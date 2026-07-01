@@ -3,7 +3,7 @@
 # users registering through the SBC. Interactive by default: exec in to drive calls.
 FROM debian:bookworm-slim
 RUN apt-get update && apt-get install -y --no-install-recommends \
-      baresip sip-tester gettext-base ca-certificates iputils-ping \
+      baresip sip-tester gettext-base ca-certificates iputils-ping ncat \
     && rm -rf /var/lib/apt/lists/*
 
 COPY baresip/ /etc/sovoc/baresip/

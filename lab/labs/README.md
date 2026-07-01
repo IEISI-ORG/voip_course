@@ -6,8 +6,9 @@ against the shared lab, with an executable checker where possible (`verify.sh`).
 | Lab | Module | Focus | Status |
 |-----|--------|-------|--------|
 | [m0-orientation](m0-orientation/) | M0 | bring-up, health, segmentation, clean reset | ✅ |
-| m1-… | M1 | SIP foundations | ⏳ |
-| … | … | (built in backlog order B1..B17) | |
+| [m1-foundations](m1-foundations/) | M1 | two-plane call, recon, living threat model | ✅ |
+| m2-… | M2 | core SIP protocol | ⏳ |
+| … | … | (built in backlog order B2..B17) | |
 
 Conventions:
 - Each lab dir has a `README.md` runbook with a **100-pt rubric (pass ≥ 70)**.

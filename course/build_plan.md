@@ -23,7 +23,7 @@ then assessment content, then instructor material.
 
 ### Stage B — Per-module lab exercises (module order)
 - [x] B0. M0 orientation lab: bring-up, health checks, capture pipeline verification  ← iteration 9
-- [ ] B1. M1 SIP foundations lab
+- [x] B1. M1 SIP foundations lab  ← iteration 12
 - [ ] B2. M2 core SIP protocol lab
 - [ ] B3. M3 SDP / media negotiation lab
 - [ ] B4. M4 RTP / codecs / QoS lab
@@ -120,6 +120,11 @@ when their parent B-task is reached.
   probe (redteam->core) only trusted after a positive control (redteam->edge) passes and
   redteam is confirmed running; broken/absent probe now yields INCONCLUSIVE→FAIL, not a false
   PASS. Added the lesson to the M0 README. B1 deferred to iteration 11.
+
+- Iteration 12 (2026-07-02): built B1 (M1 SIP foundations lab) — verify.sh (fail-closed:
+  services up → REGISTER traverses SBC returns 200), probe-banner.sh recon helper, living
+  threat-model template, 100-pt rubric. Added `ncat` to the client image for the recon probe.
+  Scripts bash-checked; compose still valid. Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
