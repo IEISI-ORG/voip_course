@@ -22,7 +22,7 @@ then assessment content, then instructor material.
 - [x] A6. redteam container: SIPVicious OSS + sipp fuzzers, fenced to `edge`/`redteam` only; authorized-use banner  ← iteration 8 (Stage A COMPLETE)
 
 ### Stage B — Per-module lab exercises (module order)
-- [ ] B0. M0 orientation lab: bring-up, health checks, capture pipeline verification
+- [x] B0. M0 orientation lab: bring-up, health checks, capture pipeline verification  ← iteration 9
 - [ ] B1. M1 SIP foundations lab
 - [ ] B2. M2 core SIP protocol lab
 - [ ] B3. M3 SDP / media negotiation lab
@@ -104,6 +104,11 @@ when their parent B-task is reached.
   crack/fuzz) that refuse non-lab targets. Removed the now-unused x-placeholder anchor; all 8
   slots are real builds. Both compose profiles validate; scripts shell-checked.
   **STAGE A (lab foundation) COMPLETE.** Next: Stage B (B0/M0 orientation lab).
+
+- Iteration 9 (2026-07-02): built B0 (M0 orientation lab) — first Stage-B lab. Runbook with
+  100-pt rubric (Labs 0.1 bring-up / 0.2 capture / 0.3 reset / ethics), plus `verify.sh`
+  auto-grader (services + network subnets + segmentation invariant, exit-coded) and
+  `gen-call.sh` deterministic call generator. Added labs/ index. Scripts bash-checked. Pushed.
 
 ## Feedback log
 - `gemini_feedback0.md` (received iter 3) → incorporated across 10 modules + BF1–BF8;
