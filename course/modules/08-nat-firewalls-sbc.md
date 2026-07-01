@@ -53,6 +53,27 @@ border. **Est. time:** 5h · **Prereqs:** Module 7.
 - What do `rport` and `received` fix, and on which header?
 - Why is consumer-router "SIP ALG" often worse than no ALG?
 
+## Curriculum addition — IPv6 media bridging & TURN hardening (review: gemini_feedback1)
+
+**Dual-stack media + stateful IPv6 filtering.**
+- **Build:** rtpengine with both v4 and v6 interfaces to bridge media between an IPv4 and an
+  IPv6 endpoint; `nftables` `ip6` stateful rules at parity with the v4 ruleset.
+- **Attack/Defend:** the classic dual-stack blind spot — v4-only firewall rules that v6 traffic
+  walks straight past; also RA/ND spoofing. Verify both address families are filtered.
+- **Lab hook (adds BF9):** place an IPv4↔IPv6 call bridged by rtpengine; confirm the `ip6`
+  ruleset permits/denies exactly as the v4 one does.
+
+**Coturn / TURN server hardening.**
+- **Rationale:** an open or loose TURN relay enables relay abuse, DDoS amplification, and
+  SSRF-style scanning of internal networks (threat T8, plus internal reconnaissance).
+- **Build:** `coturn` with `use-auth-secret` (short-term REST credentials), `denied-peer-ip`
+  covering RFC1918/loopback/link-local and the `core`/`mgmt` subnets, allocation `quota` /
+  `total-quota`, `no-multicast-peers`, and TLS on 5349.
+- **Attack/Defend:** from `redteam`, request a relay allocation toward a `core` address and
+  confirm `denied-peer-ip` blocks it; show short-term credentials expire.
+- **Lab hook (adds BF10):** deploy coturn, prove it refuses to relay to internal subnets and
+  enforces credential TTL + allocation quotas.
+
 ## References
 - RFC 4787 (NAT behavior), 3581 (rport), 5389/8489 (STUN), 5766/8656 (TURN), 8445 (ICE),
   5853 (SBC); Kamailio nathelper/rtpengine docs; coturn docs; nftables & fail2ban docs.

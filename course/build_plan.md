@@ -52,6 +52,11 @@ when their parent B-task is reached.
 - [ ] BF6. M12: RFC 8760 interop — dual MD5+SHA-256 challenge, downgrade rejection
 - [ ] BF7. M13: RFC 4475 SIP torture — SIPp fuzzing + parser-robustness regression baseline
 - [ ] BF8. M14/M15: secure recording — encryption-at-rest, RBAC/audit, DTMF suppression (PCI-DSS)
+- [ ] BF9. M7/M8: dual-stack/IPv6 — Kamailio v6 listeners + rtpengine 4↔6 media + nftables ip6 parity
+- [ ] BF10. M8: coturn/TURN hardening — use-auth-secret, denied-peer-ip (internal), quotas, TLS
+- [ ] BF11. M12: STIR/SHAKEN delegate certs (RFC 9060) — enterprise self-signed PASSporT, A-level
+- [ ] BF12. M14/M15: SIP honeypot → nftables ipset blocklist + Wazuh active-response aggregation
+- [ ] BF13. M16: cloud-native K8s — Multus vs hostNetwork media, Pod Security Standards (restricted)
 
 ### Stage C — Assessment content
 - [ ] C0. Per-module quiz bank (question + answer key + rubric) M0..M17
@@ -120,6 +125,13 @@ when their parent B-task is reached.
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
   (positive-control gating, fail-closed). Verified bash-clean.
 
+- Iteration 11 (2026-07-02): processed feedback `feedback1.md` (priority over backlog).
+  Threaded 5 curriculum additions into M7,M8,M12,M14,M15,M16; added BF9–BF13. Permanent review
+  already at `course/reviews/gemini_feedback1.md`; removed the top-level trigger. B1 deferred to
+  iteration 12.
+
 ## Feedback log
 - `gemini_feedback0.md` (received iter 3) → incorporated across 10 modules + BF1–BF8;
   archived at `course/reviews/gemini_feedback0.md`.
+- `feedback1.md` (received iter 11) → incorporated across M7,M8,M12,M14,M15,M16 + BF9–BF13;
+  permanent copy `course/reviews/gemini_feedback1.md`; top-level trigger removed.

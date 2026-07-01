@@ -64,6 +64,21 @@ zero-drop — an operational-security requirement, not just uptime.
 - **Lab hook (adds B16+):** rolling-restart the `edge-sbc` replicas from M7 under active call
   load and assert zero dropped/one-way calls; codify it as a CI check.
 
+## Curriculum addition — Cloud-native VoIP networking & pod security (review: gemini_feedback1)
+
+Running real-time media in Kubernetes collides with the RTP port-range problem (thousands of
+UDP ports per pod) and tempts insecure shortcuts.
+- **Trade-offs:** NodePort (limited range) vs `hostNetwork: true` (full host stack, high blast
+  radius) vs **Multus CNI** (a dedicated media interface per pod) — with the security cost of
+  each spelled out.
+- **Build/Defend:** enforce **Pod Security Standards (restricted)** so a compromised media pod
+  can't escalate; drop capabilities, run non-root, and reject privileged `hostNetwork` pods
+  that would expose the node. This is the container analogue of the SBC trust boundary.
+- **Attack/Defend:** container escape / node pivot via an over-privileged `hostNetwork` pod;
+  demonstrate PSA admission rejecting it.
+- **Lab hook (adds BF13):** deploy an edge media workload two ways (Multus vs hostNetwork),
+  apply the `restricted` PSS, and show the privileged variant is denied admission.
+
 ## References
 - SIPp docs & scenario reference; Kamailio/OpenSIPS textops; Docker/K8s networking for RTP;
   Ansible/Terraform docs; SIPconnect 2.0; supply-chain security (SLSA) concepts.

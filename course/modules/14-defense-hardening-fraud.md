@@ -79,6 +79,18 @@ provisioning and mishandled call recordings.
 - **Lab hook:** record a call with DTMF masked during a "payment" segment; confirm no PAN is
   present and every access is logged. Audit/monitoring side continues in M15.
 
+## Curriculum addition — SIP honeypot & dynamic blocklist (review: gemini_feedback1)
+
+A decoy listener turns reconnaissance into free threat intelligence: nobody legitimate ever
+touches it, so every hit is a confirmed bad actor you can block pre-emptively.
+- **Build:** a dummy Kamailio listener on UDP 5060 while the real service runs SIPS on 5061;
+  any request to the honeypot pushes the source into an `nftables` IP set blocklist and emits
+  a log event.
+- **Attack/Defend (T1/T8):** `svmap` the honeypot from `redteam` and confirm the source is
+  auto-banned before it can reach the real service.
+- **Lab hook (adds BF12):** deploy the honeypot, scan it, and verify the scanner IP lands in
+  the `nftables` set and is refused at the real listener. Aggregation/active-response in M15.
+
 ## References
 - NIST SP 800-58 (VoIP security), ENISA VoIP security; Asterisk/Kamailio hardening guides;
   fail2ban, nftables, CrowdSec, Wazuh docs; `../notes.md §2` (T4,T11,T13,T15).

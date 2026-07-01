@@ -67,6 +67,19 @@ An SBC/proxy that fails takes every in-flight call with it. Production security 
 - **Lab hook (adds B7+):** run two `edge-sbc` replicas sharing registrar state in Redis; kill
   the active node mid-call and confirm the call survives. Orchestration side is in M16.
 
+## Curriculum addition — Dual-stack / IPv6 signaling (review: gemini_feedback1)
+
+Carrier and IMS networks (VoLTE/VoNR) are frequently IPv6-only, so the SBC must present
+dual-stack signaling and keep security policy identical on both stacks.
+- **Standards:** RFC 3261 transports; RFC 5118 (SIP-over-IPv6 torture); DNS AAAA/NAPTR/SRV
+  (RFC 3263); happy-eyeballs sequencing.
+- **Build:** Kamailio dual-stack listeners (UDP/TCP/TLS bound on both v4 and v6), correct
+  outbound socket selection (`mhomed`/`set_send_socket`), and v6-aware record-routing.
+- **Attack/Defend:** a v6 listener that skips the v4 hardening (pike/ratelimit, ACLs) is a
+  bypass; enforce policy parity and test v6 literals against parser bugs (RFC 5118).
+- **Lab hook (adds BF9):** add an IPv6 listener to `edge-sbc`, register a v6 client, and prove
+  rate-limit/ACLs apply identically on v6. Media 4↔6 bridging continues in M8.
+
 ## References
 - Kamailio docs (core, tm/rr/registrar/topoh/topos/pike/dispatcher/rtpengine);
   OpenSIPS docs; rtpengine README; RFC 5853 (SBC in SIP).

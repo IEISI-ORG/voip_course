@@ -82,6 +82,20 @@ algorithm generations — exactly where fraud and downgrade attacks live.
   re-signed at "C"; (2) issue a dual-algorithm challenge and confirm a modern client selects
   SHA-256 while a downgrade attempt is refused.
 
+## Curriculum addition — STIR/SHAKEN delegate certificates, RFC 9060 (review: gemini_feedback1)
+
+Enterprises dialing out through a service provider that doesn't own their number block get
+downgraded to attestation **B/C** — the "attestation gap." Delegate certificates close it.
+- **Standards:** RFC 9060 (delegate certificates for STIR); RFC 8226 (cert framework,
+  TNAuthList); RFC 8225/8224 (PASSporT/Identity).
+- **Build:** the enterprise obtains a delegate certificate (SP/SPC-token → delegate CA) scoped
+  to its telephone numbers, signs its own PASSporT, and presents it so the originating SP can
+  verify and preserve **A-level** attestation.
+- **Attack/Defend:** forged delegation / out-of-scope TNAuthList; verify the delegate cert
+  chain and that signed numbers fall within the delegated range (threat T7).
+- **Lab hook (adds BF11):** issue a delegate cert from the lab private CA, sign a PASSporT as
+  the enterprise, and verify it at the SP side to retain attestation A.
+
 ## References
 - RFC 7616 (HTTP digest), 8760 (SHA-256 for SIP), 3325/3323 (PAI/Privacy), 8224/8225/8226
   (STIR), 8588 (SHAKEN PASSporT), 8946/9118 (div/RCD); ATIS-1000074/1000080 (SHAKEN);

@@ -59,6 +59,18 @@ The monitoring plane is where recording/CDR compliance is proven and where misus
 - **Lab hook (adds B15+):** add a Wazuh rule that fires on access to the recordings directory;
   trigger it and walk the alert → IR runbook path.
 
+## Curriculum addition — Honeypot aggregation & active threat intel (review: gemini_feedback1)
+
+The honeypot from M14 becomes an active-defense feed when its hits drive automated blocking
+across the platform.
+- **Build:** ship honeypot + SBC logs to Wazuh; a correlation rule turns a honeypot hit into a
+  Wazuh **active-response** that updates the `nftables` IP set on every edge node; dashboard
+  the scanner IPs and geo/ASN.
+- **Attack/Defend:** ensure the feedback loop can't be abused for self-DoS (spoofed source →
+  banning a legitimate IP); rate-limit and allowlist known-good before active-blocking.
+- **Lab hook (adds BF12 cont.):** trigger a Wazuh active-response from a honeypot hit and
+  verify the block propagates and expires per policy.
+
 ## References
 - Prometheus/Grafana/Loki/Alertmanager docs; HOMER 7; Wazuh ruleset docs; NIST SP 800-61
   (incident handling); `../notes.md §2` threat catalog for detection mapping.
