@@ -55,7 +55,8 @@ then assessment content, then instructor material.
    If present: read, incorporate, and prioritize the feedback before continuing the backlog.
 2. Build the next unmarked backlog item (one coherent unit).
 3. Update this file (mark `[x]`, note the iteration).
-4. `git commit` on `master` with a Conventional Commit message.
+4. `git commit` on `main` with a Conventional Commit message.
+5. `git push origin main` (fast-forward; never force-push in the loop).
 
 ## Iteration log
 - Iteration 1 (2026-07-01): scheduled hourly loop `e7810ccd`; built A0 (lab foundation scaffold).
