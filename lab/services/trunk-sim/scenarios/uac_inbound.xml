@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE scenario SYSTEM "sipp.dtd">
+<!-- SOVOC trunk-sim UAC (Stage A4): originate an inbound "PSTN" call to a DID via the SBC.
+     Target DID defaults to 1001; override with -s <did> on the sipp command line. -->
+<scenario name="uac_inbound">
+  <send retrans="500">
+    <![CDATA[
+      INVITE sip:[service]@[remote_ip]:[remote_port] SIP/2.0
+      Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
+      From: "PSTN Caller" <sip:+15551230000@[local_ip]:[local_port]>;tag=[call_number]
+      To: <sip:[service]@[remote_ip]:[remote_port]>
+      Call-ID: [call_id]
+      CSeq: 1 INVITE
+      Contact: <sip:pstn@[local_ip]:[local_port];transport=[transport]>
+      Max-Forwards: 70
+      Content-Type: application/sdp
+      Content-Length: [len]
+
+      v=0
+      o=pstn [call_number] [call_number] IN IP[local_ip_type] [local_ip]
+      s=sovoc-trunk
+      c=IN IP[local_ip_type] [local_ip]
+      t=0 0
+      m=audio [media_port] RTP/AVP 0 8
+      a=rtpmap:0 PCMU/8000
+      a=rtpmap:8 PCMA/8000
+    ]]>
+  </send>
+
+  <recv response="100" optional="true"/>
+  <recv response="180" optional="true"/>
+  <recv response="200" rtd="true"/>
+
+  <send>
+    <![CDATA[
+      ACK sip:[service]@[remote_ip]:[remote_port] SIP/2.0
+      Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
+      From: "PSTN Caller" <sip:+15551230000@[local_ip]:[local_port]>;tag=[call_number]
+      To: <sip:[service]@[remote_ip]:[remote_port]>[peer_tag_param]
+      Call-ID: [call_id]
+      CSeq: 1 ACK
+      Max-Forwards: 70
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <pause milliseconds="3000"/>
+
+  <send retrans="500">
+    <![CDATA[
+      BYE sip:[service]@[remote_ip]:[remote_port] SIP/2.0
+      Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
+      From: "PSTN Caller" <sip:+15551230000@[local_ip]:[local_port]>;tag=[call_number]
+      To: <sip:[service]@[remote_ip]:[remote_port]>[peer_tag_param]
+      Call-ID: [call_id]
+      CSeq: 2 BYE
+      Max-Forwards: 70
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <recv response="200"/>
+</scenario>

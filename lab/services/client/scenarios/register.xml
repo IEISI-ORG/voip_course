@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE scenario SYSTEM "sipp.dtd">
+<!-- SOVOC client REGISTER (Stage A4): register a user through the edge-sbc.
+     Usage: sipp -sf register.xml <edge-sbc-ip>:5060 -s 1001 -i <self-ip> -m 1
+     Auth is a stub at the SBC until M12; then add -au/-ap and a 401->auth retry. -->
+<scenario name="register">
+  <send retrans="500">
+    <![CDATA[
+      REGISTER sip:[remote_ip]:[remote_port] SIP/2.0
+      Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
+      From: <sip:[service]@[remote_ip]>;tag=[call_number]
+      To: <sip:[service]@[remote_ip]>
+      Call-ID: [call_id]
+      CSeq: 1 REGISTER
+      Contact: <sip:[service]@[local_ip]:[local_port];transport=[transport]>
+      Max-Forwards: 70
+      Expires: 300
+      Content-Length: 0
+    ]]>
+  </send>
+
+  <recv response="200" rtd="true"/>
+</scenario>

@@ -17,7 +17,7 @@ then assessment content, then instructor material.
 - [x] A1. edge-sbc: Kamailio base routing + rtpengine media relay (UDP/TCP/TLS listeners, topology hiding, pike/ratelimit stub)  ← iteration 2
 - [x] A2. pbx-a (Asterisk) base: PJSIP endpoints, dialplan, ARI/AMI off by default  ← iteration 4
 - [x] A3. pbx-b (FreeSWITCH) base: sofia profile, dialplan, ESL  ← iteration 5
-- [ ] A4. trunk-sim (PSTN sim) + clients (Baresip/PJSUA/Linphone provisioning, SIPp scenarios)
+- [x] A4. trunk-sim (PSTN sim) + clients (Baresip/PJSUA/Linphone provisioning, SIPp scenarios)  ← iteration 6
 - [ ] A5. observability: HOMER 7 + Heplify (HEP), Prometheus + exporters, Grafana, Loki, Wazuh
 - [ ] A6. redteam container: SIPVicious OSS + sipp fuzzers, fenced to `edge`/`redteam` only; authorized-use banner
 
@@ -87,6 +87,11 @@ when their parent B-task is reached.
   injects default_password + ESL password from env at boot (kills 1234/ClueCon, T3/T11), ESL
   bound to loopback+ACL, users 1003/1004 in restricted `sovoc` context (T4), echo/tone tests.
   compose validates; all XML well-formed. Pushed.
+
+- Iteration 6 (2026-07-02): built A4 (trunk-sim + client) on edge — SIPp PSTN peer (UAS answer /
+  UAC originate scenarios) and a Baresip+SIPp client toolbox with env-injected account secret
+  (T11) and REGISTER/call scenarios. compose validates (8 services, both real); shells OK; all
+  4 SIPp scenario XML well-formed. Pushed.
 
 ## Feedback log
 - `gemini_feedback0.md` (received iter 3) → incorporated across 10 modules + BF1–BF8;

@@ -103,16 +103,27 @@ services:
         ipv4_address: 172.28.20.22
 
   # ── External peers / users ─────────────────────────────────────────────────
-  trunk-sim:           # SIPp/Asterisk PSTN peer (Stage A4) — external trunk on edge
-    <<: *placeholder
+  trunk-sim:           # SIPp PSTN peer (Stage A4) — external trunk on edge
+    build:
+      context: ./services/trunk-sim
     hostname: trunk-sim
+    environment:
+      TRUNK_IP: 172.28.10.30
+      EDGE_SBC_IP: ${EDGE_SBC_IP:-172.28.10.10}
+    restart: unless-stopped
     networks:
       edge:
         ipv4_address: 172.28.10.30
 
-  client:              # Baresip/PJSUA/Linphone/SIPp UACs (Stage A4) — external users
-    <<: *placeholder
+  client:              # Baresip + SIPp UACs (Stage A4) — external users
+    build:
+      context: ./services/client
     hostname: client
+    environment:
+      SIP_DOMAIN: ${SIP_DOMAIN:-lab.sovoc.test}
+      EDGE_SBC_IP: ${EDGE_SBC_IP:-172.28.10.10}
+      SIP_ALICE_SECRET: ${SIP_ALICE_SECRET:-}
+    restart: unless-stopped
     networks:
       edge:
         ipv4_address: 172.28.10.40
