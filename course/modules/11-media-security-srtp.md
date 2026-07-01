@@ -55,6 +55,20 @@
 - What does the ZRTP SAS protect against that DTLS-SRTP alone may not?
 - Where can a security downgrade occur in an SBC-mediated call, and how do you prevent it?
 
+## Curriculum addition — WebRTC ↔ SIP secure media transcoding (review: gemini_feedback0)
+
+WebRTC mandates encrypted media with a different keying model (DTLS-SRTP) and transport
+quirks (ICE, RTP/RTCP mux) than legacy SIP. Bridging the two securely is a core SBC skill.
+- **Standards:** DTLS-SRTP (RFC 5763/5764); ICE (RFC 8445); RTP/RTCP multiplexing (RFC 5761);
+  WebRTC security & RTP usage (RFC 8826/8827/8834).
+- **Build:** drive rtpengine with WebRTC bridging flags — `ICE=force`, `DTLS=passive`,
+  `rtcp-mux-offer`, `SDES`/`RTP` on the legacy side — so a browser's DTLS-SRTP leg is
+  translated to the PBX's SRTP or plain RTP leg without exposing cleartext on the wire.
+- **Attack/Defend:** DTLS downgrade, fingerprint mismatch, ICE-based amplification; verify the
+  media is never briefly unencrypted at the anchor (threats T5/T9).
+- **Lab hook (adds B11+):** browser (DTLS-SRTP) ↔ Asterisk (SDES/RTP) call anchored by
+  rtpengine; prove with capture that each leg is encrypted per its own scheme.
+
 ## References
 - RFC 3711 (SRTP), 4568 (SDES), 5763/5764 (DTLS-SRTP), 6189 (ZRTP), 7714 (AES-GCM for SRTP);
   rtpengine README; Asterisk `media_encryption` docs; libsrtp docs.

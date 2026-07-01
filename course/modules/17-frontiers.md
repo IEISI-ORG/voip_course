@@ -65,6 +65,18 @@ unified communications — with the security caveats of each. **Est. time:** 5h 
 - Why does T.38 exist instead of sending fax as G.711, and what still goes wrong?
 - Name the top security control a CPaaS provider must enforce and why.
 
+## Curriculum addition — WebRTC UC & NG911 as frontier compliance (review: gemini_feedback0)
+
+The frontier is where browser-native comms and modern emergency services converge — both add
+security/compliance surface that ties the earlier modules together.
+- **WebRTC unified comms:** browser-to-PSTN as a first-class path (signaling M10, media M11);
+  discuss SFU/MCU trust boundaries and end-to-end vs hop-by-hop media encryption.
+- **NG911 / i3:** IP-based emergency services with PIDF-LO location (from M9), ESInet trust,
+  and priority handling; contrast legacy E911.
+- **Lab hook (capstone-linked):** a browser client places a secure call that traverses the
+  SBC to the simulated PSTN carrying dispatchable location — exercising WebRTC media bridging,
+  STIR/SHAKEN identity, and emergency-location delivery in one flow.
+
 ## References
 - 3GPP TS 24.229 (IMS), GSMA IR.92/IR.94, RFC 3312 (preconditions); ITU T.38/T.30, RFC 6913;
   RFC 6116 (ENUM), ATIS/SIP Forum IP-NNI; RFC 3856/3863 (presence/PIDF), 3515 (REFER);

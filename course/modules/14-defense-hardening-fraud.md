@@ -57,6 +57,28 @@ drains a budget. **Est. time:** 6h · **Prereqs:** Module 13.
 - Why do uniform error responses + rate limiting together beat either alone?
 - What makes auto-provisioning a supply-chain risk, and how do you close it?
 
+## Curriculum addition — Secure provisioning & recording compliance (review: gemini_feedback0)
+
+Two of the most common real-world VoIP breaches live in operations: insecure device
+provisioning and mishandled call recordings.
+
+**Secure auto-provisioning.**
+- **Problem:** plaintext TFTP/HTTP provisioning leaks SIP credentials to anyone on-path (T15).
+- **Build:** serve device configs over HTTPS with **mutual TLS** — per-device client certs (or
+  MAC-bound tokens), signed configs, and an allowlist so only authenticated hardware can pull
+  its own config. No credentials in world-readable files (T11).
+- **Lab hook (adds B14+):** provision a phone only over mTLS; prove an unauthenticated request
+  is refused and a spoofed MAC cannot fetch another device's config.
+
+**Secure session recording (PCI-DSS aware).**
+- **Standards/regulation:** PCI-DSS (no stored PANs/authentication data), lawful-recording and
+  consent requirements.
+- **Build:** encryption-at-rest for recordings, RBAC + access logging, retention limits, and
+  **DTMF suppression / pause-resume** so card numbers spoken or keyed during a call are never
+  captured (threat T14).
+- **Lab hook:** record a call with DTMF masked during a "payment" segment; confirm no PAN is
+  present and every access is logged. Audit/monitoring side continues in M15.
+
 ## References
 - NIST SP 800-58 (VoIP security), ENISA VoIP security; Asterisk/Kamailio hardening guides;
   fail2ban, nftables, CrowdSec, Wazuh docs; `../notes.md §2` (T4,T11,T13,T15).

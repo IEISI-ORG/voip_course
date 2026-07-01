@@ -53,6 +53,18 @@ certificates. **Est. time:** 5h · **Prereqs:** Modules 6–9.
 - What breaks if the edge certificate expires, and how do you prevent it operationally?
 - How does mutual TLS reduce trunk spoofing risk compared to IP auth?
 
+## Curriculum addition — WebRTC signaling gateway over Secure WebSocket (review: gemini_feedback0)
+
+Browsers speak SIP over WebSocket, not UDP/TCP. Securing that transport is a distinct
+signaling-security skill and the entry point for the WebRTC media work in M11.
+- **Standards:** SIP over WebSocket (RFC 7118); TLS 1.2/1.3 (RFC 8446); origin/CORS concerns.
+- **Build:** add a Kamailio `WSS` listener (`tls` + `websocket` modules) on the edge; terminate
+  Secure WebSocket from browser clients (jsSIP/SIP.js) and normalise into the core.
+- **Attack/Defend:** unauthenticated WS upgrades, cross-origin abuse, mixed `ws://` exposure;
+  enforce `wss://` only, validate `Origin`, rate-limit upgrades (ties to T8).
+- **Lab hook (adds B10+):** a browser softphone registers over `wss://` to `edge-sbc`; capture
+  and verify the TLS-wrapped WebSocket handshake. Media bridging continues in M11.
+
 ## References
 - RFC 3261 (§26 security), 5630 (sips: usage), 8446 (TLS 1.3), 7525/9325 (TLS BCP);
   NIST SP 800-52r2; certbot/acme.sh/step-ca docs; Kamailio tls & Asterisk TLS docs.

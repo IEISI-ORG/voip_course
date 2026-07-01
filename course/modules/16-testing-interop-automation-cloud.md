@@ -53,6 +53,17 @@
 - Why is host/RTP networking the classic container-VoIP pitfall, and how do you solve it?
 - Name three controls that make a VoIP CI/CD pipeline "secure by default."
 
+## Curriculum addition — Orchestrated hitless failover (review: gemini_feedback0)
+
+The HA *design* is in M7; here learners automate it so failover is repeatable and upgrades are
+zero-drop — an operational-security requirement, not just uptime.
+- **Build:** Ansible/Kubernetes for multi-replica Kamailio proxies behind shared Redis/MySQL
+  registrar state; rtpengine media redundancy; health-checked rolling upgrades.
+- **Attack/Defend:** upgrade windows and node loss as availability threats; verify state
+  replication and that security policy (TLS, ACLs) is identical on every replica.
+- **Lab hook (adds B16+):** rolling-restart the `edge-sbc` replicas from M7 under active call
+  load and assert zero dropped/one-way calls; codify it as a CI check.
+
 ## References
 - SIPp docs & scenario reference; Kamailio/OpenSIPS textops; Docker/K8s networking for RTP;
   Ansible/Terraform docs; SIPconnect 2.0; supply-chain security (SLSA) concepts.

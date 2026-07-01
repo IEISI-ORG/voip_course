@@ -55,6 +55,18 @@ your own platform. **Est. time:** 5h · **Prereqs:** Modules 1–12.
 - Which findings are "config" vs. "protocol" weaknesses, and how does that change the fix?
 - Why capture attack signatures during offense, not only during defense?
 
+## Curriculum addition — SIP torture / input-validation fuzzing (review: gemini_feedback0)
+
+Parser robustness is a security property: a single malformed message must never crash or hang
+a border element. RFC 4475 gives a standardized adversarial corpus to prove it.
+- **Standards:** RFC 4475 (SIP torture test messages); RFC 5118 (SIP-over-IPv6 torture).
+- **Build/Attack (authorized lab only):** drive the RFC 4475 message set through SIPp against
+  `edge-sbc` and the PBXs; extend with mutation fuzzing for input-validation coverage.
+- **Defend:** confirm `sanity_check` and WAF-style validation drop malformed input with a
+  correct 4xx and no crash/leak; regression-test after every config change (threat T10).
+- **Lab hook (adds B13+):** run the torture suite, assert zero crashes and well-formed
+  rejections, and record parser behaviour as a robustness baseline.
+
 ## References
 - SIPVicious OSS docs; SIPp scenarios; PTES; OWASP testing concepts; NIST SP 800-115
   (technical assessment); `../notes.md §2` threat catalog.

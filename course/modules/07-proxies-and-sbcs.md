@@ -53,6 +53,20 @@
 - Which Kamailio modules provide topology hiding, and what exactly do they rewrite?
 - How does `pike` differentiate an attack source from a busy legitimate trunk?
 
+## Curriculum addition — High availability & cluster state sharing (review: gemini_feedback0)
+
+An SBC/proxy that fails takes every in-flight call with it. Production security includes
+*availability*, so learners must build hitless failover, not just a single node.
+- **Concepts/standards:** registrar semantics (RFC 3261); Kamailio DMQ cache sync; usrloc
+  DB replication; rtpengine media-state sharing.
+- **Build:** move `usrloc` to `db_mode=3` backed by MySQL/Redis; enable DMQ so two `edge-sbc`
+  replicas share registrations; configure rtpengine with a Redis backend so media state can
+  fail over.
+- **Attack/Defend:** single-point-of-failure and split-brain; validate no call state leaks
+  across a failover; keep the trust boundary intact on the standby node.
+- **Lab hook (adds B7+):** run two `edge-sbc` replicas sharing registrar state in Redis; kill
+  the active node mid-call and confirm the call survives. Orchestration side is in M16.
+
 ## References
 - Kamailio docs (core, tm/rr/registrar/topoh/topos/pike/dispatcher/rtpengine);
   OpenSIPS docs; rtpengine README; RFC 5853 (SBC in SIP).

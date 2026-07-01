@@ -47,6 +47,18 @@
 - Design an alert that catches svwar without firing on a busy call center.
 - Outline the containment step for a compromised extension and its trade-offs.
 
+## Curriculum addition — Recording access audit & compliance monitoring (review: gemini_feedback0)
+
+The monitoring plane is where recording/CDR compliance is proven and where misuse is caught.
+- **Build:** ship recording- and CDR-access events to the SIEM (Wazuh); alert on unauthorized
+  or out-of-hours access to recordings, bulk exports, or retention-policy violations.
+- **Attack/Defend:** insider access to recordings/CDRs (threat T14); maintain a tamper-evident
+  audit trail and detection rules for anomalous access.
+- **PCI/lawful-intercept:** log every access with actor + reason; verify DTMF-suppressed
+  segments (built in M14) actually contain no card data before archival.
+- **Lab hook (adds B15+):** add a Wazuh rule that fires on access to the recordings directory;
+  trigger it and walk the alert → IR runbook path.
+
 ## References
 - Prometheus/Grafana/Loki/Alertmanager docs; HOMER 7; Wazuh ruleset docs; NIST SP 800-61
   (incident handling); `../notes.md §2` threat catalog for detection mapping.

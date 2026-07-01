@@ -60,6 +60,28 @@ STIR/SHAKEN. **Est. time:** 6h · **Prereqs:** Modules 6–11. **Checkpoint exam
 - Walk the PASSporT from creation to verification; what does attestation "A" assert?
 - Give two response-handling changes that stop extension enumeration and explain why.
 
+## Curriculum addition — Transit STIR/SHAKEN & digest interop (review: gemini_feedback0)
+
+Identity assurance and authentication both break at the *seams* between networks and
+algorithm generations — exactly where fraud and downgrade attacks live.
+
+**Transit-carrier STIR/SHAKEN.**
+- **Standards:** PASSporT (RFC 8225), Identity header (RFC 8224), certs (RFC 8226),
+  `div` PASSporT (RFC 8588); Out-of-Band STIR/SHAKEN (RFC 8816); ATIS-1000074.
+- **Build/Policy:** model gateway/transit obligations — apply attestation **C** when you
+  cannot verify the originator, strip untrusted inbound `Identity` headers, and use OOB
+  SHAKEN to carry PASSporTs across TDM/SS7 hops that cannot pass the header inline.
+- **Attack/Defend:** blindly trusting upstream attestation; enforce verify-then-reattest and
+  header stripping at the border (threat T7).
+
+**RFC 8760 digest hashing interop.**
+- **Standards:** RFC 8760 (SHA-256/SHA-512-256 digest) alongside legacy MD5 (RFC 2617/3261).
+- **Build:** issue a multi-`WWW-Authenticate` challenge (MD5 **and** SHA-256) for mixed fleets;
+  configure the UAS to prefer the strongest offered and **reject algorithm downgrade**.
+- **Lab hook (adds B12+):** (1) verify a spoofed inbound call has its attestation stripped and
+  re-signed at "C"; (2) issue a dual-algorithm challenge and confirm a modern client selects
+  SHA-256 while a downgrade attempt is refused.
+
 ## References
 - RFC 7616 (HTTP digest), 8760 (SHA-256 for SIP), 3325/3323 (PAI/Privacy), 8224/8225/8226
   (STIR), 8588 (SHAKEN PASSporT), 8946/9118 (div/RCD); ATIS-1000074/1000080 (SHAKEN);

@@ -41,6 +41,18 @@ then assessment content, then instructor material.
 - [ ] B16. M16 testing / interop / automation / cloud lab
 - [ ] B17. M17 frontiers lab (+ checkpoint exam #3 content)
 
+### Stage B+ — feedback-driven lab additions (review: gemini_feedback0)
+Design threaded into the module docs in iteration 3; these are the concrete labs to build
+when their parent B-task is reached.
+- [ ] BF1. M10/M11: WebRTC — Kamailio WSS gateway + rtpengine DTLS-SRTP↔SIP media bridge
+- [ ] BF2. M9/M17: emergency calling — PIDF-LO location body + Resource-Priority; Kari's/RAY BAUM'S
+- [ ] BF3. M7/M16: HA state sharing — Redis/MySQL registrar + rtpengine redundancy, hitless failover
+- [ ] BF4. M14: secure auto-provisioning — HTTPS mTLS config serving, signed configs, MAC allowlist
+- [ ] BF5. M12: transit STIR/SHAKEN — attestation "C", untrusted-header stripping, OOB (RFC 8816)
+- [ ] BF6. M12: RFC 8760 interop — dual MD5+SHA-256 challenge, downgrade rejection
+- [ ] BF7. M13: RFC 4475 SIP torture — SIPp fuzzing + parser-robustness regression baseline
+- [ ] BF8. M14/M15: secure recording — encryption-at-rest, RBAC/audit, DTMF suppression (PCI-DSS)
+
 ### Stage C — Assessment content
 - [ ] C0. Per-module quiz bank (question + answer key + rubric) M0..M17
 - [ ] C1. Three checkpoint exams (after M5, M12, M17)
@@ -62,3 +74,11 @@ then assessment content, then instructor material.
 - Iteration 1 (2026-07-01): scheduled hourly loop `e7810ccd`; built A0 (lab foundation scaffold).
 - Iteration 2 (2026-07-01): built A1 (edge-sbc: Kamailio border config + rtpengine media relay);
   added rtpengine service to topology; compose validates (8 services). Loop now `48a47bda` (:00).
+- Iteration 3 (2026-07-01): processed feedback `gemini_feedback0.md` (priority over backlog).
+  Threaded 8 curriculum additions into modules M7,M9,M10,M11,M12,M13,M14,M15,M16,M17; added
+  BF1–BF8 lab tasks. Archived the feedback to `course/reviews/`. Loop now `203820fb`. A2 deferred
+  to iteration 4.
+
+## Feedback log
+- `gemini_feedback0.md` (received iter 3) → incorporated across 10 modules + BF1–BF8;
+  archived at `course/reviews/gemini_feedback0.md`.

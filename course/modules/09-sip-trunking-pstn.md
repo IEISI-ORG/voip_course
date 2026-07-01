@@ -52,6 +52,21 @@
 - Why is IP-only trunk authentication insufficient, and what do you add?
 - Which single control most reduces toll-fraud blast radius, and why?
 
+## Curriculum addition — Emergency calling & regulatory compliance (review: gemini_feedback0)
+
+Emergency calls are a legal obligation with their own security/integrity requirements
+(accurate location, tamper-resistant priority). US law makes this concrete.
+- **Standards/regulation:** Kari's Law (direct 911 dial + on-site notification), RAY BAUM'S
+  Act (dispatchable location); PIDF-LO location object (RFC 4119; geo shapes RFC 5491;
+  civic/geo RFC 4776 superseding 3825); `Resource-Priority` header (RFC 4412); NENA i3/NG911.
+- **Build:** dialplan that routes `911`/direct-dial without a prefix and fires a notification;
+  attach a PIDF-LO body carrying dispatchable location; mark priority calls with
+  `Resource-Priority` for preferential routing across the trunk.
+- **Attack/Defend:** spoofed or stripped location metadata; ensure the SBC does not remove the
+  PIDF-LO body and that priority marking cannot be forged by untrusted peers.
+- **Lab hook (adds B9+):** place a simulated 911 call carrying PIDF-LO, verify location
+  delivery and `Resource-Priority` marking end-to-end. Forward-linked from M17 (NG911).
+
 ## References
 - RFC 3398 (ISUP↔SIP), 3372/3204 (SIP-T/ISUP encap), Q.850; SIPconnect 2.0 profile;
   Asterisk/Kamailio trunk docs; `../notes.md §2` (T4, T12).
