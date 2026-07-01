@@ -24,7 +24,7 @@ then assessment content, then instructor material.
 ### Stage B — Per-module lab exercises (module order)
 - [x] B0. M0 orientation lab: bring-up, health checks, capture pipeline verification  ← iteration 9
 - [x] B1. M1 SIP foundations lab  ← iteration 12
-- [ ] B2. M2 core SIP protocol lab
+- [x] B2. M2 core SIP protocol lab  ← iteration 13
 - [ ] B3. M3 SDP / media negotiation lab
 - [ ] B4. M4 RTP / codecs / QoS lab
 - [ ] B5. M5 packet-analysis lab (+ checkpoint exam #1 content)
@@ -125,6 +125,11 @@ when their parent B-task is reached.
   services up → REGISTER traverses SBC returns 200), probe-banner.sh recon helper, living
   threat-model template, 100-pt rubric. Added `ncat` to the client image for the recon probe.
   Scripts bash-checked; compose still valid. Pushed.
+
+- Iteration 13 (2026-07-02): built B2 (M2 core SIP lab) — verify.sh asserts protocol invariants
+  (REGISTER→200 + Max-Forwards:0→483 loop protection, fail-closed), trace.sh raw-response
+  reader for annotation, README with rubric (transaction/dialog, auth, forking, topology-hiding
+  labs are analysis-graded). Scripts bash-checked. Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
