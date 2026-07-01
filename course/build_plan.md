@@ -19,7 +19,7 @@ then assessment content, then instructor material.
 - [x] A3. pbx-b (FreeSWITCH) base: sofia profile, dialplan, ESL  ← iteration 5
 - [x] A4. trunk-sim (PSTN sim) + clients (Baresip/PJSUA/Linphone provisioning, SIPp scenarios)  ← iteration 6
 - [x] A5. observability: HOMER 7 + Heplify (HEP), Prometheus + exporters, Grafana, Loki, Wazuh  ← iteration 7
-- [ ] A6. redteam container: SIPVicious OSS + sipp fuzzers, fenced to `edge`/`redteam` only; authorized-use banner
+- [x] A6. redteam container: SIPVicious OSS + sipp fuzzers, fenced to `edge`/`redteam` only; authorized-use banner  ← iteration 8 (Stage A COMPLETE)
 
 ### Stage B — Per-module lab exercises (module order)
 - [ ] B0. M0 orientation lab: bring-up, health checks, capture pipeline verification
@@ -98,6 +98,12 @@ when their parent B-task is reached.
   Loki, single-node Wazuh. Added `make obs-up/obs-down`, volumes, env keys. Both base and obs
   compose profiles validate; standard configs YAML-linted. Exporters/HEP-mirroring deferred to
   M15. Pushed.
+
+- Iteration 8 (2026-07-02): built A6 (redteam) — SIPVicious + SIPp, fenced to edge/redteam by
+  compose, authorized-use banner + AUTHORIZED_USE.md, scope-guarded helpers (lab-scan/enum/
+  crack/fuzz) that refuse non-lab targets. Removed the now-unused x-placeholder anchor; all 8
+  slots are real builds. Both compose profiles validate; scripts shell-checked.
+  **STAGE A (lab foundation) COMPLETE.** Next: Stage B (B0/M0 orientation lab).
 
 ## Feedback log
 - `gemini_feedback0.md` (received iter 3) → incorporated across 10 modules + BF1–BF8;

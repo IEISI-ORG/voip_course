@@ -14,12 +14,6 @@
 
 name: sovoc-lab
 
-x-placeholder: &placeholder
-  # Replaced per Stage-A iteration. Idle so the topology boots for reachability tests.
-  image: debian:stable-slim
-  command: ["sleep", "infinity"]
-  restart: unless-stopped
-
 networks:
   edge:      # untrusted border: external users, PSTN peers, attackers
     name: sovoc_edge
@@ -220,9 +214,12 @@ services:
     networks: { mgmt: { ipv4_address: 172.28.30.57 } }
 
   # ── Offensive plane (authorized lab use ONLY) ───────────────────────────────
-  redteam:             # SIPVicious OSS + sipp fuzzers (Stage A6)
-    <<: *placeholder
+  redteam:             # SIPVicious OSS + sipp fuzzers (Stage A6) — AUTHORIZED LAB USE ONLY
+    build:
+      context: ./services/redteam
     hostname: redteam
+    restart: unless-stopped
+    # Intentionally attached to edge + redteam ONLY — never core/mgmt (ethical fence).
     networks:
       edge:
         ipv4_address: 172.28.10.90
