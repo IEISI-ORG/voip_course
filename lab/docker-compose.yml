@@ -44,14 +44,36 @@ networks:
 
 services:
   # ── Border ────────────────────────────────────────────────────────────────
-  edge-sbc:            # Kamailio + rtpengine (Stage A1). Bridges edge↔core.
-    <<: *placeholder
+  edge-sbc:            # Kamailio signaling border (Stage A1). Bridges edge↔core.
+    build:
+      context: ./services/edge-sbc
+      args:
+        KAMAILIO_TAG: ${KAMAILIO_TAG:-5.8-alpine}
     hostname: edge-sbc
+    environment:
+      # Pulled from the auto-loaded .env when present; safe defaults keep the lab bootable.
+      SIP_DOMAIN: ${SIP_DOMAIN:-lab.sovoc.test}
+      TOPOH_MASK_SECRET: ${TOPOH_MASK_SECRET:-}
+    depends_on: [rtpengine]
+    restart: unless-stopped
     networks:
       edge:
         ipv4_address: 172.28.10.10
       core:
         ipv4_address: 172.28.20.10
+
+  rtpengine:           # Media relay / SRTP bridge (Stage A1). Anchors RTP at the border.
+    build:
+      context: ./services/rtpengine
+      args:
+        RTPENGINE_REF: ${RTPENGINE_REF:-mr12.5.1.1}
+    hostname: rtpengine
+    restart: unless-stopped
+    networks:
+      edge:
+        ipv4_address: 172.28.10.11
+      core:
+        ipv4_address: 172.28.20.11
 
   # ── Trusted core ─────────────────────────────────────────────────────────
   pbx-a:               # Asterisk (Stage A2)

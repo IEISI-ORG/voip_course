@@ -14,7 +14,7 @@ then assessment content, then instructor material.
 
 ### Stage A — Lab foundation
 - [x] A0. Repo scaffold: `lab/` layout, compose topology skeleton, 4 networks, README, `.env.example`, Makefile  ← iteration 1
-- [ ] A1. edge-sbc: Kamailio base routing + rtpengine media relay (UDP/TCP/TLS listeners, topology hiding, pike/ratelimit stub)
+- [x] A1. edge-sbc: Kamailio base routing + rtpengine media relay (UDP/TCP/TLS listeners, topology hiding, pike/ratelimit stub)  ← iteration 2
 - [ ] A2. pbx-a (Asterisk) base: PJSIP endpoints, dialplan, ARI/AMI off by default
 - [ ] A3. pbx-b (FreeSWITCH) base: sofia profile, dialplan, ESL
 - [ ] A4. trunk-sim (PSTN sim) + clients (Baresip/PJSUA/Linphone provisioning, SIPp scenarios)
@@ -59,3 +59,5 @@ then assessment content, then instructor material.
 
 ## Iteration log
 - Iteration 1 (2026-07-01): scheduled hourly loop `e7810ccd`; built A0 (lab foundation scaffold).
+- Iteration 2 (2026-07-01): built A1 (edge-sbc: Kamailio border config + rtpengine media relay);
+  added rtpengine service to topology; compose validates (8 services). Loop now `48a47bda` (:00).
