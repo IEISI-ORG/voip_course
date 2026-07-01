@@ -15,7 +15,7 @@ then assessment content, then instructor material.
 ### Stage A — Lab foundation
 - [x] A0. Repo scaffold: `lab/` layout, compose topology skeleton, 4 networks, README, `.env.example`, Makefile  ← iteration 1
 - [x] A1. edge-sbc: Kamailio base routing + rtpengine media relay (UDP/TCP/TLS listeners, topology hiding, pike/ratelimit stub)  ← iteration 2
-- [ ] A2. pbx-a (Asterisk) base: PJSIP endpoints, dialplan, ARI/AMI off by default
+- [x] A2. pbx-a (Asterisk) base: PJSIP endpoints, dialplan, ARI/AMI off by default  ← iteration 4
 - [ ] A3. pbx-b (FreeSWITCH) base: sofia profile, dialplan, ESL
 - [ ] A4. trunk-sim (PSTN sim) + clients (Baresip/PJSUA/Linphone provisioning, SIPp scenarios)
 - [ ] A5. observability: HOMER 7 + Heplify (HEP), Prometheus + exporters, Grafana, Loki, Wazuh
@@ -78,6 +78,10 @@ when their parent B-task is reached.
   Threaded 8 curriculum additions into modules M7,M9,M10,M11,M12,M13,M14,M15,M16,M17; added
   BF1–BF8 lab tasks. Archived the feedback to `course/reviews/`. Loop now `203820fb`. A2 deferred
   to iteration 4.
+
+- Iteration 4 (2026-07-01): built A2 (pbx-a Asterisk base) — chan_pjsip only, AMI/ARI/HTTP off,
+  legacy channel drivers unloaded, outbound-denied dialplan (T4), env-injected secrets (T11),
+  1001/1002 endpoints + echo/playback tests. compose validates (still 8 services). Pushed.
 
 ## Feedback log
 - `gemini_feedback0.md` (received iter 3) → incorporated across 10 modules + BF1–BF8;

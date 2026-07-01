@@ -77,8 +77,13 @@ services:
 
   # ── Trusted core ─────────────────────────────────────────────────────────
   pbx-a:               # Asterisk (Stage A2)
-    <<: *placeholder
+    build:
+      context: ./services/pbx-a
     hostname: pbx-a
+    environment:
+      SIP_ALICE_SECRET: ${SIP_ALICE_SECRET:-}
+      SIP_BOB_SECRET: ${SIP_BOB_SECRET:-}
+    restart: unless-stopped
     networks:
       core:
         ipv4_address: 172.28.20.21

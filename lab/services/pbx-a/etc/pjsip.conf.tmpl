@@ -1,0 +1,68 @@
+;; SOVOC pbx-a — PJSIP config (Stage A2). Rendered from this template by entrypoint.sh
+;; (secrets injected from the environment; never commit real secrets).
+;;
+;; Posture: chan_pjsip only, no guest/anonymous calls, endpoints authenticate. Plain UDP on
+;; the trusted core for now — TLS transport + SRTP media are added in M10/M11. The edge-sbc
+;; is the only peer that relays external traffic here.
+
+[transport-udp]
+type = transport
+protocol = udp
+bind = 172.28.20.21:5060
+; Only the core network is trusted; the SBC anchors/relays everything from the edge.
+
+;; ---- Endpoint template (shared secure defaults) ----
+[endpoint-defaults](!)
+type = endpoint
+context = internal
+disallow = all
+allow = opus,ulaw,alaw
+direct_media = no                 ; force media through us/rtpengine (topology + T9)
+rtp_symmetric = yes               ; only accept RTP from the negotiated source (T9)
+force_rport = yes
+rewrite_contact = yes
+; Anti-enumeration: identify by From username, respond uniformly (T2). Digest hardening in M12.
+
+[auth-defaults](!)
+type = auth
+auth_type = userpass
+
+[aor-defaults](!)
+type = aor
+max_contacts = 1
+remove_existing = yes
+
+;; ---- Peer to the edge-sbc (relayed external calls arrive from here) ----
+[edge-sbc]
+type = identify
+endpoint = edge-sbc
+match = 172.28.20.10
+
+[edge-sbc]
+type = endpoint
+context = from-edge
+disallow = all
+allow = opus,ulaw,alaw
+direct_media = no
+rtp_symmetric = yes
+
+;; ---- Local test endpoints (alice=1001, bob=1002) ----
+[1001](endpoint-defaults)
+auth = 1001-auth
+aors = 1001
+
+[1001-auth](auth-defaults)
+username = 1001
+password = ${SIP_ALICE_SECRET}
+
+[1001](aor-defaults)
+
+[1002](endpoint-defaults)
+auth = 1002-auth
+aors = 1002
+
+[1002-auth](auth-defaults)
+username = 1002
+password = ${SIP_BOB_SECRET}
+
+[1002](aor-defaults)
