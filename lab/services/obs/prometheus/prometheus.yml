@@ -1,0 +1,21 @@
+# SOVOC observability — Prometheus scrape config (Stage A5).
+# Scrapes itself now; VoIP exporters (Kamailio/Asterisk) are wired in M15 once the exporters
+# are enabled on the core services. Targets are commented until then so scrapes don't error.
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    lab: sovoc
+
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  # --- Enabled in M15 (uncomment once exporters are running) ---
+  # - job_name: kamailio
+  #   static_configs: [{ targets: ["172.28.20.10:9494"] }]   # kamailio-exporter
+  # - job_name: asterisk
+  #   static_configs: [{ targets: ["172.28.20.21:9910"] }]   # res_prometheus
+  # - job_name: node
+  #   static_configs: [{ targets: ["edge-sbc:9100","pbx-a:9100","pbx-b:9100"] }]

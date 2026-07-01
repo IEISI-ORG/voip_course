@@ -18,7 +18,7 @@ then assessment content, then instructor material.
 - [x] A2. pbx-a (Asterisk) base: PJSIP endpoints, dialplan, ARI/AMI off by default  ← iteration 4
 - [x] A3. pbx-b (FreeSWITCH) base: sofia profile, dialplan, ESL  ← iteration 5
 - [x] A4. trunk-sim (PSTN sim) + clients (Baresip/PJSUA/Linphone provisioning, SIPp scenarios)  ← iteration 6
-- [ ] A5. observability: HOMER 7 + Heplify (HEP), Prometheus + exporters, Grafana, Loki, Wazuh
+- [x] A5. observability: HOMER 7 + Heplify (HEP), Prometheus + exporters, Grafana, Loki, Wazuh  ← iteration 7
 - [ ] A6. redteam container: SIPVicious OSS + sipp fuzzers, fenced to `edge`/`redteam` only; authorized-use banner
 
 ### Stage B — Per-module lab exercises (module order)
@@ -92,6 +92,12 @@ when their parent B-task is reached.
   UAC originate scenarios) and a Baresip+SIPp client toolbox with env-injected account secret
   (T11) and REGISTER/call scenarios. compose validates (8 services, both real); shells OK; all
   4 SIPp scenario XML well-formed. Pushed.
+
+- Iteration 7 (2026-07-02): built A5 (observability plane) — profile-gated (`obs`) stack:
+  heplify-server+homer-webapp+postgres (HOMER 7 HEP), Prometheus, Grafana (auto datasources),
+  Loki, single-node Wazuh. Added `make obs-up/obs-down`, volumes, env keys. Both base and obs
+  compose profiles validate; standard configs YAML-linted. Exporters/HEP-mirroring deferred to
+  M15. Pushed.
 
 ## Feedback log
 - `gemini_feedback0.md` (received iter 3) → incorporated across 10 modules + BF1–BF8;

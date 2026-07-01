@@ -128,15 +128,96 @@ services:
       edge:
         ipv4_address: 172.28.10.40
 
-  # ── Observability plane ─────────────────────────────────────────────────────
-  obs:                 # HOMER+Heplify, Prometheus, Grafana, Loki, Wazuh (Stage A5)
-    <<: *placeholder
-    hostname: obs
+  # ── Observability plane (Stage A5) ──────────────────────────────────────────
+  # Heavy stack — gated behind the `obs` profile so base `make up` stays light.
+  # Bring it up with `make obs-up` (docker compose --profile obs up -d).
+  obs-db:              # Postgres backing HOMER
+    image: postgres:16-alpine
+    profiles: [obs]
+    hostname: obs-db
+    environment:
+      POSTGRES_USER: ${HOMER_DB_USER:-homer}
+      POSTGRES_PASSWORD: ${HOMER_DB_PASSWORD:-homer}
+      POSTGRES_DB: ${HOMER_DB_NAME:-homer_data}
+    volumes: [obs_pgdata:/var/lib/postgresql/data]
+    restart: unless-stopped
+    networks: { mgmt: { ipv4_address: 172.28.30.51 } }
+
+  heplify-server:      # HEP collector → HOMER schema (receives mirrored SIP)
+    image: sipcapture/heplify-server:latest
+    profiles: [obs]
+    hostname: heplify-server
+    depends_on: [obs-db]
+    environment:
+      HEPLIFYSERVER_HEPADDR: "0.0.0.0:9060"
+      HEPLIFYSERVER_DBSHEMA: homer7
+      HEPLIFYSERVER_DBDRIVER: postgres
+      HEPLIFYSERVER_DBADDR: "obs-db:5432"
+      HEPLIFYSERVER_DBUSER: ${HOMER_DB_USER:-homer}
+      HEPLIFYSERVER_DBPASS: ${HOMER_DB_PASSWORD:-homer}
+      HEPLIFYSERVER_DBDATATABLE: homer_data
+      HEPLIFYSERVER_DBCONFTABLE: homer_config
+      HEPLIFYSERVER_DBROTATE: "true"
+      HEPLIFYSERVER_LOGLVL: info
+    restart: unless-stopped
     networks:
-      mgmt:
-        ipv4_address: 172.28.30.50
-      core:              # receives HEP/metrics from core services
-        ipv4_address: 172.28.20.50
+      mgmt: { ipv4_address: 172.28.30.52 }
+      core: { ipv4_address: 172.28.20.52 }   # reachable by core services sending HEP
+
+  homer-webapp:        # HOMER 7 UI
+    image: sipcapture/webapp:latest
+    profiles: [obs]
+    hostname: homer-webapp
+    depends_on: [obs-db, heplify-server]
+    environment:
+      DB_HOST: obs-db
+      DB_USER: ${HOMER_DB_USER:-homer}
+      DB_PASS: ${HOMER_DB_PASSWORD:-homer}
+    restart: unless-stopped
+    networks: { mgmt: { ipv4_address: 172.28.30.53 } }
+
+  prometheus:          # metrics
+    image: prom/prometheus:latest
+    profiles: [obs]
+    hostname: prometheus
+    volumes:
+      - ./services/obs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    restart: unless-stopped
+    networks:
+      mgmt: { ipv4_address: 172.28.30.54 }
+      core: { ipv4_address: 172.28.20.54 }   # scrape core exporters (M15)
+
+  grafana:             # dashboards
+    image: grafana/grafana:latest
+    profiles: [obs]
+    hostname: grafana
+    depends_on: [prometheus, loki]
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-admin}
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    volumes:
+      - ./services/obs/grafana/provisioning:/etc/grafana/provisioning:ro
+      - obs_grafana:/var/lib/grafana
+    restart: unless-stopped
+    networks: { mgmt: { ipv4_address: 172.28.30.55 } }
+
+  loki:                # log aggregation
+    image: grafana/loki:latest
+    profiles: [obs]
+    hostname: loki
+    command: ["-config.file=/etc/loki/loki-config.yml"]
+    volumes:
+      - ./services/obs/loki/loki-config.yml:/etc/loki/loki-config.yml:ro
+      - obs_loki:/loki
+    restart: unless-stopped
+    networks: { mgmt: { ipv4_address: 172.28.30.56 } }
+
+  wazuh:               # SIEM (single-node manager; full indexer+dashboard in M15)
+    image: wazuh/wazuh-manager:latest
+    profiles: [obs]
+    hostname: wazuh
+    restart: unless-stopped
+    networks: { mgmt: { ipv4_address: 172.28.30.57 } }
 
   # ── Offensive plane (authorized lab use ONLY) ───────────────────────────────
   redteam:             # SIPVicious OSS + sipp fuzzers (Stage A6)
@@ -147,3 +228,8 @@ services:
         ipv4_address: 172.28.10.90
       redteam:
         ipv4_address: 172.28.40.90
+
+volumes:
+  obs_pgdata:
+  obs_grafana:
+  obs_loki:
