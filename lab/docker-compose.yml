@@ -89,8 +89,15 @@ services:
         ipv4_address: 172.28.20.21
 
   pbx-b:               # FreeSWITCH (Stage A3)
-    <<: *placeholder
+    build:
+      context: ./services/pbx-b
+      args:
+        FREESWITCH_IMAGE: ${FREESWITCH_IMAGE:-safarov/freeswitch:latest}
     hostname: pbx-b
+    environment:
+      FS_DEFAULT_PASSWORD: ${FS_DEFAULT_PASSWORD:-}
+      FS_ESL_PASSWORD: ${FS_ESL_PASSWORD:-}
+    restart: unless-stopped
     networks:
       core:
         ipv4_address: 172.28.20.22

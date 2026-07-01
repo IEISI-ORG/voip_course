@@ -1,0 +1,16 @@
+<configuration name="event_socket.conf" description="Socket Client">
+  <!--
+    SOVOC pbx-b — hardened ESL (Stage A3).
+    mod_event_socket is FreeSWITCH's remote-control API (analogue of Asterisk AMI): full
+    control of the switch. It stays bound to loopback and is restricted by ACL; the password
+    is injected from the environment at boot (placeholder replaced by entrypoint). Exposed
+    beyond the mgmt plane only with TLS + tight ACLs when a lab needs it (M15).
+  -->
+  <settings>
+    <param name="nat-map" value="false"/>
+    <param name="listen-ip" value="127.0.0.1"/>
+    <param name="listen-port" value="8021"/>
+    <param name="password" value="__ESL_PASSWORD__"/>
+    <param name="apply-inbound-acl" value="loopback.auto"/>
+  </settings>
+</configuration>
