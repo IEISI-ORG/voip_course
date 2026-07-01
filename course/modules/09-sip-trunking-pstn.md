@@ -1,0 +1,57 @@
+# Module 9 — SIP Trunking & the PSTN
+
+**One-liner:** Connect your platform to the outside world (ITSPs/PSTN) securely and reliably.
+**Est. time:** 5h · **Prereqs:** Modules 6–8.
+
+## Learning Objectives
+- Configure SIP trunks (registration and static/IP modes) to an ITSP/peer.
+- Understand PSTN interworking: call flows, early media, DTMF, SIP-T/SIP-I, ISUP mapping.
+- Secure trunks against spoofed peers, abuse, and interception.
+
+## 1. Concept
+- **SIP trunks:** what replaces TDM; trunk vs. extension registration; static/IP-auth vs.
+  registration mode; DID mapping, number formats (E.164), CLI/CLIP.
+- **PSTN interworking:** SIP↔PSTN call flows, gateways, early media & early/delayed offer,
+  ringback, call-failure mapping (SIP↔Q.850 cause codes).
+- **SIP-T / SIP-I:** ISUP encapsulation across a SIP core; SS7/ISDN↔SIP message and cause mapping;
+  when carriers require it.
+- **DTMF across trunks:** RFC 4733 vs. inband vs. SIP INFO; negotiation pitfalls.
+- **Trunk topologies:** single/multi-site, converged, central vs. multiple SBCs, least-cost
+  routing, number consolidation, disaster recovery/failover, trunk bursting/elastic SIP.
+- **Choosing/validating an ITSP:** interop checklist, SIPconnect profile, what to test.
+
+## 2. Packet Reality
+- Trace an outbound PSTN call and an inbound DID; map SIP responses to Q.850 causes.
+- Observe DTMF negotiation mismatch (why IVR digits fail) and its fix.
+
+## 3. Build (OSS)
+- Asterisk PJSIP trunk to a simulated ITSP (`trunk-sim` = SIPp/Asterisk peer); inbound + outbound.
+- Kamailio edge routing to the trunk with dispatcher failover and LCR-style selection.
+- DTMF interop matrix across two endpoints/trunk.
+
+## 4. Attack / Defend
+- **Spoofed-peer / trunk abuse (T12):** IP-auth-only trunks are forgeable → require IP + TLS +
+  (where possible) digest; pin peer certs; topology hiding toward the carrier.
+- **Toll fraud via trunk (T4):** an open outbound path is the classic loss event → destination
+  allowlists, per-account spend/velocity limits, block premium/high-risk ranges, alerting (M14/M15).
+- **Interception on the trunk (T6):** carrier links may be untrusted → TLS/SIPS + SRTP toward
+  the ITSP where supported; IPsec/WireGuard overlay when not.
+- **CLI/caller-ID spoofing inbound (T7):** don't trust From/PAI from the PSTN; verify via
+  STIR/SHAKEN (M12) where available.
+- Update threat model with trunk/PSTN vectors.
+
+## 5. Labs
+- **Lab 9.1:** Bring up bidirectional trunking to `trunk-sim`; complete inbound DID + outbound PSTN.
+- **Lab 9.2:** Map five SIP failure responses to Q.850 causes from captures.
+- **Lab 9.3 (security):** Convert an IP-only trunk to TLS + auth; prove a spoofed source is
+  rejected; add an outbound destination allowlist + spend limit and trigger the alert.
+- *Rubric:* working two-way trunk; correct cause mapping; hardened trunk with fraud guardrails.
+
+## Assessment (sample)
+- Registration vs. static trunk mode: security and operational trade-offs?
+- Why is IP-only trunk authentication insufficient, and what do you add?
+- Which single control most reduces toll-fraud blast radius, and why?
+
+## References
+- RFC 3398 (ISUP↔SIP), 3372/3204 (SIP-T/ISUP encap), Q.850; SIPconnect 2.0 profile;
+  Asterisk/Kamailio trunk docs; `../notes.md §2` (T4, T12).

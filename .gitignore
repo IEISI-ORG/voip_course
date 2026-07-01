@@ -1,0 +1,28 @@
+# --- Secrets: NEVER commit (see ~/.claude/rules/security.md) ---
+.env
+.env.*
+!.env.example
+secrets/
+pki/
+*.pem
+*.key
+*_secret*
+*_token*
+credentials.json
+settings.json
+
+# --- Lab runtime artifacts ---
+lab/**/data/
+lab/**/recordings/
+lab/**/*.pcap
+lab/**/*.log
+*.sqlite
+*.db
+
+# --- OS / editor ---
+.DS_Store
+*.swp
+
+# -- DNC --
+SSCA-Elite-SIP-training.md
+

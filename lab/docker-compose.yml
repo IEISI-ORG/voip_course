@@ -1,0 +1,104 @@
+# SOVOC reference lab — topology contract.
+#
+# This file defines the FULL segmented topology up front (networks + service slots).
+# Services start as bootable placeholders (debian:stable-slim, idle) so learners can
+# verify network segmentation in the M0 lab immediately. Each Stage-A build iteration
+# replaces one placeholder with its real service (Kamailio, Asterisk, FreeSWITCH, ...).
+#
+# Segmentation invariant (enforced here, tested in M0/M8/M13):
+#   - redteam containers attach ONLY to `edge` + `redteam` — never `core` or `mgmt`.
+#   - `core` (trusted, mTLS) is reachable only through edge-sbc.
+#   - `mgmt` carries observability; production would firewall it off from `edge`.
+#
+# Usage: `make up` / `make status` / `make down`. Override versions via `.env`.
+
+name: sovoc-lab
+
+x-placeholder: &placeholder
+  # Replaced per Stage-A iteration. Idle so the topology boots for reachability tests.
+  image: debian:stable-slim
+  command: ["sleep", "infinity"]
+  restart: unless-stopped
+
+networks:
+  edge:      # untrusted border: external users, PSTN peers, attackers
+    name: sovoc_edge
+    ipam:
+      config:
+        - subnet: 172.28.10.0/24
+  core:      # trusted internal: PBXs, reachable only via edge-sbc
+    name: sovoc_core
+    ipam:
+      config:
+        - subnet: 172.28.20.0/24
+  mgmt:      # observability plane
+    name: sovoc_mgmt
+    ipam:
+      config:
+        - subnet: 172.28.30.0/24
+  redteam:   # isolated offensive plane
+    name: sovoc_redteam
+    ipam:
+      config:
+        - subnet: 172.28.40.0/24
+
+services:
+  # ── Border ────────────────────────────────────────────────────────────────
+  edge-sbc:            # Kamailio + rtpengine (Stage A1). Bridges edge↔core.
+    <<: *placeholder
+    hostname: edge-sbc
+    networks:
+      edge:
+        ipv4_address: 172.28.10.10
+      core:
+        ipv4_address: 172.28.20.10
+
+  # ── Trusted core ─────────────────────────────────────────────────────────
+  pbx-a:               # Asterisk (Stage A2)
+    <<: *placeholder
+    hostname: pbx-a
+    networks:
+      core:
+        ipv4_address: 172.28.20.21
+
+  pbx-b:               # FreeSWITCH (Stage A3)
+    <<: *placeholder
+    hostname: pbx-b
+    networks:
+      core:
+        ipv4_address: 172.28.20.22
+
+  # ── External peers / users ─────────────────────────────────────────────────
+  trunk-sim:           # SIPp/Asterisk PSTN peer (Stage A4) — external trunk on edge
+    <<: *placeholder
+    hostname: trunk-sim
+    networks:
+      edge:
+        ipv4_address: 172.28.10.30
+
+  client:              # Baresip/PJSUA/Linphone/SIPp UACs (Stage A4) — external users
+    <<: *placeholder
+    hostname: client
+    networks:
+      edge:
+        ipv4_address: 172.28.10.40
+
+  # ── Observability plane ─────────────────────────────────────────────────────
+  obs:                 # HOMER+Heplify, Prometheus, Grafana, Loki, Wazuh (Stage A5)
+    <<: *placeholder
+    hostname: obs
+    networks:
+      mgmt:
+        ipv4_address: 172.28.30.50
+      core:              # receives HEP/metrics from core services
+        ipv4_address: 172.28.20.50
+
+  # ── Offensive plane (authorized lab use ONLY) ───────────────────────────────
+  redteam:             # SIPVicious OSS + sipp fuzzers (Stage A6)
+    <<: *placeholder
+    hostname: redteam
+    networks:
+      edge:
+        ipv4_address: 172.28.10.90
+      redteam:
+        ipv4_address: 172.28.40.90
