@@ -110,6 +110,16 @@ when their parent B-task is reached.
   auto-grader (services + network subnets + segmentation invariant, exit-coded) and
   `gen-call.sh` deterministic call generator. Added labs/ index. Scripts bash-checked. Pushed.
 
+- Iteration 10 (2026-07-02): addressed automated commit security review (MEDIUM: fail-open
+  validator differential in m0 verify.sh). Made the segmentation test fail-closed — negative
+  probe (redteam->core) only trusted after a positive control (redteam->edge) passes and
+  redteam is confirmed running; broken/absent probe now yields INCONCLUSIVE→FAIL, not a false
+  PASS. Added the lesson to the M0 README. B1 deferred to iteration 11.
+
+## Security review log
+- Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
+  (positive-control gating, fail-closed). Verified bash-clean.
+
 ## Feedback log
 - `gemini_feedback0.md` (received iter 3) → incorporated across 10 modules + BF1–BF8;
   archived at `course/reviews/gemini_feedback0.md`.

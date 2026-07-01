@@ -25,6 +25,12 @@ make status        # services + sovoc_ networks
 
 **Deliverable:** paste `make status` output and the final `verify.sh` line (`M0 ACCEPTANCE: PASS`).
 
+> **Why the grader is fail-closed.** `verify.sh` won't accept "redteam can't reach core" as
+> proof of isolation unless a *positive control* (redteam **can** reach edge) first succeeds.
+> A broken probe (redteam down, `ping` missing) is reported as INCONCLUSIVE → FAIL, never a
+> false PASS. A security check that can't distinguish "control working" from "check failed" is
+> worse than none — a theme you'll revisit whenever you validate a defense in this course.
+
 ## Lab 0.2 — Capture a call end to end  (30 pts)
 1. Generate a deterministic test call:
    ```bash
