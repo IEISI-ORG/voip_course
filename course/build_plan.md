@@ -44,7 +44,7 @@ then assessment content, then instructor material.
 ### Stage B+ — feedback-driven lab additions (review: gemini_feedback0)
 Design threaded into the module docs in iteration 3; these are the concrete labs to build
 when their parent B-task is reached.
-- [ ] BF1. M10/M11: WebRTC — Kamailio WSS gateway + rtpengine DTLS-SRTP↔SIP media bridge
+- [x] BF1. M10/M11: WebRTC — Kamailio WSS gateway + rtpengine DTLS-SRTP↔SIP media bridge  ← iteration 34
 - [ ] BF2. M9/M17: emergency calling — PIDF-LO location body + Resource-Priority; Kari's/RAY BAUM'S
 - [ ] BF3. M7/M16: HA state sharing — Redis/MySQL registrar + rtpengine redundancy, hitless failover
 - [ ] BF4. M14: secure auto-provisioning — HTTPS mTLS config serving, signed configs, MAC allowlist
@@ -236,6 +236,12 @@ when their parent B-task is reached.
   private resolve, fall-through, normalization). Exam #3 (operations, M13–M17, 20 items,
   IR-gated) + separated answer key. All 18 module labs (M0–M17) and all 3 checkpoint exams done
   (C1 complete). Pushed.
+
+- Iteration 34 (2026-07-03): built BF1 (WebRTC WSS gateway + DTLS-SRTP↔SIP bridge). Kamailio
+  websocket snippet (xhttp+websocket, ws_handle_handshake), rtpengine WebRTC transform flags,
+  jsSIP browser client.html (secure-by-default: vendored locally, no un-pinned CDN script —
+  addressed a security-hook SRI warning), verify.sh (WSS/TLS basis + config + secure-client
+  checks, fail-closed). bash-checked; offline artifact checks pass. Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

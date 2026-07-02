@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+  SOVOC BF1 — minimal WebRTC softphone (jsSIP) for the WSS gateway lab.
+  Serve over HTTPS (a browser blocks getUserMedia + WSS from file://). Edit the config below.
+  jsSIP is loaded from a CDN — for an offline lab, vendor jssip.min.js locally.
+-->
+<html lang="en">
+<head><meta charset="utf-8"><title>SOVOC WebRTC softphone</title></head>
+<body>
+  <h3>SOVOC WebRTC softphone (jsSIP over WSS)</h3>
+  <label>Call target: <input id="target" value="sip:1002@lab.sovoc.test"></label>
+  <button id="call">Call</button>
+  <button id="hangup">Hang up</button>
+  <pre id="log"></pre>
+  <audio id="remote" autoplay></audio>
+
+  <!-- SECURE DEFAULT: vendor the library locally so there is no external-script/CDN-compromise
+       surface. Download jssip.min.js next to this file (verify its checksum) and serve it. -->
+  <script src="./jssip.min.js"></script>
+  <!-- CDN alternative (only if you accept the dependency) — MUST pin Subresource Integrity:
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jssip/3.10.0/jssip.min.js"
+               integrity="sha384-<verified-hash>" crossorigin="anonymous"></script>
+       Compute the hash yourself: curl -s <url> | openssl dgst -sha384 -binary | openssl base64 -A
+  -->
+  <script>
+    // ---- Lab config (edit) ----
+    const CFG = {
+      wss:    'wss://172.28.10.10:5061',        // edge-sbc Secure WebSocket
+      uri:    'sip:1001@lab.sovoc.test',
+      authUser: '1001',
+      password: 'CHANGE_ME'                       // from .env SIP_ALICE_SECRET; never commit real
+    };
+    const log = m => document.getElementById('log').textContent += m + '\n';
+    if (!window.JsSIP) { log('jsSIP failed to load (offline? vendor jssip.min.js).'); }
+
+    const socket = new JsSIP.WebSocketInterface(CFG.wss);
+    const ua = new JsSIP.UA({ sockets:[socket], uri:CFG.uri, authorization_user:CFG.authUser, password:CFG.password });
+    ua.on('registered',   () => log('REGISTERED over WSS'));
+    ua.on('registrationFailed', e => log('REGISTER failed: ' + (e.cause||'')));
+    ua.start();
+
+    const opts = { mediaConstraints:{audio:true, video:false} };
+    document.getElementById('call').onclick = () => {
+      const s = ua.call(document.getElementById('target').value, opts);
+      s.connection.ontrack = e => document.getElementById('remote').srcObject = e.streams[0];
+      log('calling…');
+    };
+    document.getElementById('hangup').onclick = () => { ua.terminateSessions(); log('hung up'); };
+  </script>
+</body>
+</html>
