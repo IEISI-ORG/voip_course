@@ -46,7 +46,7 @@ Design threaded into the module docs in iteration 3; these are the concrete labs
 when their parent B-task is reached.
 - [x] BF1. M10/M11: WebRTC — Kamailio WSS gateway + rtpengine DTLS-SRTP↔SIP media bridge  ← iteration 34
 - [x] BF2. M9/M17: emergency calling — PIDF-LO location body + Resource-Priority; Kari's/RAY BAUM'S  ← iteration 35
-- [ ] BF3. M7/M16: HA state sharing — Redis/MySQL registrar + rtpengine redundancy, hitless failover
+- [x] BF3. M7/M16: HA state sharing — Redis/MySQL registrar + rtpengine redundancy, hitless failover  ← iteration 36
 - [ ] BF4. M14: secure auto-provisioning — HTTPS mTLS config serving, signed configs, MAC allowlist
 - [ ] BF5. M12: transit STIR/SHAKEN — attestation "C", untrusted-header stripping, OOB (RFC 8816)
 - [ ] BF6. M12: RFC 8760 interop — dual MD5+SHA-256 challenge, downgrade rejection
@@ -247,6 +247,12 @@ when their parent B-task is reached.
   dispatchable location), e911-call.sh (multipart emergency INVITE w/ Resource-Priority + PIDF-LO
   + Geolocation, computed Content-Length), verify.sh PASSES 8/8 offline. Addressed a security-hook
   XML warning by parsing with defusedxml (ElementTree fallback) — models XXE-safe parsing.
+  bash-checked + executed. Pushed.
+
+- Iteration 36 (2026-07-03): built BF3 (HA state sharing / hitless failover). kamailio-ha.snippet.cfg
+  (usrloc db_mode=3 Redis/MySQL + DMQ + rtpengine redis media state), docker-compose.ha.yml overlay
+  (edge-sbc-2 replica + shared redis), failover-test.sh (register→kill R1→R2 serves). verify.sh
+  PASSES 9/9 including a real base+HA `docker compose config` merge. Policy-parity security note.
   bash-checked + executed. Pushed.
 
 ## Security review log

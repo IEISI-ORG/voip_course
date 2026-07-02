@@ -1,0 +1,31 @@
+# SOVOC BF3 — HA overlay. Adds a shared Redis store and a second SBC replica so registrations
+# survive a node loss. Use with the base file:
+#   docker compose -f docker-compose.yml -f labs/bf3-ha-failover/docker-compose.ha.yml up -d
+# (from lab/). Requires the kamailio-ha.snippet.cfg directives merged into the edge-sbc config.
+
+services:
+  redis:                 # shared registrar + rtpengine media state
+    image: redis:7-alpine
+    hostname: redis
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    restart: unless-stopped
+    networks:
+      core: { ipv4_address: 172.28.20.60 }
+
+  edge-sbc-2:            # second SBC replica (identical policy — shares state via redis/DMQ)
+    build:
+      context: ./services/edge-sbc
+      args:
+        KAMAILIO_TAG: ${KAMAILIO_TAG:-5.8-alpine}
+    hostname: edge-sbc-2
+    environment:
+      SIP_DOMAIN: ${SIP_DOMAIN:-lab.sovoc.test}
+      TOPOH_MASK_SECRET: ${TOPOH_MASK_SECRET:-}
+    depends_on: [rtpengine, redis]
+    restart: unless-stopped
+    networks:
+      edge: { ipv4_address: 172.28.10.12 }
+      core: { ipv4_address: 172.28.20.12 }
+
+  edge-sbc:              # base replica also depends on redis now
+    depends_on: [rtpengine, redis]
