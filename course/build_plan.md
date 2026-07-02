@@ -31,7 +31,7 @@ then assessment content, then instructor material.
 - [x] B6. M6 build-the-core lab  ← iteration 18
 - [x] B7. M7 proxies & SBC lab  ← iteration 20
 - [x] B8. M8 NAT / firewall / SBC lab  ← iteration 21
-- [ ] B9. M9 SIP trunking / PSTN lab
+- [x] B9. M9 SIP trunking / PSTN lab  ← iteration 23
 - [ ] B10. M10 signaling security (TLS/SIPS) lab
 - [ ] B11. M11 media security (SRTP/DTLS/ZRTP) lab
 - [ ] B12. M12 authN/authZ/identity lab (+ checkpoint exam #2 content)
@@ -175,6 +175,11 @@ when their parent B-task is reached.
   scanner-UA ban test (plain probe answered → svmap friendly-scanner → banned, fail-closed).
   nftables-edge.example.nft reference ruleset (default-drop, rate-limited SIP, media/TURN ports,
   dynamic banned set; validate on-host with `nft -c -f`). README rubric. bash-checked. Pushed.
+
+- Iteration 23 (2026-07-02): built B9 (M9 SIP trunking & PSTN lab). sip-q850.sh deterministic
+  SIP↔Q.850 mapping tool (RFC 3398; verified 486→17); verify.sh prereqs + trunk-sim SIP
+  reachability (fail-closed); trunk-hardening.md reference (IP-only→TLS+digest+allowlist, spoof
+  rejection, spend limits + alert) for 9.3; README rubric. Scripts bash-checked. Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
