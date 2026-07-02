@@ -21,8 +21,8 @@ against the shared lab, with an executable checker where possible (`verify.sh`).
 | [m13-offensive](m13-offensive/) | M13 | authorized assessment, RFC 4475 torture (survival-tested), findings report | ✅ |
 | [m14-defense-fraud](m14-defense-fraud/) | M14 | hardening v-final, CDR IRSF fraud detector (offline-graded) | ✅ |
 | [m15-monitoring-ir](m15-monitoring-ir/) | M15 | Prometheus alert rules, M13 detection coverage, IR runbooks | ✅ |
-| m16-… | M16 | testing / interop / automation / cloud | ⏳ |
-| … | … | (built in backlog order B16..B17) | |
+| [m16-testing-cloud](m16-testing-cloud/) | M16 | SIPp load test, CI pipeline (repo lint + graders), IaC | ✅ |
+| m17-… | M17 | frontiers + checkpoint exam #3 | ⏳ |
 
 Conventions:
 - Each lab dir has a `README.md` runbook with a **100-pt rubric (pass ≥ 70)**.

@@ -1,0 +1,61 @@
+name: sovoc-ci
+
+# Validates the course repo on every change: shell syntax, compose config, YAML, the offline
+# graders, and the bibliography URL extraction. Docker-dependent graders (flood/ban tests) need
+# the running topology and are run manually/nightly, not here.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  lint-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Shell syntax (bash -n) on all scripts
+        run: |
+          find lab course -name '*.sh' -print0 | xargs -0 -n1 bash -n
+          echo "all shell scripts parse"
+
+      - name: shellcheck (advisory)
+        run: |
+          sudo apt-get update && sudo apt-get install -y shellcheck
+          find lab course -name '*.sh' -print0 | xargs -0 -r shellcheck -S warning || true
+
+      - name: docker compose config (base + obs profile)
+        run: |
+          cd lab
+          docker compose config -q
+          docker compose --profile obs config -q
+          echo "compose topology valid"
+
+      - name: YAML lint
+        run: |
+          python3 - <<'PY'
+          import glob, yaml, sys
+          bad = 0
+          for f in glob.glob('**/*.yml', recursive=True) + glob.glob('**/*.yaml', recursive=True):
+              try:
+                  list(yaml.safe_load_all(open(f)))
+              except Exception as e:
+                  print(f"YAML ERROR {f}: {e}"); bad += 1
+          sys.exit(1 if bad else 0)
+          PY
+
+      - name: Offline graders (fraud + monitoring)
+        run: |
+          cd lab
+          bash labs/m14-defense-fraud/verify.sh
+          bash labs/m15-monitoring-ir/verify.sh
+
+      - name: Bibliography URL extraction (offline)
+        run: bash course/references/verify-bibliography.sh list
+
+      - name: Image scan (advisory, trivy config)
+        run: |
+          curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sudo sh -s -- -b /usr/local/bin || true
+          trivy --version || true
+          trivy config lab/ --exit-code 0 || true

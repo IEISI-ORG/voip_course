@@ -38,7 +38,7 @@ then assessment content, then instructor material.
 - [x] B13. M13 threats & offensive testing lab (authorized)  ← iteration 29
 - [x] B14. M14 defense / hardening / fraud lab  ← iteration 30
 - [x] B15. M15 monitoring / observability / IR lab  ← iteration 31
-- [ ] B16. M16 testing / interop / automation / cloud lab
+- [x] B16. M16 testing / interop / automation / cloud lab  ← iteration 32
 - [ ] B17. M17 frontiers lab (+ checkpoint exam #3 content)
 
 ### Stage B+ — feedback-driven lab additions (review: gemini_feedback0)
@@ -71,8 +71,9 @@ when their parent B-task is reached.
 
 ### Stage E — Testing & packaging (added iter 22 from feedback)
 - [~] E0. Lab environment test & verification — `lab/verify-all.sh` aggregates every module
-      verify.sh (`make verify-all`); iter 22 first cut. TODO: per-service healthcheck rollup,
-      a smoke-call end-to-end test, and a CI workflow that runs it.
+      verify.sh (`make verify-all`, iter 22); CI workflow `.github/workflows/ci.yml` added iter 32
+      (lint + compose config + offline graders + bibliography). TODO: per-service healthcheck
+      rollup + a smoke-call end-to-end test in CI (needs a dockerized topology runner).
 - [ ] E1. Package multiple-choice exams as standalone deployable HTML (self-contained, no server;
       score client-side). Start with checkpoint exams' MC portions.
 - [~] E3. Living bibliography of RFCs/standards + package KBs — `course/references/bibliography.md`
@@ -223,6 +224,12 @@ when their parent B-task is reached.
   incident-runbook-template.md (toll fraud/INVITE flood/eavesdropping IR + report). verify.sh
   runs offline and PASSES 17/17 (rules valid, alerts+threats+runbook coverage). Closes the
   red→blue arc. bash-checked + executed. Pushed.
+
+- Iteration 32 (2026-07-03): built B16 (M16 testing/interop/automation/cloud lab). Added CI
+  `.github/workflows/ci.yml` (shell lint, compose config base+obs, YAML lint, offline graders
+  M14/M15, bibliography, trivy config scan) — no untrusted github.event interpolation (injection-
+  safe). load-test.sh SIPp capacity runner; verify.sh runs offline PASS 7/7 (CI valid + all repo
+  shell scripts parse + injection check). E0 CI done. bash-checked + executed. Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
