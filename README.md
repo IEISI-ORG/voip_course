@@ -43,12 +43,12 @@ priority. Security findings from automated review are addressed and logged.
 ## Progress
 
 <!-- PROGRESS:START (updated each iteration) -->
-- **Iteration:** 27 · **Date:** 2026-07-02 · **HEAD tracks:** see `git log --oneline -1`
+- **Iteration:** 28 · **Date:** 2026-07-03 · **HEAD tracks:** see `git log --oneline -1`
 - **Stage A (lab foundation):** ✅ complete (edge-sbc, rtpengine, pbx-a, pbx-b, trunk-sim, client, observability, redteam)
-- **Stage B (per-module labs):** M0–M11 done; **next: M12 (authN/authZ/identity + checkpoint exam #2)**
+- **Stage B (per-module labs):** M0–M12 done; **next: M13 (threats & offensive testing)**
 - **References:** [bibliography](course/references/bibliography.md) + `verify-bibliography.sh` link-checker
 - **Testing:** `make verify-all` runs every module grader (`lab/verify-all.sh`)
-- **Assessments:** Checkpoint Exam #1 (M0–M5) done, answer key held separately; #2/#3 pending
+- **Assessments:** Checkpoint Exams #1 (M0–M5) & #2 (M6–M12) done, answer keys held separately; #3 pending
 - **Modules added from feedback:** M9D (DNS Infrastructure); curriculum additions BF1–BF14
 - Full detail: [`course/build_plan.md`](course/build_plan.md) (iteration log).
 <!-- PROGRESS:END -->

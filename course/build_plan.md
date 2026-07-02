@@ -34,7 +34,7 @@ then assessment content, then instructor material.
 - [x] B9. M9 SIP trunking / PSTN lab  ← iteration 23
 - [x] B10. M10 signaling security (TLS/SIPS) lab  ← iteration 26
 - [x] B11. M11 media security (SRTP/DTLS/ZRTP) lab  ← iteration 27
-- [ ] B12. M12 authN/authZ/identity lab (+ checkpoint exam #2 content)
+- [x] B12. M12 authN/authZ/identity lab (+ checkpoint exam #2 content)  ← iteration 28
 - [ ] B13. M13 threats & offensive testing lab (authorized)
 - [ ] B14. M14 defense / hardening / fraud lab
 - [ ] B15. M15 monitoring / observability / IR lab
@@ -61,7 +61,7 @@ when their parent B-task is reached.
 
 ### Stage C — Assessment content
 - [ ] C0. Per-module quiz bank (question + answer key + rubric) M0..M17
-- [~] C1. Three checkpoint exams (after M5, M12, M17) — exam #1 done (iter 17); #2/#3 pending
+- [~] C1. Three checkpoint exams (after M5, M12, M17) — exams #1 (iter 17) & #2 (iter 28) done; #3 pending
 - [ ] C2. Capstone grading harness (rubric → scoring sheet)
 
 ### Stage D — Instructor material
@@ -198,6 +198,12 @@ when their parent B-task is reached.
   fail-closed); srtp-offer.sh sends an SDES RTP/SAVP offer with a=crypto and a --strip downgrade
   mode for 11.3; README rubric (SDES/DTLS/ZRTP, crypto-strip rejection). Lab-only throwaway key
   (not a secret). Closes the M4 eavesdrop thread. bash-checked. Pushed.
+
+- Iteration 28 (2026-07-03): built B12 (M12 auth/identity lab + checkpoint exam #2). Lab:
+  passport-decode.sh (STIR/SHAKEN JWT decoder, round-trip verified), verify.sh self-validating
+  enumeration-ban (svwar→banned, fail-closed) + PASSporT tool check. Exam #2 (M6–M12, 20 items,
+  security-gated) with answer key in answer-keys/ (convention). Scripts bash-checked; exam has 0
+  inline answers. Second checkpoint exam done. Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
