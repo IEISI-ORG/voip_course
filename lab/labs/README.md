@@ -16,8 +16,9 @@ against the shared lab, with an executable checker where possible (`verify.sh`).
 | [m8-nat-firewall](m8-nat-firewall/) | M8 | NAT traversal, TURN, nftables edge, scanner-UA ban (self-validating) | ✅ |
 | [m9-trunking-pstn](m9-trunking-pstn/) | M9 | two-way trunk, SIP↔Q.850 mapping, trunk TLS/auth + fraud guardrails | ✅ |
 | [m10-signaling-tls](m10-signaling-tls/) | M10 | SIP-over-TLS (handshake-tested), cert inspection, mTLS + expiry alert | ✅ |
-| m11-… | M11 | media security (SRTP/DTLS/ZRTP) | ⏳ |
-| … | … | (built in backlog order B11..B17) | |
+| [m11-media-srtp](m11-media-srtp/) | M11 | SRTP foundation, SDES offer + crypto-strip demo, DTLS/ZRTP | ✅ |
+| m12-… | M12 | authN/authZ/identity + checkpoint exam #2 | ⏳ |
+| … | … | (built in backlog order B12..B17) | |
 
 Conventions:
 - Each lab dir has a `README.md` runbook with a **100-pt rubric (pass ≥ 70)**.

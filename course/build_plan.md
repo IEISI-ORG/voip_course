@@ -33,7 +33,7 @@ then assessment content, then instructor material.
 - [x] B8. M8 NAT / firewall / SBC lab  ← iteration 21
 - [x] B9. M9 SIP trunking / PSTN lab  ← iteration 23
 - [x] B10. M10 signaling security (TLS/SIPS) lab  ← iteration 26
-- [ ] B11. M11 media security (SRTP/DTLS/ZRTP) lab
+- [x] B11. M11 media security (SRTP/DTLS/ZRTP) lab  ← iteration 27
 - [ ] B12. M12 authN/authZ/identity lab (+ checkpoint exam #2 content)
 - [ ] B13. M13 threats & offensive testing lab (authorized)
 - [ ] B14. M14 defense / hardening / fraud lab
@@ -192,6 +192,12 @@ when their parent B-task is reached.
   inspects cert subject/expiry + days-to-expiry + live handshake (feeds the Prometheus expiry
   alert lab); README rubric (TLS-only enforce / decrypt / mTLS + expiry alert). bash-checked.
   Pushed.
+
+- Iteration 27 (2026-07-02): built B11 (M11 media security lab). verify.sh asserts the SRTP
+  foundation (rtpengine anchor reachable + SIP-TLS present so SDES keys aren't cleartext,
+  fail-closed); srtp-offer.sh sends an SDES RTP/SAVP offer with a=crypto and a --strip downgrade
+  mode for 11.3; README rubric (SDES/DTLS/ZRTP, crypto-strip rejection). Lab-only throwaway key
+  (not a secret). Closes the M4 eavesdrop thread. bash-checked. Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
