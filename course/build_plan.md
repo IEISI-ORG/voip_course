@@ -30,7 +30,7 @@ then assessment content, then instructor material.
 - [x] B5. M5 packet-analysis lab (+ checkpoint exam #1 content)  ← iteration 17
 - [x] B6. M6 build-the-core lab  ← iteration 18
 - [x] B7. M7 proxies & SBC lab  ← iteration 20
-- [ ] B8. M8 NAT / firewall / SBC lab
+- [x] B8. M8 NAT / firewall / SBC lab  ← iteration 21
 - [ ] B9. M9 SIP trunking / PSTN lab
 - [ ] B10. M10 signaling security (TLS/SIPS) lab
 - [ ] B11. M11 media security (SRTP/DTLS/ZRTP) lab
@@ -161,6 +161,11 @@ when their parent B-task is reached.
   redteam must get the source pike-banned (silence), fail-closed. flood-demo.sh before/after
   helper; README rubric (failover/topology-hiding/anchoring/rate-limit). Scripts bash-checked.
   Pushed.
+
+- Iteration 21 (2026-07-02): built B8 (M8 NAT/firewalls/SBC lab). verify.sh self-validating
+  scanner-UA ban test (plain probe answered → svmap friendly-scanner → banned, fail-closed).
+  nftables-edge.example.nft reference ruleset (default-drop, rate-limited SIP, media/TURN ports,
+  dynamic banned set; validate on-host with `nft -c -f`). README rubric. bash-checked. Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

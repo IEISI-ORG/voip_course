@@ -13,8 +13,9 @@ against the shared lab, with an executable checker where possible (`verify.sh`).
 | [m5-packet-analysis](m5-packet-analysis/) | M5 | fault diagnosis, tshark automation, evidence redaction; exam #1 | ✅ |
 | [m6-building-core](m6-building-core/) | M6 | secure-default PBXs (audited live), hardening checklist v1 | ✅ |
 | [m7-proxies-sbc](m7-proxies-sbc/) | M7 | failover, topology hiding, media anchoring, pike rate-limit (self-validating) | ✅ |
-| m8-… | M8 | NAT / firewalls / SBC | ⏳ |
-| … | … | (built in backlog order B8..B17) | |
+| [m8-nat-firewall](m8-nat-firewall/) | M8 | NAT traversal, TURN, nftables edge, scanner-UA ban (self-validating) | ✅ |
+| m9-… | M9 | SIP trunking & PSTN | ⏳ |
+| … | … | (built in backlog order B9..B17) | |
 
 Conventions:
 - Each lab dir has a `README.md` runbook with a **100-pt rubric (pass ≥ 70)**.
