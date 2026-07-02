@@ -27,7 +27,7 @@ then assessment content, then instructor material.
 - [x] B2. M2 core SIP protocol lab  ← iteration 13
 - [x] B3. M3 SDP / media negotiation lab  ← iteration 14
 - [x] B4. M4 RTP / codecs / QoS lab  ← iteration 15
-- [ ] B5. M5 packet-analysis lab (+ checkpoint exam #1 content)
+- [x] B5. M5 packet-analysis lab (+ checkpoint exam #1 content)  ← iteration 17
 - [ ] B6. M6 build-the-core lab
 - [ ] B7. M7 proxies & SBC lab
 - [ ] B8. M8 NAT / firewall / SBC lab
@@ -61,7 +61,7 @@ when their parent B-task is reached.
 
 ### Stage C — Assessment content
 - [ ] C0. Per-module quiz bank (question + answer key + rubric) M0..M17
-- [ ] C1. Three checkpoint exams (after M5, M12, M17)
+- [~] C1. Three checkpoint exams (after M5, M12, M17) — exam #1 done (iter 17); #2/#3 pending
 - [ ] C2. Capstone grading harness (rubric → scoring sheet)
 
 ### Stage D — Instructor material
@@ -141,6 +141,12 @@ when their parent B-task is reached.
   path + REGISTER + trunk-sim answers), bw-budget.sh deterministic bandwidth calculator
   (validated: G.711@20ms=80kbps L3), capture-rtp.sh RTP capture/analysis helper (eavesdrop→SRTP
   bridge to M11), README rubric. Scripts bash-checked. Pushed.
+
+- Iteration 17 (2026-07-02): built B5 (M5 packet-analysis lab + checkpoint exam #1). Lab:
+  verify.sh (prereqs + HOMER availability), list-bad-calls.sh (tshark 4xx/5xx solution),
+  redact-and-hash.sh (drop media plane, hash + chain-of-custody). Exam: course/assessments/
+  checkpoint-exam-1.md — 20 items/100pts covering M0–M5 with a security gate, answer key +
+  rubric. Scripts bash-checked. First checkpoint exam of three done. Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
