@@ -68,6 +68,15 @@ when their parent B-task is reached.
 - [ ] D0. Per-module instructor notes / slide outlines
 - [ ] D1. Course delivery guide (pacing, prerequisites, environment setup for cohorts)
 
+### Stage E — Testing & packaging (added iter 22 from feedback)
+- [~] E0. Lab environment test & verification — `lab/verify-all.sh` aggregates every module
+      verify.sh (`make verify-all`); iter 22 first cut. TODO: per-service healthcheck rollup,
+      a smoke-call end-to-end test, and a CI workflow that runs it.
+- [ ] E1. Package multiple-choice exams as standalone deployable HTML (self-contained, no server;
+      score client-side). Start with checkpoint exams' MC portions.
+- [ ] E2. Assessment convention: keep answer keys in `assessments/answer-keys/` (one level deeper,
+      separate file) — applied to exam #1 (iter 22); apply to exams #2/#3 when built.
+
 ## Loop protocol (each iteration)
 1. Check `/home/terry/voip_course` for feedback files (`*feedback*`, `FEEDBACK*`, `feedback/`).
    If present: read, incorporate, and prioritize the feedback before continuing the backlog.
@@ -188,6 +197,13 @@ when their parent B-task is reached.
   on disk; history purge deferred per request). Archived feedback to
   `course/reviews/feedback-repo-readme.md`. B7 deferred to iteration 20.
 
+- Iteration 22 (2026-07-02): processed `feedback.txt` (priority) — (1) split checkpoint exam #1
+  answer key into `assessments/answer-keys/checkpoint-exam-1-key.md` (one level deeper, separate
+  file); exam now points to it, 0 answers remain inline. (2) Built `lab/verify-all.sh` +
+  `make verify-all` lab test harness (runs all module graders). (3) Added Stage E backlog
+  (E0 lab testing, E1 HTML MC exams, E2 answer-key convention). Archived feedback. B9 deferred
+  to iteration 23.
+
 ## Feedback log
 - `gemini_feedback0.md` (received iter 3) → incorporated across 10 modules + BF1–BF8;
   archived at `course/reviews/gemini_feedback0.md`.
@@ -197,3 +213,5 @@ when their parent B-task is reached.
   archived `course/reviews/feedback-dns-module.md`.
 - `feedback.txt` (received iter 19) → top-level repo README + hide `.claude/`;
   archived `course/reviews/feedback-repo-readme.md`.
+- `feedback.txt` (received iter 22) → hide exam answers (answer-keys/ subdir), lab test harness,
+  HTML MC exams to plan; archived `course/reviews/feedback-testing-and-exams.md`.

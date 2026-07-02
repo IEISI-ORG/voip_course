@@ -37,6 +37,9 @@ obs-up: init ## Start the observability plane (HOMER/Prometheus/Grafana/Loki/Waz
 obs-down: ## Stop the observability plane
 	$(COMPOSE) --profile obs stop
 
+verify-all: ## Run every module lab's verify.sh (add SAFE=1 to restart edge-sbc for m7/m8)
+	bash verify-all.sh $(if $(SAFE),--safe,)
+
 segtest: ## M0 segmentation check: redteam MUST NOT reach core/mgmt
 	@echo "[segtest] redteam -> core (expect FAIL/unreachable):"
 	@-$(COMPOSE) exec -T redteam sh -c 'command -v ping >/dev/null && ping -c1 -W1 172.28.20.21 || echo "no-ping-tool (add in A6)"'
