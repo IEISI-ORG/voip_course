@@ -43,9 +43,9 @@ priority. Security findings from automated review are addressed and logged.
 ## Progress
 
 <!-- PROGRESS:START (updated each iteration) -->
-- **Iteration:** 29 · **Date:** 2026-07-03 · **HEAD tracks:** see `git log --oneline -1`
+- **Iteration:** 30 · **Date:** 2026-07-03 · **HEAD tracks:** see `git log --oneline -1`
 - **Stage A (lab foundation):** ✅ complete (edge-sbc, rtpengine, pbx-a, pbx-b, trunk-sim, client, observability, redteam)
-- **Stage B (per-module labs):** M0–M13 done; **next: M14 (defense / hardening / fraud)**
+- **Stage B (per-module labs):** M0–M14 done; **next: M15 (monitoring / observability / IR)**
 - **References:** [bibliography](course/references/bibliography.md) + `verify-bibliography.sh` link-checker
 - **Testing:** `make verify-all` runs every module grader (`lab/verify-all.sh`)
 - **Assessments:** Checkpoint Exams #1 (M0–M5) & #2 (M6–M12) done, answer keys held separately; #3 pending

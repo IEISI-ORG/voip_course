@@ -36,7 +36,7 @@ then assessment content, then instructor material.
 - [x] B11. M11 media security (SRTP/DTLS/ZRTP) lab  ← iteration 27
 - [x] B12. M12 authN/authZ/identity lab (+ checkpoint exam #2 content)  ← iteration 28
 - [x] B13. M13 threats & offensive testing lab (authorized)  ← iteration 29
-- [ ] B14. M14 defense / hardening / fraud lab
+- [x] B14. M14 defense / hardening / fraud lab  ← iteration 30
 - [ ] B15. M15 monitoring / observability / IR lab
 - [ ] B16. M16 testing / interop / automation / cloud lab
 - [ ] B17. M17 frontiers lab (+ checkpoint exam #3 content)
@@ -211,6 +211,12 @@ when their parent B-task is reached.
   closed) → satisfies BF7 baseline. torture.sh (5 malformed patterns, lab-guarded);
   findings-report-template.md (severity/evidence/repro/remediation/detection + authorized-use
   attestation gate); README methodology. Scripts bash-checked. Pushed.
+
+- Iteration 30 (2026-07-03): built B14 (M14 defense/hardening/fraud lab). fraud-detect.sh CDR
+  IRSF detector (spend cap + high-cost prefix spike + per-account auto-suspend) with sample-cdr.csv;
+  verify.sh runs fully offline and PASSES 5/5 (catches IRSF, no false-positive on clean CDR,
+  checklist present). README rubric (hardening v-final / fraud detection+containment / M13
+  before-after delta). Scripts bash-checked + executed. Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
