@@ -35,7 +35,7 @@ then assessment content, then instructor material.
 - [x] B10. M10 signaling security (TLS/SIPS) lab  ← iteration 26
 - [x] B11. M11 media security (SRTP/DTLS/ZRTP) lab  ← iteration 27
 - [x] B12. M12 authN/authZ/identity lab (+ checkpoint exam #2 content)  ← iteration 28
-- [ ] B13. M13 threats & offensive testing lab (authorized)
+- [x] B13. M13 threats & offensive testing lab (authorized)  ← iteration 29
 - [ ] B14. M14 defense / hardening / fraud lab
 - [ ] B15. M15 monitoring / observability / IR lab
 - [ ] B16. M16 testing / interop / automation / cloud lab
@@ -50,7 +50,8 @@ when their parent B-task is reached.
 - [ ] BF4. M14: secure auto-provisioning — HTTPS mTLS config serving, signed configs, MAC allowlist
 - [ ] BF5. M12: transit STIR/SHAKEN — attestation "C", untrusted-header stripping, OOB (RFC 8816)
 - [ ] BF6. M12: RFC 8760 interop — dual MD5+SHA-256 challenge, downgrade rejection
-- [ ] BF7. M13: RFC 4475 SIP torture — SIPp fuzzing + parser-robustness regression baseline
+- [x] BF7. M13: RFC 4475 SIP torture — parser-robustness baseline (torture.sh + verify.sh, iter 29;
+      full SIPp mutation suite is an optional extension)
 - [ ] BF8. M14/M15: secure recording — encryption-at-rest, RBAC/audit, DTMF suppression (PCI-DSS)
 - [ ] BF9. M7/M8: dual-stack/IPv6 — Kamailio v6 listeners + rtpengine 4↔6 media + nftables ip6 parity
 - [ ] BF10. M8: coturn/TURN hardening — use-auth-secret, denied-peer-ip (internal), quotas, TLS
@@ -204,6 +205,12 @@ when their parent B-task is reached.
   enumeration-ban (svwar→banned, fail-closed) + PASSporT tool check. Exam #2 (M6–M12, 20 items,
   security-gated) with answer key in answer-keys/ (convention). Scripts bash-checked; exam has 0
   inline answers. Second checkpoint exam done. Pushed.
+
+- Iteration 29 (2026-07-03): built B13 (M13 offensive lab). verify.sh = RFC 4475 parser-
+  robustness survival test (SBC answers valid request before AND after a malformed batch, fail-
+  closed) → satisfies BF7 baseline. torture.sh (5 malformed patterns, lab-guarded);
+  findings-report-template.md (severity/evidence/repro/remediation/detection + authorized-use
+  attestation gate); README methodology. Scripts bash-checked. Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
