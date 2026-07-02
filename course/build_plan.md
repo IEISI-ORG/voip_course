@@ -74,6 +74,8 @@ when their parent B-task is reached.
       a smoke-call end-to-end test, and a CI workflow that runs it.
 - [ ] E1. Package multiple-choice exams as standalone deployable HTML (self-contained, no server;
       score client-side). Start with checkpoint exams' MC portions.
+- [~] E3. Living bibliography of RFCs/standards + package KBs — `course/references/bibliography.md`
+      (started iter 24). Keep extended as modules cite new sources; spot-check URLs before publish.
 - [ ] E2. Assessment convention: keep answer keys in `assessments/answer-keys/` (one level deeper,
       separate file) — applied to exam #1 (iter 22); apply to exams #2/#3 when built.
 
@@ -209,6 +211,11 @@ when their parent B-task is reached.
   (E0 lab testing, E1 HTML MC exams, E2 answer-key convention). Archived feedback. B9 deferred
   to iteration 23.
 
+- Iteration 24 (2026-07-02): processed feedback (priority) — started the course bibliography
+  `course/references/bibliography.md` (RFCs by topic, standards/regulation, package KBs) per
+  `feedback.txt`; added E3 backlog. `feedback2.md` was empty → removed. Linked bibliography from
+  README. B10 deferred to iteration 25.
+
 ## Feedback log
 - `gemini_feedback0.md` (received iter 3) → incorporated across 10 modules + BF1–BF8;
   archived at `course/reviews/gemini_feedback0.md`.
@@ -220,3 +227,5 @@ when their parent B-task is reached.
   archived `course/reviews/feedback-repo-readme.md`.
 - `feedback.txt` (received iter 22) → hide exam answers (answer-keys/ subdir), lab test harness,
   HTML MC exams to plan; archived `course/reviews/feedback-testing-and-exams.md`.
+- `feedback.txt` (received iter 24) → start bibliography of RFCs/standards + package KBs;
+  archived `course/reviews/feedback-bibliography.md`. (`feedback2.md` empty → removed.)
