@@ -20,8 +20,9 @@ against the shared lab, with an executable checker where possible (`verify.sh`).
 | [m12-authn-identity](m12-authn-identity/) | M12 | digest/STIR-SHAKEN, PASSporT decoder, enumeration ban; exam #2 | ✅ |
 | [m13-offensive](m13-offensive/) | M13 | authorized assessment, RFC 4475 torture (survival-tested), findings report | ✅ |
 | [m14-defense-fraud](m14-defense-fraud/) | M14 | hardening v-final, CDR IRSF fraud detector (offline-graded) | ✅ |
-| m15-… | M15 | monitoring / observability / IR | ⏳ |
-| … | … | (built in backlog order B15..B17) | |
+| [m15-monitoring-ir](m15-monitoring-ir/) | M15 | Prometheus alert rules, M13 detection coverage, IR runbooks | ✅ |
+| m16-… | M16 | testing / interop / automation / cloud | ⏳ |
+| … | … | (built in backlog order B16..B17) | |
 
 Conventions:
 - Each lab dir has a `README.md` runbook with a **100-pt rubric (pass ≥ 70)**.

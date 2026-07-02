@@ -37,7 +37,7 @@ then assessment content, then instructor material.
 - [x] B12. M12 authN/authZ/identity lab (+ checkpoint exam #2 content)  ← iteration 28
 - [x] B13. M13 threats & offensive testing lab (authorized)  ← iteration 29
 - [x] B14. M14 defense / hardening / fraud lab  ← iteration 30
-- [ ] B15. M15 monitoring / observability / IR lab
+- [x] B15. M15 monitoring / observability / IR lab  ← iteration 31
 - [ ] B16. M16 testing / interop / automation / cloud lab
 - [ ] B17. M17 frontiers lab (+ checkpoint exam #3 content)
 
@@ -217,6 +217,12 @@ when their parent B-task is reached.
   verify.sh runs fully offline and PASSES 5/5 (catches IRSF, no false-positive on clean CDR,
   checklist present). README rubric (hardening v-final / fraud detection+containment / M13
   before-after delta). Scripts bash-checked + executed. Pushed.
+
+- Iteration 31 (2026-07-03): built B15 (M15 monitoring/observability/IR lab). alert-rules.yml
+  (7 Prometheus security alerts), detection-signatures.md (M13 threats→detection layer/rule),
+  incident-runbook-template.md (toll fraud/INVITE flood/eavesdropping IR + report). verify.sh
+  runs offline and PASSES 17/17 (rules valid, alerts+threats+runbook coverage). Closes the
+  red→blue arc. bash-checked + executed. Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
