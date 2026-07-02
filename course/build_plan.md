@@ -57,6 +57,7 @@ when their parent B-task is reached.
 - [ ] BF11. M12: STIR/SHAKEN delegate certs (RFC 9060) — enterprise self-signed PASSporT, A-level
 - [ ] BF12. M14/M15: SIP honeypot → nftables ipset blocklist + Wazuh active-response aggregation
 - [ ] BF13. M16: cloud-native K8s — Multus vs hostNetwork media, Pod Security Standards (restricted)
+- [ ] BF14. M9D: DNS infra lab — BIND9 NAPTR/SRV zone, SRV failover, DNSSEC + spoof mitigation, TTL cut-over/rollback
 
 ### Stage C — Assessment content
 - [ ] C0. Per-module quiz bank (question + answer key + rubric) M0..M17
@@ -150,8 +151,16 @@ when their parent B-task is reached.
   already at `course/reviews/gemini_feedback1.md`; removed the top-level trigger. B1 deferred to
   iteration 12.
 
+- Iteration 16 (2026-07-02): processed `feedback.txt` (priority over backlog) — added a new
+  module **M9D DNS Infrastructure & Resilience** (RFC 3263 NAPTR/SRV, DNS failover, anycast,
+  DNSSEC + spoof mitigation via TLS cert, TTL cut-over/rollback) as a lettered insert (no
+  renumber). Registered in overview + README; added BF14. Archived feedback to
+  `course/reviews/feedback-dns-module.md`. B5 deferred to iteration 17.
+
 ## Feedback log
 - `gemini_feedback0.md` (received iter 3) → incorporated across 10 modules + BF1–BF8;
   archived at `course/reviews/gemini_feedback0.md`.
 - `feedback1.md` (received iter 11) → incorporated across M7,M8,M12,M14,M15,M16 + BF9–BF13;
   permanent copy `course/reviews/gemini_feedback1.md`; top-level trigger removed.
+- `feedback.txt` (received iter 16) → new module M9D DNS Infrastructure + BF14;
+  archived `course/reviews/feedback-dns-module.md`.

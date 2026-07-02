@@ -26,6 +26,7 @@ around building, attacking, defending, and operating real infrastructure.
 | 7 | `modules/07-proxies-and-sbcs.md` | SIP Proxies & SBCs (Kamailio/OpenSIPS + rtpengine) |
 | 8 | `modules/08-nat-firewalls-sbc.md` | NAT, Firewalls & Session Border Control |
 | 9 | `modules/09-sip-trunking-pstn.md` | SIP Trunking & the PSTN |
+| 9D | `modules/09d-dns-infrastructure.md` | DNS Infrastructure & Resilience for VoIP |
 | 10 | `modules/10-signaling-security-tls.md` | Signaling Security: TLS & SIPS |
 | 11 | `modules/11-media-security-srtp.md` | Media Security: SRTP/DTLS-SRTP/ZRTP |
 | 12 | `modules/12-authn-authz-identity.md` | AuthN, AuthZ & Caller Identity *(exam #2)* |

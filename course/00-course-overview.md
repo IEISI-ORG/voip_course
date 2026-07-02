@@ -77,6 +77,7 @@ Each module ends with: **objectives recap**, **quiz** (10–15 items), **lab rub
 | 7 | SIP Proxies & SBCs | Kamailio, OpenSIPS, rtpengine | Topology hiding, routing security | 6 |
 | 8 | NAT, Firewalls & Session Border Control | nftables, rtpengine, STUN/TURN/ICE | Edge hardening, flood control | 5 |
 | 9 | SIP Trunking & the PSTN | Asterisk, SIPp, spandsp | Trunk auth, spoofed peers, SIP-I | 5 |
+| 9D | DNS Infrastructure & Resilience | BIND9, dnsmasq, dig | DNS spoofing, DNSSEC, anycast/failover | 4 |
 | 10 | Signaling Security: TLS & SIPS | OpenSSL, Let's Encrypt, step-ca | MITM, cert mgmt, mTLS trunks | 5 |
 | 11 | Media Security: SRTP/DTLS-SRTP/ZRTP | libsrtp, rtpengine, ZRTP clients | Eavesdropping, key exchange pitfalls | 5 |
 | 12 | AuthN, AuthZ & Caller Identity | Asterisk, libstirshaken, OpenSIPS | Enumeration, brute force, spoofing | 6 |
