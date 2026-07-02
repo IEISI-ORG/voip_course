@@ -39,7 +39,7 @@ then assessment content, then instructor material.
 - [x] B14. M14 defense / hardening / fraud lab  ← iteration 30
 - [x] B15. M15 monitoring / observability / IR lab  ← iteration 31
 - [x] B16. M16 testing / interop / automation / cloud lab  ← iteration 32
-- [ ] B17. M17 frontiers lab (+ checkpoint exam #3 content)
+- [x] B17. M17 frontiers lab (+ checkpoint exam #3 content)  ← iteration 33 (STAGE B COMPLETE)
 
 ### Stage B+ — feedback-driven lab additions (review: gemini_feedback0)
 Design threaded into the module docs in iteration 3; these are the concrete labs to build
@@ -62,7 +62,7 @@ when their parent B-task is reached.
 
 ### Stage C — Assessment content
 - [ ] C0. Per-module quiz bank (question + answer key + rubric) M0..M17
-- [~] C1. Three checkpoint exams (after M5, M12, M17) — exams #1 (iter 17) & #2 (iter 28) done; #3 pending
+- [x] C1. Three checkpoint exams (after M5, M12, M17) — #1 (iter 17), #2 (iter 28), #3 (iter 33) all done, keys separated
 - [ ] C2. Capstone grading harness (rubric → scoring sheet)
 
 ### Stage D — Instructor material
@@ -230,6 +230,12 @@ when their parent B-task is reached.
   M14/M15, bibliography, trivy config scan) — no untrusted github.event interpolation (injection-
   safe). load-test.sh SIPp capacity runner; verify.sh runs offline PASS 7/7 (CI valid + all repo
   shell scripts parse + injection check). E0 CI done. bash-checked + executed. Pushed.
+
+- Iteration 33 (2026-07-03): built B17 (M17 frontiers lab + checkpoint exam #3) — STAGE B COMPLETE.
+  enum-lookup.sh (E.164→e164.arpa NAPTR→SIP URI, verified); verify.sh offline PASS 4/4 (encoding,
+  private resolve, fall-through, normalization). Exam #3 (operations, M13–M17, 20 items,
+  IR-gated) + separated answer key. All 18 module labs (M0–M17) and all 3 checkpoint exams done
+  (C1 complete). Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
