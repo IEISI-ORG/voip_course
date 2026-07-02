@@ -73,8 +73,9 @@ when their parent B-task is reached.
    If present: read, incorporate, and prioritize the feedback before continuing the backlog.
 2. Build the next unmarked backlog item (one coherent unit).
 3. Update this file (mark `[x]`, note the iteration).
-4. `git commit` on `main` with a Conventional Commit message.
-5. `git push origin main` (fast-forward; never force-push in the loop).
+4. Update the top-level `README.md` `PROGRESS` block (iteration #, stage, next item).
+5. `git commit` on `main` with a Conventional Commit message.
+6. `git push origin main` (fast-forward; never force-push in the loop).
 
 ## Iteration log
 - Iteration 1 (2026-07-01): scheduled hourly loop `e7810ccd`; built A0 (lab foundation scaffold).
@@ -170,6 +171,12 @@ when their parent B-task is reached.
   renumber). Registered in overview + README; added BF14. Archived feedback to
   `course/reviews/feedback-dns-module.md`. B5 deferred to iteration 17.
 
+- Iteration 19 (2026-07-02): processed `feedback.txt` (priority) — added a top-level repo
+  `README.md` (project overview linked to plan + progress, with a PROGRESS block updated each
+  iteration; added that as loop-protocol step 4). Untracked `.claude/` and gitignored it (kept
+  on disk; history purge deferred per request). Archived feedback to
+  `course/reviews/feedback-repo-readme.md`. B7 deferred to iteration 20.
+
 ## Feedback log
 - `gemini_feedback0.md` (received iter 3) → incorporated across 10 modules + BF1–BF8;
   archived at `course/reviews/gemini_feedback0.md`.
@@ -177,3 +184,5 @@ when their parent B-task is reached.
   permanent copy `course/reviews/gemini_feedback1.md`; top-level trigger removed.
 - `feedback.txt` (received iter 16) → new module M9D DNS Infrastructure + BF14;
   archived `course/reviews/feedback-dns-module.md`.
+- `feedback.txt` (received iter 19) → top-level repo README + hide `.claude/`;
+  archived `course/reviews/feedback-repo-readme.md`.

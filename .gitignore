@@ -19,6 +19,9 @@ lab/**/*.log
 *.sqlite
 *.db
 
+# --- Claude Code session state (not project content; history purge deferred) ---
+.claude/
+
 # --- OS / editor ---
 .DS_Store
 *.swp
