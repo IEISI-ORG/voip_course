@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SOVOC BF2 — PIDF-LO dispatchable location (RFC 4119 presence + geopriv civic RFC 5139,
+     plus a geo shape RFC 5491). Attached to an emergency INVITE as application/pidf+xml. -->
+<presence xmlns="urn:ietf:params:xml:ns:pidf"
+          xmlns:gp="urn:ietf:params:xml:ns:pidf:geopriv10"
+          xmlns:cl="urn:ietf:params:xml:ns:pidf:geopriv10:civicAddr"
+          xmlns:gml="http://www.opengis.net/gml"
+          entity="pres:1001@lab.sovoc.test">
+  <tuple id="sovoc-loc-1">
+    <status>
+      <gp:geopriv>
+        <gp:location-info>
+          <cl:civicAddress>
+            <cl:country>US</cl:country>
+            <cl:A1>WA</cl:A1>
+            <cl:A3>Seattle</cl:A3>
+            <cl:RD>Main</cl:RD>
+            <cl:STS>St</cl:STS>
+            <cl:HNO>123</cl:HNO>
+            <cl:FLR>4</cl:FLR>
+            <cl:ROOM>4021</cl:ROOM>
+            <cl:PC>98101</cl:PC>
+          </cl:civicAddress>
+          <gml:Point srsName="urn:ogc:def:crs:EPSG::4326">
+            <gml:pos>47.6097 -122.3331</gml:pos>
+          </gml:Point>
+        </gp:location-info>
+        <gp:usage-rules>
+          <gp:retransmission-allowed>no</gp:retransmission-allowed>
+        </gp:usage-rules>
+        <gp:method>Manual</gp:method>
+      </gp:geopriv>
+    </status>
+    <timestamp>2026-07-03T09:00:00Z</timestamp>
+  </tuple>
+</presence>

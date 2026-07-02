@@ -45,7 +45,7 @@ then assessment content, then instructor material.
 Design threaded into the module docs in iteration 3; these are the concrete labs to build
 when their parent B-task is reached.
 - [x] BF1. M10/M11: WebRTC — Kamailio WSS gateway + rtpengine DTLS-SRTP↔SIP media bridge  ← iteration 34
-- [ ] BF2. M9/M17: emergency calling — PIDF-LO location body + Resource-Priority; Kari's/RAY BAUM'S
+- [x] BF2. M9/M17: emergency calling — PIDF-LO location body + Resource-Priority; Kari's/RAY BAUM'S  ← iteration 35
 - [ ] BF3. M7/M16: HA state sharing — Redis/MySQL registrar + rtpengine redundancy, hitless failover
 - [ ] BF4. M14: secure auto-provisioning — HTTPS mTLS config serving, signed configs, MAC allowlist
 - [ ] BF5. M12: transit STIR/SHAKEN — attestation "C", untrusted-header stripping, OOB (RFC 8816)
@@ -242,6 +242,12 @@ when their parent B-task is reached.
   jsSIP browser client.html (secure-by-default: vendored locally, no un-pinned CDN script —
   addressed a security-hook SRI warning), verify.sh (WSS/TLS basis + config + secure-client
   checks, fail-closed). bash-checked; offline artifact checks pass. Pushed.
+
+- Iteration 35 (2026-07-03): built BF2 (emergency calling). pidf-lo-sample.xml (RFC 4119/5139/5491
+  dispatchable location), e911-call.sh (multipart emergency INVITE w/ Resource-Priority + PIDF-LO
+  + Geolocation, computed Content-Length), verify.sh PASSES 8/8 offline. Addressed a security-hook
+  XML warning by parsing with defusedxml (ElementTree fallback) — models XXE-safe parsing.
+  bash-checked + executed. Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
