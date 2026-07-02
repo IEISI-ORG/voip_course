@@ -9,8 +9,9 @@ against the shared lab, with an executable checker where possible (`verify.sh`).
 | [m1-foundations](m1-foundations/) | M1 | two-plane call, recon, living threat model | ✅ |
 | [m2-core-sip](m2-core-sip/) | M2 | transactions/dialogs, MF loop protection, topology hiding | ✅ |
 | [m3-sdp-media](m3-sdp-media/) | M3 | SDP offer/answer, c= redirection vs media anchoring | ✅ |
-| m4-… | M4 | RTP / codecs / QoS | ⏳ |
-| … | … | (built in backlog order B4..B17) | |
+| [m4-rtp-qos](m4-rtp-qos/) | M4 | RTP stats/MOS, bandwidth budget, eavesdrop→SRTP, DSCP | ✅ |
+| m5-… | M5 | packet analysis + checkpoint exam #1 | ⏳ |
+| … | … | (built in backlog order B5..B17) | |
 
 Conventions:
 - Each lab dir has a `README.md` runbook with a **100-pt rubric (pass ≥ 70)**.
