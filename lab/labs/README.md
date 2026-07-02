@@ -11,8 +11,9 @@ against the shared lab, with an executable checker where possible (`verify.sh`).
 | [m3-sdp-media](m3-sdp-media/) | M3 | SDP offer/answer, c= redirection vs media anchoring | ✅ |
 | [m4-rtp-qos](m4-rtp-qos/) | M4 | RTP stats/MOS, bandwidth budget, eavesdrop→SRTP, DSCP | ✅ |
 | [m5-packet-analysis](m5-packet-analysis/) | M5 | fault diagnosis, tshark automation, evidence redaction; exam #1 | ✅ |
-| m6-… | M6 | building the core (Asterisk/FreeSWITCH) | ⏳ |
-| … | … | (built in backlog order B6..B17) | |
+| [m6-building-core](m6-building-core/) | M6 | secure-default PBXs (audited live), hardening checklist v1 | ✅ |
+| m7-… | M7 | proxies & SBCs | ⏳ |
+| … | … | (built in backlog order B7..B17) | |
 
 Conventions:
 - Each lab dir has a `README.md` runbook with a **100-pt rubric (pass ≥ 70)**.

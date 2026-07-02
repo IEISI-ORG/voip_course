@@ -28,7 +28,7 @@ then assessment content, then instructor material.
 - [x] B3. M3 SDP / media negotiation lab  ← iteration 14
 - [x] B4. M4 RTP / codecs / QoS lab  ← iteration 15
 - [x] B5. M5 packet-analysis lab (+ checkpoint exam #1 content)  ← iteration 17
-- [ ] B6. M6 build-the-core lab
+- [x] B6. M6 build-the-core lab  ← iteration 18
 - [ ] B7. M7 proxies & SBC lab
 - [ ] B8. M8 NAT / firewall / SBC lab
 - [ ] B9. M9 SIP trunking / PSTN lab
@@ -147,6 +147,13 @@ when their parent B-task is reached.
   redact-and-hash.sh (drop media plane, hash + chain-of-custody). Exam: course/assessments/
   checkpoint-exam-1.md — 20 items/100pts covering M0–M5 with a security gate, answer key +
   rubric. Scripts bash-checked. First checkpoint exam of three done. Pushed.
+
+- Iteration 18 (2026-07-02): built B6 (M6 building-the-core lab). verify.sh is the strongest
+  grader yet — queries live PBXs for secure defaults (fail-closed): Asterisk secret file not
+  world-readable (octal-bit checked), chan_sip unloaded, no anonymous endpoint; FreeSWITCH
+  default_password != 1234. Added living hardening-checklist.md template (v1, security-spine
+  companion to the threat model) + README rubric. Scripts bash-checked; perm logic verified.
+  Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
