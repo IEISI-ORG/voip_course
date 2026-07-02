@@ -29,7 +29,7 @@ then assessment content, then instructor material.
 - [x] B4. M4 RTP / codecs / QoS lab  ← iteration 15
 - [x] B5. M5 packet-analysis lab (+ checkpoint exam #1 content)  ← iteration 17
 - [x] B6. M6 build-the-core lab  ← iteration 18
-- [ ] B7. M7 proxies & SBC lab
+- [x] B7. M7 proxies & SBC lab  ← iteration 20
 - [ ] B8. M8 NAT / firewall / SBC lab
 - [ ] B9. M9 SIP trunking / PSTN lab
 - [ ] B10. M10 signaling security (TLS/SIPS) lab
@@ -154,6 +154,12 @@ when their parent B-task is reached.
   world-readable (octal-bit checked), chan_sip unloaded, no anonymous endpoint; FreeSWITCH
   default_password != 1234. Added living hardening-checklist.md template (v1, security-spine
   companion to the threat model) + README rubric. Scripts bash-checked; perm logic verified.
+  Pushed.
+
+- Iteration 20 (2026-07-02): built B7 (M7 proxies & SBCs lab). verify.sh is a self-validating
+  rate-limit grader — positive control probe answered pre-flood, then a 150-req flood from
+  redteam must get the source pike-banned (silence), fail-closed. flood-demo.sh before/after
+  helper; README rubric (failover/topology-hiding/anchoring/rate-limit). Scripts bash-checked.
   Pushed.
 
 ## Security review log
