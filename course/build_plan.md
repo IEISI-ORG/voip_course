@@ -75,7 +75,11 @@ when their parent B-task is reached.
 - [ ] E1. Package multiple-choice exams as standalone deployable HTML (self-contained, no server;
       score client-side). Start with checkpoint exams' MC portions.
 - [~] E3. Living bibliography of RFCs/standards + package KBs — `course/references/bibliography.md`
-      (started iter 24). Keep extended as modules cite new sources; spot-check URLs before publish.
+      (started iter 24). Verification set up iter 25: `course/references/verify-bibliography.sh`
+      (`list` offline; full run needs network — run in CI/manually, sandbox blocks egress).
+- [ ] E4. Instructor slide decks in **MARP**. REQUIREMENTS (memorized): Makefile-driven marp-cli
+      build; validate rendering via Playwright; run Playwright under a headless X server
+      (`xvfb-run`) since the build runs on cron. See memory `marp-slide-tooling`.
 - [ ] E2. Assessment convention: keep answer keys in `assessments/answer-keys/` (one level deeper,
       separate file) — applied to exam #1 (iter 22); apply to exams #2/#3 when built.
 
@@ -216,6 +220,13 @@ when their parent B-task is reached.
   `feedback.txt`; added E3 backlog. `feedback2.md` was empty → removed. Linked bibliography from
   README. B10 deferred to iteration 25.
 
+- Iteration 25 (2026-07-02): processed feedback (priority) — set up bibliography verification
+  (`course/references/verify-bibliography.sh`, list+network modes; 28 URLs extracted) and saved
+  it to project memory; added E4 MARP instructor slides to the plan with tooling requirements
+  memorized (Makefile + Playwright render check + headless X on cron). Wrote memory files
+  (course-build-loop, bibliography-verification, marp-slide-tooling + MEMORY.md). Archived
+  feedback. B10 deferred to iteration 26.
+
 ## Feedback log
 - `gemini_feedback0.md` (received iter 3) → incorporated across 10 modules + BF1–BF8;
   archived at `course/reviews/gemini_feedback0.md`.
@@ -229,3 +240,5 @@ when their parent B-task is reached.
   HTML MC exams to plan; archived `course/reviews/feedback-testing-and-exams.md`.
 - `feedback.txt` (received iter 24) → start bibliography of RFCs/standards + package KBs;
   archived `course/reviews/feedback-bibliography.md`. (`feedback2.md` empty → removed.)
+- `feedback.txt` (received iter 25) → bibliography verification + memory; MARP slides to plan
+  (memorized tooling); archived `course/reviews/feedback-bib-verify-marp.md`.
