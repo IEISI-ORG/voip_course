@@ -25,7 +25,7 @@ then assessment content, then instructor material.
 - [x] B0. M0 orientation lab: bring-up, health checks, capture pipeline verification  ← iteration 9
 - [x] B1. M1 SIP foundations lab  ← iteration 12
 - [x] B2. M2 core SIP protocol lab  ← iteration 13
-- [ ] B3. M3 SDP / media negotiation lab
+- [x] B3. M3 SDP / media negotiation lab  ← iteration 14
 - [ ] B4. M4 RTP / codecs / QoS lab
 - [ ] B5. M5 packet-analysis lab (+ checkpoint exam #1 content)
 - [ ] B6. M6 build-the-core lab
@@ -130,6 +130,11 @@ when their parent B-task is reached.
   (REGISTER→200 + Max-Forwards:0→483 loop protection, fail-closed), trace.sh raw-response
   reader for annotation, README with rubric (transaction/dialog, auth, forking, topology-hiding
   labs are analysis-graded). Scripts bash-checked. Pushed.
+
+- Iteration 14 (2026-07-02): built B3 (M3 SDP/media lab) — verify.sh (fail-closed: services +
+  REGISTER + rtpengine edge anchor reachable), sdp-offer.sh raw-offer helper carrying an
+  attacker-chosen c= line to demonstrate T9 redirection vs rtpengine anchoring, README rubric.
+  Scripts bash-checked. Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
