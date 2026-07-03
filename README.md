@@ -43,11 +43,11 @@ priority. Security findings from automated review are addressed and logged.
 ## Progress
 
 <!-- PROGRESS:START (updated each iteration) -->
-- **Iteration:** 37 · **Date:** 2026-07-03 · **HEAD tracks:** see `git log --oneline -1`
+- **Iteration:** 38 · **Date:** 2026-07-03 · **HEAD tracks:** see `git log --oneline -1`
 - **Stage A (lab foundation):** ✅ complete
 - **Stage B (per-module labs):** ✅ **complete — all 18 module labs (M0–M17) built**
 - **Assessments:** ✅ all 3 checkpoint exams done (keys held separately)
-- **Feedback-driven BF labs:** BF1–BF4 done (WebRTC, emergency, HA, provisioning); BF5–BF14 next
+- **Feedback-driven BF labs:** BF1–BF5 done (WebRTC, emergency, HA, provisioning, transit SHAKEN); BF6–BF14 next
 - **Next:** BF labs, capstone grading harness (C2), HTML MC exams (E1), MARP slides (E4)
 - **CI:** `.github/workflows/ci.yml` (lint + compose + offline graders on every push)
 - **References:** [bibliography](course/references/bibliography.md) + `verify-bibliography.sh` link-checker

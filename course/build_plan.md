@@ -48,7 +48,7 @@ when their parent B-task is reached.
 - [x] BF2. M9/M17: emergency calling — PIDF-LO location body + Resource-Priority; Kari's/RAY BAUM'S  ← iteration 35
 - [x] BF3. M7/M16: HA state sharing — Redis/MySQL registrar + rtpengine redundancy, hitless failover  ← iteration 36
 - [x] BF4. M14: secure auto-provisioning — HTTPS mTLS config serving, signed configs, MAC allowlist  ← iteration 37
-- [ ] BF5. M12: transit STIR/SHAKEN — attestation "C", untrusted-header stripping, OOB (RFC 8816)
+- [x] BF5. M12: transit STIR/SHAKEN — attestation "C", untrusted-header stripping, OOB (RFC 8816)  ← iteration 38
 - [ ] BF6. M12: RFC 8760 interop — dual MD5+SHA-256 challenge, downgrade rejection
 - [x] BF7. M13: RFC 4475 SIP torture — parser-robustness baseline (torture.sh + verify.sh, iter 29;
       full SIPp mutation suite is an optional extension)
@@ -260,6 +260,11 @@ when their parent B-task is reached.
   ssl_verify_client on + MAC allowlist + CN==MAC per-device scope, HTTPS-only), sample device
   cfg with placeholder secret + TLS/SRTP. verify.sh PASSES 9/9 (real openssl round-trip).
   bash-checked + executed. Pushed.
+
+- Iteration 38 (2026-07-03): built BF5 (transit STIR/SHAKEN). shaken-policy.sh decision tool
+  (strip untrusted Identity, attest A/B/C by own-number+trust, OOB for TDM/SS7 per RFC 8816);
+  verify.sh PASSES 7/7 across scenarios. README with the policy table + M12 integration + "never
+  relay unverified Identity" note. bash-checked + executed. Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
