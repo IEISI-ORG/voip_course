@@ -63,7 +63,7 @@ when their parent B-task is reached.
 ### Stage C — Assessment content
 - [ ] C0. Per-module quiz bank (question + answer key + rubric) M0..M17
 - [x] C1. Three checkpoint exams (after M5, M12, M17) — #1 (iter 17), #2 (iter 28), #3 (iter 33) all done, keys separated
-- [ ] C2. Capstone grading harness (rubric → scoring sheet)
+- [x] C2. Capstone grading harness (rubric → scoring sheet)
 
 ### Stage D — Instructor material
 - [ ] D0. Per-module instructor notes / slide outlines
@@ -352,6 +352,12 @@ when their parent B-task is reached.
   zone-check.sh (named-checkzone or structural). verify.sh PASSES 7/7 self-validating (flags a
   removed secondary SRV). bash-checked + executed. **ALL 14 BF DEEP LABS COMPLETE.** Next: the
   packaging tier (C0 quiz bank, C2 capstone grading harness, E1 HTML MC exams, E4 MARP, D0/D1).
+
+- Iteration 53 (2026-07-04): built C2 (capstone grading harness). score-capstone.sh reads a
+  scoresheet CSV and enforces the gate (total ≥70 AND every security category ≥50% max — security
+  mandatory); scoresheet.csv template (9 categories = 100, 5 gated). verify.sh self-test PASSES
+  6/6 including the key case (total 87 but failing encryption cat → FAIL). bash-checked + executed.
+  Next packaging item: C0 quiz bank / E1 HTML MC exams / E4 MARP / D0-D1.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

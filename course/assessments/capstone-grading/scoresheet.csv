@@ -1,0 +1,10 @@
+category,max,security,score
+Functionality,15,no,0
+Reproducibility & IaC + secure CI,15,no,0
+Signaling + media encryption,15,yes,0
+Identity (digest + STIR/SHAKEN),10,yes,0
+Edge/border defense,10,yes,0
+Fraud prevention,10,yes,0
+Observability + detection,10,no,0
+IR runbooks executed,10,yes,0
+Documentation quality,5,no,0
