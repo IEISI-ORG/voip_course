@@ -43,7 +43,7 @@ priority. Security findings from automated review are addressed and logged.
 ## Progress
 
 <!-- PROGRESS:START (updated each iteration) -->
-- **Iteration:** 48 · **Date:** 2026-07-03 · **HEAD tracks:** see `git log --oneline -1`
+- **Iteration:** 49 · **Date:** 2026-07-03 · **HEAD tracks:** see `git log --oneline -1`
 - **References:** [bibliography](course/references/bibliography.md) + [glossary](course/references/glossary.md)
 - **Consistency audit:** ✅ complete (3 passes); see [`questions.md`](questions.md)
 - **Feedback-driven BF labs:** BF1–BF11 done; BF12–BF14 pending

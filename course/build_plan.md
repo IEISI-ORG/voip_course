@@ -322,6 +322,12 @@ when their parent B-task is reached.
   touch: spelled out "Session Border Controller (SBC)" first-use in M7; added acronym + references
   conventions to the overview (glossary is the abbreviation source). Updated traceability.
 
+- Iteration 49 (2026-07-03): requirements audit **pass 5 (coverage + capstone)** — verified the
+  SIP School crosswalk maps all **14** SSCA 'Elite' modules (A1, nothing dropped) and the capstone
+  integrates the full security spine via 9 graded deliverables (A3: final threat model, hardening
+  checklist, red-team report, IR runbooks, detection-coverage map). Clean, no fixes. Updated
+  traceability. Pass 6 (definition-of-done sweep) next, then resume BF12.
+
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
   (positive-control gating, fail-closed). Verified bash-clean.

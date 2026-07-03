@@ -9,9 +9,9 @@ Status: ✅ done · 🟡 partial/in-progress · ⬜ open
 ## A. Original course requirements
 | # | Requirement | Status | Evidence |
 |---|-------------|--------|----------|
-| A1 | Course modelled on SIP School SSCA 'Elite' | ✅ | `course/00-course-overview.md`, README crosswalk |
+| A1 | Course modelled on SIP School SSCA 'Elite' | ✅ | README crosswalk maps **all 14** SSCA modules (verified iter 49, nothing dropped) |
 | A2 | Open-source tools throughout | ✅ | `lab/` (Kamailio/Asterisk/FreeSWITCH/rtpengine/HOMER/…), `notes.md` tool map |
-| A3 | Emphasis on **secure** VoIP operations | ✅ | security spine: threat catalog T1–T15, per-module attack/defend, M13–M15 |
+| A3 | Emphasis on **secure** VoIP operations | ✅ | security spine T1–T15, per-module attack/defend, M13–M15; **capstone** (verified iter 49) requires final threat model, hardening checklist, red-team report, IR runbooks, detection-coverage map |
 | A4 | Plan then deep-dive every section | ✅ | 18 modules + M9D + capstone, each 5-beat with labs |
 | A5 | Runnable/reproducible lab | ✅ | Docker compose (8 svcs), 24 module labs + BF labs, `make verify-all`, CI |
 
