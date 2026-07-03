@@ -139,4 +139,10 @@ This guarantees the "emphasis on secure VoIP operations" is assessed continuousl
 - `modules/00-orientation-and-lab.md` … `modules/17-frontiers.md` — per-module deep dives.
 - `modules/18-capstone.md` — capstone + operations runbooks.
 - `notes.md` — OSS tool map, threat catalog, lab architecture, RFC backbone.
+- `references/bibliography.md` — RFCs/standards + package knowledge bases.
+- `references/glossary.md` — abbreviations & acronyms.
 - `README.md` — index + SIP School coverage crosswalk.
+
+**Conventions:** acronyms are expanded on first use within a module, then abbreviated; all
+abbreviations are also defined in the glossary. Per-module `## References` are a subset of the
+bibliography (the single source of truth).

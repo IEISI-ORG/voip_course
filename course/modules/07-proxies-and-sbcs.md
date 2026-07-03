@@ -1,6 +1,7 @@
 # Module 7 — SIP Proxies & SBCs (Kamailio / OpenSIPS + rtpengine)
 
-**One-liner:** Build the routing and border layer: a SIP proxy and a real open-source SBC.
+**One-liner:** Build the routing and border layer: a SIP proxy and a real open-source Session
+Border Controller (SBC).
 **Est. time:** 6h · **Prereqs:** Module 6.
 
 ## Learning Objectives

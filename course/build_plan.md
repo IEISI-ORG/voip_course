@@ -316,6 +316,12 @@ when their parent B-task is reached.
   `references/glossary.md` (abbreviations), linked from bibliography. Pruned answered items from
   questions.md. Refreshed memory. Requirements audit passes 4–6 continue.
 
+- Iteration 48 (2026-07-03): requirements audit **pass 4 (feedback traceability + Q4)** — verified
+  every feedback item is threaded (gemini_feedback0 marker in 10 modules, feedback1 in 6) and each
+  has its BF lab (BF1–11 built, BF12–14 pending; BF7 lives in m13-offensive). Applied Q4 light
+  touch: spelled out "Session Border Controller (SBC)" first-use in M7; added acronym + references
+  conventions to the overview (glossary is the abbreviation source). Updated traceability.
+
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
   (positive-control gating, fail-closed). Verified bash-clean.

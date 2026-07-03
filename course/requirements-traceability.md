@@ -18,8 +18,8 @@ Status: ✅ done · 🟡 partial/in-progress · ⬜ open
 ## B. Feedback items
 | Feedback (iter) | Ask | Status | Evidence |
 |-----------------|-----|--------|----------|
-| gemini_feedback0 (3) | 8 curriculum additions | ✅ | threaded M7,M9–M17; BF1–BF8 built |
-| feedback1 (11) | 5 additions (IPv6, coturn, K8s, delegate certs, honeypot) | 🟡 | threaded; BF9,BF10,BF11 done; **BF12,BF13 pending** |
+| gemini_feedback0 (3) | 8 curriculum additions | ✅ | **verified iter 48:** `review: gemini_feedback0` marker in 10 modules; BF1–BF8 all built |
+| feedback1 (11) | 5 additions (IPv6, coturn, K8s, delegate certs, honeypot) | 🟡 | **verified iter 48:** marker in 6 modules; BF9/10/11 done; **BF12,BF13 pending** |
 | DNS module (16) | new DNS module | ✅ | `modules/09d-dns-infrastructure.md`; BF14 pending |
 | repo README + hide .claude (19) | root README, gitignore .claude | ✅ | `README.md`, `.gitignore` (history purge deferred) |
 | exams + testing (22) | hide answers, lab test harness, HTML MC exams | 🟡 | answer-keys/ ✅, `verify-all.sh`+CI ✅, **HTML MC exams (E1) open** |
