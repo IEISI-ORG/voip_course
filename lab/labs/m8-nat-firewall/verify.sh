@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M8 acceptance test — proves the SBC bans a scanner by its UA fingerprint (Lab 8.3).
+# VoIPSec M8 acceptance test — proves the SBC bans a scanner by its UA fingerprint (Lab 8.3).
 # Self-validating & fail-closed: a plain probe must be answered pre-scan (control); then a
 # single svmap scan (User-Agent: friendly-scanner) must get the source banned (silence).
 # Side effect: bans the redteam IP ~300s. Run from lab/:  bash labs/m8-nat-firewall/verify.sh

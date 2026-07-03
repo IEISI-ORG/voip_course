@@ -1,8 +1,8 @@
-# SOVOC M15 — Prometheus alerting rules for VoIP security KPIs (Lab 15.1/15.2).
+# VoIPSec M15 — Prometheus alerting rules for VoIP security KPIs (Lab 15.1/15.2).
 # Exprs assume the M15 exporters (kamailio-exporter, asterisk res_prometheus, blackbox/ssl,
 # and a fraud/CDR gauge). Validate: promtool check rules alert-rules.yml
 groups:
-  - name: sovoc-voip-security
+  - name: voipsec-voip-security
     rules:
       - alert: HighSIPFailureRatio
         expr: sum(rate(kamailio_sl_replies_total{code=~"4..|5.."}[5m])) / sum(rate(kamailio_sl_replies_total[5m])) > 0.5
@@ -40,14 +40,14 @@ groups:
           summary: "TLS cert expires in < 30 days"
 
       - alert: TollFraudSpend
-        expr: sovoc_account_spend_usd > 20
+        expr: voipsec_account_spend_usd > 20
         for: 0m
         labels: {severity: critical, threat: "T4"}
         annotations:
           summary: "Account spend over cap (possible IRSF) — auto-suspend + review"
 
       - alert: RecordingAccessAnomaly
-        expr: increase(sovoc_recording_access_total{unauthorized="true"}[10m]) > 0
+        expr: increase(voipsec_recording_access_total{unauthorized="true"}[10m]) > 0
         for: 0m
         labels: {severity: critical, threat: "T14"}
         annotations:

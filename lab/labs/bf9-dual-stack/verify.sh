@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF9 acceptance test — dual-stack firewall parity + config (offline, deterministic,
+# VoIPSec BF9 acceptance test — dual-stack firewall parity + config (offline, deterministic,
 # fail-closed & self-validating: the parity checker must PASS the good ruleset AND catch a gap).
 # Run from lab/:  bash labs/bf9-dual-stack/verify.sh
 set -u
@@ -20,7 +20,7 @@ fi
 
 echo "== 2. self-validation: a v6 gap is caught =="
 tmp=$(mktemp)
-sed '/table ip6 sovoc6/,/^}/ s/tcp dport 5061 accept//' "$NFT" > "$tmp"
+sed '/table ip6 voipsec6/,/^}/ s/tcp dport 5061 accept//' "$NFT" > "$tmp"
 if bash "$DIR/parity-check.sh" "$tmp" 2>/dev/null | grep -q 'PARITY: FAIL'; then
   ok "injected v6 blind spot detected (checker is meaningful)"
 else

@@ -1,30 +1,30 @@
-<!-- SOVOC BF12 — Wazuh decoder + rule + active-response for the SIP honeypot.
+<!-- VoIPSec BF12 — Wazuh decoder + rule + active-response for the SIP honeypot.
      Drop into the Wazuh manager (local_decoder.xml / local_rules.xml / ossec.conf). -->
 
 <!-- decoder: parse "HONEYPOT hit src=<ip> ..." -->
-<decoder name="sovoc-honeypot">
+<decoder name="voipsec-honeypot">
   <prematch>HONEYPOT hit </prematch>
   <regex>src=(\d+.\d+.\d+.\d+)</regex>
   <order>srcip</order>
 </decoder>
 
 <!-- rule: any honeypot hit is a scanner (no legitimate client touches the decoy) -->
-<group name="sovoc,honeypot,">
+<group name="voipsec,honeypot,">
   <rule id="100200" level="10">
-    <decoded_as>sovoc-honeypot</decoded_as>
+    <decoded_as>voipsec-honeypot</decoded_as>
     <description>SIP honeypot hit from $(srcip) — scanner, block it</description>
   </rule>
 </group>
 
 <!-- active-response: add the source to the nftables blocklist across edge nodes -->
 <command>
-  <name>sovoc-nft-ban</name>
-  <executable>sovoc-nft-ban.sh</executable>
+  <name>voipsec-nft-ban</name>
+  <executable>voipsec-nft-ban.sh</executable>
   <expect>srcip</expect>
   <timeout_allowed>yes</timeout_allowed>
 </command>
 <active-response>
-  <command>sovoc-nft-ban</command>
+  <command>voipsec-nft-ban</command>
   <location>local</location>
   <rules_id>100200</rules_id>
   <timeout>3600</timeout>

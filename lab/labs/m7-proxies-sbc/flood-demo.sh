@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M7 Lab 7.4 — INVITE/OPTIONS flood vs pike rate-limiting (authorized lab).
+# VoIPSec M7 Lab 7.4 — INVITE/OPTIONS flood vs pike rate-limiting (authorized lab).
 # Shows the before/after: a probe answered pre-flood, then silenced once pike bans the source.
 # Run from lab/.  (Bans the redteam IP for ~300s; restart edge-sbc to reset sooner.)
 set -u

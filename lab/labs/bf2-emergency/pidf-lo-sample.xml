@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- SOVOC BF2 — PIDF-LO dispatchable location (RFC 4119 presence + geopriv civic RFC 5139,
+<!-- VoIPSec BF2 — PIDF-LO dispatchable location (RFC 4119 presence + geopriv civic RFC 5139,
      plus a geo shape RFC 5491). Attached to an emergency INVITE as application/pidf+xml. -->
 <presence xmlns="urn:ietf:params:xml:ns:pidf"
           xmlns:gp="urn:ietf:params:xml:ns:pidf:geopriv10"
           xmlns:cl="urn:ietf:params:xml:ns:pidf:geopriv10:civicAddr"
           xmlns:gml="http://www.opengis.net/gml"
-          entity="pres:1001@lab.sovoc.test">
-  <tuple id="sovoc-loc-1">
+          entity="pres:1001@lab.voipsec.test">
+  <tuple id="voipsec-loc-1">
     <status>
       <gp:geopriv>
         <gp:location-info>

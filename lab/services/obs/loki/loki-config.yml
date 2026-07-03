@@ -1,4 +1,4 @@
-# SOVOC observability — Loki (Stage A5), single-binary filesystem mode for the lab.
+# VoIPSec observability — Loki (Stage A5), single-binary filesystem mode for the lab.
 auth_enabled: false
 
 server:

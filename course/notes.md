@@ -89,7 +89,7 @@ every module deep dive.
 - NIST SP 800-58 (VoIP security), SP 800-52 (TLS), ENISA VoIP guidance, OWASP-style SIP hardening.
 
 ## 5. SIP School coverage crosswalk (ensure nothing dropped)
-Every SIP School module maps into SOVOC; security-first reordering shown in README.md.
+Every SIP School module maps into VoIPSec; security-first reordering shown in README.md.
 Additions beyond SIP School: dedicated offensive module (M13), defense/fraud module (M14),
 observability/IR module (M15), automation/IaC (M16), and a build-focus (M6/M7) that SIP
 School only describes conceptually.

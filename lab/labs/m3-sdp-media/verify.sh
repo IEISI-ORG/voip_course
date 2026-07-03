@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M3 acceptance test — asserts the media-negotiation prerequisites are in place.
+# VoIPSec M3 acceptance test — asserts the media-negotiation prerequisites are in place.
 # Fail-closed: services up (incl. the rtpengine media anchor), REGISTER traverses the SBC, and
 # the rtpengine edge media interface is reachable on the media path. The SDP c=/codec rewrite
 # behaviour is captured/analysis-graded (see README).

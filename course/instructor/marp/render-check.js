@@ -1,4 +1,4 @@
-// SOVOC E4 — Playwright render check for the MARP decks. Opens each rendered HTML deck in a
+// VoIPSec E4 — Playwright render check for the MARP decks. Opens each rendered HTML deck in a
 // headless browser (run under xvfb-run) and asserts it actually renders MARP slides with no
 // page errors. Usage: node render-check.js [out-dir]   (default ./out)
 const { chromium } = require('playwright');

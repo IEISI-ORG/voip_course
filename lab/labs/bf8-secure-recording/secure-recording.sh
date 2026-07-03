@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF8 — secure call-recording handling (PCI-DSS aware). Encryption-at-rest, RBAC-gated
+# VoIPSec BF8 — secure call-recording handling (PCI-DSS aware). Encryption-at-rest, RBAC-gated
 # access with an audit trail, and DTMF/PAN masking. Deterministic (OpenSSL).
 # Modes:
 #   secure-recording.sh encrypt <in> <out.enc> <keyfile>
@@ -9,7 +9,7 @@
 #   secure-recording.sh demo
 set -u
 command -v openssl >/dev/null 2>&1 || { echo "needs openssl"; exit 3; }
-AUDIT="${AUDIT_LOG:-/tmp/sovoc-recording-audit.log}"
+AUDIT="${AUDIT_LOG:-/tmp/voipsec-recording-audit.log}"
 # RBAC allowlist (roles permitted to access recordings).
 RBAC_ALLOW="${RBAC_ALLOW:-compliance auditor}"
 
@@ -17,7 +17,7 @@ enc() { openssl enc -aes-256-cbc -pbkdf2 -salt -in "$1" -out "$2" -pass "file:$3
 dec() { openssl enc -d -aes-256-cbc -pbkdf2 -in "$1" -out "$2" -pass "file:$3"; }
 
 access() { # user file
-  AUDIT="${AUDIT_LOG:-/tmp/sovoc-recording-audit.log}"   # resolve at call time
+  AUDIT="${AUDIT_LOG:-/tmp/voipsec-recording-audit.log}"   # resolve at call time
   u="$1"; f="$2"; ts=$(date -u +%Y-%m-%dT%H:%M:%SZ)
   if echo " $RBAC_ALLOW " | grep -q " $u "; then
     echo "$ts ALLOW user=$u file=$f" >> "$AUDIT"; echo "ALLOW: $u may access $f (audited)"

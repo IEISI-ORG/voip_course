@@ -1,4 +1,4 @@
-# SOVOC reference lab — topology contract.
+# VoIPSec reference lab — topology contract.
 #
 # This file defines the FULL segmented topology up front (networks + service slots).
 # Services start as bootable placeholders (debian:stable-slim, idle) so learners can
@@ -12,26 +12,26 @@
 #
 # Usage: `make up` / `make status` / `make down`. Override versions via `.env`.
 
-name: sovoc-lab
+name: voipsec-lab
 
 networks:
   edge:      # untrusted border: external users, PSTN peers, attackers
-    name: sovoc_edge
+    name: voipsec_edge
     ipam:
       config:
         - subnet: 172.28.10.0/24
   core:      # trusted internal: PBXs, reachable only via edge-sbc
-    name: sovoc_core
+    name: voipsec_core
     ipam:
       config:
         - subnet: 172.28.20.0/24
   mgmt:      # observability plane
-    name: sovoc_mgmt
+    name: voipsec_mgmt
     ipam:
       config:
         - subnet: 172.28.30.0/24
   redteam:   # isolated offensive plane
-    name: sovoc_redteam
+    name: voipsec_redteam
     ipam:
       config:
         - subnet: 172.28.40.0/24
@@ -46,7 +46,7 @@ services:
     hostname: edge-sbc
     environment:
       # Pulled from the auto-loaded .env when present; safe defaults keep the lab bootable.
-      SIP_DOMAIN: ${SIP_DOMAIN:-lab.sovoc.test}
+      SIP_DOMAIN: ${SIP_DOMAIN:-lab.voipsec.test}
       TOPOH_MASK_SECRET: ${TOPOH_MASK_SECRET:-}
     depends_on: [rtpengine]
     restart: unless-stopped
@@ -114,7 +114,7 @@ services:
       context: ./services/client
     hostname: client
     environment:
-      SIP_DOMAIN: ${SIP_DOMAIN:-lab.sovoc.test}
+      SIP_DOMAIN: ${SIP_DOMAIN:-lab.voipsec.test}
       EDGE_SBC_IP: ${EDGE_SBC_IP:-172.28.10.10}
       SIP_ALICE_SECRET: ${SIP_ALICE_SECRET:-}
     restart: unless-stopped

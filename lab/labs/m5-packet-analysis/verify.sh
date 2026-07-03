@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M5 acceptance test — analysis toolchain prerequisites (fail-closed). Fault diagnosis,
+# VoIPSec M5 acceptance test — analysis toolchain prerequisites (fail-closed). Fault diagnosis,
 # HOMER correlation, and evidence handling are rubric-graded (see README).
 # Run from lab/:  bash labs/m5-packet-analysis/verify.sh
 set -u

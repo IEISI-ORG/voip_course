@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF6 acceptance test — digest interop math + downgrade rejection (offline, deterministic,
+# VoIPSec BF6 acceptance test — digest interop math + downgrade rejection (offline, deterministic,
 # fail-closed). Live 401 dual-challenge is capture-graded (M12 lab).
 # Run from lab/:  bash labs/bf6-digest-interop/verify.sh
 set -u

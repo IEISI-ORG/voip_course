@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC — validate the MC quiz bank (offline, deterministic, fail-closed). Checks JSON structure,
+# VoIPSec — validate the MC quiz bank (offline, deterministic, fail-closed). Checks JSON structure,
 # valid answer indices, per-module coverage, and that correct answers aren't clustered on one option.
 # Run:  bash course/assessments/quiz-bank/verify.sh
 set -u

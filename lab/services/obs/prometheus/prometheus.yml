@@ -1,11 +1,11 @@
-# SOVOC observability — Prometheus scrape config (Stage A5).
+# VoIPSec observability — Prometheus scrape config (Stage A5).
 # Scrapes itself now; VoIP exporters (Kamailio/Asterisk) are wired in M15 once the exporters
 # are enabled on the core services. Targets are commented until then so scrapes don't error.
 global:
   scrape_interval: 15s
   evaluation_interval: 15s
   external_labels:
-    lab: sovoc
+    lab: voipsec
 
 scrape_configs:
   - job_name: prometheus

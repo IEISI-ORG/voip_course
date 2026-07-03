@@ -5,7 +5,7 @@
 . /opt/redteam/scripts/_guard.sh
 TARGET="${1:-172.28.10.10}"
 EXT="${2:-1001}"
-sovoc_guard "$TARGET"
+voipsec_guard "$TARGET"
 shift 2>/dev/null || true; shift 2>/dev/null || true
 echo "[lab-crack] svcrack -u $EXT $TARGET ${*} (authorized lab)"
 exec svcrack -u "$EXT" "$@" "$TARGET"

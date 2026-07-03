@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M3 — send a raw SDP offer and read the answer (Labs 3.1 / 3.3).
+# VoIPSec M3 — send a raw SDP offer and read the answer (Labs 3.1 / 3.3).
 # Usage: sdp-offer.sh [target] [bogus-c-addr]
 #   Default target = trunk-sim (172.28.10.30), which answers with an SDP.
 #   The offer carries an attacker-chosen c= line so you can watch where RTP is told to go.

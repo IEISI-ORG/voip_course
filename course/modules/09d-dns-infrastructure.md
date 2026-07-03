@@ -30,13 +30,13 @@ redirecting calls. Build it correctly and defend it. **Est. time:** 4h ·
   verify, then raise TTL; keep the old target warm until TTL fully expires so rollback is instant.
 
 ## 2. Packet Reality
-- `dig NAPTR lab.sovoc.test`, `dig SRV _sip._udp.lab.sovoc.test`, `dig +dnssec` — read the
+- `dig NAPTR lab.voipsec.test`, `dig SRV _sip._udp.lab.voipsec.test`, `dig +dnssec` — read the
   resolution a UAC performs before it ever sends a packet.
 - Capture a client resolving and then registering; kill the primary SRV target and watch the
   client fail over to the secondary. Observe the TTL's effect on how fast a change takes.
 
 ## 3. Build (OSS)
-- **BIND9** (or dnsmasq) authoritative zone for `lab.sovoc.test`: NAPTR + `_sip._udp` /
+- **BIND9** (or dnsmasq) authoritative zone for `lab.voipsec.test`: NAPTR + `_sip._udp` /
   `_sips._tcp` SRV records pointing at `edge-sbc`, with a second lower-priority SRV target.
 - Configure **DNSSEC** signing of the zone; validate with `dig +dnssec`.
 - Point Kamailio/Asterisk at the resolver and enable DNS **SRV failover** (Kamailio

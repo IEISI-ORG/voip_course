@@ -1,4 +1,4 @@
-// SOVOC BF14 — BIND9 config for the SIP zone: DNSSEC signing + response-rate-limiting.
+// VoIPSec BF14 — BIND9 config for the SIP zone: DNSSEC signing + response-rate-limiting.
 options {
     directory "/var/cache/bind";
     // Validate DNSSEC on recursion (protects lookups this server makes).
@@ -14,9 +14,9 @@ options {
 };
 
 // Authoritative + DNSSEC-signed zone (keys managed by the policy).
-zone "lab.sovoc.test" {
+zone "lab.voipsec.test" {
     type master;
-    file "/etc/bind/db.lab.sovoc.test";
+    file "/etc/bind/db.lab.voipsec.test";
     dnssec-policy default;          // automatic signing + key rollover
     inline-signing yes;
 };

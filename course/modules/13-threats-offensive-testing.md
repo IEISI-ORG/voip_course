@@ -4,7 +4,7 @@
 your own platform. **Est. time:** 5h · **Prereqs:** Modules 1–12.
 
 > **Authorized-use rule (restated every lab):** all offensive tooling in this module targets
-> ONLY the SOVOC lab on the `edge`/`redteam` networks. Testing systems you do not own or lack
+> ONLY the VoIPSec lab on the `edge`/`redteam` networks. Testing systems you do not own or lack
 > written authorization for is illegal. This module teaches defense through understanding attacks.
 
 ## Learning Objectives

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M16 acceptance test — the automation/CI is valid and the repo passes its own lint
+# VoIPSec M16 acceptance test — the automation/CI is valid and the repo passes its own lint
 # (offline, deterministic, fail-closed). Mirrors what CI runs on every change.
 # Run from lab/:  bash labs/m16-testing-cloud/verify.sh
 set -u

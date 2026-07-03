@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M17 acceptance test — ENUM encoding/routing is correct (Lab 17.2). Deterministic,
+# VoIPSec M17 acceptance test — ENUM encoding/routing is correct (Lab 17.2). Deterministic,
 # offline, fail-closed. Fax (T.38) and the CPaaS API labs are capture/config-graded.
 # Run from lab/:  bash labs/m17-frontiers/verify.sh
 set -u
@@ -15,7 +15,7 @@ out=$(bash "$TOOL" "+1 415 555 0100" 2>/dev/null)
 echo "$out" | grep -q '0.0.1.0.5.5.5.5.1.4.1.e164.arpa' \
   && ok "E.164 -> reversed e164.arpa NAPTR name correct" \
   || bad "ENUM query name wrong"
-echo "$out" | grep -q 'sip:1001@lab.sovoc.test' \
+echo "$out" | grep -q 'sip:1001@lab.voipsec.test' \
   && ok "private-ENUM resolves to the mapped SIP URI" \
   || bad "ENUM did not resolve to the expected URI"
 
@@ -25,7 +25,7 @@ bash "$TOOL" "+19998887777" 2>/dev/null | grep -q 'no private-ENUM record' \
   || bad "unmapped number did not fall through"
 
 echo "== 3. digits-only normalization =="
-bash "$TOOL" "+1 (415) 555-0200" 2>/dev/null | grep -q 'sip:1002@lab.sovoc.test' \
+bash "$TOOL" "+1 (415) 555-0200" 2>/dev/null | grep -q 'sip:1002@lab.voipsec.test' \
   && ok "punctuation stripped; formatted E.164 resolves" \
   || bad "formatted E.164 not normalized"
 

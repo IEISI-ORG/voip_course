@@ -1,6 +1,6 @@
 # Authorized Assessment — Findings Report (Lab 13.1/13.2)
 
-**Engagement:** SOVOC lab · **Tester:** <name> · **Date:** <date> · **Scope:** `edge`/`redteam`
+**Engagement:** VoIPSec lab · **Tester:** <name> · **Date:** <date> · **Scope:** `edge`/`redteam`
 lab subnets ONLY (written authorization: this is a training lab). No third-party targets.
 
 ## Methodology
@@ -29,5 +29,5 @@ For each finding, fill one block. Severity: Critical / High / Medium / Low (just
 | F-01 | | | | | |
 
 ## Authorized-use attestation
-I confirm all testing was performed only against the SOVOC lab, which I am authorized to test.
+I confirm all testing was performed only against the VoIPSec lab, which I am authorized to test.
 No production or third-party systems were targeted.  Signed: <name> / <date>

@@ -1,19 +1,19 @@
-# SOVOC BF13 — hardened media Deployment: Multus dedicated interface (no hostNetwork) +
+# VoIPSec BF13 — hardened media Deployment: Multus dedicated interface (no hostNetwork) +
 # Pod Security Standards "restricted". Passes pss-audit.sh.
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sovoc-media
-  labels: { app: sovoc-media }
+  name: voipsec-media
+  labels: { app: voipsec-media }
 spec:
   replicas: 2
-  selector: { matchLabels: { app: sovoc-media } }
+  selector: { matchLabels: { app: voipsec-media } }
   template:
     metadata:
-      labels: { app: sovoc-media }
+      labels: { app: voipsec-media }
       annotations:
         # Multus: attach a dedicated media NIC so RTP's port range needs no hostNetwork.
-        k8s.v1.cni.cncf.io/networks: sovoc-media-net
+        k8s.v1.cni.cncf.io/networks: voipsec-media-net
     spec:
       hostNetwork: false
       hostPID: false

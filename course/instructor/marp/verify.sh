@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC E4 — build the MARP decks and validate rendering with Playwright under xvfb.
+# VoIPSec E4 — build the MARP decks and validate rendering with Playwright under xvfb.
 # Needs marp-cli, node+playwright, xvfb-run (see README `make deps`). If the toolchain is absent
 # (e.g. CI without a browser), it reports SKIP rather than a false failure — run it where the
 # tooling exists. Run:  bash course/instructor/marp/verify.sh

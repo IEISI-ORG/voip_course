@@ -30,4 +30,4 @@ bash verify.sh                                 # self-test of the harness (6 che
 | Documentation quality | 5 | — |
 
 Five security categories (55 pts) are gated; a candidate must be *demonstrably secure*, not just
-feature-complete — which is the whole point of SOVOC.
+feature-complete — which is the whole point of VoIPSec.

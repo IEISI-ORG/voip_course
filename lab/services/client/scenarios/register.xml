@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE scenario SYSTEM "sipp.dtd">
-<!-- SOVOC client REGISTER (Stage A4): register a user through the edge-sbc.
+<!-- VoIPSec client REGISTER (Stage A4): register a user through the edge-sbc.
      Usage: sipp -sf register.xml <edge-sbc-ip>:5060 -s 1001 -i <self-ip> -m 1
      Auth is a stub at the SBC until M12; then add -au/-ap and a 401->auth retry. -->
 <scenario name="register">

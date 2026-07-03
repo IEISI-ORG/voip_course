@@ -1,4 +1,4 @@
-# SOVOC redteam — authorized offensive-testing toolbox (Stage A6)
+# VoIPSec redteam — authorized offensive-testing toolbox (Stage A6)
 #
 # AUTHORIZED LAB USE ONLY. This container attaches to the `edge`/`redteam` networks only
 # (enforced in docker-compose.yml) and ships with a scope guard. Scanning or testing any

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M5 Lab 5.4 — evidence handling. Redact the media plane (RTP/RTCP carry audio and
+# VoIPSec M5 Lab 5.4 — evidence handling. Redact the media plane (RTP/RTCP carry audio and
 # DTMF telephone-events = spoken/keyed PINs, card numbers) while keeping signaling for analysis,
 # then produce tamper-evident hashes and a chain-of-custody record.
 # Usage: redact-and-hash.sh <evidence.pcap> [redacted-out.pcap]
@@ -20,7 +20,7 @@ sha256sum "$OUT" | tee "${OUT}.sha256"
 
 CUSTODY="${OUT%.pcap}.custody.txt"
 {
-  echo "SOVOC evidence chain of custody"
+  echo "VoIPSec evidence chain of custody"
   echo "source_evidence : $IN"
   echo "source_sha256   : $(cut -d' ' -f1 "${IN}.sha256")"
   echo "redacted_artifact : $OUT (media plane removed)"

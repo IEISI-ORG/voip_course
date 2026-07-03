@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF3 acceptance test — HA config + overlay are well-formed (offline, deterministic,
+# VoIPSec BF3 acceptance test — HA config + overlay are well-formed (offline, deterministic,
 # fail-closed). The live hitless-failover run is failover-test.sh (needs the HA overlay up).
 # Run from lab/:  bash labs/bf3-ha-failover/verify.sh
 set -u

@@ -1,5 +1,5 @@
 <!--
-  SOVOC pbx-b user 1004 (Stage A3). See 1003.xml for the security notes. user_context = sovoc.
+  VoIPSec pbx-b user 1004 (Stage A3). See 1003.xml for the security notes. user_context = voipsec.
 -->
 <include>
   <user id="1004">
@@ -8,7 +8,7 @@
       <param name="vm-password" value="1004"/>
     </params>
     <variables>
-      <variable name="user_context" value="sovoc"/>
+      <variable name="user_context" value="voipsec"/>
       <variable name="effective_caller_id_name" value="Dave 1004"/>
       <variable name="effective_caller_id_number" value="1004"/>
     </variables>

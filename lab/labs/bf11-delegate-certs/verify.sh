@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF11 acceptance test — delegate-cert chain + attestation scope (offline, deterministic,
+# VoIPSec BF11 acceptance test — delegate-cert chain + attestation scope (offline, deterministic,
 # fail-closed & self-validating). Run from lab/:  bash labs/bf11-delegate-certs/verify.sh
 set -u
 cd "$(dirname "$0")/../.." || exit 3

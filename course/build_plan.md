@@ -1,4 +1,4 @@
-# Build Plan: SOVOC Course Content (Execution Phase)
+# Build Plan: VoIPSec Course Content (Execution Phase)
 
 The design layer is complete (see `task_plan.md`, all phases `[x]`). This file tracks the
 **execution phase**: turning the module designs into runnable, gradeable course content,
@@ -113,7 +113,7 @@ when their parent B-task is reached.
 
 - Iteration 5 (2026-07-02): built A3 (pbx-b FreeSWITCH base) — overlay on community image;
   injects default_password + ESL password from env at boot (kills 1234/ClueCon, T3/T11), ESL
-  bound to loopback+ACL, users 1003/1004 in restricted `sovoc` context (T4), echo/tone tests.
+  bound to loopback+ACL, users 1003/1004 in restricted `voipsec` context (T4), echo/tone tests.
   compose validates; all XML well-formed. Pushed.
 
 - Iteration 6 (2026-07-02): built A4 (trunk-sim + client) on edge — SIPp PSTN peer (UAS answer /
@@ -349,7 +349,7 @@ when their parent B-task is reached.
   context), media-pod-insecure.yaml (anti-pattern). verify.sh PASSES 8/8 self-validating (accepts
   hardened, rejects insecure with 7 violations). bash-checked + executed. Pushed.
 
-- Iteration 52 (2026-07-04): built BF14 (DNS infra, M9D runnable) — db.lab.sovoc.test (RFC 3263
+- Iteration 52 (2026-07-04): built BF14 (DNS infra, M9D runnable) — db.lab.voipsec.test (RFC 3263
   NAPTR + SRV failover, low TTL), named.conf.snippet (dnssec-policy + RRL + recursion off),
   zone-check.sh (named-checkzone or structural). verify.sh PASSES 7/7 self-validating (flags a
   removed secondary SRV). bash-checked + executed. **ALL 14 BF DEEP LABS COMPLETE.** Next: the
@@ -403,6 +403,13 @@ when their parent B-task is reached.
   gc; force-pushed with `--force-with-lease` (76b45de → 1b7f888). Verified 0 `.claude` in HEAD/
   branch/all-history, 139 lab+module files intact. (SSCA PDF was already purged in the very first
   rewrite.) Note: GitHub may retain old blobs server-side until GC — not secrets, so acceptable.
+
+- Rename (2026-07-04, user-directed): **SOVOC → VoIPSec** across the whole repo (162 files: brand
+  text + `sovoc`→`voipsec` slugs incl. compose project `voipsec-lab`, networks `voipsec_*`, nft
+  tables, Multus net, Wazuh rules; renamed files `db.lab.voipsec.test`, dialplan `voipsec.xml`).
+  Regenerated exam.html + slide decks. Verified: 8 offline graders + bf14 PASS, compose config
+  VALID, all 3 assessment/instructor validators PASS (drift clear). Credential subtitle kept
+  ("Secure Open-source VoIP Operations").
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

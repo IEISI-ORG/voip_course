@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF9 — nftables dual-stack parity check. Extracts the allowed dports for the IPv4 (table
+# VoIPSec BF9 — nftables dual-stack parity check. Extracts the allowed dports for the IPv4 (table
 # ip) and IPv6 (table ip6) families and reports any port allowed on one family but not the other
 # (the dual-stack blind spot). A single `table inet` needs no check (parity by construction).
 # Usage: parity-check.sh <ruleset.nft>

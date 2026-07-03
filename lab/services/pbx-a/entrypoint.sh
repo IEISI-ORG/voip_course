@@ -1,5 +1,5 @@
 #!/bin/sh
-# SOVOC pbx-a entrypoint (Stage A2).
+# VoIPSec pbx-a entrypoint (Stage A2).
 # Renders endpoint secrets from the environment into pjsip.conf so no credential is ever
 # committed to git (threat T11). Real per-user secrets come from .env; safe defaults keep
 # the lab bootable for a first run.

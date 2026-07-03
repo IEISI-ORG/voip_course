@@ -1,4 +1,4 @@
-# SOVOC — Secure Open-source VoIP Operations Certificate
+# VoIPSec — Secure Open-source VoIP Operations Certificate
 
 **Course design document (master plan)**
 
@@ -11,7 +11,7 @@ Modeled on The SIP School's SSCA 'Elite' curriculum, then re-architected around 
 
 ## 1. Positioning vs. The SIP School SSCA 'Elite'
 
-| Dimension | SSCA 'Elite' | SOVOC |
+| Dimension | SSCA 'Elite' | VoIPSec |
 |-----------|--------------|-------|
 | Primary verb | Understand / describe SIP | Build, secure, and operate SIP |
 | Tools | Vendor-neutral, mostly Wireshark | Full OSS stack (Asterisk, Kamailio, rtpengine, HOMER, SIPp…) |
@@ -20,7 +20,7 @@ Modeled on The SIP School's SSCA 'Elite' curriculum, then re-architected around 
 | Audience emphasis | Includes sales/marketing | Engineers, SREs, security/telecom ops |
 | Outcome | Protocol literacy + cert | Deployable, defensible platform + cert |
 
-SOVOC is a **superset**: it covers every SSCA topic (crosswalk in `README.md`) and adds
+VoIPSec is a **superset**: it covers every SSCA topic (crosswalk in `README.md`) and adds
 building, offensive testing, defense/fraud, observability/IR, and automation.
 
 ---
@@ -88,7 +88,7 @@ Each module ends with: **objectives recap**, **quiz** (10–15 items), **lab rub
 | 17 | Frontiers: VoLTE/IMS, FoIP, ENUM/Peering, UC/UCaaS/CPaaS | Kamailio IMS, spandsp, BIND | IMS/peering trust, RCS/OTT risks | 5 |
 | — | Capstone: Secure VoIP Platform | Whole stack | Full build+attack+defend+operate | 10+ |
 
-**Total structured time ≈ 100 hours** (SIP School's "running time" is ~16h; SOVOC is a
+**Total structured time ≈ 100 hours** (SIP School's "running time" is ~16h; VoIPSec is a
 deeper, build-and-operate program). Self-paced; labs dominate.
 
 ---
@@ -117,7 +117,7 @@ Design rules:
 - **Three checkpoint exams:** after M5 (protocol), M12 (build+security), M17 (operations).
 - **Capstone:** design → deploy → attack (authorized) → defend → operate a platform, with a
   written threat model and an incident-response runbook. Peer + instructor review.
-- **Certification:** SOVOC issued on capstone pass + checkpoint exams. Security competencies
+- **Certification:** VoIPSec issued on capstone pass + checkpoint exams. Security competencies
   are mandatory to pass (you cannot certify on protocol knowledge alone).
 
 ---

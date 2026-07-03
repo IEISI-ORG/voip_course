@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF11 — attestation scope check. Sign at "A" ONLY if the calling number falls within the
+# VoIPSec BF11 — attestation scope check. Sign at "A" ONLY if the calling number falls within the
 # delegate cert's authorized TN range (the RFC 9060 / TNAuthList promise). Otherwise refuse to
 # claim A. Deterministic.
 #   attest-scope.sh <calling-tn> "<lo>-<hi>"     e.g. attest-scope.sh +1-415-555-0142 14155550100-14155550199

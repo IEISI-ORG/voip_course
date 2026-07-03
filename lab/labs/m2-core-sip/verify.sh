@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M2 acceptance test — asserts deterministic SIP protocol invariants at the SBC.
+# VoIPSec M2 acceptance test — asserts deterministic SIP protocol invariants at the SBC.
 # Fail-closed. Auto-graded core for Labs 2.1/2.2 sign-off; the transaction/dialog analysis
 # and forking/topology-hiding labs are rubric-graded (see README).
 # Run from lab/:  bash labs/m2-core-sip/verify.sh

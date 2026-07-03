@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M4 — set up an RTP capture (Labs 4.1 / 4.3). Prints host-side capture guidance and
+# VoIPSec M4 — set up an RTP capture (Labs 4.1 / 4.3). Prints host-side capture guidance and
 # generates call signaling toward trunk-sim so there is a media session to record.
 # For audible, reconstructable audio, place a real call between two Baresip clients (see below).
 # Run from lab/.
@@ -12,7 +12,7 @@ cat <<'GUIDE'
 [capture-rtp] To capture RTP for analysis:
 
   1) Find the host bridge for the edge network:
-       docker network inspect sovoc_edge -f '{{range .IPAM.Config}}{{.Subnet}}{{end}}'
+       docker network inspect voipsec_edge -f '{{range .IPAM.Config}}{{.Subnet}}{{end}}'
        ip -o link | grep -i br-        # the matching br-* interface
 
   2) Capture media ports on the host (needs sudo):

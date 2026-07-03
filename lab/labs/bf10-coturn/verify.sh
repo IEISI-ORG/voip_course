@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF10 acceptance test — coturn hardening audit + short-term credential lifecycle (offline,
+# VoIPSec BF10 acceptance test — coturn hardening audit + short-term credential lifecycle (offline,
 # deterministic, fail-closed & self-validating). Run from lab/:  bash labs/bf10-coturn/verify.sh
 set -u
 cd "$(dirname "$0")/../.." || exit 3

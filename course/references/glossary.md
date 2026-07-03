@@ -1,4 +1,4 @@
-# SOVOC Glossary — Abbreviations & Acronyms
+# VoIPSec Glossary — Abbreviations & Acronyms
 
 Companion to the [bibliography](bibliography.md). Spell out each term on first use per module,
 then abbreviate. (References themselves will be revisited later per user note.)

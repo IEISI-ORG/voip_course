@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# SOVOC BF14 acceptance test — DNS zone + BIND security config (offline, deterministic,
+# VoIPSec BF14 acceptance test — DNS zone + BIND security config (offline, deterministic,
 # fail-closed & self-validating). Run from lab/:  bash labs/bf14-dns/verify.sh
 set -u
 cd "$(dirname "$0")/../.." || exit 3
 DIR=labs/bf14-dns
-Z="$DIR/db.lab.sovoc.test"
+Z="$DIR/db.lab.voipsec.test"
 CONF="$DIR/named.conf.snippet"
 
 pass=0; fail=0
@@ -20,7 +20,7 @@ grep -q '_sips._tcp' "$Z" && ok "_sips._tcp SRV (forces TLS transport)" || bad "
 
 echo "== 3. self-validation: a single-target zone fails the failover check =="
 tmp=$(mktemp)
-grep -v 'edge-sbc-2.lab.sovoc.test.$' "$Z" > "$tmp"   # remove the secondary SRV targets
+grep -v 'edge-sbc-2.lab.voipsec.test.$' "$Z" > "$tmp"   # remove the secondary SRV targets
 if bash "$DIR/zone-check.sh" "$tmp" 2>/dev/null | grep -q 'ZONE FAIL'; then
   ok "zone with no secondary SRV is flagged (failover check is meaningful)"
 else

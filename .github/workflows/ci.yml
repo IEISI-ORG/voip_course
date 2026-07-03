@@ -1,4 +1,4 @@
-name: sovoc-ci
+name: voipsec-ci
 
 # Validates the course repo on every change: shell syntax, compose config, YAML, the offline
 # graders, and the bibliography URL extraction. Docker-dependent graders (flood/ban tests) need

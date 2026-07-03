@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC E1 — generate a self-contained HTML exam from quiz-bank.json (single source of truth).
+# VoIPSec E1 — generate a self-contained HTML exam from quiz-bank.json (single source of truth).
 # The data is inlined (works from file://; no fetch/CORS), and there are NO external scripts
 # (no CDN/SRI exposure). Client-side scoring => this is a PRACTICE/self-assessment tool, not a
 # proctored exam. Run:  bash build-exam.sh   ->  exam.html
@@ -13,7 +13,7 @@ json.loads(data)  # fail early if the bank is invalid
 TEMPLATE = r"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SOVOC Practice Exam</title>
+<title>VoIPSec Practice Exam</title>
 <style>
  body{font:16px/1.5 system-ui,sans-serif;max-width:820px;margin:2rem auto;padding:0 1rem;color:#111}
  h1{margin-bottom:.2rem} .sub{color:#666;margin-top:0}
@@ -25,7 +25,7 @@ TEMPLATE = r"""<!DOCTYPE html>
  .pass{background:#e6f7ee;color:#0a6} .fail{background:#fdecea;color:#c0392b}
  .ok{color:#0a6} .no{color:#c0392b} .correct{font-weight:600}
 </style></head><body>
-<h1>SOVOC Practice Exam</h1>
+<h1>VoIPSec Practice Exam</h1>
 <p class="sub">Self-assessment (answers are scored in your browser). Pass mark 70%.</p>
 <form id="exam"></form>
 <button id="submit">Submit &amp; score</button>

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M9 acceptance test — trunking prerequisites (fail-closed). The two-way trunk, TLS/auth
+# VoIPSec M9 acceptance test — trunking prerequisites (fail-closed). The two-way trunk, TLS/auth
 # hardening, and fraud guardrails are config/capture-graded (see README + trunk-hardening.md).
 # Run from lab/:  bash labs/m9-trunking-pstn/verify.sh
 set -u

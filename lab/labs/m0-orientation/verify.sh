@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M0 acceptance test — the automated grader for Lab 0.1 / 0.3.
+# VoIPSec M0 acceptance test — the automated grader for Lab 0.1 / 0.3.
 # Verifies: base services are up, the four networks exist with correct subnets, and the
 # segmentation invariant holds (redteam reaches edge but NOT core). Exit 0 = PASS.
 #
@@ -26,10 +26,10 @@ check_net() { # name subnet
   got=$(docker network inspect "$1" --format '{{range .IPAM.Config}}{{.Subnet}}{{end}}' 2>/dev/null)
   [ "$got" = "$2" ] && ok "$1 = $2" || bad "$1 subnet '$got' != $2"
 }
-check_net sovoc_edge    172.28.10.0/24
-check_net sovoc_core    172.28.20.0/24
-check_net sovoc_mgmt    172.28.30.0/24
-check_net sovoc_redteam 172.28.40.0/24
+check_net voipsec_edge    172.28.10.0/24
+check_net voipsec_core    172.28.20.0/24
+check_net voipsec_mgmt    172.28.30.0/24
+check_net voipsec_redteam 172.28.40.0/24
 
 echo "== 3. segmentation invariant (the security check) =="
 # FAIL-CLOSED design. A negative result ("core unreachable") is only trustworthy if we first

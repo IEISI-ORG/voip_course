@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF13 — audit a K8s manifest against Pod Security Standards "restricted". Flags the
+# VoIPSec BF13 — audit a K8s manifest against Pod Security Standards "restricted". Flags the
 # container-escape footguns: hostNetwork/PID/IPC, privileged, privilege escalation, root, missing
 # capability drop / seccomp. Deterministic. Usage: pss-audit.sh <manifest.yaml>
 set -u

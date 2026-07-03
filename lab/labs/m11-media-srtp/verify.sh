@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M11 acceptance test — asserts the SRTP foundation is in place (fail-closed):
+# VoIPSec M11 acceptance test — asserts the SRTP foundation is in place (fail-closed):
 # the media anchor (rtpengine) is on-path AND signaling TLS works (SDES keys must ride secure
 # signaling, or "encrypted" media is trivially decryptable). Actual media-payload encryption,
 # DTLS handshakes, crypto-strip rejection and ZRTP SAS are capture/config-graded (see README).

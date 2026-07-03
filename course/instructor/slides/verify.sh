@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC D0 — validate the generated MARP decks (offline, deterministic, fail-closed & in-sync).
+# VoIPSec D0 — validate the generated MARP decks (offline, deterministic, fail-closed & in-sync).
 # Run:  bash course/instructor/slides/verify.sh
 set -u
 cd "$(dirname "$0")" || exit 3

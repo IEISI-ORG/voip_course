@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF3 — hitless failover demo. Register via one SBC replica, confirm the other replica
+# VoIPSec BF3 — hitless failover demo. Register via one SBC replica, confirm the other replica
 # knows the binding (shared state), then kill the active replica and show registration/call
 # survives. Requires the HA overlay up:
 #   docker compose -f docker-compose.yml -f labs/bf3-ha-failover/docker-compose.ha.yml up -d

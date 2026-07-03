@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# SOVOC BF12 — turn honeypot hits into nftables blocklist entries. Every source that touches the
+# VoIPSec BF12 — turn honeypot hits into nftables blocklist entries. Every source that touches the
 # decoy is malicious by definition, so ban it (with a timeout). Deterministic.
 #   hp2ipset.sh <honeypot.log>            # print `add element` commands
 #   hp2ipset.sh <honeypot.log> --apply    # apply them (needs nft + the ruleset loaded)
 set -u
 LOG="${1:?usage: hp2ipset.sh <honeypot.log> [--apply]}"
 [ -f "$LOG" ] || { echo "no such log: $LOG"; exit 3; }
-TABLE="${TABLE:-inet sovoc_edge}"
+TABLE="${TABLE:-inet voipsec_edge}"
 SET="${SET:-banned_v4}"
 TIMEOUT="${TIMEOUT:-1h}"
 

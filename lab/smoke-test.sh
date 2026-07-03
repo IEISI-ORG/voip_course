@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC — end-to-end smoke test (E0). Brings the base topology up, waits for health, asserts the
+# VoIPSec — end-to-end smoke test (E0). Brings the base topology up, waits for health, asserts the
 # segmentation invariant, and drives one real REGISTER through the border. This is the "whole
 # platform works together" check — heavier than the offline graders, so run it on a host/CI with
 # Docker (not on every push). Run from lab/:  bash smoke-test.sh [--keep]

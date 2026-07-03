@@ -1,12 +1,12 @@
 #!/usr/sbin/nft -f
-# SOVOC M8 — example nftables edge ruleset for a SIP border (Lab 8.3 reference).
+# VoIPSec M8 — example nftables edge ruleset for a SIP border (Lab 8.3 reference).
 # Default-drop input; permit only the SIP/media the SBC needs, rate-limit new signaling, drop
 # invalid, and log drops. Validate before loading:  nft -c -f nftables-edge.example.nft
 # Adjust interface/addresses for your deployment. fail2ban adds dynamic bans on top of this.
 
 flush ruleset
 
-table inet sovoc_edge {
+table inet voipsec_edge {
 
   # Dynamic blocklist fail2ban / scripts can add offenders to (timeout auto-expires).
   set banned_v4 {
@@ -39,7 +39,7 @@ table inet sovoc_edge {
     tcp dport 5349 accept                                                       # TURN/TLS
 
     # Everything else: log a sample and drop.
-    limit rate 5/minute log prefix "sovoc-edge-drop " flags all
+    limit rate 5/minute log prefix "voipsec-edge-drop " flags all
     drop
   }
 

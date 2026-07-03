@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M0 — generate a deterministic test call for Lab 0.2 (something to capture).
+# VoIPSec M0 — generate a deterministic test call for Lab 0.2 (something to capture).
 # Places a scripted call from `client` through the edge-sbc toward extension 1002, so you can
 # watch it in sngrep / export a pcap. Run from lab/.
 set -u

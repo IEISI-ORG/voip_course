@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M13 — SIP torture / malformed-input probe (RFC 4475 style, Lab 13.1 / BF7).
+# VoIPSec M13 — SIP torture / malformed-input probe (RFC 4475 style, Lab 13.1 / BF7).
 # AUTHORIZED LAB ONLY. Sends a batch of malformed SIP messages at a lab target so you can
 # confirm the parser drops them cleanly (a robust border returns 4xx or silently drops, never
 # crashes). Run from lab/.  Guarded to lab subnets.

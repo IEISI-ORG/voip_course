@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M1 acceptance test — grader for the "signaling reaches the border" core of Lab 1.1.
+# VoIPSec M1 acceptance test — grader for the "signaling reaches the border" core of Lab 1.1.
 # Fail-closed: requires the probe path (client + edge-sbc) to be up, then asserts a REGISTER
 # through the SBC succeeds (the stub registrar returns 200 until M12 adds real auth).
 # Run from lab/:  bash labs/m1-foundations/verify.sh

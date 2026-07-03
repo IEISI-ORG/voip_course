@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M4 acceptance test — media-plane prerequisites (fail-closed). RTP stats/MOS, eavesdrop,
+# VoIPSec M4 acceptance test — media-plane prerequisites (fail-closed). RTP stats/MOS, eavesdrop,
 # and QoS impairment are capture/analysis-graded (see README).
 # Run from lab/:  bash labs/m4-rtp-qos/verify.sh
 set -u

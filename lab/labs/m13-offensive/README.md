@@ -3,7 +3,7 @@
 **Module:** [M13](../../../course/modules/13-threats-offensive-testing.md) · **Est.** 5h ·
 **Prereqs:** M1–M12.
 
-> **AUTHORIZED USE ONLY.** All tooling targets the SOVOC lab (`edge`/`redteam` subnets) only.
+> **AUTHORIZED USE ONLY.** All tooling targets the VoIPSec lab (`edge`/`redteam` subnets) only.
 > Testing any other system without written authorization is illegal. The `redteam` container is
 > network-fenced and its helpers refuse non-lab targets. See
 > [`services/redteam/AUTHORIZED_USE.md`](../../services/redteam/AUTHORIZED_USE.md).

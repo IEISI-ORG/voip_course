@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF13 acceptance test — PSS auditor + manifests (offline, deterministic, fail-closed &
+# VoIPSec BF13 acceptance test — PSS auditor + manifests (offline, deterministic, fail-closed &
 # self-validating). Run from lab/:  bash labs/bf13-k8s/verify.sh
 set -u
 cd "$(dirname "$0")/../.." || exit 3

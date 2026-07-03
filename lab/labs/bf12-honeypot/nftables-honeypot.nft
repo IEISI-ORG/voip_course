@@ -1,7 +1,7 @@
 #!/usr/sbin/nft -f
-# SOVOC BF12 — nftables with a timeout'd blocklist set that the honeypot pipeline populates.
+# VoIPSec BF12 — nftables with a timeout'd blocklist set that the honeypot pipeline populates.
 # Validate: nft -c -f nftables-honeypot.nft
-table inet sovoc_edge {
+table inet voipsec_edge {
   set banned_v4 {
     type ipv4_addr
     flags timeout

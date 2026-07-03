@@ -9,15 +9,15 @@ The second-stack PBX on the trusted `core` network (172.28.20.22). Runs alongsid
 |--------|-----|-----------------|
 | Inject `default_password` from env at boot | kill FreeSWITCH's stock `1234` | T3 / M12 |
 | ESL bound to `127.0.0.1`, `loopback.auto` ACL, env password | ESL = full switch control | T11 / M15 |
-| Test users in restricted `sovoc` context | no PSTN route from a user | T4 / M9 |
+| Test users in restricted `voipsec` context | no PSTN route from a user | T4 / M9 |
 | Explicit reject catch-all in dialplan | no fraud-enabling fallthrough | T4 |
 
 ## Approach
 The community FreeSWITCH image keeps its working default config; we overlay only hardening
 files onto the standard include points:
 - `autoload_configs/event_socket.conf.xml` — locked-down ESL.
-- `directory/default/1003.xml`, `1004.xml` — authenticated users in `sovoc` context.
-- `dialplan/sovoc.xml` — restricted context (echo `9196`, tone `9197`, else reject).
+- `directory/default/1003.xml`, `1004.xml` — authenticated users in `voipsec` context.
+- `dialplan/voipsec.xml` — restricted context (echo `9196`, tone `9197`, else reject).
 
 ## Deliberate stubs (hardened later)
 - **Plain SIP/RTP** — sofia TLS in **M10**, SRTP/DTLS in **M11**.

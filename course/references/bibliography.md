@@ -1,4 +1,4 @@
-# SOVOC Bibliography — Authoritative References
+# VoIPSec Bibliography — Authoritative References
 
 Living reference set for the course: RFCs and standards, regulatory sources, and the official
 knowledge base for every package in the lab. Cited across the module docs; extend as content

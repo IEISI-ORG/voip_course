@@ -1,4 +1,4 @@
-# SOVOC — Secure Open-source VoIP Operations Certificate
+# VoIPSec — Secure Open-source VoIP Operations Certificate
 
 A hands-on VoIP/SIP training course built entirely on open-source tools with an emphasis on
 **secure VoIP operations**. Modeled on The SIP School's SSCA 'Elite' curriculum, re-architected
@@ -37,10 +37,10 @@ around building, attacking, defending, and operating real infrastructure.
 | 17 | `modules/17-frontiers.md` | Frontiers: VoLTE/IMS, FoIP, ENUM/Peering, UC/UCaaS/CPaaS *(exam #3)* |
 | — | `modules/18-capstone.md` | Capstone + Operations Runbooks |
 
-## Coverage Crosswalk — SIP School SSCA 'Elite' → SOVOC
-Every SSCA 'Elite' module is fully covered; SOVOC adds build/attack/defend/operate depth.
+## Coverage Crosswalk — SIP School SSCA 'Elite' → VoIPSec
+Every SSCA 'Elite' module is fully covered; VoIPSec adds build/attack/defend/operate depth.
 
-| SSCA 'Elite' module | Covered in SOVOC |
+| SSCA 'Elite' module | Covered in VoIPSec |
 |---------------------|------------------|
 | 1. Core SIP | M1, M2, M3 |
 | 2. Wireshark | M5 (+ used in every module) |
@@ -57,9 +57,9 @@ Every SSCA 'Elite' module is fully covered; SOVOC adds build/attack/defend/opera
 | 13. SIP and Fax over IP | M17 |
 | 14. SIP in UC, UCaaS and CPaaS | M17 |
 
-### SOVOC additions beyond SSCA 'Elite'
+### VoIPSec additions beyond SSCA 'Elite'
 - **M0** reproducible lab (Docker/IaC) — SSCA has no shared build environment.
-- **M6/M7** *building* PBX/proxy/SBC from OSS — SSCA describes, SOVOC constructs.
+- **M6/M7** *building* PBX/proxy/SBC from OSS — SSCA describes, VoIPSec constructs.
 - **M13** authorized offensive testing — new.
 - **M14** defense, hardening & toll-fraud prevention as a full module — new depth.
 - **M15** observability + incident response with runbooks — new.
@@ -67,5 +67,5 @@ Every SSCA 'Elite' module is fully covered; SOVOC adds build/attack/defend/opera
 - **Capstone** end-to-end secure platform with graded security gates — new.
 
 ## Design One-Liner
-SSCA 'Elite' teaches you to *speak* SIP. SOVOC teaches you to *build it, break it, defend it,
+SSCA 'Elite' teaches you to *speak* SIP. VoIPSec teaches you to *build it, break it, defend it,
 and run it* — with open source, security-first.

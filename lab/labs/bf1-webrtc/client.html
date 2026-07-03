@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <!--
-  SOVOC BF1 — minimal WebRTC softphone (jsSIP) for the WSS gateway lab.
+  VoIPSec BF1 — minimal WebRTC softphone (jsSIP) for the WSS gateway lab.
   Serve over HTTPS (a browser blocks getUserMedia + WSS from file://). Edit the config below.
   jsSIP is loaded from a CDN — for an offline lab, vendor jssip.min.js locally.
 -->
 <html lang="en">
-<head><meta charset="utf-8"><title>SOVOC WebRTC softphone</title></head>
+<head><meta charset="utf-8"><title>VoIPSec WebRTC softphone</title></head>
 <body>
-  <h3>SOVOC WebRTC softphone (jsSIP over WSS)</h3>
-  <label>Call target: <input id="target" value="sip:1002@lab.sovoc.test"></label>
+  <h3>VoIPSec WebRTC softphone (jsSIP over WSS)</h3>
+  <label>Call target: <input id="target" value="sip:1002@lab.voipsec.test"></label>
   <button id="call">Call</button>
   <button id="hangup">Hang up</button>
   <pre id="log"></pre>
@@ -26,7 +26,7 @@
     // ---- Lab config (edit) ----
     const CFG = {
       wss:    'wss://172.28.10.10:5061',        // edge-sbc Secure WebSocket
-      uri:    'sip:1001@lab.sovoc.test',
+      uri:    'sip:1001@lab.voipsec.test',
       authUser: '1001',
       password: 'CHANGE_ME'                       // from .env SIP_ALICE_SECRET; never commit real
     };

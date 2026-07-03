@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC — self-test for the capstone grading harness (offline, deterministic, fail-closed).
+# VoIPSec — self-test for the capstone grading harness (offline, deterministic, fail-closed).
 # Confirms the gate: total >= 70 AND every security category >= 50% max.
 # Run:  bash course/assessments/capstone-grading/verify.sh
 set -u

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M1 — attack-surface recon helper for Lab 1.2 (passive, against YOUR OWN lab SBC).
+# VoIPSec M1 — attack-surface recon helper for Lab 1.2 (passive, against YOUR OWN lab SBC).
 # Sends a SIP OPTIONS and prints the response so you can see what a scanner learns: which
 # headers leak software/version, what response codes reveal. Run from lab/.
 #

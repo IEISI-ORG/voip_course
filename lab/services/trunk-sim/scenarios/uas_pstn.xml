@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE scenario SYSTEM "sipp.dtd">
-<!-- SOVOC trunk-sim UAS (Stage A4): answer a call as the PSTN far end. -->
+<!-- VoIPSec trunk-sim UAS (Stage A4): answer a call as the PSTN far end. -->
 <scenario name="uas_pstn">
   <recv request="INVITE"/>
 
@@ -42,7 +42,7 @@
 
       v=0
       o=pstn [call_number] [call_number] IN IP[local_ip_type] [local_ip]
-      s=sovoc-trunk
+      s=voipsec-trunk
       c=IN IP[local_ip_type] [local_ip]
       t=0 0
       m=audio [media_port] RTP/AVP 0 8

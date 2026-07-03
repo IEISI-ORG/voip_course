@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF4 — sign & verify a device provisioning config (integrity, so a tampered/rogue config
+# VoIPSec BF4 — sign & verify a device provisioning config (integrity, so a tampered/rogue config
 # is rejected even if the transport is subverted). RSA/SHA-256 detached signatures via OpenSSL.
 # Modes:
 #   sign-config.sh sign   <cfg> <privkey.pem> [out.sig]

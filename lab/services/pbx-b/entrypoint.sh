@@ -1,5 +1,5 @@
 #!/bin/sh
-# SOVOC pbx-b entrypoint (Stage A3).
+# VoIPSec pbx-b entrypoint (Stage A3).
 # Removes FreeSWITCH's two well-known default credentials at boot by injecting secrets from
 # the environment (never committed): the global default_password (T3) and the event-socket
 # password (T11). Safe random defaults keep the lab bootable on a first run.

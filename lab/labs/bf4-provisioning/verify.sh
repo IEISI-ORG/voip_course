@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF4 acceptance test — signing works and the provisioning server is hardened (offline,
+# VoIPSec BF4 acceptance test — signing works and the provisioning server is hardened (offline,
 # deterministic, fail-closed). The live mTLS fetch/refusal is capture-graded.
 # Run from lab/:  bash labs/bf4-provisioning/verify.sh
 set -u

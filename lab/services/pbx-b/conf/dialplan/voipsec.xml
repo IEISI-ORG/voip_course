@@ -1,27 +1,27 @@
 <!--
-  SOVOC pbx-b — restricted dialplan context (Stage A3).
-  Test users live in this "sovoc" context (NOT the outbound-capable stock "default"), so a
+  VoIPSec pbx-b — restricted dialplan context (Stage A3).
+  Test users live in this "voipsec" context (NOT the outbound-capable stock "default"), so a
   compromised registration has no PSTN route (toll-fraud safe, threat T4). Outbound trunking
   is added deliberately in M9.
 -->
 <include>
-  <context name="sovoc">
+  <context name="voipsec">
 
     <!-- Internal user-to-user (1003/1004). -->
-    <extension name="sovoc-internal">
+    <extension name="voipsec-internal">
       <condition field="destination_number" expression="^(100[34])$">
         <action application="bridge" data="user/$1@${domain}"/>
       </condition>
     </extension>
 
     <!-- Echo + tone tests for the M4/M5 media labs. -->
-    <extension name="sovoc-echo">
+    <extension name="voipsec-echo">
       <condition field="destination_number" expression="^9196$">
         <action application="answer"/>
         <action application="echo"/>
       </condition>
     </extension>
-    <extension name="sovoc-milliwatt">
+    <extension name="voipsec-milliwatt">
       <condition field="destination_number" expression="^9197$">
         <action application="answer"/>
         <action application="playback" data="tone_stream://%(10000,0,1004)"/>
@@ -30,7 +30,7 @@
     </extension>
 
     <!-- Everything else is rejected — no catch-all that could enable fraud. -->
-    <extension name="sovoc-block">
+    <extension name="voipsec-block">
       <condition field="destination_number" expression="^.*$">
         <action application="hangup" data="CALL_REJECTED"/>
       </condition>

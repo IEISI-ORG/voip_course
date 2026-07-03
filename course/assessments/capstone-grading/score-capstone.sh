@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC — capstone grading harness. Reads a scoresheet CSV (category,max,security,score),
+# VoIPSec — capstone grading harness. Reads a scoresheet CSV (category,max,security,score),
 # computes the total, and enforces the gate: PASS requires total >= 70 AND no failing security
 # category (a security category fails if it scores < 50% of its max — security is mandatory).
 # Usage: score-capstone.sh [scoresheet.csv]

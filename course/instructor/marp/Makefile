@@ -1,4 +1,4 @@
-# SOVOC E4 — render the instructor MARP decks (../slides/*.md) to HTML/PDF and validate rendering.
+# VoIPSec E4 — render the instructor MARP decks (../slides/*.md) to HTML/PDF and validate rendering.
 # Requires: marp-cli, node + playwright (npm i), xvfb-run. See README.
 SLIDES := ../slides
 OUT    := out

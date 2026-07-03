@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF8 acceptance test — secure-recording controls work (offline, deterministic, fail-closed).
+# VoIPSec BF8 acceptance test — secure-recording controls work (offline, deterministic, fail-closed).
 # Run from lab/:  bash labs/bf8-secure-recording/verify.sh
 set -u
 cd "$(dirname "$0")/../.." || exit 3

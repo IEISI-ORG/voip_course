@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M7 acceptance test — proves pike rate-limiting bans a flooding source (Lab 7.4).
+# VoIPSec M7 acceptance test — proves pike rate-limiting bans a flooding source (Lab 7.4).
 # Self-validating & fail-closed: a positive control (single probe answered) must pass BEFORE the
 # flood, so "no response after flood" is trustworthy evidence of a ban, not a broken probe.
 # Side effect: bans the redteam IP for pike autoexpire (~300s). Re-run needs a cooldown or an

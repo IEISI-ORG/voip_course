@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M2 — capture raw SIP responses for annotation (Labs 2.1 / 2.2).
+# VoIPSec M2 — capture raw SIP responses for annotation (Labs 2.1 / 2.2).
 # Sends a REGISTER and an OPTIONS through the SBC and prints the responses so you can read
 # the status line, Via/branch, From/To tags, CSeq, and Allow/Supported headers line by line.
 # Run from lab/.  For the forking + 401 traces, follow the README steps with sngrep/HOMER.

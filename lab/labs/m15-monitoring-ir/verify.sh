@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M15 acceptance test — alert rules are well-formed and cover the M13 threats (offline,
+# VoIPSec M15 acceptance test — alert rules are well-formed and cover the M13 threats (offline,
 # deterministic, fail-closed). promtool is used if present; else a YAML parse.
 # Run from lab/:  bash labs/m15-monitoring-ir/verify.sh
 set -u

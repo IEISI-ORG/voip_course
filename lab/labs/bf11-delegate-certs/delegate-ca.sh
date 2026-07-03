@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF11 — STIR/SHAKEN delegate certificate chain (RFC 9060 / RFC 8226). Builds an SP/root CA,
+# VoIPSec BF11 — STIR/SHAKEN delegate certificate chain (RFC 9060 / RFC 8226). Builds an SP/root CA,
 # issues an enterprise delegate cert chained to it, and verifies the chain. Deterministic (OpenSSL).
 #   delegate-ca.sh demo [outdir]   # self-contained: CA -> delegate -> verify chain
 set -u
@@ -8,7 +8,7 @@ OUT="${2:-$(mktemp -d)}"; mkdir -p "$OUT"
 
 echo "[1] SP/root CA"
 openssl req -x509 -newkey rsa:2048 -nodes -keyout "$OUT/ca.key" -out "$OUT/ca.crt" \
-  -subj "/C=US/O=SOVOC SP CA/CN=SOVOC STI-CA" -days 365 2>/dev/null
+  -subj "/C=US/O=VoIPSec SP CA/CN=VoIPSec STI-CA" -days 365 2>/dev/null
 
 echo "[2] enterprise key + CSR"
 openssl req -newkey rsa:2048 -nodes -keyout "$OUT/ent.key" -out "$OUT/ent.csr" \

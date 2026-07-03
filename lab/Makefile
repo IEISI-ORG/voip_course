@@ -1,4 +1,4 @@
-# SOVOC lab control surface. `make help` lists targets.
+# VoIPSec lab control surface. `make help` lists targets.
 COMPOSE ?= docker compose
 SHELL := /bin/bash
 
@@ -24,7 +24,7 @@ restart: down up ## Recreate the topology
 status: ## Show service + network status
 	@$(COMPOSE) ps
 	@echo "--- networks ---"
-	@docker network ls --filter name=sovoc_ --format 'table {{.Name}}\t{{.Driver}}'
+	@docker network ls --filter name=voipsec_ --format 'table {{.Name}}\t{{.Driver}}'
 
 logs: ## Tail logs (use S=<service> to scope, e.g. make logs S=edge-sbc)
 	$(COMPOSE) logs -f $(S)

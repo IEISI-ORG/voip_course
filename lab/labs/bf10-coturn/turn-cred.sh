@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF10 — TURN short-term REST credential (coturn use-auth-secret). Deterministic.
+# VoIPSec BF10 — TURN short-term REST credential (coturn use-auth-secret). Deterministic.
 #   username = <unix-expiry>[:userid]   password = base64(HMAC-SHA1(secret, username))
 # Modes:
 #   turn-cred.sh gen <secret> [ttl-seconds] [userid]

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M5 Lab 5.3 — list every call in a pcap that got a 4xx/5xx final response.
+# VoIPSec M5 Lab 5.3 — list every call in a pcap that got a 4xx/5xx final response.
 # The graded deliverable is your own one-liner; this is the reference solution.
 # Usage: list-bad-calls.sh <capture.pcap>
 set -u

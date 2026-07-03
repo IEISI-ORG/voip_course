@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF6 — SIP digest interop (RFC 7616 / RFC 8760). Compute a digest response for MD5 or
+# VoIPSec BF6 — SIP digest interop (RFC 7616 / RFC 8760). Compute a digest response for MD5 or
 # SHA-256, and decide whether a client's chosen algorithm is a downgrade of what was offered.
 # Deterministic. Modes:
 #   digest-interop.sh compute <MD5|SHA-256> [--user u --realm r --pass p --method M --uri U \
@@ -18,7 +18,7 @@ H() { # H(alg, string)  -> lowercase hex
 
 compute() {
   ALG="$1"; shift
-  U=alice REALM=lab.sovoc.test P=secret M=REGISTER URI=sip:lab.sovoc.test
+  U=alice REALM=lab.voipsec.test P=secret M=REGISTER URI=sip:lab.voipsec.test
   NONCE=abc123 NC=00000001 CNONCE=deadbeef QOP=auth
   while [ $# -gt 0 ]; do case "$1" in
     --user) U="$2";; --realm) REALM="$2";; --pass) P="$2";; --method) M="$2";;

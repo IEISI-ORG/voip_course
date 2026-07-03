@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
-# SOVOC BF14 — validate the SIP DNS zone (RFC 3263). Uses named-checkzone if present; otherwise
+# VoIPSec BF14 — validate the SIP DNS zone (RFC 3263). Uses named-checkzone if present; otherwise
 # structural checks: SOA, NAPTR present, SRV failover (>=2 priorities per service), low TTL.
 # Usage: zone-check.sh [zonefile]
 set -u
-Z="${1:-$(dirname "$0")/db.lab.sovoc.test}"
+Z="${1:-$(dirname "$0")/db.lab.voipsec.test}"
 [ -f "$Z" ] || { echo "no zone file: $Z"; exit 3; }
 
 if command -v named-checkzone >/dev/null 2>&1; then
-  named-checkzone lab.sovoc.test "$Z" && { echo "ZONE OK (named-checkzone)"; exit 0; } || exit 1
+  named-checkzone lab.voipsec.test "$Z" && { echo "ZONE OK (named-checkzone)"; exit 0; } || exit 1
 fi
 
 echo "named-checkzone not present — structural validation of $Z"

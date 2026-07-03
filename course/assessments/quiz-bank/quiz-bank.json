@@ -1,5 +1,5 @@
 {
-  "title": "SOVOC Quiz Bank",
+  "title": "VoIPSec Quiz Bank",
   "note": "Per-module multiple-choice questions (security-focused). answer = 0-based index of the correct option. Rendered to a self-scoring HTML exam by E1.",
   "questions": [
     { "id": "m0-1", "module": "M0", "topic": "segmentation",

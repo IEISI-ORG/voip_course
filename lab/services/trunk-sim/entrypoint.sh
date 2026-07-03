@@ -1,5 +1,5 @@
 #!/bin/sh
-# SOVOC trunk-sim entrypoint (Stage A4).
+# VoIPSec trunk-sim entrypoint (Stage A4).
 # Roles:
 #   uas   (default) — listen on 5060 and answer calls, acting as the PSTN far end.
 #   uac   <target>  — originate an "inbound" call toward the SBC (default target: edge-sbc).

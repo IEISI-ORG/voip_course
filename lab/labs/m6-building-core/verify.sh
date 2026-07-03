@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M6 acceptance test — the strongest security grader so far: queries the live PBXs for
+# VoIPSec M6 acceptance test — the strongest security grader so far: queries the live PBXs for
 # secure-default compliance (Lab 6.3). Fail-closed: any check whose command can't run is FAIL,
 # not skipped. Run from lab/:  bash labs/m6-building-core/verify.sh
 set -u

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC D0 — generate MARP slide-outline decks from the module docs (single source of truth).
+# VoIPSec D0 — generate MARP slide-outline decks from the module docs (single source of truth).
 # One deck per module in slides/<name>.md. Rerun after editing a module; E4 renders these.
 # Run:  bash build-slides.sh
 set -u

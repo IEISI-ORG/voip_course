@@ -1,4 +1,4 @@
-# SOVOC rtpengine — media relay / SRTP bridge (Stage A1)
+# VoIPSec rtpengine — media relay / SRTP bridge (Stage A1)
 #
 # No official rtpengine image exists, so we build the daemon from source in USERSPACE
 # mode (no kernel module — correct for a container lab; kernel forwarding is a prod topic

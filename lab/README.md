@@ -1,6 +1,6 @@
-# SOVOC Reference Lab
+# VoIPSec Reference Lab
 
-The single, growing lab every SOVOC module plugs into. You build it once and then extend,
+The single, growing lab every VoIPSec module plugs into. You build it once and then extend,
 attack, defend, and operate it across the course. This is the practical counterpart to the
 course design in [`../course/`](../course/).
 
@@ -44,7 +44,7 @@ service. Track progress in [`../course/build_plan.md`](../course/build_plan.md).
 ```bash
 cp .env.example .env      # then edit secrets  (make init does this)
 make up                   # start topology
-make status               # services + sovoc_ networks
+make status               # services + voipsec_ networks
 make segtest              # M0: prove redteam cannot reach core
 make down                 # stop
 ```

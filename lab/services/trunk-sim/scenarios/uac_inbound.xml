@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE scenario SYSTEM "sipp.dtd">
-<!-- SOVOC trunk-sim UAC (Stage A4): originate an inbound "PSTN" call to a DID via the SBC.
+<!-- VoIPSec trunk-sim UAC (Stage A4): originate an inbound "PSTN" call to a DID via the SBC.
      Target DID defaults to 1001; override with -s <did> on the sipp command line. -->
 <scenario name="uac_inbound">
   <send retrans="500">
@@ -18,7 +18,7 @@
 
       v=0
       o=pstn [call_number] [call_number] IN IP[local_ip_type] [local_ip]
-      s=sovoc-trunk
+      s=voipsec-trunk
       c=IN IP[local_ip_type] [local_ip]
       t=0 0
       m=audio [media_port] RTP/AVP 0 8

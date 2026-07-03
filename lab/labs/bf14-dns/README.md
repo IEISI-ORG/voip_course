@@ -9,13 +9,13 @@ run safe TTL-based cut-overs — the runnable form of Module 9D.
 ## Auto-graded core
 ```bash
 bash labs/bf14-dns/verify.sh
-bash labs/bf14-dns/zone-check.sh labs/bf14-dns/db.lab.sovoc.test
+bash labs/bf14-dns/zone-check.sh labs/bf14-dns/db.lab.voipsec.test
 ```
 Self-validating: the zone validates (NAPTR + SRV failover + low TTL), the BIND config has DNSSEC +
 rate-limiting + recursion off, and removing the secondary SRV target is flagged.
 
 ## Build
-1. **Zone** ([`db.lab.sovoc.test`](db.lab.sovoc.test)): NAPTR selects transport (publish
+1. **Zone** ([`db.lab.voipsec.test`](db.lab.voipsec.test)): NAPTR selects transport (publish
    `SIPS+D2T` to force TLS); `_sips._tcp` / `_sip._udp` SRV records carry **two targets** at
    different priorities for client-side failover. `$TTL 30` keeps cut-overs reversible.
 2. **BIND** ([`named.conf.snippet`](named.conf.snippet)): `dnssec-policy` (signing + rollover),
@@ -25,9 +25,9 @@ rate-limiting + recursion off, and removing the secondary SRV target is flagged.
 
 ## Verify (live)
 ```bash
-dig NAPTR lab.sovoc.test
-dig SRV _sips._tcp.lab.sovoc.test
-dig +dnssec SRV _sips._tcp.lab.sovoc.test    # RRSIG present
+dig NAPTR lab.voipsec.test
+dig SRV _sips._tcp.lab.voipsec.test
+dig +dnssec SRV _sips._tcp.lab.voipsec.test    # RRSIG present
 # take the primary SRV target down -> client fails over to the secondary
 ```
 

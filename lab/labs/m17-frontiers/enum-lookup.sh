@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M17 Lab 17.2 — ENUM (RFC 6116): E.164 -> e164.arpa NAPTR query name -> SIP URI.
+# VoIPSec M17 Lab 17.2 — ENUM (RFC 6116): E.164 -> e164.arpa NAPTR query name -> SIP URI.
 # Deterministic. Uses a built-in private-ENUM sample map (no public DNS). If `dig` is present
 # and RESOLVE=1, it also queries a real NAPTR (for the lab BIND zone).
 # Usage: enum-lookup.sh "+1 415 555 0100"
@@ -15,8 +15,8 @@ echo "ENUM q  : $QNAME  (NAPTR)"
 
 # Private-ENUM sample map (number -> SIP URI). This is the internal e164.arpa zone.
 case "$NUM" in
-  14155550100) URI="sip:1001@lab.sovoc.test" ;;
-  14155550200) URI="sip:1002@lab.sovoc.test" ;;
+  14155550100) URI="sip:1001@lab.voipsec.test" ;;
+  14155550200) URI="sip:1002@lab.voipsec.test" ;;
   *)           URI="" ;;
 esac
 if [ -n "$URI" ]; then

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M13 acceptance test — SIP parser robustness (RFC 4475 / BF7). Fail-closed & self-
+# VoIPSec M13 acceptance test — SIP parser robustness (RFC 4475 / BF7). Fail-closed & self-
 # validating: the SBC must answer a valid request BEFORE and AFTER a batch of malformed input.
 # "Still answering after" = the parser dropped garbage cleanly rather than crashing (T10).
 # Run from lab/:  bash labs/m13-offensive/verify.sh

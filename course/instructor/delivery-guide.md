@@ -1,6 +1,6 @@
-# SOVOC Course Delivery Guide (D1)
+# VoIPSec Course Delivery Guide (D1)
 
-For instructors running SOVOC — Secure Open-source VoIP Operations Certificate. Covers pacing,
+For instructors running VoIPSec — Secure Open-source VoIP Operations Certificate. Covers pacing,
 prerequisites, per-cohort lab setup, the assessment flow, and operations.
 
 ## 1. Audience & prerequisites
@@ -74,5 +74,5 @@ make obs-up          # observability plane, when M5/M15 need it
   learners will run them.
 
 ## 7. Certification
-SOVOC is issued on: all module labs passed + three checkpoint exams passed + capstone pass (≥ 70
+VoIPSec is issued on: all module labs passed + three checkpoint exams passed + capstone pass (≥ 70
 and no failing security category).

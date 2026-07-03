@@ -1,4 +1,4 @@
-# SOVOC Labs (Stage B)
+# VoIPSec Labs (Stage B)
 
 Per-module hands-on labs. Each turns a module's design into a runnable, graded exercise
 against the shared lab, with an executable checker where possible (`verify.sh`).

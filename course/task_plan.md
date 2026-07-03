@@ -22,7 +22,7 @@ section. Run autonomously (no user interaction) and leave a complete plan on dis
 - [x] Phase 6: Review pass — cross-check coverage vs. SIP School, consistency, index (README.md)
 
 ## Key Decisions
-- Course name: **SOVOC — Secure Open-source VoIP Operations Certificate**.
+- Course name: **VoIPSec — Secure Open-source VoIP Operations Certificate**.
 - 18 modules (M0 orientation → M17 frontiers) + capstone, vs. SIP School's 14.
 - Reference stack: Asterisk, FreeSWITCH, Kamailio, OpenSIPS, rtpengine, Wireshark/sngrep,
   HOMER/Heplify, SIPp, Baresip/Linphone/PJSIP, OpenSSL/Let's Encrypt, fail2ban/nftables,

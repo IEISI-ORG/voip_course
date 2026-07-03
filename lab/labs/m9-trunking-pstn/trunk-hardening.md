@@ -33,7 +33,7 @@ outbound_auth=itsp-auth
 [itsp-auth]
 type=auth
 auth_type=userpass
-username=sovoc-trunk
+username=voipsec-trunk
 password=${TRUNK_SECRET}         ; from .env, never committed
 [itsp-ident]
 type=identify

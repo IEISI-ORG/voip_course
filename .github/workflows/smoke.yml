@@ -1,4 +1,4 @@
-name: sovoc-smoke
+name: voipsec-smoke
 
 # End-to-end smoke test: brings up the Docker topology and drives a real REGISTER through the
 # border. Heavy (builds community images), so it is MANUAL only (workflow_dispatch) — the routine

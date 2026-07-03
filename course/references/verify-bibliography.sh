@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC — verify the bibliography's web references are reachable.
+# VoIPSec — verify the bibliography's web references are reachable.
 # Extracts every URL from bibliography.md and checks each returns 2xx/3xx.
 #
 # Needs outbound network. Under the cron build loop the sandbox may block egress, so run this
@@ -30,9 +30,9 @@ total=0; ok=0; bad=0; badlist=""
 while IFS= read -r url; do
   [ -n "$url" ] || continue
   total=$((total+1))
-  code=$(curl -sS -o /dev/null -m 12 -L -A "sovoc-bib-check" -w '%{http_code}' -I "$url" 2>/dev/null || echo 000)
+  code=$(curl -sS -o /dev/null -m 12 -L -A "voipsec-bib-check" -w '%{http_code}' -I "$url" 2>/dev/null || echo 000)
   case "$code" in 2*|3*) : ;; *)   # some hosts reject HEAD; retry with GET
-    code=$(curl -sS -o /dev/null -m 12 -L -A "sovoc-bib-check" -w '%{http_code}' "$url" 2>/dev/null || echo 000) ;;
+    code=$(curl -sS -o /dev/null -m 12 -L -A "voipsec-bib-check" -w '%{http_code}' "$url" 2>/dev/null || echo 000) ;;
   esac
   case "$code" in
     2*|3*) ok=$((ok+1)) ;;

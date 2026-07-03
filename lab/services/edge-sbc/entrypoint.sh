@@ -1,5 +1,5 @@
 #!/bin/sh
-# SOVOC edge-sbc entrypoint (Stage A1).
+# VoIPSec edge-sbc entrypoint (Stage A1).
 # - Injects the topoh mask secret from the environment (never stored in git).
 # - Generates a self-signed TLS cert on first boot if none was mounted.
 #   Real ACME / private-CA certs replace this in M10.
@@ -20,7 +20,7 @@ if [ ! -f "$CERT" ]; then
   openssl req -x509 -newkey rsa:2048 -nodes \
     -keyout "$CERT_DIR/edge-sbc.key" \
     -out "$CERT_DIR/edge-sbc.crt" \
-    -subj "/CN=${SIP_DOMAIN:-lab.sovoc.test}" -days 365 2>/dev/null || \
+    -subj "/CN=${SIP_DOMAIN:-lab.voipsec.test}" -days 365 2>/dev/null || \
     echo "[entrypoint] openssl not present; TLS listener may not start (fixed in M10 image)"
   [ -f "$CERT_DIR/edge-sbc.crt" ] && cat "$CERT_DIR/edge-sbc.key" "$CERT_DIR/edge-sbc.crt" > "$CERT" 2>/dev/null || true
 fi

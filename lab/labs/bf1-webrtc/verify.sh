@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF1 acceptance test — WebRTC gateway prerequisites (fail-closed). Full browser<->PBX
+# VoIPSec BF1 acceptance test — WebRTC gateway prerequisites (fail-closed). Full browser<->PBX
 # media bridging is capture/manual-graded (needs a browser); this asserts the WSS transport
 # basis and that the config/client artifacts are in place and secure-by-default.
 # Run from lab/:  bash labs/bf1-webrtc/verify.sh

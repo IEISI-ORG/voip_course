@@ -14,7 +14,7 @@ Get the reproducible, segmented lab running and learn the toolchain before touch
 
 ## Learning Objectives
 
-- Stand up the full SOVOC Docker topology and verify every service is healthy.
+- Stand up the full VoIPSec Docker topology and verify every service is healthy.
 - Understand lab network segmentation and the ethical/authorized-use rules for offensive tools.
 - Know where captures, logs, configs, and secrets live, and how to reset the lab cleanly.
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M14 acceptance test — the fraud detector catches the IRSF pattern and the hardening
+# VoIPSec M14 acceptance test — the fraud detector catches the IRSF pattern and the hardening
 # checklist exists (Labs 14.1/14.2). Deterministic (offline analytics); fail-closed.
 # Run from lab/:  bash labs/m14-defense-fraud/verify.sh
 set -u

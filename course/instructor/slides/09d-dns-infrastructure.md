@@ -36,7 +36,7 @@ DNS is how SIP finds servers and survives failure — and a prime target for red
 
 ## 2. Packet Reality
 
-- `dig NAPTR lab.sovoc.test`, `dig SRV _sip._udp.lab.sovoc.test`, `dig +dnssec` — read the
+- `dig NAPTR lab.voipsec.test`, `dig SRV _sip._udp.lab.voipsec.test`, `dig +dnssec` — read the
 - Capture a client resolving and then registering; kill the primary SRV target and watch the
 
 <!-- Speaker note: connect this beat to the module's security takeaway. -->
@@ -44,7 +44,7 @@ DNS is how SIP finds servers and survives failure — and a prime target for red
 
 ## 3. Build (OSS)
 
-- **BIND9** (or dnsmasq) authoritative zone for `lab.sovoc.test`: NAPTR + `_sip._udp` /
+- **BIND9** (or dnsmasq) authoritative zone for `lab.voipsec.test`: NAPTR + `_sip._udp` /
 - Configure **DNSSEC** signing of the zone; validate with `dig +dnssec`.
 - Point Kamailio/Asterisk at the resolver and enable DNS **SRV failover** (Kamailio
 - (Stretch) simulate anycast with two resolver instances sharing an address on the lab bridge.

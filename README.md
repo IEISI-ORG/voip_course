@@ -1,4 +1,4 @@
-# SOVOC — Secure Open-source VoIP Operations Certificate
+# VoIPSec — Secure Open-source VoIP Operations Certificate
 
 An open-source, security-first VoIP training course modelled on The SIP School's SSCA "Elite"
 programme but rebuilt around open-source tools and an emphasis on **secure VoIP operations**.
@@ -17,7 +17,7 @@ reproducible **Docker lab** that learners build, attack, defend, and operate acr
 | [`course/assessments/`](course/assessments/) | Checkpoint exams (answer keys + rubrics) |
 | [`course/references/`](course/references/) | Bibliography (RFCs/standards/KBs) + glossary |
 | [`course/requirements-traceability.md`](course/requirements-traceability.md) | Requirements → status → evidence matrix |
-| [`course/README.md`](course/README.md) | Course index + SIP School → SOVOC coverage crosswalk |
+| [`course/README.md`](course/README.md) | Course index + SIP School → VoIPSec coverage crosswalk |
 | [`lab/`](lab/) | The reproducible Docker lab (SBC, PBXs, trunk, clients, observability, red-team) |
 | [`lab/labs/`](lab/labs/) | Per-module hands-on labs with `verify.sh` auto-graders |
 

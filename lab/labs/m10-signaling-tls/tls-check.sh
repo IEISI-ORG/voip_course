@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M10 — inspect the SBC's TLS cert (Labs 10.2 / 10.3). Prints subject/issuer/validity and
+# VoIPSec M10 — inspect the SBC's TLS cert (Labs 10.2 / 10.3). Prints subject/issuer/validity and
 # days-to-expiry, and does a live handshake from the client. Feeds the cert-expiry alert lab.
 # Run from lab/.
 set -u

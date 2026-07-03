@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M4 — RTP bandwidth budget calculator (Lab 4.2). Deterministic; no lab needed.
+# VoIPSec M4 — RTP bandwidth budget calculator (Lab 4.2). Deterministic; no lab needed.
 # Shows how header overhead (RTP 12 + UDP 8 + IPv4 20 = 40 B, + Ethernet 18 B) inflates the
 # on-the-wire rate versus the raw codec bitrate, at different ptimes.
 # Usage: bw-budget.sh          (default table)

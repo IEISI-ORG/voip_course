@@ -4,7 +4,7 @@
 touching SIP. **Est. time:** 2h · **Prereqs:** Linux CLI, Docker basics.
 
 ## Learning Objectives
-- Stand up the full SOVOC Docker topology and verify every service is healthy.
+- Stand up the full VoIPSec Docker topology and verify every service is healthy.
 - Understand lab network segmentation and the ethical/authorized-use rules for offensive tools.
 - Know where captures, logs, configs, and secrets live, and how to reset the lab cleanly.
 

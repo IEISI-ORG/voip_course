@@ -1,11 +1,11 @@
-# AUTHORIZED USE ONLY — SOVOC redteam container
+# AUTHORIZED USE ONLY — VoIPSec redteam container
 
 This container holds offensive VoIP tools (SIPVicious, SIPp fuzzers). It exists to teach
 **defense** by demonstrating attacks against a system you are explicitly authorized to test:
-the SOVOC lab.
+the VoIPSec lab.
 
 ## Rules of engagement
-1. **Targets:** only the SOVOC lab on the `edge` (172.28.10.0/24) and `redteam`
+1. **Targets:** only the VoIPSec lab on the `edge` (172.28.10.0/24) and `redteam`
    (172.28.40.0/24) networks. The container is not attached to `core`/`mgmt` and cannot reach
    production-style services by design.
 2. **No external targets.** Running these tools against any host you do not own or have

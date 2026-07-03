@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF10 — audit a coturn config for the key hardening controls. Deterministic.
+# VoIPSec BF10 — audit a coturn config for the key hardening controls. Deterministic.
 # Usage: coturn-audit.sh <turnserver.conf>
 set -u
 F="${1:?usage: coturn-audit.sh <turnserver.conf>}"

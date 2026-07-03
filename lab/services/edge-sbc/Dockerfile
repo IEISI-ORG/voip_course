@@ -1,4 +1,4 @@
-# SOVOC edge-sbc — Kamailio border SBC (Stage A1)
+# VoIPSec edge-sbc — Kamailio border SBC (Stage A1)
 # Pin KAMAILIO_TAG in .env; verify the tag exists on the official image before a cohort runs.
 ARG KAMAILIO_TAG=5.8-alpine
 FROM kamailio/kamailio:${KAMAILIO_TAG}

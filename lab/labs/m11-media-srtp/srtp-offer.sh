@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M11 — send an SDES-SRTP offer and read the answer (Labs 11.1 / 11.3).
+# VoIPSec M11 — send an SDES-SRTP offer and read the answer (Labs 11.1 / 11.3).
 # The offer requests RTP/SAVP with an a=crypto line. Watch the answer:
 #   - a peer/anchor that supports SRTP answers RTP/SAVP + a=crypto  (11.1 secure)
 #   - a plain peer answers RTP/AVP (no crypto) -> would be a silent downgrade

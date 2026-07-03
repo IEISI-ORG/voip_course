@@ -4,6 +4,6 @@
 . /opt/redteam/scripts/_guard.sh
 TARGET="${1:-172.28.10.10}"
 RANGE="${2:-1000-1010}"
-sovoc_guard "$TARGET"
+voipsec_guard "$TARGET"
 echo "[lab-enum] svwar -e $RANGE $TARGET (authorized lab enumeration)"
 exec svwar -e "$RANGE" "$TARGET"

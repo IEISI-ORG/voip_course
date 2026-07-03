@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M16 Lab 16.1 — SIPp load + regression test. Drives calls from `client` to `trunk-sim`
+# VoIPSec M16 Lab 16.1 — SIPp load + regression test. Drives calls from `client` to `trunk-sim`
 # (which answers) at a chosen rate and reports capacity + the failure mode.
 # Usage: load-test.sh   env: RATE=<cps> CALLS=<total> TARGET=<ip>
 # Run from lab/.

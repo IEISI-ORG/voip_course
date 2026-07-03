@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF12 acceptance test — honeypot log -> blocklist pipeline (offline, deterministic,
+# VoIPSec BF12 acceptance test — honeypot log -> blocklist pipeline (offline, deterministic,
 # fail-closed & self-validating). Run from lab/:  bash labs/bf12-honeypot/verify.sh
 set -u
 cd "$(dirname "$0")/../.." || exit 3

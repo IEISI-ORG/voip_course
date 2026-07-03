@@ -11,7 +11,7 @@ and demonstrate a clean reset. No SIP theory yet — just make the platform real
 cd lab
 make init          # create .env from template — then edit secrets
 make up            # start the base topology (obs is separate: make obs-up)
-make status        # services + sovoc_ networks
+make status        # services + voipsec_ networks
 ```
 
 ## Lab 0.1 — Bring-up & health  (40 pts)
@@ -38,7 +38,7 @@ make status        # services + sovoc_ networks
    ```
 2. Watch/record it. Either:
    - live ladder: `docker compose exec -it client sngrep -d any`, or
-   - pcap: capture on the host bridge for `sovoc_edge` with `tshark`/Wireshark and re-run gen-call.
+   - pcap: capture on the host bridge for `voipsec_edge` with `tshark`/Wireshark and re-run gen-call.
 3. Identify the INVITE → 200 OK → ACK → BYE and note that the SBC (topology hiding) rewrote
    the internal addresses.
 

@@ -1,4 +1,4 @@
-# SOVOC trunk-sim — simulated PSTN peer (Stage A4)
+# VoIPSec trunk-sim — simulated PSTN peer (Stage A4)
 # SIPp-based external trunk on the edge. Answers outbound calls (UAS) and can originate
 # inbound "PSTN" calls (UAC) against the SBC. Reproducible from Debian's sip-tester package.
 FROM debian:bookworm-slim

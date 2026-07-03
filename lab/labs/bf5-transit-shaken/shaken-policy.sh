@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF5 — transit/gateway STIR/SHAKEN policy decision (RFC 8224/8588/8816).
+# VoIPSec BF5 — transit/gateway STIR/SHAKEN policy decision (RFC 8224/8588/8816).
 # Decides: strip inbound Identity? apply which attestation (A/B/C)? use Out-of-Band SHAKEN?
 # Deterministic — encodes the gateway's obligations so they can be audited/tested.
 #

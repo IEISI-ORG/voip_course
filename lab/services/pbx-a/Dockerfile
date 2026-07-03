@@ -1,4 +1,4 @@
-# SOVOC pbx-a — Asterisk application server (Stage A2)
+# VoIPSec pbx-a — Asterisk application server (Stage A2)
 # Debian bookworm ships Asterisk 20 (LTS), which keeps the lab reproducible without a
 # third-party image. TLS/SRTP arrive in M10/M11; this base is chan_pjsip only, closed by default.
 FROM debian:bookworm-slim

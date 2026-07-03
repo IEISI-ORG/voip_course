@@ -4,7 +4,7 @@
 # crash the border and returns a well-formed 4xx.
 . /opt/redteam/scripts/_guard.sh
 TARGET="${1:-172.28.10.10}"
-sovoc_guard "$TARGET"
+voipsec_guard "$TARGET"
 
 echo "[lab-fuzz] sending a malformed OPTIONS to $TARGET:5060 (expect a clean 4xx, no crash)"
 # Deliberately malformed: bad Max-Forwards + truncated headers.

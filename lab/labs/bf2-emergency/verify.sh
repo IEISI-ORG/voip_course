@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC BF2 acceptance test — emergency-call construction is correct (offline, deterministic,
+# VoIPSec BF2 acceptance test — emergency-call construction is correct (offline, deterministic,
 # fail-closed). Routing 911 to a PSAP sim + SBC not stripping the PIDF-LO is capture-graded.
 # Run from lab/:  bash labs/bf2-emergency/verify.sh
 set -u

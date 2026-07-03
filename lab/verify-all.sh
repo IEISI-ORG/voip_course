@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC — lab environment test & verification harness.
+# VoIPSec — lab environment test & verification harness.
 # Runs every module lab's verify.sh and prints a pass/fail summary. This is the top-level
 # "does the whole lab still work" check (CI-friendly: non-zero exit if any grader fails).
 #

@@ -1,7 +1,7 @@
 <!--
-  SOVOC pbx-b user 1003 (Stage A3). Password comes from the global default_password var,
+  VoIPSec pbx-b user 1003 (Stage A3). Password comes from the global default_password var,
   which the entrypoint injects from FS_DEFAULT_PASSWORD (never the stock 1234). Per-user
-  secrets + digest hardening (RFC 8760) arrive in M12. user_context = sovoc (restricted).
+  secrets + digest hardening (RFC 8760) arrive in M12. user_context = voipsec (restricted).
 -->
 <include>
   <user id="1003">
@@ -10,7 +10,7 @@
       <param name="vm-password" value="1003"/>
     </params>
     <variables>
-      <variable name="user_context" value="sovoc"/>
+      <variable name="user_context" value="voipsec"/>
       <variable name="effective_caller_id_name" value="Carol 1003"/>
       <variable name="effective_caller_id_number" value="1003"/>
     </variables>

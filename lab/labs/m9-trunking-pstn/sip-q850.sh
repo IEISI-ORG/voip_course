@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M9 Lab 9.2 — SIP status <-> Q.850 cause mapping (per RFC 3398). Deterministic lookup.
+# VoIPSec M9 Lab 9.2 — SIP status <-> Q.850 cause mapping (per RFC 3398). Deterministic lookup.
 # Usage: sip-q850.sh            # print the common mapping table
 #        sip-q850.sh 486        # look up one SIP code
 set -u

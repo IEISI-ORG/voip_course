@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SOVOC M12 acceptance test — proves enumeration is mitigated (Lab 12.3) and the PASSporT tool
+# VoIPSec M12 acceptance test — proves enumeration is mitigated (Lab 12.3) and the PASSporT tool
 # works (Lab 12.2). Self-validating & fail-closed: a plain probe is answered, then an authorized
 # svwar enumeration run must get the source banned. (Bans redteam IP ~300s.)
 # Run from lab/:  bash labs/m12-authn-identity/verify.sh
