@@ -328,6 +328,13 @@ when their parent B-task is reached.
   checklist, red-team report, IR runbooks, detection-coverage map). Clean, no fixes. Updated
   traceability. Pass 6 (definition-of-done sweep) next, then resume BF12.
 
+- Iteration 50 (2026-07-03): requirements audit **pass 6 (definition-of-done sweep)** — found and
+  fixed real drift in the README PROGRESS block (self-contradictory/stale lines: "#3 pending" vs
+  all-done, duplicate BF status) and the "What's here" table (removed the deleted `reviews/` row,
+  added glossary + traceability; corrected the feedback-handling description). **6-pass
+  requirements audit COMPLETE** — verdict: all A1–A5 + processed feedback satisfied; only BF12–14
+  and the packaging tier remain (tracked). Loop resumes BF12 next.
+
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
   (positive-control gating, fail-closed). Verified bash-clean.

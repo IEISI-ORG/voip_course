@@ -1,8 +1,11 @@
 # Requirements Traceability Matrix
 
 Started iter 46 (feedback: "make sure we are on track to satisfy all requirements"). Maps every
-requirement — original ask + each feedback item — to its status and evidence. Reviewed over the
-6-iteration audit; kept current thereafter.
+requirement — original ask + each feedback item — to its status and evidence.
+
+**Audit verdict (6 passes, iters 46–50):** all original requirements (A1–A5) and every processed
+feedback item are ✅ satisfied and verified. Outstanding work is tracked, not forgotten: BF12–14
+deep labs + the packaging tier (C0/C2, E1/E4, D0/D1). No requirement is missing or off-track.
 
 Status: ✅ done · 🟡 partial/in-progress · ⬜ open
 
@@ -26,7 +29,7 @@ Status: ✅ done · 🟡 partial/in-progress · ⬜ open
 | bibliography (24) | RFC/standards + KB bibliography | ✅ | `references/bibliography.md` |
 | bib-verify + MARP (25) | verify bib + MARP to plan + memorize | 🟡 | `verify-bibliography.sh` ✅, memory ✅, **MARP slides (E4) open** |
 | consistency audit (40) | 3-pass standards/consistency + questions.md | ✅ | passes 1–3 done; RCD/8588 fixes; questions.md |
-| requirements audit (46) | 6-iteration on-track review + memory upkeep | 🟡 | this doc (passes 1–3); memory refreshed |
+| requirements audit (46) | 6-iteration on-track review + memory upkeep | ✅ | **6 passes done:** matrix, grader health (11/11 offline PASS), Q&A+housekeeping, feedback threading (10+6 markers, BF1–11), coverage (14/14 SSCA) + capstone, README definition-of-done sweep |
 | Q&A + housekeeping (47) | answer Q2/Q3/Q4; glossary; remove committed feedback; prune questions | ✅ | Q2=A subset (holds), Q3=A, Q4 terminology; `references/glossary.md`; feedback files removed + gitignored; questions.md pruned |
 
 ## C. Open / remaining backlog (must close to "satisfy all requirements")
