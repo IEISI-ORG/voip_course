@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOVOC Practice Exam</title>
+<style>
+ body{font:16px/1.5 system-ui,sans-serif;max-width:820px;margin:2rem auto;padding:0 1rem;color:#111}
+ h1{margin-bottom:.2rem} .sub{color:#666;margin-top:0}
+ .q{border:1px solid #ddd;border-radius:8px;padding:1rem;margin:1rem 0}
+ .q .mod{font-size:.8rem;color:#0a6;font-weight:600}
+ label{display:block;padding:.25rem 0;cursor:pointer}
+ button{font-size:1rem;padding:.6rem 1.2rem;border:0;border-radius:6px;background:#0a6;color:#fff;cursor:pointer}
+ #result{font-size:1.2rem;font-weight:700;margin:1rem 0;padding:1rem;border-radius:8px}
+ .pass{background:#e6f7ee;color:#0a6} .fail{background:#fdecea;color:#c0392b}
+ .ok{color:#0a6} .no{color:#c0392b} .correct{font-weight:600}
+</style></head><body>
+<h1>SOVOC Practice Exam</h1>
+<p class="sub">Self-assessment (answers are scored in your browser). Pass mark 70%.</p>
+<form id="exam"></form>
+<button id="submit">Submit &amp; score</button>
+<div id="result" hidden></div>
+<script id="quizdata" type="application/json">
+{
+  "title": "SOVOC Quiz Bank",
+  "note": "Per-module multiple-choice questions (security-focused). answer = 0-based index of the correct option. Rendered to a self-scoring HTML exam by E1.",
+  "questions": [
+    { "id": "m0-1", "module": "M0", "topic": "segmentation",
+      "q": "Why is the redteam container attached only to the edge and redteam networks?",
+      "options": ["To share state with the core PBXs", "Because Docker requires it", "To speed up scanning", "To enforce DMZ-style isolation so offensive tools can't reach core/mgmt"],
+      "answer": 3 },
+    { "id": "m1-1", "module": "M1", "topic": "attack surface (T7)",
+      "q": "Which information most enables caller-ID spoofing in base SIP?",
+      "options": ["The Via branch parameter", "The Max-Forwards value", "The unauthenticated From / P-Asserted-Identity headers", "The Call-ID"],
+      "answer": 2 },
+    { "id": "m2-1", "module": "M2", "topic": "transactions",
+      "q": "The RFC 3261 branch magic cookie (z9hG4bK) guarantees that the branch is:",
+      "options": ["A unique transaction identifier across the Via chain", "An encryption key", "Proof the caller authenticated", "The media port"],
+      "answer": 0 },
+    { "id": "m3-1", "module": "M3", "topic": "SDP redirection (T9)",
+      "q": "An attacker rewrites the SDP c= line. What defeats the resulting RTP redirection?",
+      "options": ["A longer Call-ID", "Media anchoring at the SBC/rtpengine", "Switching to TCP", "A smaller ptime"],
+      "answer": 1 },
+    { "id": "m4-1", "module": "M4", "topic": "codec bandwidth",
+      "q": "G.711 at 20 ms ptime is approximately what one-way IP-layer bitrate?",
+      "options": ["8 kbps", "24 kbps", "80 kbps", "512 kbps"],
+      "answer": 2 },
+    { "id": "m5-1", "module": "M5", "topic": "evidence handling (T14)",
+      "q": "A troubleshooting capture contains DTMF-entered card digits. Compliant handling is to:",
+      "options": ["Keep it indefinitely for reference", "Email it to the whole team", "Drop the media plane, keep signaling, and hash the artifact with custody", "Delete every capture you ever take"],
+      "answer": 2 },
+    { "id": "m6-1", "module": "M6", "topic": "secure defaults",
+      "q": "Which is a required secure-default for the PBX?",
+      "options": ["Enable guest/anonymous calling", "Unload chan_sip, disable AMI/ARI, no anonymous endpoint", "Make secret files world-readable", "Load every channel driver"],
+      "answer": 1 },
+    { "id": "m7-1", "module": "M7", "topic": "topology hiding",
+      "q": "Kamailio topoh (topology hiding) prevents:",
+      "options": ["Toll fraud", "Cert expiry", "Internal core IPs / Via / Record-Route leaking to the edge", "DTMF capture"],
+      "answer": 2 },
+    { "id": "m8-1", "module": "M8", "topic": "banning strategies",
+      "q": "pike rate-limiting bans on behaviour; a scanner-UA rule bans on:",
+      "options": ["Signature (a known-bad User-Agent)", "Geography", "Time of day", "Media codec"],
+      "answer": 0 },
+    { "id": "m9-1", "module": "M9", "topic": "Q.850 mapping",
+      "q": "SIP 486 Busy Here maps to which Q.850 cause?",
+      "options": ["1 (unallocated number)", "34 (no circuit available)", "21 (call rejected)", "17 (user busy)"],
+      "answer": 3 },
+    { "id": "m9d-1", "module": "M9D", "topic": "DNS transport selection",
+      "q": "Publishing only a NAPTR 'SIPS+D2T' record for a domain effectively:",
+      "options": ["Disables DNS for the domain", "Forces TLS transport for the SIP service", "Enables ENUM", "Blocks IPv6"],
+      "answer": 1 },
+    { "id": "m10-1", "module": "M10", "topic": "TLS hop-by-hop",
+      "q": "SIP TLS is hop-by-hop, which means:",
+      "options": ["Media is encrypted end to end", "The PSTN leg is encrypted", "Each proxy terminates TLS and sees cleartext internally", "DNS answers are signed"],
+      "answer": 2 },
+    { "id": "m11-1", "module": "M11", "topic": "SDES depends on TLS",
+      "q": "Why does SDES-SRTP depend on TLS-protected signaling?",
+      "options": ["The SRTP key is carried in the SDP a=crypto line, exposed if signaling is plaintext", "SRTP needs TCP", "It uses the TLS certificate as the media key", "DTLS mandates it"],
+      "answer": 0 },
+    { "id": "m12-1", "module": "M12", "topic": "attestation A",
+      "q": "STIR/SHAKEN attestation 'A' requires the signer to:",
+      "options": ["Own any TLS certificate", "Use MD5 digest", "Have authenticated the caller AND be authorized for the number", "Be a transit gateway"],
+      "answer": 2 },
+    { "id": "m12-2", "module": "M12", "topic": "delegate certs (RFC 9060)",
+      "q": "RFC 9060 delegate certificates let an enterprise:",
+      "options": ["Sign its own PASSporT at A, scoped by TNAuthList", "Skip DNSSEC", "Issue certs for any number", "Avoid TLS"],
+      "answer": 0 },
+    { "id": "m13-1", "module": "M13", "topic": "parser robustness (T10)",
+      "q": "An RFC 4475 SIP torture test primarily verifies that the parser:",
+      "options": ["Rotates certificates", "Load-balances calls", "Encrypts media", "Drops malformed input cleanly without crashing or hanging"],
+      "answer": 3 },
+    { "id": "m14-1", "module": "M14", "topic": "toll-fraud backstop (T4)",
+      "q": "The essential backstop control against IRSF toll fraud is:",
+      "options": ["A longer SIP password", "A hard spend cap that bounds the loss", "Disabling logging", "Using UDP"],
+      "answer": 1 },
+    { "id": "m14-2", "module": "M14", "topic": "provisioning (T15)",
+      "q": "Insecure auto-provisioning most directly leaks:",
+      "options": ["RTP media", "DNS records", "Device SIP credentials over plaintext TFTP/HTTP", "TLS private keys of the CA"],
+      "answer": 2 },
+    { "id": "m15-1", "module": "M15", "topic": "detection coverage",
+      "q": "In the red→blue arc, every M13 finding must have a ___ so a repeat is seen:",
+      "options": ["New password", "Detection signature", "Firewall reboot", "Fresh certificate"],
+      "answer": 1 },
+    { "id": "m16-1", "module": "M16", "topic": "K8s media security",
+      "q": "The secure alternative to `hostNetwork: true` for RTP media in Kubernetes is:",
+      "options": ["Run pods privileged", "A Multus dedicated interface + Pod Security Standards restricted", "runAsUser 0", "Disable seccomp"],
+      "answer": 1 },
+    { "id": "m17-1", "module": "M17", "topic": "ENUM",
+      "q": "ENUM maps a telephone number to a URI using:",
+      "options": ["Reversed digits under e164.arpa NAPTR records", "An SRV record on port 5060", "A PIDF-LO body", "A TLS certificate"],
+      "answer": 0 },
+    { "id": "m17-2", "module": "M17", "topic": "emergency calling",
+      "q": "A dispatchable location for an emergency call is carried as:",
+      "options": ["A Resource-Priority header only", "A PIDF-LO body (RFC 4119) in a multipart INVITE", "The Call-ID", "An SDP attribute"],
+      "answer": 1 }
+  ]
+}
+
+</script>
+<script>
+(function(){
+  var data = JSON.parse(document.getElementById("quizdata").textContent);
+  var qs = data.questions || [], form = document.getElementById("exam");
+  qs.forEach(function(q,i){
+    var div = document.createElement("div"); div.className="q";
+    var h = document.createElement("div"); h.className="mod"; h.textContent = q.module + " · " + (q.topic||"");
+    var p = document.createElement("p"); p.textContent = (i+1)+". "+q.q; p.style.fontWeight="600";
+    div.appendChild(h); div.appendChild(p);
+    (q.options||[]).forEach(function(opt,j){
+      var lab=document.createElement("label");
+      var r=document.createElement("input"); r.type="radio"; r.name="q"+i; r.value=j;
+      lab.appendChild(r); lab.appendChild(document.createTextNode(" "+opt));
+      div.appendChild(lab);
+    });
+    var fb=document.createElement("div"); fb.id="fb"+i; div.appendChild(fb);
+    form.appendChild(div);
+  });
+  document.getElementById("submit").onclick=function(){
+    var correct=0;
+    qs.forEach(function(q,i){
+      var sel=form.querySelector('input[name="q'+i+'"]:checked');
+      var fb=document.getElementById("fb"+i);
+      var got = sel? parseInt(sel.value,10) : -1;
+      if(got===q.answer){ correct++; fb.className="ok"; fb.textContent="✓ correct"; }
+      else { fb.className="no"; fb.innerHTML="✗ correct answer: <span class='correct'>"+q.options[q.answer]+"</span>"; }
+    });
+    var pct=Math.round(100*correct/qs.length);
+    var r=document.getElementById("result"); r.hidden=false;
+    r.className = pct>=70 ? "pass":"fail";
+    r.textContent = "Score: "+correct+"/"+qs.length+" ("+pct+"%) — "+(pct>=70?"PASS":"try again");
+    r.scrollIntoView({behavior:"smooth"});
+  };
+})();
+</script>
+</body></html>

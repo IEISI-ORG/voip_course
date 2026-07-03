@@ -41,3 +41,19 @@ if issues:
     sys.exit(1)
 print("QUIZ BANK: PASS")
 PY
+qb=$?
+[ "$qb" -eq 0 ] || exit 1
+
+echo "== E1 HTML exam is generated, self-contained, and in sync =="
+efail=0
+bash build-exam.sh >/dev/null 2>&1 && echo "  ok: exam.html regenerates" || { echo "  FAIL: build-exam.sh"; efail=1; }
+if grep -qE 'src="https?://|href="https?://' exam.html; then echo "  FAIL: exam.html loads an external resource"; efail=1; else echo "  ok: no external resources (self-contained)"; fi
+grep -q 'id="quizdata"' exam.html && echo "  ok: quiz data embedded" || { echo "  FAIL: no embedded quiz data"; efail=1; }
+qn=$(python3 -c "import re,json,sys; m=re.search(r'application/json\">(.*?)</script>', open('exam.html').read(), re.S); print(len(json.loads(m.group(1))['questions']))" 2>/dev/null)
+bn=$(python3 -c "import json; print(len(json.load(open('quiz-bank.json'))['questions']))" 2>/dev/null)
+[ -n "$qn" ] && [ "$qn" = "$bn" ] && echo "  ok: exam has all $qn bank questions (in sync)" || { echo "  FAIL: exam/bank question count mismatch ($qn vs $bn)"; efail=1; }
+# fail if a tracked exam.html would differ from freshly-generated (drift)
+if command -v git >/dev/null 2>&1 && git ls-files --error-unmatch exam.html >/dev/null 2>&1; then
+  git diff --quiet -- exam.html && echo "  ok: committed exam.html matches the bank" || { echo "  FAIL: exam.html is stale — run build-exam.sh and commit"; efail=1; }
+fi
+[ "$efail" -eq 0 ] && echo "E1 EXAM: PASS" || { echo "E1 EXAM: FAIL"; exit 1; }

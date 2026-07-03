@@ -74,7 +74,7 @@ when their parent B-task is reached.
       verify.sh (`make verify-all`, iter 22); CI workflow `.github/workflows/ci.yml` added iter 32
       (lint + compose config + offline graders + bibliography). TODO: per-service healthcheck
       rollup + a smoke-call end-to-end test in CI (needs a dockerized topology runner).
-- [ ] E1. Package multiple-choice exams as standalone deployable HTML (self-contained, no server;
+- [x] E1. Package multiple-choice exams as standalone deployable HTML (self-contained, no server;
       score client-side). Start with checkpoint exams' MC portions.
 - [~] E3. Living bibliography of RFCs/standards + package KBs — `course/references/bibliography.md`
       (started iter 24). Verification set up iter 25: `course/references/verify-bibliography.sh`
@@ -363,6 +363,12 @@ when their parent B-task is reached.
   questions covering all 19 modules (M0–M17 + M9D), machine-readable (answer = option index).
   verify.sh validates structure + coverage + anti-clustering (answers spread across all four
   positions). Serves as the input for E1 (HTML exam). bash/JSON-checked + executed.
+
+- Iteration 55 (2026-07-04): built E1 (standalone HTML exam). build-exam.sh generates exam.html
+  from quiz-bank.json (data inlined; no external scripts → no CDN/SRI exposure; works from
+  file://), client-side scored (practice tool — answers ship in page; real grading is server-side).
+  Extended verify.sh: exam regenerates, self-contained, in-sync with the bank, and a git-drift
+  check (stale exam.html fails). PASSES. Next: E4 MARP + D0/D1.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
