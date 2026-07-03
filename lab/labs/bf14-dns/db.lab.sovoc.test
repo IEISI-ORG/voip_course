@@ -1,0 +1,25 @@
+; SOVOC BF14 — authoritative zone for lab.sovoc.test (RFC 3263 SIP server location).
+; Low $TTL so a cut-over/rollback propagates in seconds. Validate: named-checkzone.
+$TTL 30
+@       IN  SOA ns1.lab.sovoc.test. admin.lab.sovoc.test. (
+                2026070401 ; serial (YYYYMMDDnn)
+                3600       ; refresh
+                600        ; retry
+                86400      ; expire
+                30 )       ; negative-cache TTL
+        IN  NS  ns1.lab.sovoc.test.
+ns1     IN  A   172.28.30.53
+
+; SIP border servers — primary + secondary (for SRV failover)
+edge-sbc    IN  A  172.28.10.10
+edge-sbc-2  IN  A  172.28.10.12
+
+; NAPTR (RFC 3263): prefer SIPS/TLS, then SIP/UDP. Publishing only SIPS forces TLS.
+@   IN  NAPTR  10 100 "s" "SIPS+D2T" "" _sips._tcp.lab.sovoc.test.
+@   IN  NAPTR  20 100 "s" "SIP+D2U"  "" _sip._udp.lab.sovoc.test.
+
+; SRV: priority = failover order (lower first), weight = load share.
+_sips._tcp  IN  SRV  10 100 5061 edge-sbc.lab.sovoc.test.
+_sips._tcp  IN  SRV  20 100 5061 edge-sbc-2.lab.sovoc.test.
+_sip._udp   IN  SRV  10 100 5060 edge-sbc.lab.sovoc.test.
+_sip._udp   IN  SRV  20 100 5060 edge-sbc-2.lab.sovoc.test.

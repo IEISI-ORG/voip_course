@@ -58,7 +58,7 @@ when their parent B-task is reached.
 - [x] BF11. M12: STIR/SHAKEN delegate certs (RFC 9060) — enterprise self-signed PASSporT, A-level
 - [x] BF12. M14/M15: SIP honeypot → nftables ipset blocklist + Wazuh active-response aggregation
 - [x] BF13. M16: cloud-native K8s — Multus vs hostNetwork media, Pod Security Standards (restricted)
-- [ ] BF14. M9D: DNS infra lab — BIND9 NAPTR/SRV zone, SRV failover, DNSSEC + spoof mitigation, TTL cut-over/rollback
+- [x] BF14. M9D: DNS infra lab — BIND9 NAPTR/SRV zone, SRV failover, DNSSEC + spoof mitigation, TTL cut-over/rollback
 
 ### Stage C — Assessment content
 - [ ] C0. Per-module quiz bank (question + answer key + rubric) M0..M17
@@ -346,6 +346,12 @@ when their parent B-task is reached.
   privilege-escalation, root, missing cap-drop/seccomp), media-pod-secure.yaml (Multus + restricted
   context), media-pod-insecure.yaml (anti-pattern). verify.sh PASSES 8/8 self-validating (accepts
   hardened, rejects insecure with 7 violations). bash-checked + executed. Pushed.
+
+- Iteration 52 (2026-07-04): built BF14 (DNS infra, M9D runnable) — db.lab.sovoc.test (RFC 3263
+  NAPTR + SRV failover, low TTL), named.conf.snippet (dnssec-policy + RRL + recursion off),
+  zone-check.sh (named-checkzone or structural). verify.sh PASSES 7/7 self-validating (flags a
+  removed secondary SRV). bash-checked + executed. **ALL 14 BF DEEP LABS COMPLETE.** Next: the
+  packaging tier (C0 quiz bank, C2 capstone grading harness, E1 HTML MC exams, E4 MARP, D0/D1).
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

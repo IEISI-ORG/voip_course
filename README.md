@@ -45,16 +45,16 @@ findings from automated review are addressed and logged.
 ## Progress
 
 <!-- PROGRESS:START (updated each iteration) -->
-- **Iteration:** 51 · **Date:** 2026-07-03 · **HEAD:** `git log --oneline -1`
+- **Iteration:** 52 · **Date:** 2026-07-04 · **HEAD:** `git log --oneline -1`
 - **Design:** ✅ complete — 18 modules + M9D (DNS Infrastructure) + capstone
 - **Stage A (lab foundation):** ✅ complete (8 services)
 - **Stage B (per-module labs):** ✅ complete — all 18 module labs (M0–M17), each with a `verify.sh`
 - **Assessments:** ✅ all 3 checkpoint exams (keys held separately in `assessments/answer-keys/`)
-- **Feedback-driven BF labs:** BF1–BF13 done; **BF14 pending** (last BF lab)
+- **Feedback-driven BF labs:** ✅ **all 14 done (BF1–BF14)**
 - **Consistency audit:** ✅ complete (3 passes) · **Requirements audit:** ✅ complete (6 passes) — see [`course/requirements-traceability.md`](course/requirements-traceability.md)
 - **CI:** `.github/workflows/ci.yml` (shell/YAML lint, compose config, offline graders) · **Testing:** `make verify-all`
 - **References:** [bibliography](course/references/bibliography.md) + [glossary](course/references/glossary.md) + `verify-bibliography.sh`
-- **Remaining backlog:** BF14, C0 quiz bank, C2 capstone grading harness, E1 HTML MC exams, E4 MARP slides, D0/D1 instructor material
+- **Remaining backlog:** C0 quiz bank, C2 capstone grading harness, E1 HTML MC exams, E4 MARP slides, D0/D1 instructor material
 - Full detail: [`course/build_plan.md`](course/build_plan.md) (iteration log).
 <!-- PROGRESS:END -->
 
