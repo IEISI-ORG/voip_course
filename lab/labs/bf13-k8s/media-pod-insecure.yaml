@@ -1,0 +1,15 @@
+# SOVOC BF13 — the ANTI-PATTERN. hostNetwork + privileged + root: big container-escape blast
+# radius. pss-audit.sh MUST reject this; PSS "restricted" admission MUST deny it.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sovoc-media-bad
+spec:
+  hostNetwork: true          # collapses pod<->node isolation (the shortcut for RTP ports)
+  containers:
+    - name: rtpengine
+      image: rtpengine:latest
+      securityContext:
+        privileged: true      # full node access
+        runAsUser: 0          # root
+        allowPrivilegeEscalation: true

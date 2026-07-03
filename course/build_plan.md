@@ -57,7 +57,7 @@ when their parent B-task is reached.
 - [x] BF10. M8: coturn/TURN hardening — use-auth-secret, denied-peer-ip (internal), quotas, TLS
 - [x] BF11. M12: STIR/SHAKEN delegate certs (RFC 9060) — enterprise self-signed PASSporT, A-level
 - [x] BF12. M14/M15: SIP honeypot → nftables ipset blocklist + Wazuh active-response aggregation
-- [ ] BF13. M16: cloud-native K8s — Multus vs hostNetwork media, Pod Security Standards (restricted)
+- [x] BF13. M16: cloud-native K8s — Multus vs hostNetwork media, Pod Security Standards (restricted)
 - [ ] BF14. M9D: DNS infra lab — BIND9 NAPTR/SRV zone, SRV failover, DNSSEC + spoof mitigation, TTL cut-over/rollback
 
 ### Stage C — Assessment content
@@ -340,6 +340,12 @@ when their parent B-task is reached.
   banned_v4 set + drop), wazuh-honeypot.xml (decoder + rule + active-response), sample log.
   verify.sh PASSES 6/6 self-validating (dedupes 5→3, no false ban on clean log, set+rule present,
   Wazuh XML parses). bash-checked + executed. Requirements audit complete; BF labs resumed. Pushed.
+
+- Iteration 51 (2026-07-03): built BF13 (cloud-native K8s). pss-audit.sh (Python audit of a
+  manifest against Pod Security Standards "restricted" — flags hostNetwork/PID/IPC, privileged,
+  privilege-escalation, root, missing cap-drop/seccomp), media-pod-secure.yaml (Multus + restricted
+  context), media-pod-insecure.yaml (anti-pattern). verify.sh PASSES 8/8 self-validating (accepts
+  hardened, rejects insecure with 7 violations). bash-checked + executed. Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

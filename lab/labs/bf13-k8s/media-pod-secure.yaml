@@ -1,0 +1,37 @@
+# SOVOC BF13 — hardened media Deployment: Multus dedicated interface (no hostNetwork) +
+# Pod Security Standards "restricted". Passes pss-audit.sh.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sovoc-media
+  labels: { app: sovoc-media }
+spec:
+  replicas: 2
+  selector: { matchLabels: { app: sovoc-media } }
+  template:
+    metadata:
+      labels: { app: sovoc-media }
+      annotations:
+        # Multus: attach a dedicated media NIC so RTP's port range needs no hostNetwork.
+        k8s.v1.cni.cncf.io/networks: sovoc-media-net
+    spec:
+      hostNetwork: false
+      hostPID: false
+      hostIPC: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        seccompProfile: { type: RuntimeDefault }
+      containers:
+        - name: rtpengine
+          image: rtpengine:pinned-tag
+          securityContext:
+            allowPrivilegeEscalation: false
+            privileged: false
+            runAsNonRoot: true
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: [ "ALL" ]
+            seccompProfile: { type: RuntimeDefault }
+          ports:
+            - { containerPort: 30000, protocol: UDP }
