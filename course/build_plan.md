@@ -49,7 +49,7 @@ when their parent B-task is reached.
 - [x] BF3. M7/M16: HA state sharing — Redis/MySQL registrar + rtpengine redundancy, hitless failover  ← iteration 36
 - [x] BF4. M14: secure auto-provisioning — HTTPS mTLS config serving, signed configs, MAC allowlist  ← iteration 37
 - [x] BF5. M12: transit STIR/SHAKEN — attestation "C", untrusted-header stripping, OOB (RFC 8816)  ← iteration 38
-- [ ] BF6. M12: RFC 8760 interop — dual MD5+SHA-256 challenge, downgrade rejection
+- [x] BF6. M12: RFC 8760 interop — dual MD5+SHA-256 challenge, downgrade rejection  ← iteration 39
 - [x] BF7. M13: RFC 4475 SIP torture — parser-robustness baseline (torture.sh + verify.sh, iter 29;
       full SIPp mutation suite is an optional extension)
 - [ ] BF8. M14/M15: secure recording — encryption-at-rest, RBAC/audit, DTMF suppression (PCI-DSS)
@@ -265,6 +265,12 @@ when their parent B-task is reached.
   (strip untrusted Identity, attest A/B/C by own-number+trust, OOB for TDM/SS7 per RFC 8816);
   verify.sh PASSES 7/7 across scenarios. README with the policy table + M12 integration + "never
   relay unverified Identity" note. bash-checked + executed. Pushed.
+
+- Iteration 39 (2026-07-03): built BF6 (RFC 8760 digest interop). digest-interop.sh computes
+  MD5/SHA-256 digest responses (RFC 7616 math via openssl) + downgrade-check policy (reject a
+  chosen alg weaker than strongest offered). verify.sh PASSES 7/7 (alg differ, deterministic,
+  downgrade rejected). README with M12 integration + downgrade-attack note. bash-checked +
+  executed. Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
