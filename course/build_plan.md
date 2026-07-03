@@ -296,6 +296,12 @@ when their parent B-task is reached.
   validating (real chain verifies, rogue self-signed cert rejected, in/out-of-scope attestation).
   bash-checked + executed. Pushed.
 
+- Iteration 46b (2026-07-03): processed `feedback.txt` (mid-iteration) — start a 6-iteration
+  requirements/traceability review + memory upkeep. Built `course/requirements-traceability.md`
+  (original asks + all 9 feedback items + open backlog, each with status/evidence). Refreshed
+  project memory `course-build-loop` (progress, conventions, standards-precision, security-hook
+  lessons). Open: BF12–14, C0/C2, E1/E4, D0/D1. Archived feedback. Audit passes 2–6 next.
+
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
   (positive-control gating, fail-closed). Verified bash-clean.

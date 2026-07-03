@@ -1,0 +1,47 @@
+# Requirements Traceability Matrix
+
+Started iter 46 (feedback: "make sure we are on track to satisfy all requirements"). Maps every
+requirement — original ask + each feedback item — to its status and evidence. Reviewed over the
+6-iteration audit; kept current thereafter.
+
+Status: ✅ done · 🟡 partial/in-progress · ⬜ open
+
+## A. Original course requirements
+| # | Requirement | Status | Evidence |
+|---|-------------|--------|----------|
+| A1 | Course modelled on SIP School SSCA 'Elite' | ✅ | `course/00-course-overview.md`, README crosswalk |
+| A2 | Open-source tools throughout | ✅ | `lab/` (Kamailio/Asterisk/FreeSWITCH/rtpengine/HOMER/…), `notes.md` tool map |
+| A3 | Emphasis on **secure** VoIP operations | ✅ | security spine: threat catalog T1–T15, per-module attack/defend, M13–M15 |
+| A4 | Plan then deep-dive every section | ✅ | 18 modules + M9D + capstone, each 5-beat with labs |
+| A5 | Runnable/reproducible lab | ✅ | Docker compose (8 svcs), 24 module labs + BF labs, `make verify-all`, CI |
+
+## B. Feedback items
+| Feedback (iter) | Ask | Status | Evidence |
+|-----------------|-----|--------|----------|
+| gemini_feedback0 (3) | 8 curriculum additions | ✅ | threaded M7,M9–M17; BF1–BF8 built |
+| feedback1 (11) | 5 additions (IPv6, coturn, K8s, delegate certs, honeypot) | 🟡 | threaded; BF9,BF10,BF11 done; **BF12,BF13 pending** |
+| DNS module (16) | new DNS module | ✅ | `modules/09d-dns-infrastructure.md`; BF14 pending |
+| repo README + hide .claude (19) | root README, gitignore .claude | ✅ | `README.md`, `.gitignore` (history purge deferred) |
+| exams + testing (22) | hide answers, lab test harness, HTML MC exams | 🟡 | answer-keys/ ✅, `verify-all.sh`+CI ✅, **HTML MC exams (E1) open** |
+| bibliography (24) | RFC/standards + KB bibliography | ✅ | `references/bibliography.md` |
+| bib-verify + MARP (25) | verify bib + MARP to plan + memorize | 🟡 | `verify-bibliography.sh` ✅, memory ✅, **MARP slides (E4) open** |
+| consistency audit (40) | 3-pass standards/consistency + questions.md | ✅ | passes 1–3 done; RCD/8588 fixes; questions.md |
+| requirements audit (46) | 6-iteration on-track review + memory upkeep | 🟡 | this doc (pass 1) |
+
+## C. Open / remaining backlog (must close to "satisfy all requirements")
+| Item | Status | Note |
+|------|--------|------|
+| BF12 SIP honeypot | ⬜ | next BF lab |
+| BF13 cloud-native K8s pod security | ⬜ | feedback1 item |
+| BF14 DNS infra lab (M9D) | ⬜ | runnable BIND9 lab |
+| C0 per-module quiz bank | ⬜ | assessment |
+| C2 capstone grading harness | ⬜ | assessment |
+| E1 HTML MC exams | ⬜ | feedback iter 22 |
+| E4 MARP instructor slides | ⬜ | feedback iter 25 (tooling memorized) |
+| D0/D1 instructor notes + delivery guide | ⬜ | instructor material |
+| questions.md Q2/Q4 | ⬜ | awaiting user (citation-style, terminology) |
+| `.claude/` history purge | ⬜ | deferred by user ("later") |
+
+## D. Verification health
+- Offline graders green in CI (`.github/workflows/ci.yml`): M14, M15, and all deterministic BF
+  graders. Docker-dependent graders run via `make verify-all` on a live topology.

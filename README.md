@@ -45,7 +45,8 @@ priority. Security findings from automated review are addressed and logged.
 <!-- PROGRESS:START (updated each iteration) -->
 - **Iteration:** 46 · **Date:** 2026-07-03 · **HEAD tracks:** see `git log --oneline -1`
 - **Consistency audit:** ✅ complete (3 passes); see [`questions.md`](questions.md)
-- **Feedback-driven BF labs:** BF1–BF11 done; **next: BF12** (SIP honeypot); then BF13–BF14
+- **Feedback-driven BF labs:** BF1–BF11 done; BF12–BF14 pending
+- **Now:** 6-iteration requirements/traceability review ([`course/requirements-traceability.md`](course/requirements-traceability.md)) + memory upkeep, then resume BF12
 - **Stage A (lab foundation):** ✅ complete
 - **Stage B (per-module labs):** ✅ **complete — all 18 module labs (M0–M17) built**
 - **Assessments:** ✅ all 3 checkpoint exams done (keys held separately)
