@@ -117,8 +117,9 @@ Design rules:
 - **Three checkpoint exams:** after M5 (protocol), M12 (build+security), M17 (operations).
 - **Capstone:** design → deploy → attack (authorized) → defend → operate a platform, with a
   written threat model and an incident-response runbook. Peer + instructor review.
-- **Certification:** VoIPSec issued on capstone pass + checkpoint exams. Security competencies
-  are mandatory to pass (you cannot certify on protocol knowledge alone).
+- **Certification:** the **Certified VoIPSec Operator (CVO)** credential, issued on capstone pass +
+  checkpoint exams. Security competencies are mandatory to pass (you cannot certify on protocol
+  knowledge alone).
 
 ---
 

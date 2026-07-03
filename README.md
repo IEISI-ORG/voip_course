@@ -4,9 +4,9 @@ An open-source, security-first VoIP training course modelled on The SIP School's
 programme but rebuilt around open-source tools and an emphasis on **secure VoIP operations**.
 It pairs a written curriculum (18 modules + a DNS module + capstone) with a single, growing,
 reproducible **Docker lab** that learners build, attack, defend, and operate across the course.
+Completing it earns the **Certified VoIPSec Operator (CVO)** credential.
 
 > Status: **build backlog complete** — full curriculum, lab, all graded labs, assessments, capstone harness, instructor material + rendered slides, CI, references. See **Progress**.
-> lab and per-module graded labs are being built module-by-module. See **Progress** below.
 
 ## What's here
 

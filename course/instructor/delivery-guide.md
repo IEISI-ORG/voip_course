@@ -74,5 +74,5 @@ make obs-up          # observability plane, when M5/M15 need it
   learners will run them.
 
 ## 7. Certification
-VoIPSec is issued on: all module labs passed + three checkpoint exams passed + capstone pass (≥ 70
-and no failing security category).
+The **Certified VoIPSec Operator (CVO)** credential is issued on: all module labs passed + three
+checkpoint exams passed + capstone pass (≥ 70 and no failing security category).
