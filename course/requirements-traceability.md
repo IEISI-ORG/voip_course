@@ -44,7 +44,7 @@ Status: ✅ done · 🟡 partial/in-progress · ⬜ open
 | E4 MARP instructor slides | ⬜ | feedback iter 25 (tooling memorized) |
 | D0/D1 instructor notes + delivery guide | ⬜ | instructor material |
 | questions.md Q2/Q4 | ⬜ | awaiting user (citation-style, terminology) |
-| `.claude/` history purge | ⬜ | deferred by user ("later") |
+| `.claude/` history purge | ✅ | done iter 60: filter-branch removed `.claude` from all 63 commits; force-pushed (lease). SSCA PDF was already purged in the initial rewrite. |
 
 ## D. Verification health (measured iter 47, audit pass 2)
 Ran every `verify.sh`:

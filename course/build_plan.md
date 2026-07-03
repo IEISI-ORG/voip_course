@@ -397,6 +397,13 @@ when their parent B-task is reached.
   image builds kept off per-push CI; no untrusted github.event input). bash/YAML-checked. Did NOT
   do the deferred `.claude`/SSCA history purge (needs explicit user go-ahead + force-push).
 
+- Iteration 60 (2026-07-04): integrity sweep (15/15 offline graders + 3/3 validators PASS, tree
+  clean/no drift). Then, on explicit user go-ahead, **purged git history**: `git filter-branch`
+  removed `.claude/` (+ `course/.claude/`) from all 63 commits; cleaned refs/original + reflog +
+  gc; force-pushed with `--force-with-lease` (76b45de → 1b7f888). Verified 0 `.claude` in HEAD/
+  branch/all-history, 139 lab+module files intact. (SSCA PDF was already purged in the very first
+  rewrite.) Note: GitHub may retain old blobs server-side until GC — not secrets, so acceptable.
+
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
   (positive-control gating, fail-closed). Verified bash-clean.
