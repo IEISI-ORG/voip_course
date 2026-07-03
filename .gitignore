@@ -35,3 +35,8 @@ lab/**/*.log
 # -- DNC --
 SSCA-Elite-SIP-training.md
 
+
+# --- MARP (E4) build artifacts ---
+course/instructor/marp/node_modules/
+course/instructor/marp/out/
+course/instructor/marp/package-lock.json

@@ -5,7 +5,7 @@ programme but rebuilt around open-source tools and an emphasis on **secure VoIP 
 It pairs a written curriculum (18 modules + a DNS module + capstone) with a single, growing,
 reproducible **Docker lab** that learners build, attack, defend, and operate across the course.
 
-> Status: **active build** via an autonomous iteration loop. Design layer complete; the runnable
+> Status: **build backlog complete** — full curriculum, lab, all graded labs, assessments, capstone harness, instructor material + rendered slides, CI, references. See **Progress**.
 > lab and per-module graded labs are being built module-by-module. See **Progress** below.
 
 ## What's here
@@ -45,7 +45,7 @@ findings from automated review are addressed and logged.
 ## Progress
 
 <!-- PROGRESS:START (updated each iteration) -->
-- **Iteration:** 57 · **Date:** 2026-07-04 · **HEAD:** `git log --oneline -1`
+- **Iteration:** 58 · **Date:** 2026-07-04 · **HEAD:** `git log --oneline -1`
 - **Design:** ✅ complete — 18 modules + M9D (DNS Infrastructure) + capstone
 - **Stage A (lab foundation):** ✅ complete (8 services)
 - **Stage B (per-module labs):** ✅ complete — all 18 module labs (M0–M17), each with a `verify.sh`
@@ -54,7 +54,7 @@ findings from automated review are addressed and logged.
 - **Consistency audit:** ✅ complete (3 passes) · **Requirements audit:** ✅ complete (6 passes) — see [`course/requirements-traceability.md`](course/requirements-traceability.md)
 - **CI:** `.github/workflows/ci.yml` (shell/YAML lint, compose config, offline graders) · **Testing:** `make verify-all`
 - **References:** [bibliography](course/references/bibliography.md) + [glossary](course/references/glossary.md) + `verify-bibliography.sh`
-- **Remaining backlog:** E4 (MARP render tooling) — last item
+- **Backlog:** ✅ all items complete (E0/E3 are ongoing `[~]`). Deferred: `.claude`/SSCA-PDF history purge (user)
 - Full detail: [`course/build_plan.md`](course/build_plan.md) (iteration log).
 <!-- PROGRESS:END -->
 

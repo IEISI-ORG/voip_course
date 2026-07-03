@@ -79,7 +79,7 @@ when their parent B-task is reached.
 - [~] E3. Living bibliography of RFCs/standards + package KBs — `course/references/bibliography.md`
       (started iter 24). Verification set up iter 25: `course/references/verify-bibliography.sh`
       (`list` offline; full run needs network — run in CI/manually, sandbox blocks egress).
-- [ ] E4. Instructor slide decks in **MARP**. REQUIREMENTS (memorized): Makefile-driven marp-cli
+- [x] E4. Instructor slide decks in **MARP**. REQUIREMENTS (memorized): Makefile-driven marp-cli
       build; validate rendering via Playwright; run Playwright under a headless X server
       (`xvfb-run`) since the build runs on cron. See memory `marp-slide-tooling`.
 - [x] E2. Assessment convention: keep answer keys in `assessments/answer-keys/` (one level deeper,
@@ -380,6 +380,14 @@ when their parent B-task is reached.
   MARP decks from the module docs (single source) — title, objectives, 5-beat sections, speaker
   notes, lab closer. verify.sh: one deck/module, MARP-valid, drift check. PASS. Decks are E4's
   input. Only E4 (MARP render tooling) remains.
+
+- Iteration 58 (2026-07-04): built E4 (MARP render tooling). Makefile (marp-cli html/pdf/check/
+  watch/clean), render-check.js (Playwright opens each rendered deck under xvfb, asserts MARP
+  slides + no page errors), verify.sh (SKIPs cleanly if toolchain absent). The toolchain (marp,
+  node+playwright, xvfb) was present — ran it: **20 decks render, all PASS**. node_modules/out/
+  gitignored. **BUILD BACKLOG COMPLETE** — 0 open items; only E0/E3 remain `[~]` (ongoing CI /
+  living bibliography). Remaining discretionary: `.claude`/SSCA-PDF git-history purge (deferred by
+  user), E0 dockerized smoke test in CI.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
