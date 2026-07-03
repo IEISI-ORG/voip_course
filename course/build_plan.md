@@ -67,7 +67,7 @@ when their parent B-task is reached.
 
 ### Stage D — Instructor material
 - [ ] D0. Per-module instructor notes / slide outlines
-- [ ] D1. Course delivery guide (pacing, prerequisites, environment setup for cohorts)
+- [x] D1. Course delivery guide (pacing, prerequisites, environment setup for cohorts)
 
 ### Stage E — Testing & packaging (added iter 22 from feedback)
 - [~] E0. Lab environment test & verification — `lab/verify-all.sh` aggregates every module
@@ -82,7 +82,7 @@ when their parent B-task is reached.
 - [ ] E4. Instructor slide decks in **MARP**. REQUIREMENTS (memorized): Makefile-driven marp-cli
       build; validate rendering via Playwright; run Playwright under a headless X server
       (`xvfb-run`) since the build runs on cron. See memory `marp-slide-tooling`.
-- [ ] E2. Assessment convention: keep answer keys in `assessments/answer-keys/` (one level deeper,
+- [x] E2. Assessment convention: keep answer keys in `assessments/answer-keys/` (one level deeper,
       separate file) — applied to exam #1 (iter 22); apply to exams #2/#3 when built.
 
 ## Loop protocol (each iteration)
@@ -369,6 +369,12 @@ when their parent B-task is reached.
   file://), client-side scored (practice tool — answers ship in page; real grading is server-side).
   Extended verify.sh: exam regenerates, self-contained, in-sync with the bank, and a git-drift
   check (stale exam.html fails). PASSES. Next: E4 MARP + D0/D1.
+
+- Iteration 56 (2026-07-04): built D1 (course delivery guide) — `course/instructor/delivery-guide.md`:
+  audience/prereqs, pacing (self-paced/cohort/bootcamp), per-cohort lab setup (secrets, isolation,
+  reset, verify-all), assessment flow (labs+graders, quizzes/HTML, 3 checkpoint exams, capstone
+  harness), instructor ops, pitfalls, certification. Closed E2 (answer-key convention already
+  applied to all 3 exams). Remaining: D0 (instructor notes/slide outlines) + E4 (MARP).
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

@@ -45,7 +45,7 @@ findings from automated review are addressed and logged.
 ## Progress
 
 <!-- PROGRESS:START (updated each iteration) -->
-- **Iteration:** 55 · **Date:** 2026-07-04 · **HEAD:** `git log --oneline -1`
+- **Iteration:** 56 · **Date:** 2026-07-04 · **HEAD:** `git log --oneline -1`
 - **Design:** ✅ complete — 18 modules + M9D (DNS Infrastructure) + capstone
 - **Stage A (lab foundation):** ✅ complete (8 services)
 - **Stage B (per-module labs):** ✅ complete — all 18 module labs (M0–M17), each with a `verify.sh`
@@ -54,7 +54,7 @@ findings from automated review are addressed and logged.
 - **Consistency audit:** ✅ complete (3 passes) · **Requirements audit:** ✅ complete (6 passes) — see [`course/requirements-traceability.md`](course/requirements-traceability.md)
 - **CI:** `.github/workflows/ci.yml` (shell/YAML lint, compose config, offline graders) · **Testing:** `make verify-all`
 - **References:** [bibliography](course/references/bibliography.md) + [glossary](course/references/glossary.md) + `verify-bibliography.sh`
-- **Remaining backlog:** E4 MARP slides, D0/D1 instructor material
+- **Remaining backlog:** D0 instructor notes + E4 MARP slides
 - Full detail: [`course/build_plan.md`](course/build_plan.md) (iteration log).
 <!-- PROGRESS:END -->
 
