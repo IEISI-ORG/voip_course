@@ -45,12 +45,12 @@ findings from automated review are addressed and logged.
 ## Progress
 
 <!-- PROGRESS:START (updated each iteration) -->
-- **Iteration:** 49 · **Date:** 2026-07-03 · **HEAD:** `git log --oneline -1`
+- **Iteration:** 50 · **Date:** 2026-07-03 · **HEAD:** `git log --oneline -1`
 - **Design:** ✅ complete — 18 modules + M9D (DNS Infrastructure) + capstone
 - **Stage A (lab foundation):** ✅ complete (8 services)
 - **Stage B (per-module labs):** ✅ complete — all 18 module labs (M0–M17), each with a `verify.sh`
 - **Assessments:** ✅ all 3 checkpoint exams (keys held separately in `assessments/answer-keys/`)
-- **Feedback-driven BF labs:** BF1–BF11 done; **BF12–BF14 pending**
+- **Feedback-driven BF labs:** BF1–BF12 done; **BF13–BF14 pending**
 - **Consistency audit:** ✅ complete (3 passes) · **Requirements audit:** ✅ complete (6 passes) — see [`course/requirements-traceability.md`](course/requirements-traceability.md)
 - **CI:** `.github/workflows/ci.yml` (shell/YAML lint, compose config, offline graders) · **Testing:** `make verify-all`
 - **References:** [bibliography](course/references/bibliography.md) + [glossary](course/references/glossary.md) + `verify-bibliography.sh`

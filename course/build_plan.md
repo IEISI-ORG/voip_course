@@ -56,7 +56,7 @@ when their parent B-task is reached.
 - [x] BF9. M7/M8: dual-stack/IPv6 — Kamailio v6 listeners + rtpengine 4↔6 media + nftables ip6 parity
 - [x] BF10. M8: coturn/TURN hardening — use-auth-secret, denied-peer-ip (internal), quotas, TLS
 - [x] BF11. M12: STIR/SHAKEN delegate certs (RFC 9060) — enterprise self-signed PASSporT, A-level
-- [ ] BF12. M14/M15: SIP honeypot → nftables ipset blocklist + Wazuh active-response aggregation
+- [x] BF12. M14/M15: SIP honeypot → nftables ipset blocklist + Wazuh active-response aggregation
 - [ ] BF13. M16: cloud-native K8s — Multus vs hostNetwork media, Pod Security Standards (restricted)
 - [ ] BF14. M9D: DNS infra lab — BIND9 NAPTR/SRV zone, SRV failover, DNSSEC + spoof mitigation, TTL cut-over/rollback
 
@@ -334,6 +334,12 @@ when their parent B-task is reached.
   added glossary + traceability; corrected the feedback-handling description). **6-pass
   requirements audit COMPLETE** — verdict: all A1–A5 + processed feedback satisfied; only BF12–14
   and the packaging tier remain (tracked). Loop resumes BF12 next.
+
+- Iteration 50 (2026-07-03): built BF12 (SIP honeypot → dynamic blocklist). hp2ipset.sh (honeypot
+  log → deduped nft `add element` ban commands with timeout), nftables-honeypot.nft (timeout'd
+  banned_v4 set + drop), wazuh-honeypot.xml (decoder + rule + active-response), sample log.
+  verify.sh PASSES 6/6 self-validating (dedupes 5→3, no false ban on clean log, set+rule present,
+  Wazuh XML parses). bash-checked + executed. Requirements audit complete; BF labs resumed. Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

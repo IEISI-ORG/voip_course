@@ -1,0 +1,15 @@
+#!/usr/sbin/nft -f
+# SOVOC BF12 — nftables with a timeout'd blocklist set that the honeypot pipeline populates.
+# Validate: nft -c -f nftables-honeypot.nft
+table inet sovoc_edge {
+  set banned_v4 {
+    type ipv4_addr
+    flags timeout
+  }
+
+  chain input {
+    type filter hook input priority -10; policy accept;
+    # Drop anything from the dynamic blocklist first (honeypot / fail2ban / Wazuh feed it).
+    ip saddr @banned_v4 drop
+  }
+}
