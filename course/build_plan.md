@@ -66,7 +66,7 @@ when their parent B-task is reached.
 - [x] C2. Capstone grading harness (rubric → scoring sheet)
 
 ### Stage D — Instructor material
-- [ ] D0. Per-module instructor notes / slide outlines
+- [x] D0. Per-module instructor notes / slide outlines
 - [x] D1. Course delivery guide (pacing, prerequisites, environment setup for cohorts)
 
 ### Stage E — Testing & packaging (added iter 22 from feedback)
@@ -375,6 +375,11 @@ when their parent B-task is reached.
   reset, verify-all), assessment flow (labs+graders, quizzes/HTML, 3 checkpoint exams, capstone
   harness), instructor ops, pitfalls, certification. Closed E2 (answer-key convention already
   applied to all 3 exams). Remaining: D0 (instructor notes/slide outlines) + E4 (MARP).
+
+- Iteration 57 (2026-07-04): built D0 (instructor slide outlines). build-slides.sh generates 20
+  MARP decks from the module docs (single source) — title, objectives, 5-beat sections, speaker
+  notes, lab closer. verify.sh: one deck/module, MARP-valid, drift check. PASS. Decks are E4's
+  input. Only E4 (MARP render tooling) remains.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
