@@ -71,9 +71,11 @@ when their parent B-task is reached.
 
 ### Stage E — Testing & packaging (added iter 22 from feedback)
 - [~] E0. Lab environment test & verification — `lab/verify-all.sh` aggregates every module
-      verify.sh (`make verify-all`, iter 22); CI workflow `.github/workflows/ci.yml` added iter 32
-      (lint + compose config + offline graders + bibliography). TODO: per-service healthcheck
-      rollup + a smoke-call end-to-end test in CI (needs a dockerized topology runner).
+      verify.sh (`make verify-all`, iter 22); CI `ci.yml` (lint + compose config + offline graders,
+      iter 32). End-to-end smoke test added iter 59: `lab/smoke-test.sh` (`make smoke`) — up →
+      health → M0 segmentation → REGISTER through the SBC; manual CI `.github/workflows/smoke.yml`
+      (workflow_dispatch, kept off per-push since it builds community images). Effectively complete;
+      leaving `[~]` since the smoke run is validated by design/bash-check, not executed in-sandbox.
 - [x] E1. Package multiple-choice exams as standalone deployable HTML (self-contained, no server;
       score client-side). Start with checkpoint exams' MC portions.
 - [~] E3. Living bibliography of RFCs/standards + package KBs — `course/references/bibliography.md`
@@ -388,6 +390,12 @@ when their parent B-task is reached.
   gitignored. **BUILD BACKLOG COMPLETE** — 0 open items; only E0/E3 remain `[~]` (ongoing CI /
   living bibliography). Remaining discretionary: `.claude`/SSCA-PDF git-history purge (deferred by
   user), E0 dockerized smoke test in CI.
+
+- Iteration 59 (2026-07-04): backlog complete, so advanced E0's remaining TODO — end-to-end smoke
+  test. `lab/smoke-test.sh` (up → wait-for-health → M0 segmentation grader → REGISTER through the
+  SBC, teardown), `make smoke`, and `.github/workflows/smoke.yml` (manual workflow_dispatch — heavy
+  image builds kept off per-push CI; no untrusted github.event input). bash/YAML-checked. Did NOT
+  do the deferred `.claude`/SSCA history purge (needs explicit user go-ahead + force-push).
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

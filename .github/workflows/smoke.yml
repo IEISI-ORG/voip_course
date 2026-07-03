@@ -1,0 +1,19 @@
+name: sovoc-smoke
+
+# End-to-end smoke test: brings up the Docker topology and drives a real REGISTER through the
+# border. Heavy (builds community images), so it is MANUAL only (workflow_dispatch) — the routine
+# per-push checks live in ci.yml. Run from the Actions tab when you want a full integration pass.
+on:
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bring up topology + run the end-to-end smoke test
+        working-directory: lab
+        run: |
+          cp .env.example .env
+          bash smoke-test.sh

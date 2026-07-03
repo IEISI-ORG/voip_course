@@ -45,14 +45,14 @@ findings from automated review are addressed and logged.
 ## Progress
 
 <!-- PROGRESS:START (updated each iteration) -->
-- **Iteration:** 58 · **Date:** 2026-07-04 · **HEAD:** `git log --oneline -1`
+- **Iteration:** 59 · **Date:** 2026-07-04 · **HEAD:** `git log --oneline -1`
 - **Design:** ✅ complete — 18 modules + M9D (DNS Infrastructure) + capstone
 - **Stage A (lab foundation):** ✅ complete (8 services)
 - **Stage B (per-module labs):** ✅ complete — all 18 module labs (M0–M17), each with a `verify.sh`
 - **Assessments:** ✅ all 3 checkpoint exams (keys held separately in `assessments/answer-keys/`)
 - **Feedback-driven BF labs:** ✅ **all 14 done (BF1–BF14)**
 - **Consistency audit:** ✅ complete (3 passes) · **Requirements audit:** ✅ complete (6 passes) — see [`course/requirements-traceability.md`](course/requirements-traceability.md)
-- **CI:** `.github/workflows/ci.yml` (shell/YAML lint, compose config, offline graders) · **Testing:** `make verify-all`
+- **CI:** `.github/workflows/ci.yml` (shell/YAML lint, compose config, offline graders) · **Testing:** `make verify-all` + `make smoke` (end-to-end)
 - **References:** [bibliography](course/references/bibliography.md) + [glossary](course/references/glossary.md) + `verify-bibliography.sh`
 - **Backlog:** ✅ all items complete (E0/E3 are ongoing `[~]`). Deferred: `.claude`/SSCA-PDF history purge (user)
 - Full detail: [`course/build_plan.md`](course/build_plan.md) (iteration log).
