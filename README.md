@@ -43,9 +43,9 @@ priority. Security findings from automated review are addressed and logged.
 ## Progress
 
 <!-- PROGRESS:START (updated each iteration) -->
-- **Iteration:** 44 · **Date:** 2026-07-03 · **HEAD tracks:** see `git log --oneline -1`
+- **Iteration:** 45 · **Date:** 2026-07-03 · **HEAD tracks:** see `git log --oneline -1`
 - **Consistency audit:** ✅ complete (3 passes); see [`questions.md`](questions.md)
-- **Feedback-driven BF labs:** BF1–BF9 done; **next: BF10** (coturn hardening); then BF11–BF14
+- **Feedback-driven BF labs:** BF1–BF10 done; **next: BF11** (delegate certs); then BF12–BF14
 - **Stage A (lab foundation):** ✅ complete
 - **Stage B (per-module labs):** ✅ **complete — all 18 module labs (M0–M17) built**
 - **Assessments:** ✅ all 3 checkpoint exams done (keys held separately)
