@@ -9,8 +9,10 @@ Below are decisions I need from you. Turn any of these into a `feedback*.txt` an
   - rubric point-totals: **all 24 labs sum to exactly 100**;
   - cross-references: **37/37 relative `.md` links resolve** (0 broken);
   - threat IDs: **T1–T15 used consistently, none undefined** (no T16+).
-- **Pass 3 (next):** prose flow / anti-AI-slop line edit (light touch — see Q3). Blocked on your
-  answers to Q1–Q4 for anything beyond the light-touch default.
+- **Pass 3 (done, iter 42):** resolved Q1 (RCD = RFC 9795/9796, verified) and fixed it in the
+  content; light-touch anti-slop scan confirmed the flagged words ("robustness", "landscape") are
+  legitimate technical usage, not slop — left as-is. **Audit complete.**
+  Q2/Q4 (citation-style + terminology preferences) remain optional; tell me if you want them applied.
 
 ## What I already fixed in Pass 1 (no decision needed)
 - **`div` PASSporT was mis-attributed.** RFC **8588** is the SHAKEN PASSporT (`attest`/`origid`);
@@ -18,11 +20,10 @@ Below are decisions I need from you. Turn any of these into a `feedback*.txt` an
 - Added cited-but-missing RFCs to the bibliography so it is the single source of truth
   (3312, 3581, 3856, 4787, 5853, 6913, 8946, 1918; noted 2617→7616).
 
-## Q1 — Rich Call Data (RCD) PASSporT RFC number  *(verification needed)*
-M12 cites "Rich Call Data (RFC 8946/9118)". RFC 8946 is **diverted calls**, not RCD — so RCD is
-mis-paired. I believe RCD is **not** RFC 9118 either, but I'm not certain of the correct number.
-**Decision:** (a) you confirm the RCD RFC, or (b) I verify it against the RFC index next pass and
-correct it. Until resolved I've left the RCD mention but corrected `div`→8946.
+## Q1 — Rich Call Data (RCD) PASSporT RFC number  ✅ RESOLVED (iter 42)
+Verified against the IETF datatracker: **RCD PASSporT = RFC 9795**, with **RFC 9796** for the SIP
+Call-Info parameters. The old "RFC 8946/9118" was wrong on both counts (8946 is `div`; 9118 isn't
+RCD). Corrected in M12 and added to the bibliography. No decision needed.
 
 ## Q2 — Citation style: single source of truth vs repetition
 Each module repeats a `## References` list AND the bibliography holds the master list. This drifts.

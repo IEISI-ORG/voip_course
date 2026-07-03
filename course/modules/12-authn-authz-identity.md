@@ -22,7 +22,7 @@ STIR/SHAKEN. **Est. time:** 6h · **Prereqs:** Modules 6–11. **Checkpoint exam
   - **SHAKEN:** the deployment framework, attestation levels A/B/C, the authentication service
     (originating) and verification service (terminating), `verstat`.
   - Cert management, the "attestation gap" for enterprises, delegate certificates, Rich Call
-    Data (RFC 8946/9118), out-of-band STIR, `div`/`div-o` for diverted calls (RFC 8946).
+    Data (RCD, RFC 9795/9796), out-of-band STIR, `div`/`div-o` for diverted calls (RFC 8946).
 - **Interplay:** digest proves *your* subscriber; STIR/SHAKEN conveys trust *between operators*.
 
 ## 2. Packet Reality
@@ -99,5 +99,5 @@ downgraded to attestation **B/C** — the "attestation gap." Delegate certificat
 
 ## References
 - RFC 7616 (HTTP digest), 8760 (SHA-256 for SIP), 3325/3323 (PAI/Privacy), 8224/8225/8226
-  (STIR), 8588 (SHAKEN PASSporT), 8946/9118 (div/RCD); ATIS-1000074/1000080 (SHAKEN);
+  (STIR), 8588 (SHAKEN PASSporT), 8946 (div), 9795/9796 (Rich Call Data); ATIS-1000074/1000080 (SHAKEN);
   libstirshaken, Asterisk res_stir_shaken, OpenSIPS stir_shaken docs.

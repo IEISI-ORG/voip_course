@@ -324,6 +324,12 @@ when their parent B-task is reached.
   threat IDs T1–T15 consistent, none undefined. Recorded results in questions.md. Pass 3
   (prose/anti-slop light touch) awaits user answers to Q1–Q4. BF8 still deferred until audit done.
 
+- Iteration 42 (2026-07-03): consistency audit **pass 3 (final)** — resolved Q1 via IETF
+  datatracker: RCD PASSporT = RFC 9795 (+9796 Call-Info); the content's "8946/9118 (div/RCD)" was
+  wrong on both counts. Fixed M12 + bibliography; 0 stray 9118. Light-touch anti-slop: flagged
+  words are legitimate technical terms, left as-is. **3-pass consistency audit COMPLETE.** BF8
+  resumes next iteration. (Q2/Q4 style/terminology remain optional, awaiting user.)
+
 ## Feedback log
 - `gemini_feedback0.md` (received iter 3) → incorporated across 10 modules + BF1–BF8;
   archived at `course/reviews/gemini_feedback0.md`.

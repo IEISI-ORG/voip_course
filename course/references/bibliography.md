@@ -47,6 +47,8 @@ grows.
 - **RFC 8226** — Secure Telephone Identity Credentials (certs, TNAuthList)
 - **RFC 8588** — SHAKEN PASSporT extension (`attest` / `origid`)
 - **RFC 8946** — PASSporT extension for diverted calls (`div`)
+- **RFC 9795** — PASSporT extension for Rich Call Data (RCD); **RFC 9796** — SIP Call-Info
+  parameters for RCD
 - **RFC 8816** — Out-of-Band STIR/SHAKEN
 - **RFC 9060** — Delegate certificates
 - **ATIS-1000074 / 1000080** — SHAKEN framework & governance
