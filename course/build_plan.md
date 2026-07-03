@@ -53,7 +53,7 @@ when their parent B-task is reached.
 - [x] BF7. M13: RFC 4475 SIP torture — parser-robustness baseline (torture.sh + verify.sh, iter 29;
       full SIPp mutation suite is an optional extension)
 - [x] BF8. M14/M15: secure recording — encryption-at-rest, RBAC/audit, DTMF suppression (PCI-DSS)  ← iteration 43
-- [ ] BF9. M7/M8: dual-stack/IPv6 — Kamailio v6 listeners + rtpengine 4↔6 media + nftables ip6 parity
+- [x] BF9. M7/M8: dual-stack/IPv6 — Kamailio v6 listeners + rtpengine 4↔6 media + nftables ip6 parity
 - [ ] BF10. M8: coturn/TURN hardening — use-auth-secret, denied-peer-ip (internal), quotas, TLS
 - [ ] BF11. M12: STIR/SHAKEN delegate certs (RFC 9060) — enterprise self-signed PASSporT, A-level
 - [ ] BF12. M14/M15: SIP honeypot → nftables ipset blocklist + Wazuh active-response aggregation
@@ -277,6 +277,12 @@ when their parent B-task is reached.
   verify.sh PASSES 7/7 offline (round-trip, RBAC allow+deny+audit, PAN/PIN masked, no full-PAN
   leak). README emphasises DTMF suppression (never write it) over redaction. bash-checked +
   executed. Consistency audit done; BF labs resumed. Pushed.
+
+- Iteration 44 (2026-07-03): built BF9 (dual-stack/IPv6). nftables-dual-stack.nft (separate ip/ip6
+  tables at parity), parity-check.sh (flags any port allowed on one family but not the other),
+  kamailio-v6.snippet.cfg (v6 listeners + rtpengine 4↔6 note). verify.sh PASSES 4/4 — self-
+  validating (confirms parity AND catches an injected v6 gap). README: `table inet` = parity by
+  construction. bash-checked + executed. Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

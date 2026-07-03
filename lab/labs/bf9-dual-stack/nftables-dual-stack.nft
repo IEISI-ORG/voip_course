@@ -1,0 +1,35 @@
+#!/usr/sbin/nft -f
+# SOVOC BF9 — dual-stack edge ruleset with SEPARATE ip / ip6 tables kept at PARITY.
+# (The simpler, parity-by-construction option is a single `table inet` — see M8's
+# nftables-edge.example.nft. This file shows the separate-tables pattern so parity can be tested.)
+# Validate: nft -c -f nftables-dual-stack.nft ; parity: parity-check.sh nftables-dual-stack.nft
+
+flush ruleset
+
+table ip sovoc4 {
+  chain input {
+    type filter hook input priority 0; policy drop;
+    ct state established,related accept
+    iif "lo" accept
+    udp dport 5060 accept
+    tcp dport 5060 accept
+    tcp dport 5061 accept
+    udp dport 30000-30100 accept
+    udp dport 3478 accept
+    drop
+  }
+}
+
+table ip6 sovoc6 {
+  chain input {
+    type filter hook input priority 0; policy drop;
+    ct state established,related accept
+    iif "lo" accept
+    udp dport 5060 accept
+    tcp dport 5060 accept
+    tcp dport 5061 accept
+    udp dport 30000-30100 accept
+    udp dport 3478 accept
+    drop
+  }
+}
