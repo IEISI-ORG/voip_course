@@ -319,6 +319,11 @@ when their parent B-task is reached.
   with decisions needed (RCD RFC #, citation-style policy, anti-slop depth, terminology). Passes
   2–3 next. BF8 deferred until the audit completes.
 
+- Iteration 41 (2026-07-03): consistency audit **pass 2 (mechanical)** — all clean, no fixes:
+  rubric point-totals all 24 labs = 100; 37/37 relative markdown cross-references resolve;
+  threat IDs T1–T15 consistent, none undefined. Recorded results in questions.md. Pass 3
+  (prose/anti-slop light touch) awaits user answers to Q1–Q4. BF8 still deferred until audit done.
+
 ## Feedback log
 - `gemini_feedback0.md` (received iter 3) → incorporated across 10 modules + BF1–BF8;
   archived at `course/reviews/gemini_feedback0.md`.

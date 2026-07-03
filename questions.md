@@ -5,9 +5,12 @@ Below are decisions I need from you. Turn any of these into a `feedback*.txt` an
 
 ## Pass plan
 - **Pass 1 (done, iter 40):** standards/RFC citation consistency.
-- **Pass 2 (next):** terminology + cross-reference consistency (defer detail lists to the
-  bibliography; standardize first-use of acronyms).
-- **Pass 3:** prose flow / anti-AI-slop line edit (light touch — see Q3).
+- **Pass 2 (done, iter 41):** mechanical consistency — **all clean, no fixes needed**:
+  - rubric point-totals: **all 24 labs sum to exactly 100**;
+  - cross-references: **37/37 relative `.md` links resolve** (0 broken);
+  - threat IDs: **T1–T15 used consistently, none undefined** (no T16+).
+- **Pass 3 (next):** prose flow / anti-AI-slop line edit (light touch — see Q3). Blocked on your
+  answers to Q1–Q4 for anything beyond the light-touch default.
 
 ## What I already fixed in Pass 1 (no decision needed)
 - **`div` PASSporT was mis-attributed.** RFC **8588** is the SHAKEN PASSporT (`attest`/`origid`);
