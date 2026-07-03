@@ -42,6 +42,14 @@ Status: ✅ done · 🟡 partial/in-progress · ⬜ open
 | questions.md Q2/Q4 | ⬜ | awaiting user (citation-style, terminology) |
 | `.claude/` history purge | ⬜ | deferred by user ("later") |
 
-## D. Verification health
-- Offline graders green in CI (`.github/workflows/ci.yml`): M14, M15, and all deterministic BF
-  graders. Docker-dependent graders run via `make verify-all` on a live topology.
+## D. Verification health (measured iter 47, audit pass 2)
+Ran every `verify.sh`:
+- **Offline graders: 11/11 PASS** — bf2, bf4, bf5, bf6, bf8, bf9, bf10, bf11, m14, m15, m17.
+  These are deterministic and run in CI.
+- **Topology-dependent graders: correctly FAIL/inconclusive without a live lab** (fail-closed,
+  no false-pass) — m0–m13, bf1. (bf3, m16 pass their config-validation parts since the Docker
+  CLI is present.)
+- **Honest gap:** the topology-dependent labs are structurally validated (`bash -n` on all
+  scripts, `docker compose config`, self-validating logic) but **not yet executed end-to-end
+  against a running topology in this environment**. That end-to-end run is E0's remaining TODO
+  (a dockerized topology runner in CI). Not a defect — a coverage boundary to close.

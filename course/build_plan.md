@@ -302,6 +302,11 @@ when their parent B-task is reached.
   project memory `course-build-loop` (progress, conventions, standards-precision, security-hook
   lessons). Open: BF12–14, C0/C2, E1/E4, D0/D1. Archived feedback. Audit passes 2–6 next.
 
+- Iteration 47 (2026-07-03): requirements audit **pass 2 (verification)** — ran every verify.sh.
+  Result: 11/11 offline graders PASS (bf2/4/5/6/8/9/10/11, m14/15/17); topology-dependent graders
+  correctly fail-closed without a live lab (no false-pass). Recorded measured verification health
+  + honest gap (end-to-end topology run is E0's TODO) in requirements-traceability.md.
+
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
   (positive-control gating, fail-closed). Verified bash-clean.
