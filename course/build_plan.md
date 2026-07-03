@@ -52,7 +52,7 @@ when their parent B-task is reached.
 - [x] BF6. M12: RFC 8760 interop — dual MD5+SHA-256 challenge, downgrade rejection  ← iteration 39
 - [x] BF7. M13: RFC 4475 SIP torture — parser-robustness baseline (torture.sh + verify.sh, iter 29;
       full SIPp mutation suite is an optional extension)
-- [ ] BF8. M14/M15: secure recording — encryption-at-rest, RBAC/audit, DTMF suppression (PCI-DSS)
+- [x] BF8. M14/M15: secure recording — encryption-at-rest, RBAC/audit, DTMF suppression (PCI-DSS)  ← iteration 43
 - [ ] BF9. M7/M8: dual-stack/IPv6 — Kamailio v6 listeners + rtpengine 4↔6 media + nftables ip6 parity
 - [ ] BF10. M8: coturn/TURN hardening — use-auth-secret, denied-peer-ip (internal), quotas, TLS
 - [ ] BF11. M12: STIR/SHAKEN delegate certs (RFC 9060) — enterprise self-signed PASSporT, A-level
@@ -271,6 +271,12 @@ when their parent B-task is reached.
   chosen alg weaker than strongest offered). verify.sh PASSES 7/7 (alg differ, deterministic,
   downgrade rejected). README with M12 integration + downgrade-attack note. bash-checked +
   executed. Pushed.
+
+- Iteration 43 (2026-07-03): built BF8 (secure recording, PCI-DSS). secure-recording.sh — AES-256
+  encrypt/decrypt at rest, RBAC-gated access with an audit trail, DTMF/PAN masking (last-4/PIN);
+  verify.sh PASSES 7/7 offline (round-trip, RBAC allow+deny+audit, PAN/PIN masked, no full-PAN
+  leak). README emphasises DTMF suppression (never write it) over redaction. bash-checked +
+  executed. Consistency audit done; BF labs resumed. Pushed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
