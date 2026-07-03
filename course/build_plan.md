@@ -55,7 +55,7 @@ when their parent B-task is reached.
 - [x] BF8. M14/M15: secure recording — encryption-at-rest, RBAC/audit, DTMF suppression (PCI-DSS)  ← iteration 43
 - [x] BF9. M7/M8: dual-stack/IPv6 — Kamailio v6 listeners + rtpengine 4↔6 media + nftables ip6 parity
 - [x] BF10. M8: coturn/TURN hardening — use-auth-secret, denied-peer-ip (internal), quotas, TLS
-- [ ] BF11. M12: STIR/SHAKEN delegate certs (RFC 9060) — enterprise self-signed PASSporT, A-level
+- [x] BF11. M12: STIR/SHAKEN delegate certs (RFC 9060) — enterprise self-signed PASSporT, A-level
 - [ ] BF12. M14/M15: SIP honeypot → nftables ipset blocklist + Wazuh active-response aggregation
 - [ ] BF13. M16: cloud-native K8s — Multus vs hostNetwork media, Pod Security Standards (restricted)
 - [ ] BF14. M9D: DNS infra lab — BIND9 NAPTR/SRV zone, SRV failover, DNSSEC + spoof mitigation, TTL cut-over/rollback
@@ -288,6 +288,12 @@ when their parent B-task is reached.
   denied-peer-ip SSRF fence for RFC1918/loopback/link-local, quotas, TLS, no-cli); coturn-audit.sh
   (10-control checklist); turn-cred.sh (TURN REST HMAC short-term credentials). verify.sh PASSES
   5/5 — self-validating (audit catches a weakened config; cred valid/expired/forged all correct).
+  bash-checked + executed. Pushed.
+
+- Iteration 46 (2026-07-03): built BF11 (STIR/SHAKEN delegate certs, RFC 9060). delegate-ca.sh
+  (SP CA → enterprise delegate cert via OpenSSL, chain verified), attest-scope.sh (sign A only
+  within the delegated TN range — fixed a country-code off-by-one), verify.sh PASSES 4/4 self-
+  validating (real chain verifies, rogue self-signed cert rejected, in/out-of-scope attestation).
   bash-checked + executed. Pushed.
 
 ## Security review log
