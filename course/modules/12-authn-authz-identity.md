@@ -67,7 +67,8 @@ algorithm generations — exactly where fraud and downgrade attacks live.
 
 **Transit-carrier STIR/SHAKEN.**
 - **Standards:** PASSporT (RFC 8225), Identity header (RFC 8224), certs (RFC 8226),
-  `div` PASSporT (RFC 8588); Out-of-Band STIR/SHAKEN (RFC 8816); ATIS-1000074.
+  SHAKEN PASSporT (RFC 8588), `div` PASSporT for diverted calls (RFC 8946); Out-of-Band
+  STIR/SHAKEN (RFC 8816); ATIS-1000074.
 - **Build/Policy:** model gateway/transit obligations — apply attestation **C** when you
   cannot verify the originator, strip untrusted inbound `Identity` headers, and use OOB
   SHAKEN to carry PASSporTs across TDM/SS7 hops that cannot pass the header inline.

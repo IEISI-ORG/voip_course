@@ -19,6 +19,7 @@ grows.
 - **RFC 3891** — Replaces header
 - **RFC 6140** — Bulk registration (trunking)
 - **RFC 4028** — Session timers
+- **RFC 6665** — SIP event notification (SUBSCRIBE/NOTIFY); **RFC 3856** — presence event package
 
 ## 2. Media: SDP, RTP, codecs (RFC)
 - **RFC 4566** — SDP
@@ -35,14 +36,17 @@ grows.
 - **RFC 6189** — ZRTP
 - **RFC 8826 / 8827 / 8834** — WebRTC security / architecture / RTP usage
 - **RFC 8445** — ICE; **RFC 5389 / 8489** — STUN; **RFC 5766 / 8656** — TURN
-- **RFC 7616** — HTTP Digest (SHA-256); **RFC 8760** — SIP digest AKA/SHA-256
-  (updates 2617/3261 auth)
+- **RFC 4787** — NAT behavioural requirements (UDP); **RFC 3581** — `rport`; **RFC 1918** —
+  private address space; **RFC 5853** — SBC use in SIP
+- **RFC 7616** — HTTP Digest (SHA-256, obsoletes **RFC 2617**); **RFC 8760** — SIP digest
+  additional algorithms (updates RFC 3261 auth)
 
 ## 4. Caller identity / STIR/SHAKEN (RFC + ATIS)
 - **RFC 8224** — Authenticated Identity Management (Identity header)
 - **RFC 8225** — PASSporT
 - **RFC 8226** — Secure Telephone Identity Credentials (certs, TNAuthList)
-- **RFC 8588** — SHAKEN PASSporT extension (`div`)
+- **RFC 8588** — SHAKEN PASSporT extension (`attest` / `origid`)
+- **RFC 8946** — PASSporT extension for diverted calls (`div`)
 - **RFC 8816** — Out-of-Band STIR/SHAKEN
 - **RFC 9060** — Delegate certificates
 - **ATIS-1000074 / 1000080** — SHAKEN framework & governance
@@ -55,6 +59,7 @@ grows.
 
 ## 6. PSTN interworking, fax, emergency (RFC/ITU + regulation)
 - **RFC 3398** — ISUP ↔ SIP mapping (SIP status ↔ Q.850 cause)
+- **RFC 6913** — indicating Fax-over-IP capability in SIP; **RFC 3312** — preconditions
 - **ITU-T Q.850** — Cause values; **ITU-T T.38 / T.30** — real-time fax / fax
 - **RFC 4412** — Resource-Priority header
 - **RFC 4119 / 5491 / 4776** — PIDF-LO location object / geo shapes / civic

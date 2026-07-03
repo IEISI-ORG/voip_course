@@ -43,7 +43,8 @@ priority. Security findings from automated review are addressed and logged.
 ## Progress
 
 <!-- PROGRESS:START (updated each iteration) -->
-- **Iteration:** 39 · **Date:** 2026-07-03 · **HEAD tracks:** see `git log --oneline -1`
+- **Iteration:** 41 · **Date:** 2026-07-03 · **HEAD tracks:** see `git log --oneline -1`
+- **Consistency audit** in progress (3 passes); decisions pending in [`questions.md`](questions.md)
 - **Stage A (lab foundation):** ✅ complete
 - **Stage B (per-module labs):** ✅ **complete — all 18 module labs (M0–M17) built**
 - **Assessments:** ✅ all 3 checkpoint exams done (keys held separately)

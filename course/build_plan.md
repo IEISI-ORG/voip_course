@@ -312,6 +312,13 @@ when their parent B-task is reached.
   (course-build-loop, bibliography-verification, marp-slide-tooling + MEMORY.md). Archived
   feedback. B10 deferred to iteration 26.
 
+- Iteration 40 (2026-07-03): processed `feedback.txt` — started a 3-iteration consistency audit.
+  **Pass 1 (standards):** fixed `div` PASSporT mis-attribution (RFC 8588=SHAKEN, RFC 8946=div) in
+  M12 + bibliography; added cited-but-missing RFCs to the bibliography (now the single source of
+  truth). AI-slop scan: content already clean (crucial/delve/vibrant=0). Wrote root `questions.md`
+  with decisions needed (RCD RFC #, citation-style policy, anti-slop depth, terminology). Passes
+  2–3 next. BF8 deferred until the audit completes.
+
 ## Feedback log
 - `gemini_feedback0.md` (received iter 3) → incorporated across 10 modules + BF1–BF8;
   archived at `course/reviews/gemini_feedback0.md`.
