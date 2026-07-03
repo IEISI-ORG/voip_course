@@ -26,7 +26,8 @@ Status: ✅ done · 🟡 partial/in-progress · ⬜ open
 | bibliography (24) | RFC/standards + KB bibliography | ✅ | `references/bibliography.md` |
 | bib-verify + MARP (25) | verify bib + MARP to plan + memorize | 🟡 | `verify-bibliography.sh` ✅, memory ✅, **MARP slides (E4) open** |
 | consistency audit (40) | 3-pass standards/consistency + questions.md | ✅ | passes 1–3 done; RCD/8588 fixes; questions.md |
-| requirements audit (46) | 6-iteration on-track review + memory upkeep | 🟡 | this doc (pass 1) |
+| requirements audit (46) | 6-iteration on-track review + memory upkeep | 🟡 | this doc (passes 1–3); memory refreshed |
+| Q&A + housekeeping (47) | answer Q2/Q3/Q4; glossary; remove committed feedback; prune questions | ✅ | Q2=A subset (holds), Q3=A, Q4 terminology; `references/glossary.md`; feedback files removed + gitignored; questions.md pruned |
 
 ## C. Open / remaining backlog (must close to "satisfy all requirements")
 | Item | Status | Note |

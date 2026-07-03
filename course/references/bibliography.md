@@ -109,6 +109,9 @@ grows.
 | Baresip / Linphone | softphones | https://github.com/baresip/baresip · https://www.linphone.org |
 | Docker / Compose | orchestration | https://docs.docker.com |
 
+## Glossary
+Abbreviations and acronyms are defined in [`glossary.md`](glossary.md).
+
 ## 11. Citation convention
 In module docs, cite as `RFC NNNN` (SIP/media/security), standards body + doc id
 (e.g. `ATIS-1000074`, `NIST SP 800-58`, `GSMA IR.92`), or the package KB by name. Keep this file

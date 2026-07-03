@@ -87,7 +87,9 @@ when their parent B-task is reached.
 
 ## Loop protocol (each iteration)
 1. Check `/home/terry/voip_course` for feedback files (`*feedback*`, `FEEDBACK*`, `feedback/`).
-   If present: read, incorporate, and prioritize the feedback before continuing the backlog.
+   If present: read, incorporate, and prioritize before the backlog. Record what it asked in the
+   feedback log below; then **delete the feedback file** (do NOT commit it — they are gitignored
+   and ephemeral). Also prune any now-answered items from `questions.md`.
 2. Build the next unmarked backlog item (one coherent unit).
 3. Update this file (mark `[x]`, note the iteration).
 4. Update the top-level `README.md` `PROGRESS` block (iteration #, stage, next item).
@@ -306,6 +308,13 @@ when their parent B-task is reached.
   Result: 11/11 offline graders PASS (bf2/4/5/6/8/9/10/11, m14/15/17); topology-dependent graders
   correctly fail-closed without a live lab (no false-pass). Recorded measured verification health
   + honest gap (end-to-end topology run is E0's TODO) in requirements-traceability.md.
+
+- Iteration 47b (2026-07-03): processed `feedback.txt` (answers + directives). Removed all
+  committed feedback files (root + course/reviews/) and gitignored `/feedback*`; switched loop
+  protocol to process→delete (no commit). Answered questions applied: Q2=A (module refs are a
+  bibliography subset — verified, holds), Q3=A (light touch), Q4 terminology; added
+  `references/glossary.md` (abbreviations), linked from bibliography. Pruned answered items from
+  questions.md. Refreshed memory. Requirements audit passes 4–6 continue.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

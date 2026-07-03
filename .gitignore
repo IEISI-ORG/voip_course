@@ -22,6 +22,12 @@ lab/**/*.log
 # --- Claude Code session state (not project content; history purge deferred) ---
 .claude/
 
+# --- Feedback files: ephemeral steering, processed then deleted, never committed ---
+/feedback.txt
+/feedback*.md
+/FEEDBACK*
+/feedback/
+
 # --- OS / editor ---
 .DS_Store
 *.swp

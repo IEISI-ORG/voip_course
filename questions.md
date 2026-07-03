@@ -1,53 +1,19 @@
-# Questions / Decisions Needed (for the consistency audit)
+# Questions / Decisions
 
-Per your feedback (iter 40), I'm running a 3-iteration consistency pass across the content base.
-Below are decisions I need from you. Turn any of these into a `feedback*.txt` and I'll apply it.
+Answered questions are pruned each iteration (per your instruction). No open decisions right now.
 
-## Pass plan
-- **Pass 1 (done, iter 40):** standards/RFC citation consistency.
-- **Pass 2 (done, iter 41):** mechanical consistency — **all clean, no fixes needed**:
-  - rubric point-totals: **all 24 labs sum to exactly 100**;
-  - cross-references: **37/37 relative `.md` links resolve** (0 broken);
-  - threat IDs: **T1–T15 used consistently, none undefined** (no T16+).
-- **Pass 3 (done, iter 42):** resolved Q1 (RCD = RFC 9795/9796, verified) and fixed it in the
-  content; light-touch anti-slop scan confirmed the flagged words ("robustness", "landscape") are
-  legitimate technical usage, not slop — left as-is. **Audit complete.**
-  Q2/Q4 (citation-style + terminology preferences) remain optional; tell me if you want them applied.
+## Applied decisions
+- **Q1 (RCD RFC):** RCD PASSporT = RFC 9795 (+9796); corrected. *(resolved iter 42)*
+- **Q2 (citation style) = A:** per-module `## References` stay, but must be a **subset of and
+  consistent with** the bibliography. *(auditing iter 48; single-source-of-truth = bibliography)*
+- **Q3 (anti-slop depth) = A:** light touch — fix clear AI-isms/flow only, preserve technical
+  wording. Content already scans near-zero for AI-isms. *(done)*
+- **Q4 (terminology):** keep `redteam` for the literal service/network, "red team" in prose;
+  spell out each acronym on first use per module, then abbreviate. Added a **glossary**
+  (`course/references/glossary.md`). *(glossary done; first-use spell-out applied light-touch)*
 
-## What I already fixed in Pass 1 (no decision needed)
-- **`div` PASSporT was mis-attributed.** RFC **8588** is the SHAKEN PASSporT (`attest`/`origid`);
-  `div` (diverted calls) is RFC **8946**. Fixed in M12 and the bibliography.
-- Added cited-but-missing RFCs to the bibliography so it is the single source of truth
-  (3312, 3581, 3856, 4787, 5853, 6913, 8946, 1918; noted 2617→7616).
+## Noted for later (your call)
+- "We will revisit the entire question of references later" — holding on any large reference
+  rework until you steer it.
 
-## Q1 — Rich Call Data (RCD) PASSporT RFC number  ✅ RESOLVED (iter 42)
-Verified against the IETF datatracker: **RCD PASSporT = RFC 9795**, with **RFC 9796** for the SIP
-Call-Info parameters. The old "RFC 8946/9118" was wrong on both counts (8946 is `div`; 9118 isn't
-RCD). Corrected in M12 and added to the bibliography. No decision needed.
-
-## Q2 — Citation style: single source of truth vs repetition
-Each module repeats a `## References` list AND the bibliography holds the master list. This drifts.
-**Decision — pick one:**
-- (A) Keep per-module reference lists but they must be a **subset** of the bibliography (I audit).
-- (B) Slim per-module lists to "see bibliography" + only the 2–3 RFCs central to that module.
-- (C) Leave as-is (I only fix outright errors).
-Default if you don't answer: **(A)**.
-
-## Q3 — How aggressive should the anti-slop prose pass be?
-Scan result: the content is already clean (crucial/delve/vibrant/leverage/"in order to" = 0
-occurrences; only "landscape" ×1, "robust" ×2). So heavy rewriting risks introducing errors into
-technical text for little gain.
-**Decision — pick one:**
-- (A) **Light touch:** fix only clear AI-isms + awkward flow, preserve technical wording. *(Recommended)*
-- (B) Deeper voice pass (more rewriting, higher risk on technical accuracy).
-Default: **(A)**.
-
-## Q4 — Terminology standardization (minor)
-- "red-team" (prose) vs "redteam" (the container/network name). Keep `redteam` for the literal
-  service/network, "red team" in prose? (Default: yes.)
-- Spell out acronyms on first use per module (SBC, PSTN, PBX, SRTP…)? (Default: spell out the
-  first time each appears in a module, then abbreviate.)
-
-## Q5 — Anything else you want checked
-- Cross-module claim contradictions? Number/threat-ID (T1–T15) consistency? Rubric point-total
-  consistency (all should sum to 100)? Tell me if any of these matter and I'll add them to Pass 2.
+_Drop a `feedback.txt` to add decisions; it is processed then deleted (not committed)._
