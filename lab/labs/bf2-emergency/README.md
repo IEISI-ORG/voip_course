@@ -31,6 +31,16 @@ dispatchable location; the INVITE carries `Resource-Priority`, a `Geolocation` h
 - Location is sensitive PII: `retransmission-allowed=no`; handle per privacy rules.
 - Parse any inbound location XML with an XXE/entity-safe parser (see `verify.sh`).
 
+## Jurisdictions (the framework is neutral; the rules are national)
+PIDF-LO and Resource-Priority are jurisdiction-neutral; the *obligations* are national:
+- **US:** direct-dial + notification (**Kari's Law**) and **dispatchable location** (**RAY BAUM'S
+  Act**) — the default this lab implements.
+- **AU (000):** the Australian Telecommunications Alliance industry code **C674:2025 — *Emergency
+  Calling – Network and Mobile Phone Testing*** ([bib §11b](../../../course/references/bibliography.md))
+  governs how operators must *test* emergency-call handling; carrier obligations sit under the ACMA.
+- **UK/EU (999 / 112):** **112** is the pan-EU emergency number; UK adds **999**, regulated by Ofcom.
+  (Full AU/UK regulatory detail is tracked as backlog **F5**.)
+
 ## Rubric (100 pts, pass ≥ 70)
 | Item | Pts | Grading |
 |------|-----|---------|

@@ -100,9 +100,10 @@ when their parent B-task is reached.
 - [x] F2. AI-slop content review pass — audited tracked markdown for AI-vocabulary, negative parallelism, promo/superlative, superficial -ing, trendslop, and correlation-as-causation: CLEAN (only legit hits: paper titles, digest-auth "realm", "powerful" attack-surface descriptor). Shipped reusable `course/references/slop-check.sh` (advisory) + CONTRIBUTING hook. ← iter 68
 - [ ] F3. Issue-triage loop — read `gh issue list`, draft a planned response per open issue, act
       ONLY after the maintainer approves in the issue thread. (feedback.txt.)
-- [ ] F5. Emergency-calling coverage for multiple jurisdictions (feedback3): today BF2/M17 are
-      US-centric (e911, Kari's/RAY BAUM'S). Add **AU (000 / ACMA)** and **UK (999/112 / Ofcom)**
-      dispatchable-location + routing requirements so the course isn't US-only.
+- [~] F5. Emergency-calling coverage for multiple jurisdictions (feedback3): BF2/M17 were US-centric
+      (Kari's/RAY BAUM'S). AU (000) partially addressed iter 72 — ATA industry code **C674:2025** cited
+      + a "Jurisdictions" note in BF2. Remaining: UK (999/112, Ofcom), EU (112), fuller AU regulatory
+      detail + a routing/testing lab hook.
 - [x] F6. VoIP RFC dependency map (feedback4) — `course/references/rfc-dependency-map.md`, a Mermaid
       graph (29 nodes/27 edges, validated) of how the core SIP/VoIP RFCs build on RFC 3261; the VoIP
       analogue of the RPKI RFC dependency graph. ← iter 71
@@ -507,6 +508,13 @@ when their parent B-task is reached.
   (emergency AU/UK — real gap: BF2 is US-only), **F7** (vendor device-config-security from Crexendo/
   Yealink docs). 7 dropped papers (SIP papers + TR-104 + vendor docs) queued for venue-checked
   ingestion next. Deleted all 6 feedback files.
+
+- Iteration 72 (2026-07-04): MEMO (feedback2) → memorized **source priority: standards & codes of
+  conduct > peer-reviewed papers**. Processed **C674:2025** (dropped) — turned out to be the ATA
+  industry code *Emergency Calling – Network and Mobile Phone Testing* (not SIP headers as the user
+  recalled). Added to bibliography §11b (cited, not reproduced — © ATA), and folded a "Jurisdictions"
+  note into BF2 (US/AU/UK-EU) → F5 now `[~]` (AU started; UK/EU remain). Deleted 2 feedback. The
+  other queued papers (vendor docs, SIP papers) still pending venue-checked ingestion.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

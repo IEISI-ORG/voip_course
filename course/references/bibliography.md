@@ -122,6 +122,7 @@ grows.
 | Doc | Relevance | Note |
 |-----|-----------|------|
 | Broadband Forum **TR-104 Issue 2**, *Provisioning Parameters for VoIP CPE*, March 2014. https://www.broadband-forum.org/technical/download/TR-104_Issue-2.pdf | BF4 provisioning; device config | Standardised data model (the TR-069/CWMP `VoiceService` object) for provisioning VoIP CPE — the vendor-neutral schema behind secure auto-provisioning. Broadband Forum TRs are consensus industry standards (not peer-reviewed papers, but citable authorities like RFC/NIST). |
+| Australian Telecommunications Alliance, **C674:2025**, *Emergency Calling – Network and Mobile Phone Testing*, 2025. https://www.austelco.org.au | M17/BF2 emergency (AU 000) | AU industry code for how operators must test emergency-call handling. A national **code of conduct** — a high-priority authority. (© ATA; cited, not reproduced.) |
 
 ## RFC dependency map
 See [`rfc-dependency-map.md`](rfc-dependency-map.md) — a curated graph of how the core VoIP RFCs
