@@ -100,10 +100,11 @@ when their parent B-task is reached.
 - [x] F2. AI-slop content review pass — audited tracked markdown for AI-vocabulary, negative parallelism, promo/superlative, superficial -ing, trendslop, and correlation-as-causation: CLEAN (only legit hits: paper titles, digest-auth "realm", "powerful" attack-surface descriptor). Shipped reusable `course/references/slop-check.sh` (advisory) + CONTRIBUTING hook. ← iter 68
 - [ ] F3. Issue-triage loop — read `gh issue list`, draft a planned response per open issue, act
       ONLY after the maintainer approves in the issue thread. (feedback.txt.)
-- [~] F5. Emergency-calling coverage for multiple jurisdictions (feedback3): BF2 Jurisdictions note
-      now covers **US** (Kari's/RAY BAUM'S), **AU 000** (ATA C674:2025), **EU 112** (EECC Art 109 +
-      ETSI TS 103 479 NG112 + EENA/AML), **UK 999/112** (Ofcom). Cited in bib §11b. Remaining: a
-      routing/testing *lab hook* (NG112 flow) + deeper per-country detail if wanted.
+- [x] F5. Emergency-calling coverage for multiple jurisdictions (feedback3). BF2 covers US (Kari's/
+      RAY BAUM'S), AU 000 (C674:2025), EU 112 (EECC Art 109 + ETSI TS 103 479 NG112 + EENA), UK 999/112
+      (Ofcom), cited in bib §11b. **NG112 routing lab hook added iter 76**: `emergency-route.sh`
+      (ECRF/LoST stand-in) maps (number, jurisdiction) → PSAP and is **fail-closed on missing
+      location**; verify.sh now 14/14. ← iter 76
 - [x] F6. VoIP RFC dependency map (feedback4) — `course/references/rfc-dependency-map.md`, a Mermaid
       graph (29 nodes/27 edges, validated) of how the core SIP/VoIP RFCs build on RFC 3261; the VoIP
       analogue of the RPKI RFC dependency graph. ← iter 71
@@ -535,6 +536,13 @@ when their parent B-task is reached.
   **Rejected** the Journal of Communications P2P-SIP study (Academy Publisher — marginal, redundant).
   EENA legislation slide is redundant with the existing EENA/EECC citations (no new cite). papers/ =
   12 MDs, all triaged; the remaining ones are the kept sources.
+
+- Iteration 76 (2026-07-05): built the F5 NG112 routing lab hook — `lab/labs/bf2-emergency/
+  emergency-route.sh`: a deterministic ECRF/LoST (RFC 5222) stand-in mapping (dialed number,
+  jurisdiction) → PSAP for US 911 / AU 000 / UK 999 / EU 112, **fail-closed on missing dispatchable
+  location** (the invariant shared by RAY BAUM'S / EECC Art 109 / C674). Extended BF2 verify.sh with
+  6 routing tests (now 14/14, self-validating: locationless call REFUSED, non-emergency not
+  misclassified). **F5 complete.** No feedback this iter.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

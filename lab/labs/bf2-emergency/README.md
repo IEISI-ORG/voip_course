@@ -31,6 +31,16 @@ dispatchable location; the INVITE carries `Resource-Priority`, a `Geolocation` h
 - Location is sensitive PII: `retransmission-allowed=no`; handle per privacy rules.
 - Parse any inbound location XML with an XXE/entity-safe parser (see `verify.sh`).
 
+## NG112-style routing (multi-jurisdiction)
+[`emergency-route.sh`](emergency-route.sh) is a deterministic stand-in for an ECRF/LoST
+(RFC 5222) location→PSAP lookup: it maps `(dialed number, jurisdiction)` to the right PSAP for
+**US 911 / AU 000 / UK 999 / EU 112** and enforces the invariant shared by RAY BAUM'S, EECC Art 109
+and C674 — **an emergency call with no dispatchable location is refused, never silently routed**.
+```bash
+bash emergency-route.sh 000 AU                 # -> ROUTE to Triple Zero
+bash emergency-route.sh 911 US --location absent   # -> REFUSE (fail-closed)
+```
+
 ## Jurisdictions (the framework is neutral; the rules are national)
 PIDF-LO and Resource-Priority are jurisdiction-neutral; the *obligations* are national:
 - **US:** direct-dial + notification (**Kari's Law**) and **dispatchable location** (**RAY BAUM'S

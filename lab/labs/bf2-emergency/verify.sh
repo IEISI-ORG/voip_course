@@ -38,6 +38,19 @@ echo "$msg" | grep -q 'application/pidf+xml'       && ok "PIDF-LO body attached 
 echo "$msg" | grep -q 'Geolocation:'               && ok "Geolocation header references the body"  || bad "no Geolocation header"
 echo "$msg" | grep -q 'multipart/mixed'            && ok "multipart/mixed (SDP + location)"         || bad "not multipart"
 
+echo "== 3. NG112-style routing across jurisdictions (fail-closed on location) =="
+R="$DIR/emergency-route.sh"
+for pair in "911 US" "000 AU" "999 UK" "112 EU"; do
+  bash "$R" $pair 2>/dev/null | grep -q '^ROUTE:' && ok "routes $pair to a PSAP with location" || bad "did not route $pair"
+done
+# self-validation: a located-absent emergency call must be REFUSED (exit 1), not routed
+if bash "$R" 911 US --location absent >/dev/null 2>&1; then
+  bad "locationless emergency call was NOT refused (fail-open)"
+else
+  bash "$R" 911 US --location absent 2>/dev/null | grep -q '^REFUSE' && ok "locationless emergency call refused (RAY BAUM'S/EECC/C674)" || bad "refuse path malformed"
+fi
+bash "$R" 5551234 US 2>/dev/null | grep -q '^NON-EMERGENCY' && ok "non-emergency number not treated as emergency" || bad "misclassified a normal call"
+
 echo
 echo "== note: SBC must NOT strip the PIDF-LO and Resource-Priority must not be forgeable by"
 echo "==       untrusted peers (spoofed priority = DoS amplification). Kari's Law: direct 911 + notify."
