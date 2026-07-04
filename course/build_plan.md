@@ -443,6 +443,16 @@ when their parent B-task is reached.
   feedback-*.md + gemini_feedback*.md) via filter-branch + force-push; substance retained in this
   feedback log. Deleted the 4 feedback files (never committed).
 
+- Iteration 64 (2026-07-04): F4 papers ingestion — 3 PDFs dropped in `papers/`, converted to MD
+  (pdftotext), PDFs removed (MD kept, gitignored). Folded 2 high-authority sources into cited
+  content: **Keromytis, IEEE COMST 2012 VoIP-security survey** → bibliography §11 + M13 (impl
+  bugs/misconfig = primary vuln source; DoS/service-abuse under-addressed); **Raut/Shukla/Modi, J.
+  Digital Security & Forensics 2026 VoIP forensics review** → bib §11 + M5 (volatile+encrypted
+  evidence → memory forensics + ML detection complement capture). Paper 3 (Bernard, Walden doctoral
+  study 2022) held pending user decision (Q7 — managerial register, uncertain fit). Citations taken
+  verbatim from the PDFs (no memory guessing, per anti-slop guardrail). F1 (Suricata) deferred to
+  next iteration.
+
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
   (positive-control gating, fail-closed). Verified bash-clean.

@@ -109,10 +109,16 @@ grows.
 | Baresip / Linphone | softphones | https://github.com/baresip/baresip · https://www.linphone.org |
 | Docker / Compose | orchestration | https://docs.docker.com |
 
+## 11. Academic surveys & literature (peer-reviewed)
+| Work | Relevance | Key finding used |
+|------|-----------|------------------|
+| A. D. Keromytis, "A Comprehensive Survey of Voice over IP Security Research," *IEEE Communications Surveys & Tutorials*, vol. 14, no. 2, pp. 514–537, 2012. | M13 threats; whole-course thesis | Classifies 245 papers by the VoIPSA threat taxonomy; finds **DoS and service abuse** the most under-addressed areas, and that most research takes a *black-box* view that misses **implementation bugs and misconfigurations** — the primary vulnerability source. |
+| V. Raut, K. Shukla, K. Modi, "Voice over Internet Protocol (VoIP) Network Forensics and Security…," *Journal of Digital Security and Forensics*, vol. 3, no. 1, pp. 59–70, 2026. DOI 10.29121/DigiSecForensics.v3.i1.2026.81. | M5 analysis; M15 IR | 25-year synthesis (41 papers): **memory forensics** recovers volatile VoIP evidence where network capture fails; ML classifiers detect encrypted VoIP traffic at >95%; open challenges in real-time collection and cross-platform (proprietary) analysis. |
+
 ## Glossary
 Abbreviations and acronyms are defined in [`glossary.md`](glossary.md).
 
-## 11. Citation convention
+## 12. Citation convention
 In module docs, cite as `RFC NNNN` (SIP/media/security), standards body + doc id
 (e.g. `ATIS-1000074`, `NIST SP 800-58`, `GSMA IR.92`), or the package KB by name. Keep this file
 the single source of truth for the canonical reference list.

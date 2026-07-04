@@ -3,7 +3,13 @@
 Answered questions are pruned each iteration (per your instruction).
 
 ## Open (need your steer)
-_None right now._
+- **Q7 (paper 3 — Bernard, Walden Univ. doctoral study 2022, "Strategies to Secure a VoIP Telephone
+  System"):** processed 3 dropped papers. Folded the two high-authority ones in (Keromytis IEEE
+  COMST survey → M13 + bib; Raut et al. VoIP forensics review → M5 + bib). Paper 3 is a **qualitative
+  case study of strategies IT leaders use** (managerial/governance angle, DIT dissertation) — real
+  but lower technical authority and a different register than this hands-on course. **Do you want its
+  conclusions folded in (e.g., a governance/defense-in-depth note in M14 or the delivery guide), or
+  skip it?** Its MD is held in `papers/` pending your call.
 
 ## Applied decisions
 - **Q5 (Suricata) = integrate into M13→M15 pipeline:** build F1 as the IDS stage of the existing

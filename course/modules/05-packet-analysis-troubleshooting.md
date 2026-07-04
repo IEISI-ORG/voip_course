@@ -50,3 +50,8 @@ fault-isolation method. **Est. time:** 4h · **Prereqs:** Modules 2–4. **Check
 
 ## References
 - Wireshark User Guide (VoIP); sngrep README; HOMER 7 / Heplify / HEP RFC-draft; tshark docs.
+- Raut, Shukla & Modi (J. Digital Security & Forensics 2026), *VoIP Network Forensics and Security*
+  — see [bibliography §11](../references/bibliography.md). Note for evidence work: much VoIP evidence
+  is **volatile** and increasingly **encrypted**, so network capture alone is often insufficient —
+  memory forensics complements it, and encrypted-traffic classification (ML) is how analysts detect
+  flows they cannot decode. Reinforces this module's redact-and-hash evidence discipline.

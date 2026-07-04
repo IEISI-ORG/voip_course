@@ -70,3 +70,8 @@ a border element. RFC 4475 gives a standardized adversarial corpus to prove it.
 ## References
 - SIPVicious OSS docs; SIPp scenarios; PTES; OWASP testing concepts; NIST SP 800-115
   (technical assessment); `../notes.md §2` threat catalog.
+- Keromytis (IEEE COMST 2012), *A Comprehensive Survey of VoIP Security Research* — see
+  [bibliography §11](../references/bibliography.md). Its survey of 245 papers finds **implementation
+  bugs and misconfigurations** to be the primary vulnerability source (missed by black-box
+  research), and **DoS and service abuse** the most under-addressed areas — which is why this course
+  leans on config-hardening and parser-robustness testing (RFC 4475), not just protocol theory.
