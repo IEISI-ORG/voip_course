@@ -32,7 +32,8 @@ mergeable.
 - [ ] Ran the relevant checks: the lab's `verify.sh`, `make verify-all` where applicable, and
   `bash -n` on shell scripts. CI (lint + offline graders) must pass.
 - [ ] Accuracy over trend: cite an authority (RFC/standard/vendor KB); don't present correlation as
-  causation. See the bibliography in `course/references/`.
+  causation. See the bibliography in `course/references/`. Run the advisory
+  `bash course/references/slop-check.sh` and review any marker hits.
 
 ## Security issues
 Do **not** file a public issue for a security vulnerability. Email **contact@ieisi.org** with details.

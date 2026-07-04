@@ -97,8 +97,7 @@ when their parent B-task is reached.
       relevant/useful conclusions into the course content **with a citation** (added to the
       bibliography). Ask the maintainer when a paper's usefulness is uncertain. Never commit the
       source papers; only distilled, cited conclusions land in tracked content.
-- [ ] F2. AI-slop content review pass — audit the whole corpus for **trendslop** (common-in-data ≠
-      correct) and **correlation-presented-as-causation**; fix any found. (feedback2.)
+- [x] F2. AI-slop content review pass — audited tracked markdown for AI-vocabulary, negative parallelism, promo/superlative, superficial -ing, trendslop, and correlation-as-causation: CLEAN (only legit hits: paper titles, digest-auth "realm", "powerful" attack-surface descriptor). Shipped reusable `course/references/slop-check.sh` (advisory) + CONTRIBUTING hook. ← iter 68
 - [ ] F3. Issue-triage loop — read `gh issue list`, draft a planned response per open issue, act
       ONLY after the maintainer approves in the issue thread. (feedback.txt.)
 
