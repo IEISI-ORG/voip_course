@@ -475,6 +475,13 @@ when their parent B-task is reached.
   → same nftables-ipset sink as BF12's hp2ipset.sh). verify.sh PASSES 9/9, self-validating (bans only
   VOIPSEC-alert sources; ignores non-alert flows + non-VOIPSEC alerts). Cross-linked into M15.
 
+- Iteration 69 (2026-07-04): F4 — processed paper **Kolahi et al. (2013), "Impact of IPSec Security
+  on VoIP in Different Environments"** → bibliography §11 + M9 (trunk security). Cited the measured
+  tradeoff (IPsec adds CPU + delay; throughput ~unchanged; RTT/jitter inconsistent) as evidence that
+  trunk crypto must be capacity-budgeted, and why per-hop TLS+SRTP is often preferred over a blanket
+  IPsec tunnel. Attributed carefully (small single test-bed; no overclaiming on the inconsistent
+  metrics, per anti-slop guardrail). MD kept in papers/ (gitignored); citation verbatim from source.
+
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
   (positive-control gating, fail-closed). Verified bash-clean.
