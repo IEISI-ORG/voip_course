@@ -29,6 +29,23 @@ mTLS + allowlist + per-device (CN==MAC) scoping over HTTPS-only.
 - Valid device, spoofed MAC (fetch another device's config) → 403 (CN≠MAC).
 - Tampered config → signature invalid → device rejects it.
 
+## This lab matches industry guidance (not hypothetical)
+The **Comms Council UK** code *Recommendations for Device Provisioning Security*
+([bib §11b](../../../course/references/bibliography.md)) states exactly what this lab enforces:
+authenticate provisioning over **HTTPS with factory-installed client certificates**, **never** use
+TFTP/HTTP/FTP/unencrypted transports, and **delete SIP passwords** from the server once provisioned.
+
+Shipping products implement the same pattern — vendor docs (lower authority, concrete examples):
+- **Yealink RPS** (Redirection & Provisioning Service): configs are served over **HTTPS** and a device
+  only receives them if its **MAC is enrolled** to the reseller's authenticated account — the same
+  "TLS + MAC-bound + authenticated fetch" pattern this lab enforces.
+- **Crexendo firewall guidance:** don't blanket-open SIP — **allowlist the provider's specific
+  signalling/media IPs+ports**, put phones on a **dedicated voice VLAN**, and disable **SIP ALG** on
+  edge routers (it rewrites SIP and breaks TLS/topology hiding). Network-side complement to M8.
+
+> Vendor documentation is the lowest-authority source class (below standards and peer-reviewed work);
+> used here only for concrete, vendor-neutral configuration practice.
+
 ## Rubric (100 pts, pass ≥ 70)
 | Item | Pts | Grading |
 |------|-----|---------|

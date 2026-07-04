@@ -107,9 +107,7 @@ when their parent B-task is reached.
 - [x] F6. VoIP RFC dependency map (feedback4) — `course/references/rfc-dependency-map.md`, a Mermaid
       graph (29 nodes/27 edges, validated) of how the core SIP/VoIP RFCs build on RFC 3261; the VoIP
       analogue of the RPKI RFC dependency graph. ← iter 71
-- [ ] F7. Vendor device-config-security content (feedback6) — from the dropped vendor docs (Crexendo
-      firewall setup, Yealink RPS provisioning): fold vendor-neutral hardening guidance into BF4
-      (provisioning) / M14, cited. Venue = vendor documentation (label as such, not peer-reviewed).
+- [x] F7. Device-config-security (feedback6) — folded into BF4: Comms Council UK *Recommendations for Device Provisioning Security* (UK code) as the authority + Yealink RPS / Crexendo vendor docs as concrete examples; bibliography §11b/§11c. ← iter 74
 
 ## Loop protocol (each iteration)
 1. Check `/home/terry/voip_course` for feedback files (`*feedback*`, `FEEDBACK*`, `feedback/`).
@@ -522,6 +520,14 @@ when their parent B-task is reached.
   bibliography §11b; expanded the BF2 Jurisdictions note to US/AU/EU/UK. Refined C674 note (it defines
   AU emergency SIP-header requirements). F5 now covers all four jurisdictions at the standards level;
   only a NG112 routing/testing lab hook remains. Deleted 3 feedback files.
+
+- Iteration 74 (2026-07-04): F7 device-config-security — folded into BF4: **Comms Council UK
+  *Recommendations for Device Provisioning Security*** (UK code; HTTPS + factory client certs, no
+  TFTP/HTTP, delete SIP passwords post-provision — validates BF4's design) as the authority, plus
+  Yealink RPS + Crexendo vendor docs as concrete examples. Bibliography §11b (UK code) + new §11c
+  (vendor docs, lowest-authority class). Triaged the paper queue: **rejected** Session_Initiation_
+  Protocol (IJSER, predatory). Remaining queued: Bur Goode (Proc. IEEE — keep, fold to M1), a Journal
+  of Communications SIP study + an EU emergency legislation slide (assess). No feedback this iter.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

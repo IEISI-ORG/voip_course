@@ -123,9 +123,17 @@ grows.
 |-----|-----------|------|
 | Broadband Forum **TR-104 Issue 2**, *Provisioning Parameters for VoIP CPE*, March 2014. https://www.broadband-forum.org/technical/download/TR-104_Issue-2.pdf | BF4 provisioning; device config | Standardised data model (the TR-069/CWMP `VoiceService` object) for provisioning VoIP CPE — the vendor-neutral schema behind secure auto-provisioning. Broadband Forum TRs are consensus industry standards (not peer-reviewed papers, but citable authorities like RFC/NIST). |
 | Australian Telecommunications Alliance, **C674:2025**, *Emergency Calling – Network and Mobile Phone Testing*, 2025. https://www.austelco.org.au | M17/BF2 emergency (AU 000) | AU industry **code** governing emergency-call handling/testing, incl. the SIP-header requirements for AU emergency calls. A national code of conduct — high-priority authority. (© ATA; cited, not reproduced.) |
+| **Comms Council UK**, *Recommendations for Device Provisioning Security*, v2. https://www.commscouncil.uk | BF4 provisioning | UK industry code: **authenticate provisioning over HTTPS with factory-installed client certificates**; **never** TFTP/HTTP/FTP/unencrypted; **delete SIP passwords** from servers once provisioned. Directly validates this course's BF4 mTLS + MAC-allowlist + signed-config design. |
 | **EECC** — Directive (EU) 2018/1972 (European Electronic Communications Code), **Article 109**. https://eur-lex.europa.eu/eli/dir/2018/1972/oj | M17/BF2 emergency (EU 112) | The EU legal mandate: every ECS provider must supply **free** emergency communications and transmit **precise caller location** (network-based **and** handset-derived) to the PSAP **without delay**. |
 | **ETSI TS 103 479** V1.2.1 (2023-03), *Emergency Communications (EMTEL); Core elements for network independent access to emergency services*. https://www.etsi.org | M17/BF2 emergency (EU/NG112) | The **NG112** reference architecture — BCF, ESRP, ECRF, PSAP, LIS, BRIDGE. The EU standard behind IP emergency-call routing/location. |
 | **EENA** — European Emergency Number Association (112 operational guidance & AML). https://eena.org | M17/BF2 emergency (EU 112) | The pan-European body for 112; guidance on Advanced Mobile Location (AML) handset-derived location and PSAP operations. |
+
+## 11c. Vendor documentation (device/network config — lowest-authority class)
+Used only for concrete, vendor-neutral configuration practice; below standards and peer-reviewed work.
+| Doc | Relevance | Note |
+|-----|-----------|------|
+| Yealink, *Redirection and Provisioning Service (RPS) VAR Manual*. https://rps.yealink.com | BF4 provisioning | Zero-touch provisioning over **HTTPS** with **MAC-bound** device enrolment under an authenticated reseller account — real-world instance of the lab's TLS + MAC-allowlist model. |
+| Crexendo, *VIP General Firewall Setup*. https://www.crexendo.com | M8 firewall; BF4 | Provider-IP/port **allowlisting**, **voice VLAN**, and **SIP-ALG-off** guidance for VoIP endpoints. |
 
 ## RFC dependency map
 See [`rfc-dependency-map.md`](rfc-dependency-map.md) — a curated graph of how the core VoIP RFCs
