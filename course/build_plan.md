@@ -87,6 +87,17 @@ when their parent B-task is reached.
 - [x] E2. Assessment convention: keep answer keys in `assessments/answer-keys/` (one level deeper,
       separate file) — applied to exam #1 (iter 22); apply to exams #2/#3 when built.
 
+### Stage F — community & licensing (added iter 62 from feedback)
+- [x] F0. LICENSE (CC BY-NC-SA 4.0 + commercial/royalty clause) + CONTRIBUTING.md (issue-first,
+      approval-gated, PR must match license) + CONTRIBUTORS.md  ← iteration 62
+- [ ] F1. Suricata IDS lab — network intrusion detection for VoIP threats (SIP scan/flood/toll-fraud
+      signatures); integrates with M13 (attack) → M15 (detect) and the honeypot/Wazuh pipeline.
+      (feedback1: "IDS: Suricata … detecting hackers, can do?" → yes.)
+- [ ] F2. AI-slop content review pass — audit the whole corpus for **trendslop** (common-in-data ≠
+      correct) and **correlation-presented-as-causation**; fix any found. (feedback2.)
+- [ ] F3. Issue-triage loop — read `gh issue list`, draft a planned response per open issue, act
+      ONLY after the maintainer approves in the issue thread. (feedback.txt.)
+
 ## Loop protocol (each iteration)
 1. Check `/home/terry/voip_course` for feedback files (`*feedback*`, `FEEDBACK*`, `feedback/`).
    If present: read, incorporate, and prioritize before the backlog. Record what it asked in the
@@ -410,6 +421,14 @@ when their parent B-task is reached.
   Regenerated exam.html + slide decks. Verified: 8 offline graders + bf14 PASS, compose config
   VALID, all 3 assessment/instructor validators PASS (drift clear). Credential subtitle kept
   ("Secure Open-source VoIP Operations").
+
+- Iteration 62 (2026-07-04): processed 3 feedback files (priority over backlog). **Fixed .gitignore**
+  (`/feedback.txt`+`/feedback*.md` → `/feedback*`) — feedback1.txt/feedback2.txt were NOT ignored and
+  could have been committed. Built F0: LICENSE (CC BY-NC-SA 4.0 + commercial/royalty clause, contact
+  tcs@ieisi.org), CONTRIBUTING.md (issue-first, approval-gated; PR must match license + add to
+  contributors; no-secrets/lab-scoped rules; accuracy-over-trend), CONTRIBUTORS.md. Logged F1
+  (Suricata IDS), F2 (AI-slop review), F3 (issue-triage loop) to the backlog. Answered the questions
+  in questions.md; memorized the AI-slop guidance. Deleted the 3 feedback files (never committed).
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

@@ -60,6 +60,11 @@ findings from automated review are addressed and logged.
 
 ## License / use
 
+Licensed **CC BY-NC-SA 4.0** — free to learn from, run, teach, and adapt for **non-commercial**
+use with attribution and share-alike. Commercial/for-profit use needs a separate licence (royalty);
+see [`LICENSE`](LICENSE). Contributions welcome under [`CONTRIBUTING.md`](CONTRIBUTING.md) (issue
+first, approval-gated) — contributors are credited in [`CONTRIBUTORS.md`](CONTRIBUTORS.md).
+
 Training material for **authorized** security education. Offensive tooling targets only the
 local lab; testing systems without written authorization is illegal. See
 [`lab/services/redteam/AUTHORIZED_USE.md`](lab/services/redteam/AUTHORIZED_USE.md).

@@ -23,8 +23,7 @@ lab/**/*.log
 .claude/
 
 # --- Feedback files: ephemeral steering, processed then deleted, never committed ---
-/feedback.txt
-/feedback*.md
+/feedback*
 /FEEDBACK*
 /feedback/
 
