@@ -118,6 +118,15 @@ grows.
 | A. Mohd Ramly, Z. W. Ng, Y. Khamayseh, C. S. C. Kwan, A. Amphawan, T.-K. Neo, "Review and Enhancement of VoIP Security: Identifying Vulnerabilities and Proposing Integrated Solutions," *Journal of Telecommunications and the Digital Economy*, vol. 12, no. 4, 2024. DOI 10.18080/jtde.v12n4.1022. | M13 threats | Recent peer-reviewed review of VoIP vulnerabilities (eavesdropping, registration/call hijacking, SPIT, vishing, malware) and layered/integrated mitigations. |
 | S. S. Kolahi, K. Mudaliar, C. Zhang, Z. Gu, "Impact of IPSec Security on VoIP in Different Environments," *9th Int'l Conf. on Ubiquitous and Future Networks (IEEE ICUFN)*, pp. 979–982, 2017. DOI 10.1109/ICUFN.2017.7993945. | M9 trunk security; security-vs-performance | Peer-reviewed IEEE conference paper. Test-bed comparison (IPv4/IPv6/6in4, ±IPsec): IPsec raised **CPU usage** and added **delay**; throughput ~unchanged; RTT/jitter results **inconsistent**. Used carefully (single test-bed): encryption overhead is real and must be capacity-budgeted. |
 
+## 11b. Industry technical reports & standards (non-RFC)
+| Doc | Relevance | Note |
+|-----|-----------|------|
+| Broadband Forum **TR-104 Issue 2**, *Provisioning Parameters for VoIP CPE*, March 2014. https://www.broadband-forum.org/technical/download/TR-104_Issue-2.pdf | BF4 provisioning; device config | Standardised data model (the TR-069/CWMP `VoiceService` object) for provisioning VoIP CPE — the vendor-neutral schema behind secure auto-provisioning. Broadband Forum TRs are consensus industry standards (not peer-reviewed papers, but citable authorities like RFC/NIST). |
+
+## RFC dependency map
+See [`rfc-dependency-map.md`](rfc-dependency-map.md) — a curated graph of how the core VoIP RFCs
+build on one another (the VoIP analogue of the RPKI RFC dependency graph).
+
 ## Glossary
 Abbreviations and acronyms are defined in [`glossary.md`](glossary.md).
 

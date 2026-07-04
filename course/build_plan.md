@@ -100,6 +100,15 @@ when their parent B-task is reached.
 - [x] F2. AI-slop content review pass — audited tracked markdown for AI-vocabulary, negative parallelism, promo/superlative, superficial -ing, trendslop, and correlation-as-causation: CLEAN (only legit hits: paper titles, digest-auth "realm", "powerful" attack-surface descriptor). Shipped reusable `course/references/slop-check.sh` (advisory) + CONTRIBUTING hook. ← iter 68
 - [ ] F3. Issue-triage loop — read `gh issue list`, draft a planned response per open issue, act
       ONLY after the maintainer approves in the issue thread. (feedback.txt.)
+- [ ] F5. Emergency-calling coverage for multiple jurisdictions (feedback3): today BF2/M17 are
+      US-centric (e911, Kari's/RAY BAUM'S). Add **AU (000 / ACMA)** and **UK (999/112 / Ofcom)**
+      dispatchable-location + routing requirements so the course isn't US-only.
+- [x] F6. VoIP RFC dependency map (feedback4) — `course/references/rfc-dependency-map.md`, a Mermaid
+      graph (29 nodes/27 edges, validated) of how the core SIP/VoIP RFCs build on RFC 3261; the VoIP
+      analogue of the RPKI RFC dependency graph. ← iter 71
+- [ ] F7. Vendor device-config-security content (feedback6) — from the dropped vendor docs (Crexendo
+      firewall setup, Yealink RPS provisioning): fold vendor-neutral hardening guidance into BF4
+      (provisioning) / M14, cited. Venue = vendor documentation (label as such, not peer-reviewed).
 
 ## Loop protocol (each iteration)
 1. Check `/home/terry/voip_course` for feedback files (`*feedback*`, `FEEDBACK*`, `feedback/`).
@@ -490,6 +499,14 @@ when their parent B-task is reached.
   publisher; unfolded from M5+bib), "Enhancing…" (Macron, no venue), "Threat Detection…" (Martins, no
   venue). Kept VoIPSA taxonomy as a standards doc. Q8 flags the two judgment calls. Memorized the
   peer-review gate ([[cite-processed-papers]]). Deleted feedback + all source PDFs (papers/ = 5 MDs).
+
+- Iteration 71 (2026-07-04): processed 6 feedback + logged a 7-paper batch (queued for venue-check).
+  Q8 resolved (drop Raut for good; keep VoIPSA as aged rebuttable standard). Added **Broadband Forum
+  TR-104 Issue 2** to bibliography (§11b, new non-RFC standards section; feedback5). Built **F6 VoIP
+  RFC dependency map** (Mermaid, 29 nodes/27 edges, structurally validated; feedback4). Logged **F5**
+  (emergency AU/UK — real gap: BF2 is US-only), **F7** (vendor device-config-security from Crexendo/
+  Yealink docs). 7 dropped papers (SIP papers + TR-104 + vendor docs) queued for venue-checked
+  ingestion next. Deleted all 6 feedback files.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
