@@ -461,6 +461,15 @@ when their parent B-task is reached.
   (21 decks PASS under xvfb). Memorized the standing rule **always cite papers we process+use**
   ([[cite-processed-papers]], feedback2). Deleted feedback files. F1 (Suricata) still next.
 
+- Iteration 66 (2026-07-04): (1) **Dropped Bernard** per feedback — removed the governance appendix
+  slide, its bibliography entry, and MD; restored slides/verify.sh + marp/render-check.js to
+  pre-appendix state (management, not technical). Q7 marked DROPPED. (2) Processed new paper
+  **VoIPSA VoIP Security & Privacy Threat Taxonomy (Public Release 1.0, 2005)** → bibliography §11 +
+  M13: the canonical six-category classification (Social, Eavesdropping, Interception & Modification,
+  Service Abuse, Intentional Interruption of Service/DoS, Physical Intrusion) that the course's
+  T1–T15 catalog maps onto and that Keromytis extends. Citation verbatim from the PDF. F1 (Suricata)
+  still next.
+
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
   (positive-control gating, fail-closed). Verified bash-clean.

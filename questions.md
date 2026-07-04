@@ -6,7 +6,8 @@ Answered questions are pruned each iteration (per your instruction).
 _None right now._
 
 ## Applied decisions
-- **Q7 (paper 3 Bernard 2022) = one MARP slide only:** added `course/instructor/slides/z-appendix-governance.md` (governance themes) + cited in bibliography §11; NOT folded into module prose. *(answered iter 65)*
+- **Q7 (paper 3 Bernard 2022) = DROPPED entirely:** management, not technical. Reverted the slide +
+  citation + MD (iter 66). *(final)*
 - **Q5 (Suricata) = integrate into M13→M15 pipeline:** build F1 as the IDS stage of the existing
   attack→detect→respond pipeline (not a standalone service). *(answered iter 63)*
 - **Q6 (commercial contact) = contact@ieisi.org** + web <https://www.ieisi.org/contact> and

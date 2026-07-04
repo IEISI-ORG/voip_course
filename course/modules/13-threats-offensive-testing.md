@@ -70,6 +70,11 @@ a border element. RFC 4475 gives a standardized adversarial corpus to prove it.
 ## References
 - SIPVicious OSS docs; SIPp scenarios; PTES; OWASP testing concepts; NIST SP 800-115
   (technical assessment); `../notes.md §2` threat catalog.
+- **VoIPSA VoIP Security & Privacy Threat Taxonomy** (Public Release 1.0, 2005) — see
+  [bibliography §11](../references/bibliography.md). The authoritative classification behind this
+  course's threat catalog: its six categories — Social Threats, Eavesdropping, Interception &
+  Modification, Service Abuse, Intentional Interruption of Service (DoS/DDoS), and Physical
+  Intrusion — are the buckets our T1–T15 threats map into.
 - Keromytis (IEEE COMST 2012), *A Comprehensive Survey of VoIP Security Research* — see
   [bibliography §11](../references/bibliography.md). Its survey of 245 papers finds **implementation
   bugs and misconfigurations** to be the primary vulnerability source (missed by black-box
