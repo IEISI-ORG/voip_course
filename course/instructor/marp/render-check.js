@@ -8,7 +8,7 @@ const path = require('path');
 (async () => {
   const dir = path.resolve(process.argv[2] || 'out');
   const files = fs.readdirSync(dir)
-    .filter(f => /^[0-9].*\.html$/.test(f))   // numbered decks only (skip README.html)
+    .filter(f => /^([0-9]|z-).*\.html$/.test(f))   // module decks + z-* appendices (skip README.html)
     .sort();
   if (!files.length) { console.log('no decks in ' + dir); process.exit(1); }
 

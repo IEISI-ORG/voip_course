@@ -11,12 +11,13 @@ bad() { echo "  FAIL: $1"; fail=$((fail+1)); }
 echo "== 1. decks regenerate =="
 bash build-slides.sh >/dev/null 2>&1 && ok "build-slides.sh runs" || bad "build-slides.sh failed"
 
-echo "== 2. one deck per module =="
+echo "== 2. one generated deck per module (z-* are hand-authored appendices) =="
 mods=$(ls ../../modules/*.md | wc -l | tr -d ' ')
-decks=$(ls *.md 2>/dev/null | grep -v '^README' | wc -l | tr -d ' ')
-[ "$mods" = "$decks" ] && ok "$decks decks for $mods modules" || bad "deck/module mismatch ($decks vs $mods)"
+decks=$(ls *.md 2>/dev/null | grep -vE '^README|^z-' | wc -l | tr -d ' ')
+[ "$mods" = "$decks" ] && ok "$decks generated decks for $mods modules" || bad "deck/module mismatch ($decks vs $mods)"
+appx=$(ls z-*.md 2>/dev/null | wc -l | tr -d ' '); [ "$appx" -gt 0 ] && echo "  (+$appx hand-authored appendix deck(s))"
 
-echo "== 3. every deck has MARP front-matter + a title slide =="
+echo "== 3. every deck has MARP front-matter + a title slide (incl. appendices) =="
 missing=0
 for d in *.md; do [ "$d" = "README.md" ] && continue
   head -6 "$d" | grep -q 'marp: true' || { echo "    no marp front-matter: $d"; missing=1; }

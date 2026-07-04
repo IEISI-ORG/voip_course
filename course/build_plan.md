@@ -453,6 +453,14 @@ when their parent B-task is reached.
   verbatim from the PDFs (no memory guessing, per anti-slop guardrail). F1 (Suricata) deferred to
   next iteration.
 
+- Iteration 65 (2026-07-04): finished paper-3 handling per Q7 — Bernard (Walden 2022) gets **one
+  MARP slide only**: hand-authored `slides/z-appendix-governance.md` (4 governance themes + practitioner
+  recs, incl. card-number masking → BF8) + cited in bibliography §11; NOT folded into module prose.
+  Taught the slides pipeline about hand-authored appendices: `slides/verify.sh` excludes `z-*` from
+  the per-module count (still MARP-validates), `marp/render-check.js` now render-checks `z-*` too
+  (21 decks PASS under xvfb). Memorized the standing rule **always cite papers we process+use**
+  ([[cite-processed-papers]], feedback2). Deleted feedback files. F1 (Suricata) still next.
+
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
   (positive-control gating, fail-closed). Verified bash-clean.
