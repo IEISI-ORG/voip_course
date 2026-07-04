@@ -56,6 +56,14 @@ PIDF-LO and Resource-Priority are jurisdiction-neutral; the *obligations* are na
 - **UK (999 / 112):** both numbers reach the same emergency services; regulated by **Ofcom**;
   NG112/AML adopted. (Fuller UK detail + a routing/testing lab hook are tracked as backlog **F5**.)
 
+## References
+- IETF **ECRIT** WG — the emergency-calling RFC family
+  ([bib §6](../../../course/references/bibliography.md)): **RFC 6443** (framework), **RFC 6881**
+  (BCP 181), **RFC 5222** (LoST — the ECRF location→PSAP routing that `emergency-route.sh` stands in
+  for), **RFC 6442** (location conveyance), **RFC 7852** (additional data), **RFC 4119** (PIDF-LO),
+  **RFC 4412** (Resource-Priority).
+- AU: Comms Alliance **C674:2025** / **C536:2025** (emergency) · **G673:2024** (SIP transport).
+
 ## Rubric (100 pts, pass ≥ 70)
 | Item | Pts | Grading |
 |------|-----|---------|

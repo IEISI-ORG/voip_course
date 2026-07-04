@@ -71,6 +71,9 @@ graph TD
     R6442["RFC 6442 — Location conveyance"]
     R6443["RFC 6443 — Emergency calling (SIP)"]
     R4412["RFC 4412 — Resource-Priority"]
+    R5222["RFC 5222 — LoST (ECRF routing)"]
+    R6881["RFC 6881 — BCP 181"]
+    R7852["RFC 7852 — Additional data"]
   end
   R3261 --> R3263
   R6116 --> R3263
@@ -78,6 +81,9 @@ graph TD
   R6442 --> R3261
   R6443 --> R6442
   R6443 --> R4412
+  R6443 --> R5222
+  R6881 --> R6443
+  R7852 --> R6443
 ```
 
 ## How to read it

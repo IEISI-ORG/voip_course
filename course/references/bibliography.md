@@ -65,6 +65,11 @@ grows.
 - **ITU-T Q.850** — Cause values; **ITU-T T.38 / T.30** — real-time fax / fax
 - **RFC 4412** — Resource-Priority header
 - **RFC 4119 / 5491 / 4776** — PIDF-LO location object / geo shapes / civic
+- **IETF ECRIT WG** (Emergency Context Resolution with Internet Technologies): **RFC 6443**
+  (framework for emergency calling), **RFC 6881** (BCP 181 — emergency-calling BCP), **RFC 5222**
+  (LoST — location-to-service translation, the ECRF routing protocol), **RFC 6442** (location
+  conveyance for SIP), **RFC 7852** (additional data related to an emergency call).
+  Charter: https://datatracker.ietf.org/doc/charter-ietf-ecrit/
 - **Kari's Law**, **RAY BAUM'S Act**, **NENA i3 / NG911** — emergency calling
 
 ## 7. Robustness / testing (RFC)
@@ -125,6 +130,8 @@ grows.
 | Broadband Forum **TR-104 Issue 2**, *Provisioning Parameters for VoIP CPE*, March 2014. https://www.broadband-forum.org/technical/download/TR-104_Issue-2.pdf | BF4 provisioning; device config | Standardised data model (the TR-069/CWMP `VoiceService` object) for provisioning VoIP CPE — the vendor-neutral schema behind secure auto-provisioning. Broadband Forum TRs are consensus industry standards (not peer-reviewed papers, but citable authorities like RFC/NIST). |
 | Australian Telecommunications Alliance, **C674:2025**, *Emergency Calling – Network and Mobile Phone Testing*, 2025. https://www.austelco.org.au | M17/BF2 emergency (AU 000) | AU industry **code** governing emergency-call handling/testing, incl. the SIP-header requirements for AU emergency calls. A national code of conduct — high-priority authority. (© ATA; cited, not reproduced.) |
 | **Comms Council UK**, *Recommendations for Device Provisioning Security*, v2. https://www.commscouncil.uk | BF4 provisioning | UK industry code: **authenticate provisioning over HTTPS with factory-installed client certificates**; **never** TFTP/HTTP/FTP/unencrypted; **delete SIP passwords** from servers once provisioned. Directly validates this course's BF4 mTLS + MAC-allowlist + signed-config design. |
+| **Communications Alliance C536:2025**, *Emergency Call Service Requirements*. https://www.commsalliance.com.au | M17/BF2 emergency (AU 000) | AU industry **code** on emergency-call-service obligations (complements C674's testing/SIP-header requirements). |
+| **Communications Alliance G673:2024**, *Transport of Session Initiation Protocol* (industry guideline). https://www.commsalliance.com.au | M2/M9 SIP transport (AU) | AU guideline for SIP transport/interconnect (the AU "how SIP is carried" companion to the RFC 3261 header set). |
 | **EECC** — Directive (EU) 2018/1972 (European Electronic Communications Code), **Article 109**. https://eur-lex.europa.eu/eli/dir/2018/1972/oj | M17/BF2 emergency (EU 112) | The EU legal mandate: every ECS provider must supply **free** emergency communications and transmit **precise caller location** (network-based **and** handset-derived) to the PSAP **without delay**. |
 | **ETSI TS 103 479** V1.2.1 (2023-03), *Emergency Communications (EMTEL); Core elements for network independent access to emergency services*. https://www.etsi.org | M17/BF2 emergency (EU/NG112) | The **NG112** reference architecture — BCF, ESRP, ECRF, PSAP, LIS, BRIDGE. The EU standard behind IP emergency-call routing/location. |
 | **EENA** — European Emergency Number Association (112 operational guidance & AML). https://eena.org | M17/BF2 emergency (EU 112) | The pan-European body for 112; guidance on Advanced Mobile Location (AML) handset-derived location and PSAP operations. |

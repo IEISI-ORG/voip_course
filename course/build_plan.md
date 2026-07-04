@@ -544,6 +544,14 @@ when their parent B-task is reached.
   6 routing tests (now 14/14, self-validating: locationless call REFUSED, non-emergency not
   misclassified). **F5 complete.** No feedback this iter.
 
+- Iteration 84 (2026-07-05): feedback — added the IETF **ECRIT** emergency-RFC family to bibliography
+  §6 (**RFC 6443** framework, **6881** BCP 181, **5222** LoST/ECRF, **6442** location conveyance,
+  **7852** additional data) + the ECRIT WG charter; cross-referenced in BF2. Added the three new
+  nodes (5222/6881/7852) to the RFC dependency map (re-validated: 32 nodes/30 edges). Processed 2 new
+  AU standards: **Comms Alliance C536:2025** (Emergency Call Service Requirements) and **G673:2024**
+  (*Transport of SIP* — the AU SIP guideline the user meant by "G674") → bibliography §11b. Deleted 2
+  feedback + 2 source PDFs.
+
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
   (positive-control gating, fail-closed). Verified bash-clean.
