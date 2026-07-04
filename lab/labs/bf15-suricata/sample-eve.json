@@ -1,0 +1,4 @@
+{"timestamp":"2026-07-04T15:00:00.000000+0000","event_type":"alert","src_ip":"203.0.113.7","dest_ip":"172.28.20.10","proto":"UDP","alert":{"signature":"VOIPSEC SIP scanner UA (SIPVicious friendly-scanner)","signature_id":9000001,"category":"attempted-recon"}}
+{"timestamp":"2026-07-04T15:00:01.000000+0000","event_type":"sip","src_ip":"198.51.100.9","dest_ip":"172.28.20.10","proto":"UDP","sip":{"method":"OPTIONS"}}
+{"timestamp":"2026-07-04T15:00:02.000000+0000","event_type":"alert","src_ip":"203.0.113.7","dest_ip":"172.28.20.10","proto":"UDP","alert":{"signature":"VOIPSEC SIP REGISTER flood/brute-force","signature_id":9000004,"category":"attempted-dos"}}
+{"timestamp":"2026-07-04T15:00:03.000000+0000","event_type":"alert","src_ip":"192.0.2.50","dest_ip":"172.28.20.10","proto":"TCP","alert":{"signature":"ET SCAN Some Other Rule","signature_id":2000000,"category":"misc"}}

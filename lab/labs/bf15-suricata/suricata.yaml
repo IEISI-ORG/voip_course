@@ -1,0 +1,36 @@
+%YAML 1.1
+---
+# VoIPSec BF15 — minimal Suricata config for the lab edge span. Merge into the distro suricata.yaml
+# (or run: suricata -c suricata.yaml -i <iface>). Watches SIP toward the core and emits EVE JSON.
+
+vars:
+  address-groups:
+    # The trusted VoIP core (PBXs/SBC). Alerts fire on traffic INTO this from untrusted sources.
+    HOME_NET: "[172.28.20.0/24,172.28.10.0/24]"
+    EXTERNAL_NET: "!$HOME_NET"
+
+af-packet:
+  - interface: eth0        # the edge/untrusted span to sniff (set to your mirror/monitor port)
+    cluster-id: 99
+    cluster-type: cluster_flow
+    defrag: yes
+
+app-layer:
+  protocols:
+    sip:
+      enabled: yes         # SIP app-layer parser -> sip.method / sip.uri / sip.request_line keywords
+
+default-rule-path: .
+rule-files:
+  - suricata-voip.rules
+
+outputs:
+  # EVE JSON is the integration point: eve-to-ipset.sh tails alert events -> nftables blocklist.
+  - eve-log:
+      enabled: yes
+      filetype: regular
+      filename: /var/log/suricata/eve.json
+      types:
+        - alert:
+            payload: no
+        - sip

@@ -90,9 +90,8 @@ when their parent B-task is reached.
 ### Stage F — community & licensing (added iter 62 from feedback)
 - [x] F0. LICENSE (CC BY-NC-SA 4.0 + commercial/royalty clause) + CONTRIBUTING.md (issue-first,
       approval-gated, PR must match license) + CONTRIBUTORS.md  ← iteration 62
-- [ ] F1. Suricata IDS lab — network intrusion detection for VoIP threats (SIP scan/flood/toll-fraud
-      signatures). **Decided (Q5): integrate as the IDS stage of the M13→M15 attack→detect→respond
-      pipeline** (not standalone), feeding the nftables-ipset + Wazuh active-response path (BF12).
+- [x] F1. Suricata IDS lab (BF15) — SIP scanner/flood/toll-fraud rules; EVE→nftables-ipset (same
+      sink as BF12) + Wazuh; the IDS stage of the M13→detect→M15 pipeline (Q5). verify.sh 9/9. ← iter 67
 - [ ] F4. Papers ingestion workflow (feedback3): `papers/` is gitignored — the maintainer drops
       articles (any format) there; convert each to Markdown, KEEP THE MD ONLY, then fold genuinely
       relevant/useful conclusions into the course content **with a citation** (added to the
@@ -469,6 +468,13 @@ when their parent B-task is reached.
   Service Abuse, Intentional Interruption of Service/DoS, Physical Intrusion) that the course's
   T1–T15 catalog maps onto and that Keromytis extends. Citation verbatim from the PDF. F1 (Suricata)
   still next.
+
+- Iteration 67 (2026-07-04): deleted a stale duplicate feedback (Bernard-drop, already done iter 66).
+  Built **F1 = BF15 Suricata IDS** (Q5 decision — the IDS stage of M13→detect→M15). suricata-voip.rules
+  (scanner UAs, OPTIONS sweep, REGISTER/INVITE floods, toll-fraud dial prefixes, oversized SIP;
+  local sid 9000000+), suricata.yaml (HOME_NET, SIP app-layer, EVE JSON), eve-to-ipset.sh (EVE alerts
+  → same nftables-ipset sink as BF12's hp2ipset.sh). verify.sh PASSES 9/9, self-validating (bans only
+  VOIPSEC-alert sources; ignores non-alert flows + non-VOIPSEC alerts). Cross-linked into M15.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

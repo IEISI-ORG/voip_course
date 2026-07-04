@@ -70,6 +70,10 @@ across the platform.
   banning a legitimate IP); rate-limit and allowlist known-good before active-blocking.
 - **Lab hook (adds BF12 cont.):** trigger a Wazuh active-response from a honeypot hit and
   verify the block propagates and expires per policy.
+- **Lab hook (BF15 — Suricata IDS):** add a *signature* sensor beside the *behavioural* honeypot.
+  Suricata watches the edge span for scanner UAs, OPTIONS/REGISTER/INVITE floods, and toll-fraud
+  dial patterns; its EVE alerts feed the **same** nftables-ipset blocklist (`eve-to-ipset.sh`) and
+  Wazuh correlation. Diverse detection, one response path — the M13→detect→M15 arc.
 
 ## References
 - Prometheus/Grafana/Loki/Alertmanager docs; HOMER 7; Wazuh ruleset docs; NIST SP 800-61
