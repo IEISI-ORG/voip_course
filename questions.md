@@ -3,16 +3,13 @@
 Answered questions are pruned each iteration (per your instruction).
 
 ## Open (need your steer)
-- **Q5 (Suricata IDS placement):** Yes, Suricata fits well. Proposed as **F1** — a new lab that
-  ties M13 (attack) → M15 (detect): Suricata on the `mgmt`/`edge` span with VoIP rules (SIP
-  scanner/OPTIONS-sweep, REGISTER/INVITE flood, toll-fraud dial patterns), feeding the same
-  nftables-ipset + Wazuh active-response pipeline as the honeypot (BF12). **OK to build it that way,
-  or do you want Suricata as a standalone service instead of folded into M15?**
-- **Q6 (commercial-licence contact):** `LICENSE` currently lists **tcs@ieisi.org** (your org
-  address, already public in commit metadata) + a "Commercial licensing" GitHub issue. Swap in a
-  different address, or keep as-is?
+_None right now._
 
 ## Applied decisions
+- **Q5 (Suricata) = integrate into M13→M15 pipeline:** build F1 as the IDS stage of the existing
+  attack→detect→respond pipeline (not a standalone service). *(answered iter 63)*
+- **Q6 (commercial contact) = contact@ieisi.org** + web <https://www.ieisi.org/contact> and
+  training <https://www.ieisi.org/training>. Applied to LICENSE/CONTRIBUTING. *(answered iter 63)*
 - **Q1 (RCD RFC):** RCD PASSporT = RFC 9795 (+9796); corrected. *(resolved iter 42)*
 - **Q2 (citation style) = A:** per-module `## References` stay, but must be a **subset of and
   consistent with** the bibliography. *(auditing iter 48; single-source-of-truth = bibliography)*

@@ -27,6 +27,9 @@ lab/**/*.log
 /FEEDBACK*
 /feedback/
 
+# --- Source papers dropped for ingestion: never committed (only distilled cites land in content) ---
+/papers/
+
 # --- OS / editor ---
 .DS_Store
 *.swp

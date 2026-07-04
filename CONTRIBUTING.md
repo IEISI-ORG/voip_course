@@ -35,8 +35,9 @@ mergeable.
   causation. See the bibliography in `course/references/`.
 
 ## Security issues
-Do **not** file a public issue for a security vulnerability. Email **tcs@ieisi.org** with details.
+Do **not** file a public issue for a security vulnerability. Email **contact@ieisi.org** with details.
 
 ## Commercial use
 This is non-commercial licensed material. For for-profit use, see the "Commercial use" section of
-[`LICENSE`](LICENSE).
+[`LICENSE`](LICENSE) — contact **contact@ieisi.org**, <https://www.ieisi.org/contact>, or see
+training at <https://www.ieisi.org/training>.

@@ -91,8 +91,13 @@ when their parent B-task is reached.
 - [x] F0. LICENSE (CC BY-NC-SA 4.0 + commercial/royalty clause) + CONTRIBUTING.md (issue-first,
       approval-gated, PR must match license) + CONTRIBUTORS.md  ← iteration 62
 - [ ] F1. Suricata IDS lab — network intrusion detection for VoIP threats (SIP scan/flood/toll-fraud
-      signatures); integrates with M13 (attack) → M15 (detect) and the honeypot/Wazuh pipeline.
-      (feedback1: "IDS: Suricata … detecting hackers, can do?" → yes.)
+      signatures). **Decided (Q5): integrate as the IDS stage of the M13→M15 attack→detect→respond
+      pipeline** (not standalone), feeding the nftables-ipset + Wazuh active-response path (BF12).
+- [ ] F4. Papers ingestion workflow (feedback3): `papers/` is gitignored — the maintainer drops
+      articles (any format) there; convert each to Markdown, KEEP THE MD ONLY, then fold genuinely
+      relevant/useful conclusions into the course content **with a citation** (added to the
+      bibliography). Ask the maintainer when a paper's usefulness is uncertain. Never commit the
+      source papers; only distilled, cited conclusions land in tracked content.
 - [ ] F2. AI-slop content review pass — audit the whole corpus for **trendslop** (common-in-data ≠
       correct) and **correlation-presented-as-causation**; fix any found. (feedback2.)
 - [ ] F3. Issue-triage loop — read `gh issue list`, draft a planned response per open issue, act
@@ -425,10 +430,18 @@ when their parent B-task is reached.
 - Iteration 62 (2026-07-04): processed 3 feedback files (priority over backlog). **Fixed .gitignore**
   (`/feedback.txt`+`/feedback*.md` → `/feedback*`) — feedback1.txt/feedback2.txt were NOT ignored and
   could have been committed. Built F0: LICENSE (CC BY-NC-SA 4.0 + commercial/royalty clause, contact
-  tcs@ieisi.org), CONTRIBUTING.md (issue-first, approval-gated; PR must match license + add to
+  contact@ieisi.org), CONTRIBUTING.md (issue-first, approval-gated; PR must match license + add to
   contributors; no-secrets/lab-scoped rules; accuracy-over-trend), CONTRIBUTORS.md. Logged F1
   (Suricata IDS), F2 (AI-slop review), F3 (issue-triage loop) to the backlog. Answered the questions
   in questions.md; memorized the AI-slop guidance. Deleted the 3 feedback files (never committed).
+
+- Iteration 63 (2026-07-04): processed 4 feedback files. Q5 → Suricata integrates into M13→M15
+  pipeline (F1 note updated). Q6 → commercial contact = contact@ieisi.org + www.ieisi.org/contact +
+  /training (LICENSE, CONTRIBUTING updated). feedback3 → `papers/` gitignored + F4 ingestion
+  workflow added (convert→keep MD→fold cited conclusions→ask if unsure; never commit sources).
+  feedback4 → history purge of all feedback-named paths (root feedback*.txt + course/reviews/
+  feedback-*.md + gemini_feedback*.md) via filter-branch + force-push; substance retained in this
+  feedback log. Deleted the 4 feedback files (never committed).
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
