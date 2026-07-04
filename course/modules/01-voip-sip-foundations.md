@@ -45,3 +45,7 @@ defend. **Est. time:** 3h · **Prereqs:** Module 0, TCP/IP.
 
 ## References
 - RFC 3261 (§1–§8), RFC 3263 (locating servers); Asterisk PJSIP config docs; Wireshark VoIP guide.
+- Dantu, Fahmy, Schulzrinne & Cangussu (Elsevier *Computers & Security*, 2009), *Issues and
+  Challenges in Securing VoIP* — see [bibliography §11](../references/bibliography.md). Frames VoIP
+  security as controls **at each boundary network element** — the edge/core/SBC layering this course
+  builds. (Co-authored by H. Schulzrinne, an author of the SIP RFC.)

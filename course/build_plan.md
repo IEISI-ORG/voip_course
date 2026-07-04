@@ -482,6 +482,15 @@ when their parent B-task is reached.
   IPsec tunnel. Attributed carefully (small single test-bed; no overclaiming on the inconsistent
   metrics, per anti-slop guardrail). MD kept in papers/ (gitignored); citation verbatim from source.
 
+- Iteration 70 (2026-07-04): **peer-review audit** (feedback: use only peer-reviewed papers). Checked
+  venues of 4 new + recent papers. KEPT/folded peer-reviewed: **Dantu et al. (Elsevier Computers &
+  Security 2009**, co-author Schulzrinne) → M1; **Mohd Ramly et al. (JTDE 2024)** → M13; Keromytis
+  (IEEE); **Kolahi — corrected 2013→IEEE ICUFN 2017** (WebSearch-verified; DOI added) after catching
+  my own guessed year. REMOVED (not peer-reviewed): Raut et al. (Granthaalayah — questionable
+  publisher; unfolded from M5+bib), "Enhancing…" (Macron, no venue), "Threat Detection…" (Martins, no
+  venue). Kept VoIPSA taxonomy as a standards doc. Q8 flags the two judgment calls. Memorized the
+  peer-review gate ([[cite-processed-papers]]). Deleted feedback + all source PDFs (papers/ = 5 MDs).
+
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
   (positive-control gating, fail-closed). Verified bash-clean.

@@ -80,3 +80,7 @@ a border element. RFC 4475 gives a standardized adversarial corpus to prove it.
   bugs and misconfigurations** to be the primary vulnerability source (missed by black-box
   research), and **DoS and service abuse** the most under-addressed areas — which is why this course
   leans on config-hardening and parser-robustness testing (RFC 4475), not just protocol theory.
+- Mohd Ramly et al. (JTDE 2024), *Review and Enhancement of VoIP Security* — see
+  [bibliography §11](../references/bibliography.md). A recent peer-reviewed review of VoIP
+  vulnerabilities (eavesdropping, registration/call hijacking, SPIT, vishing, malware) and layered
+  mitigations; corroborates this module's threat coverage.

@@ -36,10 +36,10 @@
   allowlists, per-account spend/velocity limits, block premium/high-risk ranges, alerting (M14/M15).
 - **Interception on the trunk (T6):** carrier links may be untrusted → TLS/SIPS + SRTP toward
   the ITSP where supported; IPsec/WireGuard overlay when not. Budget for the crypto cost: a test-bed
-  study (Kolahi et al., 2013 — [bib §11](../references/bibliography.md)) measured **higher CPU usage
-  and added delay** with IPsec on VoIP (throughput ~unchanged; RTT/jitter inconsistent). It's a real
-  tradeoff, not free — size the SBC/gateway for it, which is also why per-hop TLS+SRTP is often
-  preferred over a blanket IPsec tunnel.
+  study (Kolahi et al., IEEE ICUFN 2017 — [bib §11](../references/bibliography.md)) measured **higher
+  CPU usage and added delay** with IPsec on VoIP (throughput ~unchanged; RTT/jitter inconsistent).
+  It's a real tradeoff, not free — size the SBC/gateway for it, which is also why per-hop TLS+SRTP is
+  often preferred over a blanket IPsec tunnel.
 - **CLI/caller-ID spoofing inbound (T7):** don't trust From/PAI from the PSTN; verify via
   STIR/SHAKEN (M12) where available.
 - Update threat model with trunk/PSTN vectors.
@@ -74,5 +74,5 @@ Emergency calls are a legal obligation with their own security/integrity require
 ## References
 - RFC 3398 (ISUP↔SIP), 3372/3204 (SIP-T/ISUP encap), Q.850; SIPconnect 2.0 profile;
   Asterisk/Kamailio trunk docs; `../notes.md §2` (T4, T12).
-- Kolahi et al. (2013), *Impact of IPSec Security on VoIP in Different Environments* — see
+- Kolahi et al. (IEEE ICUFN 2017), *Impact of IPSec Security on VoIP in Different Environments* — see
   [bibliography §11](../references/bibliography.md). Evidence for the trunk-crypto overhead tradeoff.

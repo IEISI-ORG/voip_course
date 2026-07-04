@@ -3,7 +3,14 @@
 Answered questions are pruned each iteration (per your instruction).
 
 ## Open (need your steer)
-_None right now._
+- **Q8 (peer-review audit — two judgment calls):** applied your "remove if not peer-reviewed" rule.
+  - **Removed** the Raut et al. VoIP-forensics review — its journal (*J. Digital Security & Forensics*,
+    Granthaalayah Publications) *claims* double-blind review but Granthaalayah is a questionable/
+    borderline publisher, not a recognised venue. Unfolded from M5 + bibliography. **If you consider
+    it acceptable, I can restore it.**
+  - **Kept the VoIPSA Threat Taxonomy** (2005) even though it is not "peer-reviewed" — it is an
+    industry *standards/consortium* document (same class as the RFCs/NIST/ATIS docs the bibliography
+    already relies on), not a research paper. **OK to keep it on that basis?**
 
 ## Applied decisions
 - **Q7 (paper 3 Bernard 2022) = DROPPED entirely:** management, not technical. Reverted the slide +
