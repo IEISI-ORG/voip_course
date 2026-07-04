@@ -54,3 +54,7 @@ the media path is attacked. **Est. time:** 4h · **Prereqs:** Module 3.
 ## References
 - RFC 3550/3551 (RTP/RTCP), 3611 (RTCP-XR), 4733/4734 (DTMF events), 6716 (Opus),
   3168 (ECN), 4594/8837 (DiffServ for RT), 5761 (rtcp-mux).
+- Goode (Proc. IEEE, 2002), *Voice Over Internet Protocol (VoIP)* — see
+  [bibliography §11](../references/bibliography.md). The authoritative treatment of the
+  **delay-vs-bandwidth tradeoff**, codec selection, and the delay budget behind this module's
+  bandwidth-budget maths (`lab/labs/m4-rtp-qos/bw-budget.sh`).

@@ -529,6 +529,13 @@ when their parent B-task is reached.
   Protocol (IJSER, predatory). Remaining queued: Bur Goode (Proc. IEEE — keep, fold to M1), a Journal
   of Communications SIP study + an EU emergency legislation slide (assess). No feedback this iter.
 
+- Iteration 75 (2026-07-05): deleted 3 stale duplicate feedback (EU-emergency items already done
+  iter 73). Finished paper-queue triage: folded **B. Goode, *VoIP*, Proc. IEEE 2002** (invited;
+  vol/no/DOI verified from the PDF) into M4 + bibliography §11 (delay-vs-bandwidth budget authority).
+  **Rejected** the Journal of Communications P2P-SIP study (Academy Publisher — marginal, redundant).
+  EENA legislation slide is redundant with the existing EENA/EECC citations (no new cite). papers/ =
+  12 MDs, all triaged; the remaining ones are the kept sources.
+
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
   (positive-control gating, fail-closed). Verified bash-clean.
