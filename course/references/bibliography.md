@@ -122,7 +122,10 @@ grows.
 | Doc | Relevance | Note |
 |-----|-----------|------|
 | Broadband Forum **TR-104 Issue 2**, *Provisioning Parameters for VoIP CPE*, March 2014. https://www.broadband-forum.org/technical/download/TR-104_Issue-2.pdf | BF4 provisioning; device config | Standardised data model (the TR-069/CWMP `VoiceService` object) for provisioning VoIP CPE — the vendor-neutral schema behind secure auto-provisioning. Broadband Forum TRs are consensus industry standards (not peer-reviewed papers, but citable authorities like RFC/NIST). |
-| Australian Telecommunications Alliance, **C674:2025**, *Emergency Calling – Network and Mobile Phone Testing*, 2025. https://www.austelco.org.au | M17/BF2 emergency (AU 000) | AU industry code for how operators must test emergency-call handling. A national **code of conduct** — a high-priority authority. (© ATA; cited, not reproduced.) |
+| Australian Telecommunications Alliance, **C674:2025**, *Emergency Calling – Network and Mobile Phone Testing*, 2025. https://www.austelco.org.au | M17/BF2 emergency (AU 000) | AU industry **code** governing emergency-call handling/testing, incl. the SIP-header requirements for AU emergency calls. A national code of conduct — high-priority authority. (© ATA; cited, not reproduced.) |
+| **EECC** — Directive (EU) 2018/1972 (European Electronic Communications Code), **Article 109**. https://eur-lex.europa.eu/eli/dir/2018/1972/oj | M17/BF2 emergency (EU 112) | The EU legal mandate: every ECS provider must supply **free** emergency communications and transmit **precise caller location** (network-based **and** handset-derived) to the PSAP **without delay**. |
+| **ETSI TS 103 479** V1.2.1 (2023-03), *Emergency Communications (EMTEL); Core elements for network independent access to emergency services*. https://www.etsi.org | M17/BF2 emergency (EU/NG112) | The **NG112** reference architecture — BCF, ESRP, ECRF, PSAP, LIS, BRIDGE. The EU standard behind IP emergency-call routing/location. |
+| **EENA** — European Emergency Number Association (112 operational guidance & AML). https://eena.org | M17/BF2 emergency (EU 112) | The pan-European body for 112; guidance on Advanced Mobile Location (AML) handset-derived location and PSAP operations. |
 
 ## RFC dependency map
 See [`rfc-dependency-map.md`](rfc-dependency-map.md) — a curated graph of how the core VoIP RFCs

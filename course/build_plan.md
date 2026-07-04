@@ -100,10 +100,10 @@ when their parent B-task is reached.
 - [x] F2. AI-slop content review pass — audited tracked markdown for AI-vocabulary, negative parallelism, promo/superlative, superficial -ing, trendslop, and correlation-as-causation: CLEAN (only legit hits: paper titles, digest-auth "realm", "powerful" attack-surface descriptor). Shipped reusable `course/references/slop-check.sh` (advisory) + CONTRIBUTING hook. ← iter 68
 - [ ] F3. Issue-triage loop — read `gh issue list`, draft a planned response per open issue, act
       ONLY after the maintainer approves in the issue thread. (feedback.txt.)
-- [~] F5. Emergency-calling coverage for multiple jurisdictions (feedback3): BF2/M17 were US-centric
-      (Kari's/RAY BAUM'S). AU (000) partially addressed iter 72 — ATA industry code **C674:2025** cited
-      + a "Jurisdictions" note in BF2. Remaining: UK (999/112, Ofcom), EU (112), fuller AU regulatory
-      detail + a routing/testing lab hook.
+- [~] F5. Emergency-calling coverage for multiple jurisdictions (feedback3): BF2 Jurisdictions note
+      now covers **US** (Kari's/RAY BAUM'S), **AU 000** (ATA C674:2025), **EU 112** (EECC Art 109 +
+      ETSI TS 103 479 NG112 + EENA/AML), **UK 999/112** (Ofcom). Cited in bib §11b. Remaining: a
+      routing/testing *lab hook* (NG112 flow) + deeper per-country detail if wanted.
 - [x] F6. VoIP RFC dependency map (feedback4) — `course/references/rfc-dependency-map.md`, a Mermaid
       graph (29 nodes/27 edges, validated) of how the core SIP/VoIP RFCs build on RFC 3261; the VoIP
       analogue of the RPKI RFC dependency graph. ← iter 71
@@ -515,6 +515,13 @@ when their parent B-task is reached.
   recalled). Added to bibliography §11b (cited, not reproduced — © ATA), and folded a "Jurisdictions"
   note into BF2 (US/AU/UK-EU) → F5 now `[~]` (AU started; UK/EU remain). Deleted 2 feedback. The
   other queued papers (vendor docs, SIP papers) still pending venue-checked ingestion.
+
+- Iteration 73 (2026-07-04): feedback9 → converted all remaining papers/ PDFs to MD (0 PDFs left,
+  gitignored). F5 EU (feedback1/2): added **EECC Art 109** (Directive (EU) 2018/1972), **ETSI TS 103
+  479** (NG112 — corrected from the user's "TR 103 479"; WebSearch-verified title), and **EENA** to
+  bibliography §11b; expanded the BF2 Jurisdictions note to US/AU/EU/UK. Refined C674 note (it defines
+  AU emergency SIP-header requirements). F5 now covers all four jurisdictions at the standards level;
+  only a NG112 routing/testing lab hook remains. Deleted 3 feedback files.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

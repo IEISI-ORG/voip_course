@@ -35,11 +35,16 @@ dispatchable location; the INVITE carries `Resource-Priority`, a `Geolocation` h
 PIDF-LO and Resource-Priority are jurisdiction-neutral; the *obligations* are national:
 - **US:** direct-dial + notification (**Kari's Law**) and **dispatchable location** (**RAY BAUM'S
   Act**) — the default this lab implements.
-- **AU (000):** the Australian Telecommunications Alliance industry code **C674:2025 — *Emergency
-  Calling – Network and Mobile Phone Testing*** ([bib §11b](../../../course/references/bibliography.md))
-  governs how operators must *test* emergency-call handling; carrier obligations sit under the ACMA.
-- **UK/EU (999 / 112):** **112** is the pan-EU emergency number; UK adds **999**, regulated by Ofcom.
-  (Full AU/UK regulatory detail is tracked as backlog **F5**.)
+- **AU (000):** the ATA industry code **C674:2025 — *Emergency Calling – Network and Mobile Phone
+  Testing*** ([bib §11b](../../../course/references/bibliography.md)) governs emergency-call handling
+  and testing (including the SIP-header requirements for AU emergency calls); carrier obligations sit
+  under the ACMA.
+- **EU (112):** the **EECC** (Directive (EU) 2018/1972) **Article 109** mandates *free* emergency
+  communications and automatic transmission of **precise network + handset-derived (AML)** caller
+  location *without delay*. Architecture: **ETSI TS 103 479** (**NG112** — BCF/ESRP/ECRF/PSAP/LIS);
+  operational body **EENA**.
+- **UK (999 / 112):** both numbers reach the same emergency services; regulated by **Ofcom**;
+  NG112/AML adopted. (Fuller UK detail + a routing/testing lab hook are tracked as backlog **F5**.)
 
 ## Rubric (100 pts, pass ≥ 70)
 | Item | Pts | Grading |
