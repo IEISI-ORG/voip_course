@@ -118,7 +118,7 @@ fixing what it finds:
       (Q2); RFC numbers/titles/years correct; no dangling cites.
 - [x] G3. Lab ↔ module alignment — each module has its lab; every lab ships a fail-closed `verify.sh`;
       rubrics sum to 100 (pass ≥ 70).
-- [ ] G4. Internal links — every relative link in course/ + lab/ resolves to a real file/anchor.
+- [x] G4. Internal links — every relative link in course/ + lab/ resolves to a real file/anchor.
 - [ ] G5. Terminology/glossary — acronyms spelled out first-use; glossary covers what the modules use.
 - [ ] G6. Security invariants — fail-closed graders, no committed secrets, offensive tooling lab-scoped.
 - [ ] G7. Assessments — quiz bank + 3 exams map to modules; answer keys separated; capstone gate intact.
@@ -603,6 +603,10 @@ Fold F8/F9 opportunistically during these passes.
 - Iteration 88 (2026-07-05): **G3 lab<->module alignment pass** — CLEAN. 32 labs; modules M0-M17
   all have a lab; every lab ships a verify.sh with a fail path (exit 1); all 32 rubrics parse and
   sum to exactly 100 (pass >= 70). No defects. Next: G4 (internal-link integrity).
+
+- Iteration 89 (2026-07-05): **G4 internal-link integrity pass** — CLEAN. Checked 147 relative
+  Markdown links across all tracked docs (course/, lab/, root README/CONTRIBUTING, image links incl.
+  the RFC SVG): every one resolves to a real file. No broken links. Next: G5 (terminology/glossary).
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
