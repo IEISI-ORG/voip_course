@@ -48,7 +48,7 @@ every module deep dive.
 | T12 | Trunk abuse / spoofed peers | Static-IP trunks without auth | IP+TLS+SIP auth, topology hiding | M9,M11 |
 | T13 | Voicemail / feature-code abuse | Weak PINs, DISA misuse | PIN policy, disable DISA, monitor | M15 |
 | T14 | Insider / recording exposure | Access to recordings/CDRs | Encryption at rest, RBAC, audit | M15,M16 |
-| T15 | Supply-chain / provisioning abuse | Insecure auto-provisioning (TFTP) | HTTPS provisioning, signed configs, MACs | M15 |
+| T15 | Supply-chain / provisioning abuse; **cleartext config exposure** | Insecure auto-provisioning (TFTP/HTTP); config files with credentials in the clear | HTTPS/mTLS provisioning, **signed AND encrypted configs**, MAC binding, key rotation | M15 |
 
 ## 3. Reference Lab Architecture (Docker-composed)
 

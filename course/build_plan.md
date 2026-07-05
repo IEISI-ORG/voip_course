@@ -136,7 +136,7 @@ Fold F8/F9 opportunistically during these passes.
 - [x] H1. **Promote M9D (DNS Infrastructure) into the main module series** — it is core, not an
       optional extra. Renumber it into sequence and update every reference (modules, labs BF14,
       bibliography, crosswalk, dependency map). Big cross-cutting refactor — do carefully post-audit.
-- [ ] H2. **Provisioning-security expansion** — "device config files in the clear are a major SIP
+- [~] H2. **Provisioning-security expansion** — "device config files in the clear are a major SIP
       security hole." Deepen beyond BF4 into fuller module coverage: cleartext-config threat (extend
       T15), TR-069/CWMP + TR-104 model, signed+encrypted configs, secure zero-touch (RPS/mTLS/MAC),
       key/secret rotation. Likely a dedicated provisioning-security module + expanded lab.
@@ -655,6 +655,15 @@ Fold F8/F9 opportunistically during these passes.
   capstone/slides validators PASS, offline graders PASS, threat-catalog map still 0 mismatches.
   NOTE: earlier log entries + Stage B backlog use the pre-shift numbering (they narrate past state);
   current course content uses M10=DNS. Checkpoint exams now after M5/M13/M18. Next: H2.
+
+- Iteration 95 (2026-07-05): feedback 'move DNS to M10 and renumber' — already done (H1, iter 94);
+  deleted as satisfied. **H2 step 1 (config confidentiality)**: added `encrypt-config.sh` to BF4 —
+  AES-256-CBC/PBKDF2 encrypt/decrypt + **key rotation** (re-key without persisting plaintext), the
+  direct fix for 'config files in the clear'. BF4 verify.sh now 12/12 (encrypted config hides the
+  secret, round-trips, tamper rejected). Extended **T15** (cleartext config exposure -> signed AND
+  encrypted configs + rotation). H2 left `[~]`: a *dedicated* provisioning-security module would
+  need a placement decision + another renumber — deferred to the user's steer (won't renumber
+  reactively). Next: continue H2 / reactive backlog.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

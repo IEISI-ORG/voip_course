@@ -27,6 +27,16 @@ echo "== 3. sample config has no committed secret + secure transport =="
 grep -q '__INJECTED_FROM_SECURE_STORE__' "$DIR/AABBCCDDEEFF.cfg" && ok "password is a placeholder (no committed secret)" || bad "possible committed secret"
 grep -q 'transport=TLS' "$DIR/AABBCCDDEEFF.cfg"                   && ok "device provisioned for TLS + SRTP"            || bad "insecure transport in config"
 
+echo "== 4. config encryption at rest (H2 — no credentials in the clear) =="
+if command -v openssl >/dev/null 2>&1; then
+  demo=$(bash "$DIR/encrypt-config.sh" demo 2>/dev/null)
+  echo "$demo" | grep -q '2).*  0 hit' && ok "encrypted config does NOT leak the secret" || bad "secret visible in ciphertext"
+  echo "$demo" | grep -q '3).*yes'      && ok "decrypt round-trips"                        || bad "decrypt did not round-trip"
+  echo "$demo" | grep -q '4).*rejected' && ok "tampered ciphertext rejected (confidentiality+integrity)" || bad "tamper not detected"
+else
+  echo "  (openssl absent — skipped)"
+fi
+
 echo
 echo "== result: $pass passed, $fail failed =="
 [ "$fail" -eq 0 ] && { echo "BF4 ACCEPTANCE: PASS"; exit 0; } || { echo "BF4 ACCEPTANCE: FAIL"; exit 1; }

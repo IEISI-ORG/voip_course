@@ -29,6 +29,19 @@ mTLS + allowlist + per-device (CN==MAC) scoping over HTTPS-only.
 - Valid device, spoofed MAC (fetch another device's config) → 403 (CN≠MAC).
 - Tampered config → signature invalid → device rejects it.
 
+## Config confidentiality — "config in the clear" is the hole (H2)
+mTLS + signing protect the config **in transit** and **against tampering**, but a signed config is
+still **plaintext** — anyone who reads the store, a backup, or a mis-served copy gets the SIP
+credentials. Close it by **encrypting the config at rest** (encrypt-then-sign):
+```bash
+bash encrypt-config.sh demo                          # plaintext leaks the secret; ciphertext doesn't
+bash encrypt-config.sh encrypt device.cfg key.bin device.cfg.enc
+bash encrypt-config.sh rotate device.cfg.enc oldkey newkey   # re-key; plaintext never hits disk
+```
+`verify.sh` proves the encrypted config doesn't leak the secret, decrypts round-trip, and rejects a
+tampered ciphertext (AES-256-CBC/PBKDF2 for confidentiality; pair with the RSA signature for
+integrity). Rotate keys on a schedule and on any suspected exposure.
+
 ## This lab matches industry guidance (not hypothetical)
 The **Comms Council UK** code *Recommendations for Device Provisioning Security*
 ([bib §11b](../../../course/references/bibliography.md)) states exactly what this lab enforces:
