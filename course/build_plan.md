@@ -121,7 +121,7 @@ fixing what it finds:
 - [x] G4. Internal links — every relative link in course/ + lab/ resolves to a real file/anchor.
 - [x] G5. Terminology/glossary — acronyms spelled out first-use; glossary covers what the modules use.
 - [x] G6. Security invariants — fail-closed graders, no committed secrets, offensive tooling lab-scoped.
-- [ ] G7. Assessments — quiz bank + 3 exams map to modules; answer keys separated; capstone gate intact.
+- [x] G7. Assessments — quiz bank + 3 exams map to modules; answer keys separated; capstone gate intact.
 - [ ] G8. Naming/branding (VoIPSec, zero SOVOC), build_plan ↔ reality, requirements-traceability refresh.
 Fold F8/F9 opportunistically during these passes.
 
@@ -132,6 +132,14 @@ Fold F8/F9 opportunistically during these passes.
 - [ ] F9. Track Henning Schulzrinne's standards work (feedback9) — a "key authors" note in the
       bibliography (SIP 3261, RTP 3550, RTSP, plus his emergency-calling contributions).
 
+### Stage H — post-audit content expansion (feedback0/1, execute AFTER the G-audit)
+- [ ] H1. **Promote M9D (DNS Infrastructure) into the main module series** — it is core, not an
+      optional extra. Renumber it into sequence and update every reference (modules, labs BF14,
+      bibliography, crosswalk, dependency map). Big cross-cutting refactor — do carefully post-audit.
+- [ ] H2. **Provisioning-security expansion** — "device config files in the clear are a major SIP
+      security hole." Deepen beyond BF4 into fuller module coverage: cleartext-config threat (extend
+      T15), TR-069/CWMP + TR-104 model, signed+encrypted configs, secure zero-touch (RPS/mTLS/MAC),
+      key/secret rotation. Likely a dedicated provisioning-security module + expanded lab.
 ## Loop protocol (each iteration)
 1. Check `/home/terry/voip_course` for feedback files (`*feedback*`, `FEEDBACK*`, `feedback/`).
    If present: read, incorporate, and prioritize before the backlog. Record what it asked in the
@@ -623,6 +631,13 @@ Fold F8/F9 opportunistically during these passes.
   (3) Offensive tooling lab-scoped: redteam container attaches to edge+redteam ONLY (never core/mgmt);
   `_guard.sh` refuses any target outside 172.28.10/40 and is sourced by 5 scripts; AUTHORIZED_USE
   present. No defects. Next: G7 (assessments alignment).
+
+- Iteration 92 (2026-07-05): **G7 assessments-alignment pass**. Quiz-bank + capstone validators
+  PASS; 3 checkpoint exams (M5/M12/M17) present; answer keys separated in answer-keys/ (3 keys) with
+  **no leakage** in exam files — the 2 grep hits were references-to-the-key, not answers. Fixed a
+  stale line in checkpoint-exam-1 ('answer key at the bottom' -> 'held separately'). Also recorded
+  **Stage H** (feedback0/1, post-audit): H1 promote M9D DNS into the main module series; H2 expand
+  provisioning-security (cleartext config = major hole). Next: G8 (naming/traceability) — last pass.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

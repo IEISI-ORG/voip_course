@@ -5,7 +5,8 @@ analysis, and the security threads introduced so far (T1, T2, T5, T7, T10, evide
 
 - **Format:** 20 items, 100 points. **Pass ≥ 70** (and ≥ 50% on the Security section).
 - **Open-book** (RFCs, your notes, the lab). Time: 90 minutes.
-- Answer key + rubric at the bottom (instructor copy — the two are split in delivery).
+- Answer key held separately (instructor-only) in [`answer-keys/`](answer-keys/); learners get
+  the exam without adjacent answers. Grading weighting is at the bottom.
 
 ---
 
