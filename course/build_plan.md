@@ -116,7 +116,7 @@ fixing what it finds:
 - [x] G1. Threat catalog T1–T15 — used consistently across every module + lab; none undefined/orphaned.
 - [x] G2. Citations — every module `## References` is a subset of, and consistent with, the bibliography
       (Q2); RFC numbers/titles/years correct; no dangling cites.
-- [ ] G3. Lab ↔ module alignment — each module has its lab; every lab ships a fail-closed `verify.sh`;
+- [x] G3. Lab ↔ module alignment — each module has its lab; every lab ships a fail-closed `verify.sh`;
       rubrics sum to 100 (pass ≥ 70).
 - [ ] G4. Internal links — every relative link in course/ + lab/ resolves to a real file/anchor.
 - [ ] G5. Terminology/glossary — acronyms spelled out first-use; glossary covers what the modules use.
@@ -599,6 +599,10 @@ Fold F8/F9 opportunistically during these passes.
   cite: M17 referenced **RFC 3863** (base PIDF) not in the bibliography -> added it alongside RFC
   3856 (presence). Re-verified: 0 dangling — every module RFC cite is backed (Q2 subset rule holds).
   Next: G3 (lab<->module alignment).
+
+- Iteration 88 (2026-07-05): **G3 lab<->module alignment pass** — CLEAN. 32 labs; modules M0-M17
+  all have a lab; every lab ships a verify.sh with a fail path (exit 1); all 32 rubrics parse and
+  sum to exactly 100 (pass >= 70). No defects. Next: G4 (internal-link integrity).
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
