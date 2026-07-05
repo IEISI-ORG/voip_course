@@ -120,7 +120,7 @@ fixing what it finds:
       rubrics sum to 100 (pass ≥ 70).
 - [x] G4. Internal links — every relative link in course/ + lab/ resolves to a real file/anchor.
 - [x] G5. Terminology/glossary — acronyms spelled out first-use; glossary covers what the modules use.
-- [ ] G6. Security invariants — fail-closed graders, no committed secrets, offensive tooling lab-scoped.
+- [x] G6. Security invariants — fail-closed graders, no committed secrets, offensive tooling lab-scoped.
 - [ ] G7. Assessments — quiz bank + 3 exams map to modules; answer keys separated; capstone gate intact.
 - [ ] G8. Naming/branding (VoIPSec, zero SOVOC), build_plan ↔ reality, requirements-traceability refresh.
 Fold F8/F9 opportunistically during these passes.
@@ -615,6 +615,14 @@ Fold F8/F9 opportunistically during these passes.
   (AEAD/AES-GCM/JWT/HSM/SAN/DH), + a 'SIP methods' line. Residual ~57 are non-glossary tokens (tool
   names HOMER/BIND9/PJSIP, citation venues IEEE/JTDE, English-word false positives, terms spelled out
   in-context). First-use spell-out stays light-touch (Q4); glossary now backstops it. Next: G6.
+
+- Iteration 91 (2026-07-05): **G6 security-invariant pass** — CLEAN. (1) No committed secrets: no
+  PEM private keys; every password/secret is a placeholder (`__FROM_ENV__`/`__INJECTED__`) or
+  env-injected, or an auditor grepping *for* a setting. (2) Fail-closed graders: all verify.sh exit 1
+  on failure; the two `|| ok` uses (bf8 PAN-absent, m16 no-github.event) are correct negative tests.
+  (3) Offensive tooling lab-scoped: redteam container attaches to edge+redteam ONLY (never core/mgmt);
+  `_guard.sh` refuses any target outside 172.28.10/40 and is sourced by 5 scripts; AUTHORIZED_USE
+  present. No defects. Next: G7 (assessments alignment).
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
