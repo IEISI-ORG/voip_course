@@ -129,7 +129,7 @@ Fold F8/F9 opportunistically during these passes.
 - [x] F8. VoWiFi / WiFi-calling (feedback2/3): add **GSMA IR.51/IR.61** (VoWiFi/roaming) to the
       bibliography, and fold the CISPA VoWiFi key-exchange paper (venue-checked) into M10/M11 (media
       security) — empirical evidence on commercial VoWiFi IPsec/IKE weaknesses.
-- [ ] F9. Track Henning Schulzrinne's standards work (feedback9) — a "key authors" note in the
+- [x] F9. Track Henning Schulzrinne's standards work (feedback9) — a "key authors" note in the
       bibliography (SIP 3261, RTP 3550, RTSP, plus his emergency-calling contributions).
 
 ### Stage H — post-audit content expansion (feedback0/1, execute AFTER the G-audit)
@@ -677,6 +677,13 @@ Fold F8/F9 opportunistically during these passes.
   section into M18 (frontiers): IMS-over-Wi-Fi via IPsec/IKEv2 to the ePDG, with the paper's finding
   (13 operators/~140M users on weak/downgradeable DH groups -> MITM) as the crypto-agility lesson.
   Next: F9 (Schulzrinne) / reactive backlog.
+
+- Iteration 98 (2026-07-06): **F9** — added a 'Key standards contributors' note to the bibliography
+  tracking **Henning Schulzrinne** (co-author RFC 3261 SIP; first author RFC 3550 RTP + RFC 2326 RTSP;
+  ECRIT/NG911 emergency-calling leadership; FCC CTO; + the Dantu 2009 survey we cite), with his IETF
+  datatracker + Scholar links (feedback9). Cited only specs I'm confident of (verify-don't-guess).
+  Stage F queued items now done (F8/F9); remaining: F3/F4 reactive + H2 (dedicated provisioning
+  module awaits user placement call).
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

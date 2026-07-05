@@ -150,6 +150,16 @@ Used only for concrete, vendor-neutral configuration practice; below standards a
 |-----|-----------|------|
 | GSMA **IR.51** — *IMS over Wi-Fi (VoWiFi)* profile; **IR.61** — *Wi-Fi Roaming Guidelines*. https://www.gsma.com | M18 VoWiFi | The carrier profiles for Wi-Fi calling: IMS carried over IPsec/IKEv2 to the ePDG. Companion to IR.92 (VoLTE)/IR.94. |
 
+## Key standards contributors
+Much of this course's spine traces to a small set of IETF authors; tracking their work is a good way
+to follow where the standards go next.
+- **Henning Schulzrinne** — co-author of **RFC 3261 (SIP)**, first author of **RFC 3550 (RTP/RTCP)**
+  and **RFC 2326 (RTSP)**, and a long-standing leader in **emergency calling** (ECRIT / NG911; served
+  as FCC CTO). He also co-authored the VoIP-security survey cited above (Dantu et al., 2009). Nearly
+  every module here (signalling, media, emergency) rests on a spec he shaped.
+  IETF datatracker: https://datatracker.ietf.org/person/hgs@cs.columbia.edu ·
+  Scholar: https://scholar.google.com/citations?user=6IHX8J4AAAAJ
+
 ## RFC dependency map
 See [`rfc-dependency-map.md`](rfc-dependency-map.md) — a curated graph of how the core VoIP RFCs
 build on one another (the VoIP analogue of the RPKI RFC dependency graph).
