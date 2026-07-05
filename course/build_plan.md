@@ -119,7 +119,7 @@ fixing what it finds:
 - [x] G3. Lab ↔ module alignment — each module has its lab; every lab ships a fail-closed `verify.sh`;
       rubrics sum to 100 (pass ≥ 70).
 - [x] G4. Internal links — every relative link in course/ + lab/ resolves to a real file/anchor.
-- [ ] G5. Terminology/glossary — acronyms spelled out first-use; glossary covers what the modules use.
+- [x] G5. Terminology/glossary — acronyms spelled out first-use; glossary covers what the modules use.
 - [ ] G6. Security invariants — fail-closed graders, no committed secrets, offensive tooling lab-scoped.
 - [ ] G7. Assessments — quiz bank + 3 exams map to modules; answer keys separated; capstone gate intact.
 - [ ] G8. Naming/branding (VoIPSec, zero SOVOC), build_plan ↔ reality, requirements-traceability refresh.
@@ -607,6 +607,14 @@ Fold F8/F9 opportunistically during these passes.
 - Iteration 89 (2026-07-05): **G4 internal-link integrity pass** — CLEAN. Checked 147 relative
   Markdown links across all tracked docs (course/, lab/, root README/CONTRIBUTING, image links incl.
   the RFC SVG): every one resolves to a real file. No broken links. Next: G5 (terminology/glossary).
+
+- Iteration 90 (2026-07-05): **G5 terminology/glossary pass**. Extracted 201 distinct domain
+  acronyms across modules; the glossary covered only ~65. Added **49 entries** (55 -> 104): SDES,
+  ALG, MITM, TTL, IVR, SAS, ISUP, SPIT, SS7, HMAC, WAF, RRL, DMZ, standards bodies (IETF/ATIS/NIST/
+  NENA/GSMA/ENISA/OWASP/PTES), telephony KPIs (ASR/ACD/PDD/RTT), codecs (AMR/EVS/CBR/VBR), crypto
+  (AEAD/AES-GCM/JWT/HSM/SAN/DH), + a 'SIP methods' line. Residual ~57 are non-glossary tokens (tool
+  names HOMER/BIND9/PJSIP, citation venues IEEE/JTDE, English-word false positives, terms spelled out
+  in-context). First-use spell-out stays light-touch (Q4); glossary now backstops it. Next: G6.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
