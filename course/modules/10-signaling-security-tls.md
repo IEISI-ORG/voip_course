@@ -18,7 +18,7 @@ certificates. **Est. time:** 5h · **Prereqs:** Modules 6–9.
   resumption; certificate chains, SAN matching to SIP domain, CN/SAN pitfalls.
 - **Certificate management:** public certs (Let's Encrypt via certbot/acme.sh) for edge;
   private CA (step-ca/OpenSSL) for internal mTLS; rotation, revocation, monitoring expiry.
-- **Mutual TLS on trunks/peering:** authenticate carrier/peer by client cert — strong anti-spoof.
+- **Mutual TLS on trunks/peering (T12):** authenticate carrier/peer by client cert — strong anti-spoof.
 - **Interplay with topology hiding & SBC:** TLS terminates at the edge; re-originate to core over
   internal mTLS.
 

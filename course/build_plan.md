@@ -113,7 +113,7 @@ when their parent B-task is reached.
 ### Stage G — full consistency audit (feedback13: next 8 iterations)
 Reserve the next 8 loop iterations for a fuller cross-course consistency check. One pass per iteration,
 fixing what it finds:
-- [ ] G1. Threat catalog T1–T15 — used consistently across every module + lab; none undefined/orphaned.
+- [x] G1. Threat catalog T1–T15 — used consistently across every module + lab; none undefined/orphaned.
 - [ ] G2. Citations — every module `## References` is a subset of, and consistent with, the bibliography
       (Q2); RFC numbers/titles/years correct; no dangling cites.
 - [ ] G3. Lab ↔ module alignment — each module has its lab; every lab ships a fail-closed `verify.sh`;
@@ -585,6 +585,14 @@ Fold F8/F9 opportunistically during these passes.
 - History purge (2026-07-05, user-directed): removed the stray `index.html` (copyrighted saved
   web page) from all history via filter-branch; force-pushed with lease (ccc39c8 -> fc01731).
   0 hits in history; 265 files intact. Now gitignored so it can't recur.
+
+- Iteration 86 (2026-07-05): **G1 threat-catalog consistency pass**. All T1-T15 defined (notes.md
+  §2) and actively used (8-31 refs each); no orphans, none out-of-range. Found + fixed **4 mapping
+  drifts** where the catalog claimed a module treats a threat but the module didn't tag it: added
+  T1/T2/T3 to M14 (brute-force/scan defense), T4 to M15 (toll-fraud CDR detection), T12 to M10
+  (mutual-TLS trunks). Re-verified: catalog fully consistent (0 mismatches). feedback0 - TelcoBridges
+  YouTube noted as a pending source (user to transcribe); converted the TelcoBridges SIP-headers
+  article to MD (vendor blog, not folded - RFC 3261 is the header authority). Next: G2.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

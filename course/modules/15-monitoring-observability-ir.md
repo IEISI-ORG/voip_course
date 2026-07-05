@@ -10,7 +10,7 @@
 
 ## 1. Concept
 - **Three pillars for VoIP:** metrics (Prometheus + exporters), logs (Loki/promtail, syslog),
-  and full SIP capture/correlation (HOMER/HEP) — plus CDRs for fraud.
+  and full SIP capture/correlation (HOMER/HEP) — plus CDRs for toll-fraud detection (T4).
 - **KPIs & SLOs:** registration success rate, ASR (answer-seizure ratio), ACD, PDD (post-dial
   delay), 4xx/5xx rates, concurrent calls, MOS/jitter/loss trends, trunk utilization.
 - **Alerting:** thresholds vs. anomaly; alert on auth-failure spikes, scan patterns, flood, MOS

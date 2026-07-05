@@ -25,7 +25,7 @@ drains a budget. **Est. time:** 6h · **Prereqs:** Module 13.
 - **Fraud controls:** destination allow/deny (block high-risk ranges), per-account spend and
   concurrency limits, time-of-day rules, velocity/anomaly detection on CDRs, hard spend caps,
   real-time alerting and auto-suspend.
-- **Brute-force/scan defense:** fail2ban jails, `pike`, nftables rate limits, CrowdSec-style
+- **Brute-force/scan defense (T1/T2/T3):** fail2ban jails, `pike`, nftables rate limits, CrowdSec-style
   reputation, lockout/backoff.
 
 ## 2. Packet Reality
@@ -93,4 +93,4 @@ touches it, so every hit is a confirmed bad actor you can block pre-emptively.
 
 ## References
 - NIST SP 800-58 (VoIP security), ENISA VoIP security; Asterisk/Kamailio hardening guides;
-  fail2ban, nftables, CrowdSec, Wazuh docs; `../notes.md §2` (T4,T11,T13,T15).
+  fail2ban, nftables, CrowdSec, Wazuh docs; `../notes.md §2` (T2,T3,T4,T11,T13,T15).
