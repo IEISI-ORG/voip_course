@@ -1,0 +1,89 @@
+// VoIPSec RFC evolution & dependency map. Render: dot -Tsvg rfc-evolution-map.dot -o rfc-evolution-map.svg
+// Left-to-right by year. Fill = domain. Obsoleted RFCs are dashed/grey. Red "replaced by" edges
+// track how the course follows superseded standards; grey edges are "uses/extends" (rank-free).
+digraph RFCEvolution {
+  rankdir=LR; nodesep=0.25; ranksep=0.7; bgcolor="white";
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=10, color="#555555"];
+  edge [fontname="Helvetica", fontsize=8];
+
+  // ---- invisible year anchors force the left->right time axis ----
+  node [shape=plaintext, style="", fontsize=11, fontcolor="#333333"];
+  y1996[label="1996"]; y1998[label="1998"]; y1999[label="1999"]; y2002[label="2002"];
+  y2003[label="2003"]; y2004[label="2004"]; y2005[label="2005"]; y2006[label="2006"];
+  y2008[label="2008"]; y2010[label="2010"]; y2011[label="2011"]; y2012[label="2012"];
+  y2013[label="2013"]; y2015[label="2015"]; y2016[label="2016"]; y2018[label="2018"];
+  y2019[label="2019"]; y2020[label="2020"]; y2021[label="2021"];
+  y1996->y1998->y1999->y2002->y2003->y2004->y2005->y2006->y2008->y2010->y2011->y2012->y2013->y2015->y2016->y2018->y2019->y2020->y2021 [style=invis];
+  node [shape=box, style="rounded,filled"];
+
+  // ---- domain fills: signaling=blue media=green security=orange auth=teal identity=purple emergency=red pstn=lime dns=brown ----
+  // ---- obsoleted style: dashed grey ----
+  rfc2543[label="RFC 2543\nSIP", fillcolor="#eeeeee", style="rounded,filled,dashed", fontcolor="#888888"];
+  rfc3261[label="RFC 3261\nSIP core", fillcolor="#bbdefb"];
+  rfc3262[label="RFC 3262\nPRACK", fillcolor="#bbdefb"];
+  rfc3263[label="RFC 3263\nLocating servers", fillcolor="#bbdefb"];
+  rfc3264[label="RFC 3264\nOffer/Answer", fillcolor="#c8e6c9"];
+  rfc3265[label="RFC 3265\nEvents", fillcolor="#eeeeee", style="rounded,filled,dashed", fontcolor="#888888"];
+  rfc6665[label="RFC 6665\nEvents", fillcolor="#bbdefb"];
+  rfc2327[label="RFC 2327\nSDP", fillcolor="#eeeeee", style="rounded,filled,dashed", fontcolor="#888888"];
+  rfc4566[label="RFC 4566\nSDP", fillcolor="#c8e6c9"];
+  rfc8866[label="RFC 8866\nSDP", fillcolor="#c8e6c9"];
+  rfc1889[label="RFC 1889\nRTP", fillcolor="#eeeeee", style="rounded,filled,dashed", fontcolor="#888888"];
+  rfc3550[label="RFC 3550\nRTP/RTCP", fillcolor="#c8e6c9"];
+  rfc3711[label="RFC 3711\nSRTP", fillcolor="#ffe0b2"];
+  rfc4568[label="RFC 4568\nSDES", fillcolor="#ffe0b2"];
+  rfc5764[label="RFC 5764\nDTLS-SRTP", fillcolor="#ffe0b2"];
+  rfc2617[label="RFC 2617\nHTTP Digest", fillcolor="#eeeeee", style="rounded,filled,dashed", fontcolor="#888888"];
+  rfc7616[label="RFC 7616\nDigest", fillcolor="#b2dfdb"];
+  rfc8760[label="RFC 8760\nDigest SHA-256", fillcolor="#b2dfdb"];
+  rfc8224[label="RFC 8224\nSTIR", fillcolor="#e1bee7"];
+  rfc8225[label="RFC 8225\nPASSporT", fillcolor="#e1bee7"];
+  rfc8226[label="RFC 8226\nSTIR certs", fillcolor="#e1bee7"];
+  rfc8588[label="RFC 8588\nSHAKEN", fillcolor="#e1bee7"];
+  rfc9060[label="RFC 9060\nDelegate certs", fillcolor="#e1bee7"];
+  rfc4119[label="RFC 4119\nPIDF-LO", fillcolor="#ffcdd2"];
+  rfc4412[label="RFC 4412\nResource-Priority", fillcolor="#ffcdd2"];
+  rfc5222[label="RFC 5222\nLoST (ECRF)", fillcolor="#ffcdd2"];
+  rfc6442[label="RFC 6442\nLocation conveyance", fillcolor="#ffcdd2"];
+  rfc6443[label="RFC 6443\nEmergency framework", fillcolor="#ffcdd2"];
+  rfc6881[label="RFC 6881\nBCP 181", fillcolor="#ffcdd2"];
+  rfc7852[label="RFC 7852\nAdditional data", fillcolor="#ffcdd2"];
+  rfc3398[label="RFC 3398\nISUP<->SIP", fillcolor="#f0f4c3"];
+  rfc6116[label="RFC 6116\nENUM", fillcolor="#d7ccc8"];
+
+  // ---- pin RFCs into their year column ----
+  {rank=same; y1996; rfc1889;}
+  {rank=same; y1998; rfc2327;}
+  {rank=same; y1999; rfc2543; rfc2617;}
+  {rank=same; y2002; rfc3261; rfc3262; rfc3263; rfc3264; rfc3265; rfc3398;}
+  {rank=same; y2003; rfc3550;}
+  {rank=same; y2004; rfc3711;}
+  {rank=same; y2005; rfc4119;}
+  {rank=same; y2006; rfc4566; rfc4568; rfc4412;}
+  {rank=same; y2008; rfc5222;}
+  {rank=same; y2010; rfc5764;}
+  {rank=same; y2011; rfc6116; rfc6442; rfc6443;}
+  {rank=same; y2012; rfc6665;}
+  {rank=same; y2013; rfc6881;}
+  {rank=same; y2015; rfc7616;}
+  {rank=same; y2016; rfc7852;}
+  {rank=same; y2018; rfc8224; rfc8225; rfc8226;}
+  {rank=same; y2019; rfc8588;}
+  {rank=same; y2020; rfc8760;}
+  {rank=same; y2021; rfc8866; rfc9060;}
+
+  // ---- "replaced by" (obsoletion) — the spine, old -> new ----
+  edge [color="#d32f2f", penwidth=2.0, label="replaced by", fontcolor="#d32f2f", constraint=true];
+  rfc2543->rfc3261; rfc2327->rfc4566; rfc4566->rfc8866; rfc1889->rfc3550; rfc3265->rfc6665; rfc2617->rfc7616;
+
+  // ---- "uses / extends" — secondary, does not affect ranking ----
+  edge [color="#9e9e9e", penwidth=1.0, label="", constraint=false];
+  rfc3262->rfc3261; rfc3263->rfc3261; rfc3264->rfc3261; rfc3264->rfc4566;
+  rfc3711->rfc3550; rfc4568->rfc3711; rfc5764->rfc3711;
+  rfc8224->rfc8225; rfc8588->rfc8224; rfc8588->rfc8226; rfc9060->rfc8226; rfc8760->rfc3261;
+  rfc6442->rfc4119; rfc6443->rfc6442; rfc6443->rfc5222; rfc6881->rfc6443; rfc7852->rfc6443;
+  rfc6116->rfc3263; rfc3398->rfc3261;
+
+  // ---- legend ----
+  legend[shape=note, fillcolor="#fffde7", fontsize=9, label="Fill = domain (signalling/media/security/auth/identity/emergency/PSTN/DNS)\ndashed grey = obsoleted   |   red = replaced by   |   grey = uses/extends\nLeft -> right by publication year"];
+}

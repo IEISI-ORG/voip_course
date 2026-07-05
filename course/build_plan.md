@@ -110,6 +110,28 @@ when their parent B-task is reached.
       analogue of the RPKI RFC dependency graph. ← iter 71
 - [x] F7. Device-config-security (feedback6) — folded into BF4: Comms Council UK *Recommendations for Device Provisioning Security* (UK code) as the authority + Yealink RPS / Crexendo vendor docs as concrete examples; bibliography §11b/§11c. ← iter 74
 
+### Stage G — full consistency audit (feedback13: next 8 iterations)
+Reserve the next 8 loop iterations for a fuller cross-course consistency check. One pass per iteration,
+fixing what it finds:
+- [ ] G1. Threat catalog T1–T15 — used consistently across every module + lab; none undefined/orphaned.
+- [ ] G2. Citations — every module `## References` is a subset of, and consistent with, the bibliography
+      (Q2); RFC numbers/titles/years correct; no dangling cites.
+- [ ] G3. Lab ↔ module alignment — each module has its lab; every lab ships a fail-closed `verify.sh`;
+      rubrics sum to 100 (pass ≥ 70).
+- [ ] G4. Internal links — every relative link in course/ + lab/ resolves to a real file/anchor.
+- [ ] G5. Terminology/glossary — acronyms spelled out first-use; glossary covers what the modules use.
+- [ ] G6. Security invariants — fail-closed graders, no committed secrets, offensive tooling lab-scoped.
+- [ ] G7. Assessments — quiz bank + 3 exams map to modules; answer keys separated; capstone gate intact.
+- [ ] G8. Naming/branding (VoIPSec, zero SOVOC), build_plan ↔ reality, requirements-traceability refresh.
+Fold F8/F9 opportunistically during these passes.
+
+### Stage F — community & licensing (continued)
+- [ ] F8. VoWiFi / WiFi-calling (feedback2/3): add **GSMA IR.51/IR.61** (VoWiFi/roaming) to the
+      bibliography, and fold the CISPA VoWiFi key-exchange paper (venue-checked) into M10/M11 (media
+      security) — empirical evidence on commercial VoWiFi IPsec/IKE weaknesses.
+- [ ] F9. Track Henning Schulzrinne's standards work (feedback9) — a "key authors" note in the
+      bibliography (SIP 3261, RTP 3550, RTSP, plus his emergency-calling contributions).
+
 ## Loop protocol (each iteration)
 1. Check `/home/terry/voip_course` for feedback files (`*feedback*`, `FEEDBACK*`, `feedback/`).
    If present: read, incorporate, and prioritize before the backlog. Record what it asked in the
@@ -551,6 +573,14 @@ when their parent B-task is reached.
   AU standards: **Comms Alliance C536:2025** (Emergency Call Service Requirements) and **G673:2024**
   (*Transport of SIP* — the AU SIP guideline the user meant by "G674") → bibliography §11b. Deleted 2
   feedback + 2 source PDFs.
+
+- Iteration 85 (2026-07-05): feedback1 → replaced the Mermaid RFC map with a Graphviz **SVG**
+  (`rfc-evolution-map.dot`/`.svg`): left-to-right by year, domain-coloured, **obsoleted RFCs dashed
+  with red "replaced by" edges** (2543→3261, 2327→4566→8866, 1889→3550, 3265→6665, 2617→7616) —
+  showing the course tracks superseded standards. 31 RFC nodes, well-formed SVG. Recorded **Stage G**
+  (feedback13: next 8 iterations = full consistency audit, G1–G8) and queued **F8** (VoWiFi/GSMA +
+  CISPA paper, feedback2/3) + **F9** (Schulzrinne tracking, feedback9). Converted 2 new papers to MD.
+  Deleted 5 feedback. Next: G1 (threat-catalog consistency).
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
