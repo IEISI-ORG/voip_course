@@ -15,6 +15,13 @@ unified communications — with the security caveats of each. **Est. time:** 5h 
 - IMS architecture: P-/I-/S-CSCF, HSS, AS/TAS, PCSCF; SIP registration in IMS; call flow.
 - VoLTE (LTE/EPC) and VoNR (5G) media; SIP preconditions (RFC 3312) and codec (AMR/EVS);
   GSMA IR.92/IR.94 profiles; the OTT-vs-carrier tension; RCS.
+- **VoWiFi (Wi-Fi calling):** IMS carried over untrusted Wi-Fi via IPsec/IKEv2 tunnels to the
+  operator's **ePDG** (GSMA **IR.51**; roaming IR.61). The whole security of the call rests on that
+  IKE key exchange — and it's a real-world weak point: a peer-reviewed measurement of commercial
+  deployments (Gegenhuber et al., **USENIX Security 2024** — [bib §11](../references/bibliography.md))
+  found **13 operators (~140M users)** using weak/deprecated Diffie-Hellman groups that are
+  downgradeable to breakable, leaving VoWiFi setups susceptible to MITM. Lesson: mandate strong IKE
+  groups + reject downgrade (the crypto-agility failure this course warns about in M11).
 - Security/trust: IPX peering, SIP over secured bearers, the operator trust model.
 
 ### 1b. Fax over IP
@@ -78,6 +85,7 @@ security/compliance surface that ties the earlier modules together.
   STIR/SHAKEN identity, and emergency-location delivery in one flow.
 
 ## References
-- 3GPP TS 24.229 (IMS), GSMA IR.92/IR.94, RFC 3312 (preconditions); ITU T.38/T.30, RFC 6913;
+- 3GPP TS 24.229 (IMS), GSMA IR.92/IR.94, **IR.51/IR.61 (VoWiFi)**, RFC 3312 (preconditions);
+  Gegenhuber et al. (USENIX Sec '24, VoWiFi key exchange) — see [bibliography §11/§11d](../references/bibliography.md); ITU T.38/T.30, RFC 6913;
   RFC 6116 (ENUM), ATIS/SIP Forum IP-NNI; RFC 3856/3863 (presence/PIDF), 3515 (REFER);
   Asterisk ARI / FreeSWITCH ESL docs.

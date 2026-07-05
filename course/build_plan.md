@@ -126,7 +126,7 @@ fixing what it finds:
 Fold F8/F9 opportunistically during these passes.
 
 ### Stage F — community & licensing (continued)
-- [ ] F8. VoWiFi / WiFi-calling (feedback2/3): add **GSMA IR.51/IR.61** (VoWiFi/roaming) to the
+- [x] F8. VoWiFi / WiFi-calling (feedback2/3): add **GSMA IR.51/IR.61** (VoWiFi/roaming) to the
       bibliography, and fold the CISPA VoWiFi key-exchange paper (venue-checked) into M10/M11 (media
       security) — empirical evidence on commercial VoWiFi IPsec/IKE weaknesses.
 - [ ] F9. Track Henning Schulzrinne's standards work (feedback9) — a "key authors" note in the
@@ -670,6 +670,13 @@ Fold F8/F9 opportunistically during these passes.
   `labs/m15-monitoring-ir` (now m15-defense-fraud / m16-monitoring-ir) -> CI offline-grader step
   failed. Fixed both paths; both graders PASS locally; ci.yml valid YAML. Swept all tracked scripts/
   workflows for stale `labs/m<n>-` refs -> none. (Lesson: renumber scope must include .github/.)
+
+- Iteration 97 (2026-07-05): **F8 VoWiFi/GSMA**. Venue-checked the CISPA VoWiFi paper -> Gegenhuber
+  et al., **USENIX Security 2024** (verified via WebSearch; I'd have guessed 2023) -> bibliography §11.
+  Added **GSMA IR.51/IR.61** (VoWiFi/Wi-Fi roaming) as a new §11d (mobile standards). Folded a VoWiFi
+  section into M18 (frontiers): IMS-over-Wi-Fi via IPsec/IKEv2 to the ePDG, with the paper's finding
+  (13 operators/~140M users on weak/downgradeable DH groups -> MITM) as the crypto-agility lesson.
+  Next: F9 (Schulzrinne) / reactive backlog.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
