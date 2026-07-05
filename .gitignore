@@ -42,3 +42,8 @@ SSCA-Elite-SIP-training.md
 course/instructor/marp/node_modules/
 course/instructor/marp/out/
 course/instructor/marp/package-lock.json
+
+# --- Stray saved web pages (copyrighted third-party; belong in papers/, not the repo) ---
+/index.html
+/*_files/
+/understanding-*.html
