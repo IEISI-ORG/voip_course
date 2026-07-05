@@ -8,17 +8,17 @@ about what is turned off.
 
 | Choice | Why | Threat / module |
 |--------|-----|-----------------|
-| `chan_pjsip` only, `chan_sip` unloaded | legacy stack has weak enumeration/defaults | T2 / M12 |
-| AMI disabled (`manager.conf`) | powerful remote-control surface | T11 / M15 |
+| `chan_pjsip` only, `chan_sip` unloaded | legacy stack has weak enumeration/defaults | T2 / M13 |
+| AMI disabled (`manager.conf`) | powerful remote-control surface | T11 / M16 |
 | ARI/HTTP disabled (`http.conf`) | unneeded attack surface | T11 |
 | MGCP/Skinny/Unistim unloaded | shrink channel-driver surface | T11 |
 | Dialplan denies outbound by default | no toll route from a compromised ext | T4 / M9 |
-| `direct_media=no`, `rtp_symmetric=yes`, `strictrtp` | media through anchor, drop stray RTP | T9 / M11 |
+| `direct_media=no`, `rtp_symmetric=yes`, `strictrtp` | media through anchor, drop stray RTP | T9 / M12 |
 | Secrets rendered from env at boot | no credentials in git | T11 |
 
 ## Deliberate stubs (hardened later)
-- **Plain UDP on core** — TLS transport in **M10**, SRTP media in **M11**.
-- **Digest auth is basic** — SHA-256 + downgrade rejection (RFC 8760) in **M12**.
+- **Plain UDP on core** — TLS transport in **M11**, SRTP media in **M12**.
+- **Digest auth is basic** — SHA-256 + downgrade rejection (RFC 8760) in **M13**.
 - **No outbound trunk** — added with restrictions/spend limits in **M9**.
 
 ## Endpoints

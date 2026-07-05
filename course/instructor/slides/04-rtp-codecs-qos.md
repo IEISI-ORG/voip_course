@@ -54,7 +54,7 @@ The media plane: how voice/video actually travels, its quality metrics, and how 
 ## 4. Attack / Defend
 
 - **RTP injection / bleed (T9):** unauthenticated RTP ports accept spoofed streams → symmetric
-- **Eavesdropping (T5):** plaintext RTP is trivially recorded (`rtp` export → audio) → SRTP (M11).
+- **Eavesdropping (T5):** plaintext RTP is trivially recorded (`rtp` export → audio) → SRTP (M12).
 - **QoS abuse / DSCP marking by untrusted hosts:** re-mark/trust boundaries at the edge.
 - **RTCP-based info leak / bandwidth exhaustion.** Update threat model.
 

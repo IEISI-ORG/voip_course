@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # VoIPSec BF5 acceptance test — the transit SHAKEN policy makes the correct decisions (offline,
-# deterministic, fail-closed). Live signing/verification is capture-graded (M12 lab).
+# deterministic, fail-closed). Live signing/verification is capture-graded (M13 lab).
 # Run from lab/:  bash labs/bf5-transit-shaken/verify.sh
 set -u
 cd "$(dirname "$0")/../.." || exit 3

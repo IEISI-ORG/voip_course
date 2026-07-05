@@ -4,7 +4,7 @@
 **Prereqs:** M3.
 
 Goal: understand how media actually travels, measure its quality, compute its cost, and see why
-plaintext RTP is a confidentiality problem (threat T5) that SRTP fixes (M11).
+plaintext RTP is a confidentiality problem (threat T5) that SRTP fixes (M12).
 
 ## Auto-graded prerequisites
 ```bash
@@ -33,11 +33,11 @@ Ethernet overhead change the number. Verify one row against your own capture.
 
 ## Lab 4.3 (attack → defend) — Eavesdrop, then SRTP  (30 pts)
 With the plaintext capture from 4.1, reconstruct the audio in Wireshark ("Play Streams"). That
-is threat **T5**. Note that after **M11** (SRTP/DTLS-SRTP) the payload is encrypted and the same
+is threat **T5**. Note that after **M12** (SRTP/DTLS-SRTP) the payload is encrypted and the same
 capture can no longer be played — the sniffer is defeated.
 
 **Deliverable:** evidence you reconstructed plaintext audio + a written explanation of how SRTP
-defeats the same attack (forward reference to M11).
+defeats the same attack (forward reference to M12).
 
 ## Lab 4.4 — DSCP & QoS under impairment  (15 pts)
 Mark media EF (DSCP 46) on a PBX/SBC, impair the edge link with `netem`

@@ -19,4 +19,4 @@ send "OPTIONS (read Via/branch, CSeq, Allow)" \
 
 echo "For the authenticated REGISTER (401 challenge) trace, watch it live:"
 echo "  docker compose exec -it client sngrep -d any"
-echo "  (SBC stubs auth until M12; a real 401 challenge appears once M12 is applied.)"
+echo "  (SBC stubs auth until M13; a real 401 challenge appears once M13 is applied.)"

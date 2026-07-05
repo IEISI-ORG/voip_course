@@ -1,7 +1,7 @@
 # Lab BF15 — Suricata IDS for VoIP (the detect stage)
 
-**Modules:** [M13](../../../course/modules/13-threats-offensive-testing.md) (attack) →
-**detect** → [M15](../../../course/modules/15-monitoring-observability-ir.md) (respond). Feedback-
+**Modules:** [M14](../../../course/modules/14-threats-offensive-testing.md) (attack) →
+**detect** → [M16](../../../course/modules/16-monitoring-observability-ir.md) (respond). Feedback-
 derived (F1). A signature sensor that sits **beside** the honeypot (BF12) and feeds the **same**
 response pipeline: diverse detection, unified response (defense in depth).
 
@@ -39,5 +39,5 @@ bash eve-to-ipset.sh /var/log/suricata/eve.json --apply    # ban the scanners
 | Suricata detects a SIP scan/flood (live) | 30 | run svwar → EVE alert |
 | Toll-fraud dial pattern caught | 15 | INVITE to premium prefix → alert |
 | EVE → nftables ban applied | 25 | scanner IP appears in `banned_v4` |
-| Wired to M15 (Wazuh/Grafana sees the alert) | 20 | alert visible in the obs plane |
+| Wired to M16 (Wazuh/Grafana sees the alert) | 20 | alert visible in the obs plane |
 | No false ban of a legitimate REGISTER/OPTIONS | 10 | threshold tuning shown |

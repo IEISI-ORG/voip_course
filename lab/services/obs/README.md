@@ -26,7 +26,7 @@ scraped — the mgmt plane never touches `edge` or `redteam`.
 ## What's wired now vs later
 - **Now:** Prometheus (self-scrape), Grafana datasources, Loki, HOMER HEP intake path, a
   single-node Wazuh manager.
-- **M15:** enable Kamailio/Asterisk exporters (Prometheus targets are commented in
+- **M16:** enable Kamailio/Asterisk exporters (Prometheus targets are commented in
   `prometheus/prometheus.yml`), mirror SIP from `edge-sbc` to HEP, SIP dashboards, Wazuh
   rules for toll-fraud / recording-access (threats T4/T14), full Wazuh indexer+dashboard.
 

@@ -1,6 +1,6 @@
 # Lab BF5 — Transit STIR/SHAKEN (attestation C, header stripping, OOB)
 
-**Module:** [M12](../../../course/modules/12-authn-authz-identity.md). Feedback-derived
+**Module:** [M13](../../../course/modules/13-authn-authz-identity.md). Feedback-derived
 (gemini_feedback1). Threat: caller-ID spoofing / laundered identity (T7).
 
 Goal: handle STIR/SHAKEN as a **transit/gateway** carrier — strip untrusted `Identity`, apply
@@ -25,7 +25,7 @@ flags OOB for TDM/SS7.
 | Cannot verify originator (gateway) | — | **C** | — |
 | Next hop is TDM/SS7 | — | — | **yes** (RFC 8816) |
 
-## Build (M12 integration)
+## Build (M13 integration)
 - Kamailio/Asterisk STIR/SHAKEN: on ingress, **remove** any `Identity` from an untrusted or
   unverified source before routing (don't pass forged identity downstream).
 - On egress where you sign, apply the attestation from the policy above; sign with the SHAKEN
@@ -36,7 +36,7 @@ flags OOB for TDM/SS7.
 ## Security notes
 - **Never** relay an unverified `Identity` — that launders a spoofer's claim into a trusted one.
 - Attestation **C** is honest signalling ("passed through me, origin unverified"), not a failure.
-- Verify inbound signatures against the `x5u` chain and TN scope before trusting (see M12
+- Verify inbound signatures against the `x5u` chain and TN scope before trusting (see M13
   `passport-decode.sh`).
 
 ## Rubric (100 pts, pass ≥ 70)

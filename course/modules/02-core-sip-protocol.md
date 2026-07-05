@@ -43,7 +43,7 @@
 - **CSeq/Call-ID/tag** manipulation and replay considerations; Max-Forwards loops.
 - **Registration hijack (T3):** why an unauthenticated REGISTER is fatal; challenge everything.
 - Defense: authenticate REGISTER/INVITE, strip internal Via/Record-Route at edge, sane
-  Max-Forwards, reject malformed (M13 fuzzing preview).
+  Max-Forwards, reject malformed (M14 fuzzing preview).
 
 ## 5. Labs
 - **Lab 2.1:** Given three pcaps, identify each transaction/dialog and explain every non-2xx.

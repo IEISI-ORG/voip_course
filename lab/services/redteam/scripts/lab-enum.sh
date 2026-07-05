@@ -1,5 +1,5 @@
 #!/bin/sh
-# lab-enum [target] [ext-range]  — extension enumeration (SIPVicious svwar). M13/M12 (T2).
+# lab-enum [target] [ext-range]  — extension enumeration (SIPVicious svwar). M14/M13 (T2).
 # Demonstrates why uniform auth responses + fail2ban matter. Scope-guarded.
 . /opt/redteam/scripts/_guard.sh
 TARGET="${1:-172.28.10.10}"

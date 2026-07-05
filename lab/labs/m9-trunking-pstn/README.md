@@ -1,7 +1,7 @@
 # Lab M9 — SIP Trunking & the PSTN
 
 **Module:** [M9](../../../course/modules/09-sip-trunking-pstn.md) · **Est.** 5h ·
-**Prereqs:** M6–M8. **See also:** [M9D DNS Infrastructure](../../../course/modules/09d-dns-infrastructure.md).
+**Prereqs:** M6–M8. **See also:** [M10 DNS Infrastructure](../../../course/modules/10-dns-infrastructure.md).
 
 Goal: connect the platform to the outside world (ITSP/PSTN) securely — two-way trunking, correct
 cause mapping, authenticated/encrypted trunks, and fraud guardrails.

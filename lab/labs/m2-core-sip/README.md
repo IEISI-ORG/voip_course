@@ -25,11 +25,11 @@ non-2xx you see. Correlate in HOMER (`make obs-up`).
 **Deliverable:** annotated ladder with transaction/dialog boundaries + a note on each non-2xx.
 
 ## Lab 2.2 — Authentication round-trip  (20 pts)
-Read the challenge/response model. The edge-sbc **stubs auth until M12**, so today you trace the
-REGISTER→200; once M12 is applied, re-run to capture the real `401 WWW-Authenticate` → digest
+Read the challenge/response model. The edge-sbc **stubs auth until M13**, so today you trace the
+REGISTER→200; once M13 is applied, re-run to capture the real `401 WWW-Authenticate` → digest
 `Authorization` round-trip and annotate the nonce/realm/qop.
 
-**Deliverable:** the REGISTER trace now + a note on where the 401 will appear post-M12.
+**Deliverable:** the REGISTER trace now + a note on where the 401 will appear post-M13.
 
 ## Lab 2.3 — Forking & the CANCEL race  (25 pts)
 Register the same AoR from two clients (parallel forking), call it, and capture the two `180`s,

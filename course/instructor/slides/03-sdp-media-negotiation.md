@@ -28,7 +28,7 @@ How endpoints agree on media with SDP offer/answer, and how that negotiation is 
 - **Codec negotiation:** payload types (static vs. dynamic), `rtpmap`/`fmtp`, ptime, DTMF
 - **Session changes:** hold (`sendonly`/`inactive`, old `c=0.0.0.0` method), re-INVITE vs.
 - **Direction & address:** how `c=` + `m=` port define where RTP goes — the crux of NAT and
-- Crypto attributes preview (`a=crypto`, `a=fingerprint`, `a=setup`) — full treatment in M11.
+- Crypto attributes preview (`a=crypto`, `a=fingerprint`, `a=setup`) — full treatment in M12.
 
 <!-- Speaker note: connect this beat to the module's security takeaway. -->
 ---

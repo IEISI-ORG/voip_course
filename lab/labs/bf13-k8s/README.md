@@ -1,6 +1,6 @@
 # Lab BF13 — Cloud-Native VoIP: K8s Media Networking & Pod Security
 
-**Module:** [M16](../../../course/modules/16-testing-interop-automation-cloud.md). Feedback-derived
+**Module:** [M17](../../../course/modules/17-testing-interop-automation-cloud.md). Feedback-derived
 (gemini_feedback1). Threat: container escape / node pivot via over-privileged media pods.
 
 Goal: run RTP media in Kubernetes without the `hostNetwork` shortcut, and enforce Pod Security

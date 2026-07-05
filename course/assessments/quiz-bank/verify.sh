@@ -24,7 +24,7 @@ for q in qs:
     if not q.get("q"): issues.append(f"{qid}: empty question text")
     modules.add(q.get("module",""))
 
-need = ["M0","M1","M2","M3","M4","M5","M6","M7","M8","M9","M9D","M10","M11","M12","M13","M14","M15","M16","M17"]
+need = ["M0","M1","M2","M3","M4","M5","M6","M7","M8","M9","M10","M11","M12","M13","M14","M15","M16","M17","M18"]
 missing = [m for m in need if m not in modules]
 if missing: issues.append("modules with no question: " + ",".join(missing))
 

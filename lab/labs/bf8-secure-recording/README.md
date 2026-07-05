@@ -1,7 +1,7 @@
 # Lab BF8 — Secure Call Recording (PCI-DSS aware)
 
-**Modules:** [M14](../../../course/modules/14-defense-hardening-fraud.md) +
-[M15](../../../course/modules/15-monitoring-observability-ir.md). Feedback-derived
+**Modules:** [M15](../../../course/modules/15-defense-hardening-fraud.md) +
+[M16](../../../course/modules/16-monitoring-observability-ir.md). Feedback-derived
 (gemini_feedback0). Threats: recording/CDR exposure (T14), PCI/PII liability.
 
 Goal: record lawfully without creating a breach. **Suppress** sensitive DTMF during payment,
@@ -24,8 +24,8 @@ masking (last-4 only, PIN fully masked).
 2. **Encryption at rest:** encrypt recordings (`secure-recording.sh encrypt <in> <out> <key>`);
    keys in a KMS/secure store, not beside the media.
 3. **RBAC + audit:** only allowlisted roles may access; every access is logged
-   (`secure-recording.sh access <user> <file>`). Ship the audit log to the SIEM (M15).
-4. **Detection:** Wazuh rule on recording-directory access / bulk export (M15
+   (`secure-recording.sh access <user> <file>`). Ship the audit log to the SIEM (M16).
+4. **Detection:** Wazuh rule on recording-directory access / bulk export (M16
    `RecordingAccessAnomaly`).
 
 ## Security / compliance notes

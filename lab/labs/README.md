@@ -15,16 +15,16 @@ against the shared lab, with an executable checker where possible (`verify.sh`).
 | [m7-proxies-sbc](m7-proxies-sbc/) | M7 | failover, topology hiding, media anchoring, pike rate-limit (self-validating) | ✅ |
 | [m8-nat-firewall](m8-nat-firewall/) | M8 | NAT traversal, TURN, nftables edge, scanner-UA ban (self-validating) | ✅ |
 | [m9-trunking-pstn](m9-trunking-pstn/) | M9 | two-way trunk, SIP↔Q.850 mapping, trunk TLS/auth + fraud guardrails | ✅ |
-| [m10-signaling-tls](m10-signaling-tls/) | M10 | SIP-over-TLS (handshake-tested), cert inspection, mTLS + expiry alert | ✅ |
-| [m11-media-srtp](m11-media-srtp/) | M11 | SRTP foundation, SDES offer + crypto-strip demo, DTLS/ZRTP | ✅ |
-| [m12-authn-identity](m12-authn-identity/) | M12 | digest/STIR-SHAKEN, PASSporT decoder, enumeration ban; exam #2 | ✅ |
-| [m13-offensive](m13-offensive/) | M13 | authorized assessment, RFC 4475 torture (survival-tested), findings report | ✅ |
-| [m14-defense-fraud](m14-defense-fraud/) | M14 | hardening v-final, CDR IRSF fraud detector (offline-graded) | ✅ |
-| [m15-monitoring-ir](m15-monitoring-ir/) | M15 | Prometheus alert rules, M13 detection coverage, IR runbooks | ✅ |
-| [m16-testing-cloud](m16-testing-cloud/) | M16 | SIPp load test, CI pipeline (repo lint + graders), IaC | ✅ |
-| [m17-frontiers](m17-frontiers/) | M17 | ENUM lookup tool, T.38 fax, CPaaS API hardening; exam #3 | ✅ |
+| [m11-signaling-tls](m11-signaling-tls/) | M11 | SIP-over-TLS (handshake-tested), cert inspection, mTLS + expiry alert | ✅ |
+| [m12-media-srtp](m12-media-srtp/) | M12 | SRTP foundation, SDES offer + crypto-strip demo, DTLS/ZRTP | ✅ |
+| [m13-authn-identity](m13-authn-identity/) | M13 | digest/STIR-SHAKEN, PASSporT decoder, enumeration ban; exam #2 | ✅ |
+| [m14-offensive](m14-offensive/) | M14 | authorized assessment, RFC 4475 torture (survival-tested), findings report | ✅ |
+| [m15-defense-fraud](m15-defense-fraud/) | M15 | hardening v-final, CDR IRSF fraud detector (offline-graded) | ✅ |
+| [m16-monitoring-ir](m16-monitoring-ir/) | M16 | Prometheus alert rules, M14 detection coverage, IR runbooks | ✅ |
+| [m17-testing-cloud](m17-testing-cloud/) | M17 | SIPp load test, CI pipeline (repo lint + graders), IaC | ✅ |
+| [m18-frontiers](m18-frontiers/) | M18 | ENUM lookup tool, T.38 fax, CPaaS API hardening; exam #3 | ✅ |
 
-**Stage B complete — all 18 module labs (M0–M17) built.**
+**Stage B complete — all 18 module labs (M0–M18) built.**
 
 Conventions:
 - Each lab dir has a `README.md` runbook with a **100-pt rubric (pass ≥ 70)**.

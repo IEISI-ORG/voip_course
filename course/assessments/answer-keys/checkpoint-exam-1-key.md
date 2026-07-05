@@ -5,7 +5,7 @@
 
 ## Answer key
 
-- **1.** NAPTR → SRV → A/AAAA; NAPTR service field (e.g. `SIPS+D2T`) selects transport. (M9D/M1)
+- **1.** NAPTR → SRV → A/AAAA; NAPTR service field (e.g. `SIPS+D2T`) selects transport. (M10/M1)
 - **2.** RFC 3261 magic cookie marks RFC-3261 branch IDs; guarantees the branch is a **unique
   transaction identifier** across a message's Via chain (loop/retrans detection).
 - **3.** Non-2xx ACK is hop-by-hop, absorbed by the INVITE server transaction (reliability of the
@@ -33,7 +33,7 @@
 - **14.** `tshark -r f.pcap -Y 'sip.Status-Code >= 400' -T fields -e sip.Call-ID -e sip.Status-Code | sort -u`.
 - **15.** Capture before TLS if you only have on-path access (ciphertext otherwise); decrypt after
   only with the server key/keylog and authorization. Encryption is the reason plaintext capture
-  fails post-M10.
+  fails post-M11.
 - **16.** A shared correlation key — the SIP **Call-ID** (plus tags) carried in HEP from each
   capture agent lets HOMER stitch the hops.
 - **17.** e.g.: reproduce → capture at the edge → confirm request arrives → follow the transaction

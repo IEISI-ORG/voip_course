@@ -18,7 +18,7 @@ abused. **Est. time:** 3h · **Prereqs:** Module 2.
   UPDATE, music-on-hold, multiple m-lines (audio+video), BUNDLE overview.
 - **Direction & address:** how `c=` + `m=` port define where RTP goes — the crux of NAT and
   of media redirection attacks.
-- Crypto attributes preview (`a=crypto`, `a=fingerprint`, `a=setup`) — full treatment in M11.
+- Crypto attributes preview (`a=crypto`, `a=fingerprint`, `a=setup`) — full treatment in M12.
 
 ## 2. Packet Reality
 - Annotate an INVITE SDP offer and the 200 OK answer; map the resulting RTP 5-tuple.
@@ -34,7 +34,7 @@ abused. **Est. time:** 3h · **Prereqs:** Module 2.
 - **Media redirection:** attacker rewrites `c=`/`m=` to steer RTP (eavesdrop/relay) → why the
   SBC must control media (rtpengine anchoring) and validate source (T9).
 - **Codec/security downgrade:** stripping `a=crypto`/`fingerprint` to force plaintext RTP → the
-  defense is policy: require SRTP, reject cleartext (M11).
+  defense is policy: require SRTP, reject cleartext (M12).
 - **Hold/inactive abuse & re-INVITE floods** (T8) → rate-limit re-INVITEs, sanity-check SDP.
 - Update the living threat model with SDP vectors.
 

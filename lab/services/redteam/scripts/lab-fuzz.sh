@@ -1,6 +1,6 @@
 #!/bin/sh
 # lab-fuzz [target]  — minimal SIP robustness probe (guarded). The full RFC 4475 SIP torture
-# suite is built in M13 (backlog BF7); this is a smoke probe that a malformed OPTIONS does not
+# suite is built in M14 (backlog BF7); this is a smoke probe that a malformed OPTIONS does not
 # crash the border and returns a well-formed 4xx.
 . /opt/redteam/scripts/_guard.sh
 TARGET="${1:-172.28.10.10}"

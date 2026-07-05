@@ -1,6 +1,6 @@
 #!/bin/sh
 # lab-crack [target] [extension] [extra svcrack args] — password attack (SIPVicious svcrack).
-# M14 (threat T3). Shows why strong secrets + lockout + TLS matter. Scope-guarded.
+# M15 (threat T3). Shows why strong secrets + lockout + TLS matter. Scope-guarded.
 # Example: lab-crack 172.28.10.10 1001 -r 1000-9999
 . /opt/redteam/scripts/_guard.sh
 TARGET="${1:-172.28.10.10}"

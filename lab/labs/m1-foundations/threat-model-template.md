@@ -16,7 +16,7 @@ in version control and update it as you build and attack the platform.
 | Entry point | Exposure | Notes |
 |-------------|----------|-------|
 | edge-sbc UDP/TCP 5060 | untrusted (edge) | scanning/flood target |
-| edge-sbc TLS 5061 | untrusted | signaling security (M10) |
+| edge-sbc TLS 5061 | untrusted | signaling security (M11) |
 | media ports (rtpengine) | untrusted | RTP injection/eavesdrop |
 | trunk-sim peer | edge | trunk abuse/spoofing (M9) |
 | mgmt/observability | mgmt only | must not reach edge |
@@ -30,9 +30,9 @@ in version control and update it as you build and attack the platform.
 | ID | Threat | Entry point | Current control | Status |
 |----|--------|-------------|-----------------|--------|
 | T1 | scanning / fingerprinting | edge 5060 | UA hide, pike, fail2ban | partial |
-| T2 | extension enumeration | registrar/auth | uniform responses (M12) | open |
-| T5 | media eavesdropping | RTP path | SRTP (M11) | open |
-| T7 | caller-ID spoofing | inbound trunk | STIR/SHAKEN (M12/M17) | open |
+| T2 | extension enumeration | registrar/auth | uniform responses (M13) | open |
+| T5 | media eavesdropping | RTP path | SRTP (M12) | open |
+| T7 | caller-ID spoofing | inbound trunk | STIR/SHAKEN (M13/M18) | open |
 
 ## 5. Assumptions & open questions
 - <what you are assuming is true; what you still need to verify>

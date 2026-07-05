@@ -133,7 +133,7 @@ Fold F8/F9 opportunistically during these passes.
       bibliography (SIP 3261, RTP 3550, RTSP, plus his emergency-calling contributions).
 
 ### Stage H — post-audit content expansion (feedback0/1, execute AFTER the G-audit)
-- [ ] H1. **Promote M9D (DNS Infrastructure) into the main module series** — it is core, not an
+- [x] H1. **Promote M9D (DNS Infrastructure) into the main module series** — it is core, not an
       optional extra. Renumber it into sequence and update every reference (modules, labs BF14,
       bibliography, crosswalk, dependency map). Big cross-cutting refactor — do carefully post-audit.
 - [ ] H2. **Provisioning-security expansion** — "device config files in the clear are a major SIP
@@ -646,6 +646,15 @@ Fold F8/F9 opportunistically during these passes.
   added the post-rename era (VoIPSec, Stage F community/licensing, multi-jurisdiction emergency,
   peer-review gate, G1-G8), updated verification health. Remaining open = reactive (F3/F4) +
   planned Stage H (H1 DNS-into-main, H2 provisioning-security). **Next: begin Stage H (H1).**
+
+- Iteration 94 (2026-07-05): **H1 — promoted the DNS module into the main series.** DNS is now
+  **M10** (`10-dns-infrastructure.md`); former M10-M17 shifted +1 to M11-M18, capstone 18->19. Done
+  with a collision-free token-renumber over 214 content files + file/lab-dir renames + module-map
+  table + regenerated slides/exam. **First attempt had a placeholder off-by-one bug -> caught by the
+  verification gate, `git reset --hard`, redone correctly.** Verified GREEN: 0 broken links, quiz/
+  capstone/slides validators PASS, offline graders PASS, threat-catalog map still 0 mismatches.
+  NOTE: earlier log entries + Stage B backlog use the pre-shift numbering (they narrate past state);
+  current course content uses M10=DNS. Checkpoint exams now after M5/M13/M18. Next: H2.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

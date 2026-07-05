@@ -37,7 +37,7 @@ border. **Est. time:** 5h · **Prereqs:** Module 7.
 - **SIP scanning & flooding (T1/T8):** svmap sweeps, INVITE/REGISTER floods → nftables rate
   limits + `pike` + fail2ban; drop plaintext 5060 at the edge where policy allows.
 - **RTP bleed/injection (T9):** open media ports → rtpengine strict-source, symmetric RTP,
-  tight RTP port range in the firewall, SRTP (M11).
+  tight RTP port range in the firewall, SRTP (M12).
 - **NAT keepalive amplification / ALG corruption:** disable upstream SIP ALG; control keepalives.
 - Consolidate the **edge hardening checklist**; update threat model with border attacks.
 

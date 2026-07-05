@@ -8,25 +8,25 @@ sits behind.
 
 | Concern | Mechanism | Threat / module |
 |---------|-----------|-----------------|
-| Listeners | UDP/TCP 5060, TLS 5061 | M10 |
-| Malformed-message drop | `sanity_check` | T10 / M13 |
-| Flood protection | `pike` + `htable` ipban | T8 / M8, M14 |
-| Scanner rejection | UA fingerprint match → ban | T1 / M14 |
+| Listeners | UDP/TCP 5060, TLS 5061 | M11 |
+| Malformed-message drop | `sanity_check` | T10 / M14 |
+| Flood protection | `pike` + `htable` ipban | T8 / M8, M15 |
+| Scanner rejection | UA fingerprint match → ban | T1 / M15 |
 | Topology hiding | `topoh` (masks internal Via/Contact/RR) | M7 |
 | NAT handling | `nat_uac_test` + `fix_nated_*` | M8 |
-| Media anchoring | `rtpengine_manage` rewrites SDP → rtpengine | T9 / M11 |
-| Registrar | in-memory `usrloc` (DB in M6/M12) | — |
+| Media anchoring | `rtpengine_manage` rewrites SDP → rtpengine | T9 / M12 |
+| Registrar | in-memory `usrloc` (DB in M6/M13) | — |
 
 ## Deliberate stubs (hardened later)
 
 - **Authentication accepts all REGISTERs** — digest SHA-256 + per-user secrets land in
-  **M12**. Do not expose this build to any untrusted network.
-- **TLS is self-signed, verify off** — real ACME / private-CA + mutual TLS on trunks in **M10**.
+  **M13**. Do not expose this build to any untrusted network.
+- **TLS is self-signed, verify off** — real ACME / private-CA + mutual TLS on trunks in **M11**.
 - **Static route to `pbx-a`** — policy/DID routing and failover in **M9**.
 
 ## Files
 - `kamailio.cfg` — border routing logic (the teaching artifact).
-- `tls.cfg` — TLS baseline (hardened M10).
+- `tls.cfg` — TLS baseline (hardened M11).
 - `Dockerfile`, `entrypoint.sh` — build + first-boot secret/cert injection.
 
 ## Verify (once the topology is up)

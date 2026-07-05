@@ -23,5 +23,5 @@ docker compose exec client \
 
 ## Security notes
 - Account password is injected from `.env` at boot; never stored in git (T11).
-- Plain UDP for now — SIPS/TLS registration and SRTP media are added in **M10/M11**, at which
-  point the SIPp scenarios gain a 401→auth retry (SBC auth is stubbed until **M12**).
+- Plain UDP for now — SIPS/TLS registration and SRTP media are added in **M11/M12**, at which
+  point the SIPp scenarios gain a 401→auth retry (SBC auth is stubbed until **M13**).

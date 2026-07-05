@@ -29,7 +29,7 @@ cat <<'GUIDE'
   For real, audible audio use two softphones:
      docker compose exec -it client baresip     # dial the other endpoint and speak/play
 
-  SRTP mitigation (Lab 4.3 defend): after M11, the RTP payload is encrypted and Wireshark can
+  SRTP mitigation (Lab 4.3 defend): after M12, the RTP payload is encrypted and Wireshark can
   no longer play it back — the same capture that leaked audio here becomes useless to a sniffer.
 GUIDE
 

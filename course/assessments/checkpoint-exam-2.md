@@ -1,6 +1,6 @@
-# Checkpoint Exam #2 — Build + Security (after M12)
+# Checkpoint Exam #2 — Build + Security (after M13)
 
-Covers **M6–M12** (+ M9D): building PBXs, proxies/SBCs, NAT/firewall/TURN, trunking, DNS,
+Covers **M6–M13** (+ M10): building PBXs, proxies/SBCs, NAT/firewall/TURN, trunking, DNS,
 signaling TLS, media SRTP, and auth/identity.
 
 - **Format:** 20 items, 100 points. **Pass ≥ 70** (and ≥ 50% on the Security section).

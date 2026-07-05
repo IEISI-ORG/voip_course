@@ -34,7 +34,7 @@ the media path is attacked. **Est. time:** 4h · **Prereqs:** Module 3.
 ## 4. Attack / Defend
 - **RTP injection / bleed (T9):** unauthenticated RTP ports accept spoofed streams → symmetric
   RTP, strict-source in rtpengine, SRTP authentication.
-- **Eavesdropping (T5):** plaintext RTP is trivially recorded (`rtp` export → audio) → SRTP (M11).
+- **Eavesdropping (T5):** plaintext RTP is trivially recorded (`rtp` export → audio) → SRTP (M12).
 - **QoS abuse / DSCP marking by untrusted hosts:** re-mark/trust boundaries at the edge.
 - **RTCP-based info leak / bandwidth exhaustion.** Update threat model.
 
@@ -42,7 +42,7 @@ the media path is attacked. **Est. time:** 4h · **Prereqs:** Module 3.
 - **Lab 4.1:** From a pcap, extract and play the audio; compute jitter/loss and estimate MOS.
 - **Lab 4.2:** Compute the bandwidth budget for G.711 vs. Opus at two ptimes; verify on the wire.
 - **Lab 4.3 (attack):** Sniff and reconstruct a plaintext call's audio; then repeat with SRTP and
-  show it fails (bridges to M11).
+  show it fails (bridges to M12).
 - **Lab 4.4:** Mark DSCP EF, impair the link with netem, and show QoS effect in dashboards.
 - *Rubric:* correct stats/MOS; accurate budget; demonstrated eavesdrop + SRTP mitigation.
 

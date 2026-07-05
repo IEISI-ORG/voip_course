@@ -66,7 +66,7 @@ An SBC/proxy that fails takes every in-flight call with it. Production security 
 - **Attack/Defend:** single-point-of-failure and split-brain; validate no call state leaks
   across a failover; keep the trust boundary intact on the standby node.
 - **Lab hook (adds B7+):** run two `edge-sbc` replicas sharing registrar state in Redis; kill
-  the active node mid-call and confirm the call survives. Orchestration side is in M16.
+  the active node mid-call and confirm the call survives. Orchestration side is in M17.
 
 ## Curriculum addition — Dual-stack / IPv6 signaling (review: gemini_feedback1)
 

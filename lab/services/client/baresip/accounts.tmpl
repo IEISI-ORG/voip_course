@@ -1,5 +1,5 @@
 # VoIPSec Baresip account (Stage A4) — rendered by entrypoint.sh from the environment.
-# Registers extension 1001 (alice) through the edge-sbc. TLS/SIPS + SRTP are added in M10/M11;
+# Registers extension 1001 (alice) through the edge-sbc. TLS/SIPS + SRTP are added in M11/M12;
 # for now this is plain UDP via the border. Never store the real password here — it comes
 # from SIP_ALICE_SECRET in .env.
 <sip:1001@${SIP_DOMAIN}>;auth_user=1001;auth_pass=${SIP_ALICE_SECRET};outbound="sip:${EDGE_SBC_IP}:5060;transport=udp";regint=300;answermode=manual;ptime=20;audio_codecs=opus/48000/2,PCMU,PCMA

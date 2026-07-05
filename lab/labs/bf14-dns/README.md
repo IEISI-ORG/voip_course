@@ -1,10 +1,10 @@
 # Lab BF14 — DNS Infrastructure for VoIP (BIND9)
 
-**Module:** [M9D](../../../course/modules/09d-dns-infrastructure.md). Feedback-derived
+**Module:** [M10](../../../course/modules/10-dns-infrastructure.md). Feedback-derived
 (the DNS module). Threats: DNS spoofing / cache poisoning → call redirection (T6/T7).
 
 Goal: publish correct SIP DNS (RFC 3263), fail over between SBCs, sign the zone with DNSSEC, and
-run safe TTL-based cut-overs — the runnable form of Module 9D.
+run safe TTL-based cut-overs — the runnable form of Module 10.
 
 ## Auto-graded core
 ```bash

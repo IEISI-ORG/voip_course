@@ -1,8 +1,8 @@
 # Lab BF1 — WebRTC: WSS gateway + DTLS-SRTP↔SIP media bridge
 
-**Modules:** [M10](../../../course/modules/10-signaling-security-tls.md) (WSS signaling) +
-[M11](../../../course/modules/11-media-security-srtp.md) (DTLS-SRTP media). Feedback-derived
-(gemini_feedback0). **Prereqs:** M10, M11.
+**Modules:** [M11](../../../course/modules/11-signaling-security-tls.md) (WSS signaling) +
+[M12](../../../course/modules/12-media-security-srtp.md) (DTLS-SRTP media). Feedback-derived
+(gemini_feedback0). **Prereqs:** M11, M12.
 
 Goal: let a browser (jsSIP/SIP.js) place a call to a legacy SIP endpoint — translating **Secure
 WebSocket ↔ SIP** (signaling) and **DTLS-SRTP + ICE + RTCP-mux ↔ RTP/SRTP** (media) at the SBC.

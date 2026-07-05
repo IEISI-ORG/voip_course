@@ -2,7 +2,7 @@
 ;; (secrets injected from the environment; never commit real secrets).
 ;;
 ;; Posture: chan_pjsip only, no guest/anonymous calls, endpoints authenticate. Plain UDP on
-;; the trusted core for now — TLS transport + SRTP media are added in M10/M11. The edge-sbc
+;; the trusted core for now — TLS transport + SRTP media are added in M11/M12. The edge-sbc
 ;; is the only peer that relays external traffic here.
 
 [transport-udp]
@@ -21,7 +21,7 @@ direct_media = no                 ; force media through us/rtpengine (topology +
 rtp_symmetric = yes               ; only accept RTP from the negotiated source (T9)
 force_rport = yes
 rewrite_contact = yes
-; Anti-enumeration: identify by From username, respond uniformly (T2). Digest hardening in M12.
+; Anti-enumeration: identify by From username, respond uniformly (T2). Digest hardening in M13.
 
 [auth-defaults](!)
 type = auth

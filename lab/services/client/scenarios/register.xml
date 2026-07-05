@@ -2,7 +2,7 @@
 <!DOCTYPE scenario SYSTEM "sipp.dtd">
 <!-- VoIPSec client REGISTER (Stage A4): register a user through the edge-sbc.
      Usage: sipp -sf register.xml <edge-sbc-ip>:5060 -s 1001 -i <self-ip> -m 1
-     Auth is a stub at the SBC until M12; then add -au/-ap and a 401->auth retry. -->
+     Auth is a stub at the SBC until M13; then add -au/-ap and a 401->auth retry. -->
 <scenario name="register">
   <send retrans="500">
     <![CDATA[

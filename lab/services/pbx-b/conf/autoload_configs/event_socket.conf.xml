@@ -4,7 +4,7 @@
     mod_event_socket is FreeSWITCH's remote-control API (analogue of Asterisk AMI): full
     control of the switch. It stays bound to loopback and is restricted by ACL; the password
     is injected from the environment at boot (placeholder replaced by entrypoint). Exposed
-    beyond the mgmt plane only with TLS + tight ACLs when a lab needs it (M15).
+    beyond the mgmt plane only with TLS + tight ACLs when a lab needs it (M16).
   -->
   <settings>
     <param name="nat-map" value="false"/>

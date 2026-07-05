@@ -1,7 +1,7 @@
 <!--
   VoIPSec pbx-b user 1003 (Stage A3). Password comes from the global default_password var,
   which the entrypoint injects from FS_DEFAULT_PASSWORD (never the stock 1234). Per-user
-  secrets + digest hardening (RFC 8760) arrive in M12. user_context = voipsec (restricted).
+  secrets + digest hardening (RFC 8760) arrive in M13. user_context = voipsec (restricted).
 -->
 <include>
   <user id="1003">

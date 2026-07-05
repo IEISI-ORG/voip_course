@@ -26,16 +26,16 @@ around building, attacking, defending, and operating real infrastructure.
 | 7 | `modules/07-proxies-and-sbcs.md` | SIP Proxies & SBCs (Kamailio/OpenSIPS + rtpengine) |
 | 8 | `modules/08-nat-firewalls-sbc.md` | NAT, Firewalls & Session Border Control |
 | 9 | `modules/09-sip-trunking-pstn.md` | SIP Trunking & the PSTN |
-| 9D | `modules/09d-dns-infrastructure.md` | DNS Infrastructure & Resilience for VoIP |
-| 10 | `modules/10-signaling-security-tls.md` | Signaling Security: TLS & SIPS |
-| 11 | `modules/11-media-security-srtp.md` | Media Security: SRTP/DTLS-SRTP/ZRTP |
-| 12 | `modules/12-authn-authz-identity.md` | AuthN, AuthZ & Caller Identity *(exam #2)* |
-| 13 | `modules/13-threats-offensive-testing.md` | VoIP Threats & Offensive Testing (authorized) |
-| 14 | `modules/14-defense-hardening-fraud.md` | Defense, Hardening & Fraud Prevention |
-| 15 | `modules/15-monitoring-observability-ir.md` | Monitoring, Observability & Incident Response |
-| 16 | `modules/16-testing-interop-automation-cloud.md` | Testing, Interop, Automation & Cloud |
-| 17 | `modules/17-frontiers.md` | Frontiers: VoLTE/IMS, FoIP, ENUM/Peering, UC/UCaaS/CPaaS *(exam #3)* |
-| — | `modules/18-capstone.md` | Capstone + Operations Runbooks |
+| 9D | `modules/10-dns-infrastructure.md` | DNS Infrastructure & Resilience for VoIP |
+| 10 | `modules/11-signaling-security-tls.md` | Signaling Security: TLS & SIPS |
+| 11 | `modules/12-media-security-srtp.md` | Media Security: SRTP/DTLS-SRTP/ZRTP |
+| 12 | `modules/13-authn-authz-identity.md` | AuthN, AuthZ & Caller Identity *(exam #2)* |
+| 13 | `modules/14-threats-offensive-testing.md` | VoIP Threats & Offensive Testing (authorized) |
+| 14 | `modules/15-defense-hardening-fraud.md` | Defense, Hardening & Fraud Prevention |
+| 15 | `modules/16-monitoring-observability-ir.md` | Monitoring, Observability & Incident Response |
+| 16 | `modules/17-testing-interop-automation-cloud.md` | Testing, Interop, Automation & Cloud |
+| 17 | `modules/18-frontiers.md` | Frontiers: VoLTE/IMS, FoIP, ENUM/Peering, UC/UCaaS/CPaaS *(exam #3)* |
+| — | `modules/19-capstone.md` | Capstone + Operations Runbooks |
 
 ## Coverage Crosswalk — SIP School SSCA 'Elite' → VoIPSec
 Every SSCA 'Elite' module is fully covered; VoIPSec adds build/attack/defend/operate depth.
@@ -46,24 +46,24 @@ Every SSCA 'Elite' module is fully covered; VoIPSec adds build/attack/defend/ope
 | 2. Wireshark | M5 (+ used in every module) |
 | 3. SIP and the PSTN | M9 |
 | 4. SIP, VVoIP and QoS | M4 |
-| 5. SIP and Media Security | M10, M11 (+ security spine throughout) |
-| 6. STIR/SHAKEN & identity | M12 (+ M17 international/OOB/RCD) |
+| 5. SIP and Media Security | M11, M12 (+ security spine throughout) |
+| 6. STIR/SHAKEN & identity | M13 (+ M18 international/OOB/RCD) |
 | 7. Firewalls, NAT and SBCs | M7, M8 |
-| 8. SIP Trunking | M9 (+ M16 MPLS/SD-WAN/automation) |
-| 9. Testing, Troubleshooting & Interop | M5, M16 |
-| 10. ENUM, Peering and Interconnect | M17 |
-| 11. SIP in the Cloud | M16 |
-| 12. SIP in Cellular networks | M17 |
-| 13. SIP and Fax over IP | M17 |
-| 14. SIP in UC, UCaaS and CPaaS | M17 |
+| 8. SIP Trunking | M9 (+ M17 MPLS/SD-WAN/automation) |
+| 9. Testing, Troubleshooting & Interop | M5, M17 |
+| 10. ENUM, Peering and Interconnect | M18 |
+| 11. SIP in the Cloud | M17 |
+| 12. SIP in Cellular networks | M18 |
+| 13. SIP and Fax over IP | M18 |
+| 14. SIP in UC, UCaaS and CPaaS | M18 |
 
 ### VoIPSec additions beyond SSCA 'Elite'
 - **M0** reproducible lab (Docker/IaC) — SSCA has no shared build environment.
 - **M6/M7** *building* PBX/proxy/SBC from OSS — SSCA describes, VoIPSec constructs.
-- **M13** authorized offensive testing — new.
-- **M14** defense, hardening & toll-fraud prevention as a full module — new depth.
-- **M15** observability + incident response with runbooks — new.
-- **M16** automation/IaC/CI + interop at scale — new depth.
+- **M14** authorized offensive testing — new.
+- **M15** defense, hardening & toll-fraud prevention as a full module — new depth.
+- **M16** observability + incident response with runbooks — new.
+- **M17** automation/IaC/CI + interop at scale — new depth.
 - **Capstone** end-to-end secure platform with graded security gates — new.
 
 ## Design One-Liner

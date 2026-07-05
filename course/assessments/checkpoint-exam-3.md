@@ -1,6 +1,6 @@
-# Checkpoint Exam #3 — Operations (after M17)
+# Checkpoint Exam #3 — Operations (after M18)
 
-Covers **operations across M13–M17** and running the whole platform: offensive testing, defense
+Covers **operations across M14–M18** and running the whole platform: offensive testing, defense
 & fraud, monitoring & IR, testing/automation/cloud, and the frontiers — plus cross-cutting
 operational security.
 
@@ -23,7 +23,7 @@ operational security.
 
 ## Part B — Monitoring & IR (25 pts) — *must score ≥ 13/25*
 6. (5) Name five security KPIs you'd alert on and the threat each maps to.
-7. (5) Why must every M13 finding have a detection signature? What's the failure otherwise?
+7. (5) Why must every M14 finding have a detection signature? What's the failure otherwise?
 8. (5) Walk the six IR phases for an INVITE flood, naming the containing control at each step.
 9. (5) A capture for troubleshooting contains a PAN + PIN. How do you handle it end to end?
 10. (5) How do you alert on cert expiry, and why is that an availability *and* security control?

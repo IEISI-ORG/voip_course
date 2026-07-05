@@ -14,7 +14,7 @@
 - **FreeSWITCH architecture:** XML config, profiles/gateways, dialplan XML, mod_* modules,
   Event Socket Layer (ESL) for automation; when to prefer FS (scale, media) vs. Asterisk (features/community).
 - **Core features:** registration, extension-to-extension, voicemail, IVR/auto-attendant,
-  ring groups/queues, MoH, call recording (lawful), transfer/REFER, presence/BLF (preview M17).
+  ring groups/queues, MoH, call recording (lawful), transfer/REFER, presence/BLF (preview M18).
 - **Config data models:** flat files vs. realtime (DB-backed) config; provisioning at scale.
 
 ## 2. Packet Reality
@@ -34,7 +34,7 @@
   - **Secret hygiene (T11):** strong endpoint secrets, file perms (`640 root:asterisk`), no
     credentials in git, secrets via env/vault, rotate.
   - Voicemail/feature-code hardening (T13): PIN policy, disable DISA, limit `Dial` options.
-  - Logging to `mgmt` for later detection (M15).
+  - Logging to `mgmt` for later detection (M16).
 - Start the **hardening checklist** deliverable here.
 
 ## 5. Labs

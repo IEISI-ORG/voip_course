@@ -26,7 +26,7 @@ Self-validating: the parity checker must confirm the shipped ruleset AND catch a
 ## Security notes
 - The classic breach: a careful v4 firewall + neglected v6 rules → the same SIP port open on v6.
   Attackers scan v6 for exactly this. **`table inet` removes the possibility.**
-- Parser-harden IPv6 literals (RFC 5118 torture, see M13).
+- Parser-harden IPv6 literals (RFC 5118 torture, see M14).
 - Verify a v6 scan triggers the same bans as a v4 scan (policy parity, not just port parity).
 
 ## Rubric (100 pts, pass ≥ 70)

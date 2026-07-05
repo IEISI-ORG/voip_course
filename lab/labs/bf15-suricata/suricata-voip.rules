@@ -1,5 +1,5 @@
 # VoIPSec BF15 — Suricata IDS rules for VoIP/SIP threats (local sid range 9000000+).
-# Detect stage of the M13(attack) -> detect -> M15(respond) pipeline. Alerts are consumed by
+# Detect stage of the M14(attack) -> detect -> M16(respond) pipeline. Alerts are consumed by
 # eve-to-ipset.sh, which feeds offending sources into the same nftables blocklist as the honeypot.
 # Threat mapping (VoIPSA taxonomy): recon/service-abuse + intentional interruption of service (DoS).
 

@@ -1,6 +1,6 @@
 # Lab BF11 — STIR/SHAKEN Delegate Certificates (RFC 9060)
 
-**Module:** [M12](../../../course/modules/12-authn-authz-identity.md). Feedback-derived
+**Module:** [M13](../../../course/modules/13-authn-authz-identity.md). Feedback-derived
 (gemini_feedback1). Closes the enterprise "attestation gap" (T7).
 
 Goal: let an enterprise sign its **own** PASSporT at attestation **A** using a delegate
