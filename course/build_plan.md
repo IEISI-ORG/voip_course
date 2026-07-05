@@ -114,7 +114,7 @@ when their parent B-task is reached.
 Reserve the next 8 loop iterations for a fuller cross-course consistency check. One pass per iteration,
 fixing what it finds:
 - [x] G1. Threat catalog T1–T15 — used consistently across every module + lab; none undefined/orphaned.
-- [ ] G2. Citations — every module `## References` is a subset of, and consistent with, the bibliography
+- [x] G2. Citations — every module `## References` is a subset of, and consistent with, the bibliography
       (Q2); RFC numbers/titles/years correct; no dangling cites.
 - [ ] G3. Lab ↔ module alignment — each module has its lab; every lab ships a fail-closed `verify.sh`;
       rubrics sum to 100 (pass ≥ 70).
@@ -593,6 +593,12 @@ Fold F8/F9 opportunistically during these passes.
   (mutual-TLS trunks). Re-verified: catalog fully consistent (0 mismatches). feedback0 - TelcoBridges
   YouTube noted as a pending source (user to transcribe); converted the TelcoBridges SIP-headers
   article to MD (vendor blog, not folded - RFC 3261 is the header authority). Next: G2.
+
+- Iteration 87 (2026-07-05): **G2 citations consistency pass**. Extracted every RFC cited across
+  the 19 module docs (incl. slash-lists) vs. the bibliography+maps (77 RFCs). Found **1 dangling**
+  cite: M17 referenced **RFC 3863** (base PIDF) not in the bibliography -> added it alongside RFC
+  3856 (presence). Re-verified: 0 dangling — every module RFC cite is backed (Q2 subset rule holds).
+  Next: G3 (lab<->module alignment).
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

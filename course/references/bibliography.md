@@ -19,7 +19,8 @@ grows.
 - **RFC 3891** — Replaces header
 - **RFC 6140** — Bulk registration (trunking)
 - **RFC 4028** — Session timers
-- **RFC 6665** — SIP event notification (SUBSCRIBE/NOTIFY); **RFC 3856** — presence event package
+- **RFC 6665** — SIP event notification (SUBSCRIBE/NOTIFY); **RFC 3856** — presence event package;
+  **RFC 3863** — Presence Information Data Format (PIDF), the base extended by PIDF-LO (RFC 4119)
 
 ## 2. Media: SDP, RTP, codecs (RFC)
 - **RFC 4566** — SDP
