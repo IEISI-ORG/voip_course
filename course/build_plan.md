@@ -665,6 +665,12 @@ Fold F8/F9 opportunistically during these passes.
   need a placement decision + another renumber — deferred to the user's steer (won't renumber
   reactively). Next: continue H2 / reactive backlog.
 
+- Iteration 96 (2026-07-05): **CI fix** (feedback). The H1 renumber (iter 94) renamed lab dirs but
+  my content-replace scope excluded `.github/`, so `ci.yml` still ran `labs/m14-defense-fraud` and
+  `labs/m15-monitoring-ir` (now m15-defense-fraud / m16-monitoring-ir) -> CI offline-grader step
+  failed. Fixed both paths; both graders PASS locally; ci.yml valid YAML. Swept all tracked scripts/
+  workflows for stale `labs/m<n>-` refs -> none. (Lesson: renumber scope must include .github/.)
+
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
   (positive-control gating, fail-closed). Verified bash-clean.

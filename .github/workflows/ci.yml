@@ -48,8 +48,8 @@ jobs:
       - name: Offline graders (fraud + monitoring)
         run: |
           cd lab
-          bash labs/m14-defense-fraud/verify.sh
-          bash labs/m15-monitoring-ir/verify.sh
+          bash labs/m15-defense-fraud/verify.sh
+          bash labs/m16-monitoring-ir/verify.sh
 
       - name: Bibliography URL extraction (offline)
         run: bash course/references/verify-bibliography.sh list
