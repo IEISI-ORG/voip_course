@@ -582,6 +582,10 @@ Fold F8/F9 opportunistically during these passes.
   CISPA paper, feedback2/3) + **F9** (Schulzrinne tracking, feedback9). Converted 2 new papers to MD.
   Deleted 5 feedback. Next: G1 (threat-catalog consistency).
 
+- History purge (2026-07-05, user-directed): removed the stray `index.html` (copyrighted saved
+  web page) from all history via filter-branch; force-pushed with lease (ccc39c8 -> fc01731).
+  0 hits in history; 265 files intact. Now gitignored so it can't recur.
+
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
   (positive-control gating, fail-closed). Verified bash-clean.
