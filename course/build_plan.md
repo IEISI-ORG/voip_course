@@ -685,6 +685,11 @@ Fold F8/F9 opportunistically during these passes.
   Stage F queued items now done (F8/F9); remaining: F3/F4 reactive + H2 (dedicated provisioning
   module awaits user placement call).
 
+- Iteration 99 (2026-07-06): post-refactor integrity sweep (graders/validators/links/slop all
+  PASS; module sequence 00-09,10=DNS,11-18,19=capstone). Caught one **real drift**: iter 97 edited
+  M18 (VoWiFi section) but didn't regenerate its MARP deck -> the slides drift check flagged it.
+  Regenerated `slides/18-frontiers.md`; SLIDES PASS. (The drift check earned its keep.)
+
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10
   (positive-control gating, fail-closed). Verified bash-clean.

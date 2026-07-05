@@ -25,10 +25,10 @@ Where SIP goes beyond the PBX — mobile core, fax, inter-carrier routing, and u
 
 - IMS architecture: P-/I-/S-CSCF, HSS, AS/TAS, PCSCF; SIP registration in IMS; call flow.
 - VoLTE (LTE/EPC) and VoNR (5G) media; SIP preconditions (RFC 3312) and codec (AMR/EVS);
+- **VoWiFi (Wi-Fi calling):** IMS carried over untrusted Wi-Fi via IPsec/IKEv2 tunnels to the
 - Security/trust: IPX peering, SIP over secured bearers, the operator trust model.
 - Why fax breaks on VoIP (T.30 timing vs. packet loss); G.711 pass-through vs. **T.38 relay** vs.
 - Troubleshooting FoIP (jitter, ECM, gateway timing).
-- E.164 → NAPTR (RFC 6116) → SIP URI; public vs. private/carrier ENUM (e164.arpa); DNS role.
 
 <!-- Speaker note: connect this beat to the module's security takeaway. -->
 ---
