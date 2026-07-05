@@ -122,7 +122,7 @@ fixing what it finds:
 - [x] G5. Terminology/glossary — acronyms spelled out first-use; glossary covers what the modules use.
 - [x] G6. Security invariants — fail-closed graders, no committed secrets, offensive tooling lab-scoped.
 - [x] G7. Assessments — quiz bank + 3 exams map to modules; answer keys separated; capstone gate intact.
-- [ ] G8. Naming/branding (VoIPSec, zero SOVOC), build_plan ↔ reality, requirements-traceability refresh.
+- [x] G8. Naming/branding (VoIPSec, zero SOVOC), build_plan ↔ reality, requirements-traceability refresh.
 Fold F8/F9 opportunistically during these passes.
 
 ### Stage F — community & licensing (continued)
@@ -638,6 +638,14 @@ Fold F8/F9 opportunistically during these passes.
   stale line in checkpoint-exam-1 ('answer key at the bottom' -> 'held separately'). Also recorded
   **Stage H** (feedback0/1, post-audit): H1 promote M9D DNS into the main module series; H2 expand
   provisioning-security (cleartext config = major hole). Next: G8 (naming/traceability) — last pass.
+
+- Iteration 93 (2026-07-05): **G8 naming/branding + traceability pass — the 8-pass audit is
+  COMPLETE (G1-G8).** Zero live SOVOC residue (only the 3 intentional rename-log lines in this
+  file). build_plan<->reality spot-check: all sampled done-items have their artifacts. **Refreshed
+  requirements-traceability.md** (was frozen ~iter 50): closed the packaging tier + all BF labs,
+  added the post-rename era (VoIPSec, Stage F community/licensing, multi-jurisdiction emergency,
+  peer-review gate, G1-G8), updated verification health. Remaining open = reactive (F3/F4) +
+  planned Stage H (H1 DNS-into-main, H2 provisioning-security). **Next: begin Stage H (H1).**
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

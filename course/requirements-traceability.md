@@ -3,9 +3,13 @@
 Started iter 46 (feedback: "make sure we are on track to satisfy all requirements"). Maps every
 requirement — original ask + each feedback item — to its status and evidence.
 
-**Audit verdict (6 passes, iters 46–50):** all original requirements (A1–A5) and every processed
-feedback item are ✅ satisfied and verified. Outstanding work is tracked, not forgotten: BF12–14
-deep labs + the packaging tier (C0/C2, E1/E4, D0/D1). No requirement is missing or off-track.
+**Audit verdict (refreshed iter 93, G8):** all original requirements (A1–A5) and every processed
+feedback item are ✅ satisfied and verified. The packaging tier and all BF deep labs are **done**;
+the course was **renamed SOVOC → VoIPSec** (credential: Certified VoIPSec Operator) and grew a
+community/licensing tier (Stage F), a multi-jurisdiction emergency arc, a peer-review-gated
+reference set, and an 8-pass consistency audit (Stage G, G1–G8). Only **reactive** items (issue
+triage, paper ingestion) and the **planned** Stage H (DNS-module promotion, provisioning-security
+expansion) remain open by design.
 
 Status: ✅ done · 🟡 partial/in-progress · ⬜ open
 
@@ -32,24 +36,36 @@ Status: ✅ done · 🟡 partial/in-progress · ⬜ open
 | requirements audit (46) | 6-iteration on-track review + memory upkeep | ✅ | **6 passes done:** matrix, grader health (11/11 offline PASS), Q&A+housekeeping, feedback threading (10+6 markers, BF1–11), coverage (14/14 SSCA) + capstone, README definition-of-done sweep |
 | Q&A + housekeeping (47) | answer Q2/Q3/Q4; glossary; remove committed feedback; prune questions | ✅ | Q2=A subset (holds), Q3=A, Q4 terminology; `references/glossary.md`; feedback files removed + gitignored; questions.md pruned |
 
-## C. Open / remaining backlog (must close to "satisfy all requirements")
+## C. Packaging tier + deep labs — now all CLOSED
 | Item | Status | Note |
 |------|--------|------|
-| BF12 SIP honeypot | ⬜ | next BF lab |
-| BF13 cloud-native K8s pod security | ⬜ | feedback1 item |
-| BF14 DNS infra lab (M9D) | ⬜ | runnable BIND9 lab |
-| C0 per-module quiz bank | ⬜ | assessment |
-| C2 capstone grading harness | ⬜ | assessment |
-| E1 HTML MC exams | ⬜ | feedback iter 22 |
-| E4 MARP instructor slides | ⬜ | feedback iter 25 (tooling memorized) |
-| D0/D1 instructor notes + delivery guide | ⬜ | instructor material |
-| questions.md Q2/Q4 | ⬜ | awaiting user (citation-style, terminology) |
-| `.claude/` history purge | ✅ | done iter 60: filter-branch removed `.claude` from all 63 commits; force-pushed (lease). SSCA PDF was already purged in the initial rewrite. |
+| BF12 honeypot / BF13 K8s PSS / BF14 DNS / BF15 Suricata | ✅ | iters 43-67; each self-validating verify.sh |
+| C0 quiz bank · C2 capstone grading harness | ✅ | iters 53-54 |
+| E1 HTML MC exams · E4 MARP slides (Makefile+Playwright+xvfb) | ✅ | iters 55, 58 (ran 20 decks) |
+| D0 slide decks · D1 delivery guide | ✅ | iters 56-57 |
+| questions.md Q1–Q8 | ✅ | all answered (subset citation rule, terminology, Suricata placement, contacts, peer-review) |
+| `.claude/` + feedback + index.html history purges | ✅ | iters 60/63/85 (filter-branch + force-push, lease) |
 
-## D. Verification health (measured iter 47, audit pass 2)
-Ran every `verify.sh`:
-- **Offline graders: 11/11 PASS** — bf2, bf4, bf5, bf6, bf8, bf9, bf10, bf11, m14, m15, m17.
-  These are deterministic and run in CI.
+## E. Post-rename era — Stages F/G/H
+| Item | Status | Evidence |
+|------|--------|----------|
+| Rename SOVOC → VoIPSec + CVO credential | ✅ | iter 62; 0 live residue (G8), history/log clean |
+| F0 LICENSE (CC BY-NC-SA 4.0) + CONTRIBUTING + CONTRIBUTORS | ✅ | iter 62 |
+| F1 Suricata IDS (BF15) into M13→M15 pipeline | ✅ | iter 67, verify 9/9 |
+| F2 AI-slop review + `slop-check.sh` | ✅ | iter 68 (clean) |
+| F5 multi-jurisdiction emergency (US/AU/UK/EU) + NG112 hook | ✅ | iters 72-76 (BF2 14/14) |
+| F6 RFC evolution SVG · F7 device-config-security | ✅ | iters 74, 85 |
+| Peer-review gate on all processed papers | ✅ | iter 70+ (Keromytis/Dantu/Kolahi/JTDE/Goode kept; predatory venues rejected) |
+| G1–G8 consistency audit | ✅ | iters 86-93 (threat-map, citations, lab-align, links, glossary +49, security, assessments, naming) |
+| F3 issue-triage · F4 paper ingestion | 🟡 | reactive — wake on GitHub issue / dropped paper |
+| F8 VoWiFi/GSMA · F9 Schulzrinne · H1 DNS-into-main · H2 provisioning-security | ⬜ | planned; H1/H2 post-audit (feedback iter 92) |
+
+## D. Verification health (re-measured across the G-audit, iters 86–93)
+Ran every `verify.sh` + validators:
+- **Offline graders: all PASS** — the deterministic set has grown to include bf13 (K8s), bf14 (DNS),
+  bf15 (Suricata 9/9), bf2 (emergency 14/14 incl. NG112 routing), plus m14/m15 and the earlier BF
+  set; assessment/instructor validators (quiz-bank/E1, capstone harness, slides) all PASS.
+- **G3 confirmed:** 32 labs, every one a fail-closed `verify.sh`; all 32 rubrics sum to 100.
 - **Topology-dependent graders: correctly FAIL/inconclusive without a live lab** (fail-closed,
   no false-pass) — m0–m13, bf1. (bf3, m16 pass their config-validation parts since the Docker
   CLI is present.)
