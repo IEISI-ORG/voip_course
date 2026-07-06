@@ -11,13 +11,13 @@ prerequisites, per-cohort lab setup, the assessment flow, and operations.
   observability profile (`make obs-up`) runs concurrently.
 
 ## 2. Structure & pacing
-18 modules + M10 (DNS) + capstone; ~100 structured hours, lab-dominant.
+20 modules (incl. DNS M10 + provisioning M14) + capstone; ~105 structured hours, lab-dominant.
 
 | Mode | Duration | Cadence |
 |------|----------|---------|
 | Self-paced | 8–12 weeks | ~8–12 h/week |
 | Instructor-led cohort | 12 weeks | 1 module/week (M5,M13,M19 weeks include the checkpoint exam) |
-| Intensive bootcamp | 3 weeks | 6 modules/week; capstone in a 4th week |
+| Intensive bootcamp | 3 weeks | 7 modules/week; capstone in a 4th week |
 
 Checkpoint exams gate progress after **M5** (protocol), **M13** (build+security), **M19** (operations).
 

@@ -56,14 +56,14 @@ redirecting calls. Build it correctly and defend it. **Est. time:** 4h ·
   - Anycast to blunt DNS DDoS; rate-limit and RRL on authoritative servers.
 
 ## 5. Labs
-- **Lab 9D.1:** Author the NAPTR/SRV/A zone in BIND9; prove a client resolves it (RFC 3263 order)
+- **Lab 10.1:** Author the NAPTR/SRV/A zone in BIND9; prove a client resolves it (RFC 3263 order)
   and registers through the resolved `edge-sbc`.
-- **Lab 9D.2 (failover):** Give the SIP service two SRV targets; take the primary down and show
+- **Lab 10.2 (failover):** Give the SIP service two SRV targets; take the primary down and show
   client-side failover; measure recovery vs TTL.
-- **Lab 9D.3 (security):** Inject a spoofed DNS answer redirecting `_sips._tcp` to a rogue host;
+- **Lab 10.3 (security):** Inject a spoofed DNS answer redirecting `_sips._tcp` to a rogue host;
   show the call is redirected over plain resolution, then show **DNSSEC validation** and **TLS
   cert verification** each defeat the redirect.
-- **Lab 9D.4 (ops):** Perform a TTL-based cut-over to a new edge node and a clean rollback; write
+- **Lab 10.4 (ops):** Perform a TTL-based cut-over to a new edge node and a clean rollback; write
   the runbook (pre-lower TTL, verify, raise TTL, rollback path).
 - *Rubric:* correct RFC 3263 resolution; working SRV failover; demonstrated spoof + DNSSEC/TLS
   mitigation; a safe, reversible cut-over runbook.

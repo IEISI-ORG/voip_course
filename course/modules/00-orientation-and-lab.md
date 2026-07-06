@@ -9,7 +9,7 @@ touching SIP. **Est. time:** 2h · **Prereqs:** Linux CLI, Docker basics.
 - Know where captures, logs, configs, and secrets live, and how to reset the lab cleanly.
 
 ## 1. Concept
-- Why a shared, growing lab: you build one platform across 18 modules; the capstone is its
+- Why a shared, growing lab: you build one platform across 20 modules; the capstone is its
   hardened final form.
 - Network segmentation model: `edge` (untrusted), `core` (trusted/mTLS), `mgmt`
   (observability), `redteam` (isolated). Maps to real DMZ design.

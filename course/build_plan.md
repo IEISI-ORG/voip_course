@@ -713,6 +713,15 @@ Fold F8/F9 opportunistically during these passes.
   `Module N` cross-refs (threats→16 harden, →17 detect) were already correct. Verify: bash -n / quiz
   / offline graders (m16,m17) / slop all PASS; 0 broken links. (Runtime graders m11/12/13/15 FAIL
   offline — pre-existing service dependency, not this change.) 1 audit pass left.
+- Iteration 109 (2026-07-06): **renumber-audit pass 2 — renumber CLOSED**. Residual long-tail
+  swept and fixed: delivery-guide count/hours ("18 modules + M10" → "20 modules … + capstone;
+  ~105 h") + bootcamp cadence (6→7 modules/wk); README "modules/00…18" → "00…19 + 20-capstone";
+  module-00 "across 18 modules" → 20 (regen slide); traceability A4 count + the DNS status row
+  (stale `09d-dns-infrastructure.md`/"BF14 pending" → `10-dns-infrastructure.md`/done). Also
+  fixed **H1-era drift the DNS promotion missed**: module M10's labs were still `Lab 9D.x` →
+  `Lab 10.x`. Final state: every module 0–19 has `Lab N.x == module N`; no residual `9D`/`M9D`/
+  stale-count tokens; 0 broken links; quiz/slop/offline-graders PASS. `task_plan.md` left as-is
+  (frozen start-of-project planning doc, like this log). H2 + its 2-pass audit fully complete.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

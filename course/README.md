@@ -10,7 +10,7 @@ around building, attacking, defending, and operating real infrastructure.
 ## Read in this order
 1. `00-course-overview.md` — master design (positioning, outcomes, pedagogy, module map, assessment).
 2. `notes.md` — the engine room: OSS tool map, threat catalog, lab architecture, RFC backbone.
-3. `modules/00…18` — per-module deep dives and the capstone.
+3. `modules/00…19` — per-module deep dives, plus `modules/20-capstone.md`.
 4. `task_plan.md` — build plan + decisions (for maintainers of this course).
 
 ## Module Index

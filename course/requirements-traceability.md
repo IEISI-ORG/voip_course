@@ -19,7 +19,7 @@ Status: ✅ done · 🟡 partial/in-progress · ⬜ open
 | A1 | Course modelled on SIP School SSCA 'Elite' | ✅ | README crosswalk maps **all 14** SSCA modules (verified iter 49, nothing dropped) |
 | A2 | Open-source tools throughout | ✅ | `lab/` (Kamailio/Asterisk/FreeSWITCH/rtpengine/HOMER/…), `notes.md` tool map |
 | A3 | Emphasis on **secure** VoIP operations | ✅ | security spine T1–T15, per-module attack/defend, M13–M16; **capstone** (verified iter 49) requires final threat model, hardening checklist, red-team report, IR runbooks, detection-coverage map |
-| A4 | Plan then deep-dive every section | ✅ | 18 modules + M9D + capstone, each 5-beat with labs |
+| A4 | Plan then deep-dive every section | ✅ | 20 modules (incl. DNS M10, provisioning M14) + capstone, each 5-beat with labs |
 | A5 | Runnable/reproducible lab | ✅ | Docker compose (8 svcs), 24 module labs + BF labs, `make verify-all`, CI |
 
 ## B. Feedback items
@@ -27,7 +27,7 @@ Status: ✅ done · 🟡 partial/in-progress · ⬜ open
 |-----------------|-----|--------|----------|
 | gemini_feedback0 (3) | 8 curriculum additions | ✅ | **verified iter 48:** `review: gemini_feedback0` marker in 10 modules; BF1–BF8 all built |
 | feedback1 (11) | 5 additions (IPv6, coturn, K8s, delegate certs, honeypot) | 🟡 | **verified iter 48:** marker in 6 modules; BF9/10/11 done; **BF12,BF13 pending** |
-| DNS module (16) | new DNS module | ✅ | `modules/09d-dns-infrastructure.md`; BF14 pending |
+| DNS module (16) | new DNS module | ✅ | `modules/10-dns-infrastructure.md` (promoted to M10, iter 94); BF14 done |
 | repo README + hide .claude (19) | root README, gitignore .claude | ✅ | `README.md`, `.gitignore` (history purge deferred) |
 | exams + testing (22) | hide answers, lab test harness, HTML MC exams | 🟡 | answer-keys/ ✅, `verify-all.sh`+CI ✅, **HTML MC exams (E1) open** |
 | bibliography (24) | RFC/standards + KB bibliography | ✅ | `references/bibliography.md` |

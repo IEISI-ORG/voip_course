@@ -23,7 +23,7 @@ Get the reproducible, segmented lab running and learn the toolchain before touch
 
 ## 1. Concept
 
-- Why a shared, growing lab: you build one platform across 18 modules; the capstone is its
+- Why a shared, growing lab: you build one platform across 20 modules; the capstone is its
 - Network segmentation model: `edge` (untrusted), `core` (trusted/mTLS), `mgmt`
 - Reproducibility contract: infra-as-code, no snowflake hosts, `docker compose down -v` resets.
 

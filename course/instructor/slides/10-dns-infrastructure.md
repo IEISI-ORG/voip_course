@@ -66,10 +66,10 @@ DNS is how SIP finds servers and survives failure — and a prime target for red
 
 ## 5. Labs
 
-- **Lab 9D.1:** Author the NAPTR/SRV/A zone in BIND9; prove a client resolves it (RFC 3263 order)
-- **Lab 9D.2 (failover):** Give the SIP service two SRV targets; take the primary down and show
-- **Lab 9D.3 (security):** Inject a spoofed DNS answer redirecting `_sips._tcp` to a rogue host;
-- **Lab 9D.4 (ops):** Perform a TTL-based cut-over to a new edge node and a clean rollback; write
+- **Lab 10.1:** Author the NAPTR/SRV/A zone in BIND9; prove a client resolves it (RFC 3263 order)
+- **Lab 10.2 (failover):** Give the SIP service two SRV targets; take the primary down and show
+- **Lab 10.3 (security):** Inject a spoofed DNS answer redirecting `_sips._tcp` to a rogue host;
+- **Lab 10.4 (ops):** Perform a TTL-based cut-over to a new edge node and a clean rollback; write
 - *Rubric:* correct RFC 3263 resolution; working SRV failover; demonstrated spoof + DNSSEC/TLS
 
 <!-- Speaker note: connect this beat to the module's security takeaway. -->
