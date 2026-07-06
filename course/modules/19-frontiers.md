@@ -1,7 +1,7 @@
 # Module 19 — Frontiers: VoLTE/IMS, Fax over IP, ENUM/Peering, UC/UCaaS/CPaaS
 
 **One-liner:** Where SIP goes beyond the PBX — mobile core, fax, inter-carrier routing, and
-unified communications — with the security caveats of each. **Est. time:** 5h · **Prereqs:** M1–16.
+unified communications — with the security caveats of each. **Est. time:** 5h · **Prereqs:** M1–17.
 **Checkpoint exam #3 (operations) after this module.**
 
 ## Learning Objectives
@@ -61,9 +61,9 @@ unified communications — with the security caveats of each. **Est. time:** 5h 
 - Final threat-model update covering the frontier surfaces.
 
 ## 5. Labs / Deliverable
-- **Lab 17.1:** Working T.38 fax through the SBC; diagnose one induced failure.
-- **Lab 17.2:** Private-ENUM routing + presence between endpoints.
-- **Lab 17.3 (security):** Secure a CPaaS-style origination API (auth + rate + spend cap) and show
+- **Lab 19.1:** Working T.38 fax through the SBC; diagnose one induced failure.
+- **Lab 19.2:** Private-ENUM routing + presence between endpoints.
+- **Lab 19.3 (security):** Secure a CPaaS-style origination API (auth + rate + spend cap) and show
   an abusive caller blocked.
 - *Rubric:* fax completes + troubleshooting shown; ENUM routing works; API abuse contained.
 

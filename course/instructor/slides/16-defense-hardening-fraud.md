@@ -60,9 +60,9 @@ Turn the Module 15 findings into a hardened platform and stop toll fraud before 
 
 ## 5. Labs / Deliverable
 
-- **Lab 14.1:** Apply and commit the **hardening checklist v-final**; map each item to the T# it
-- **Lab 14.2:** Build fraud detection + auto-suspend; simulate an IRSF pattern and show it caught
-- **Lab 14.3:** Re-run the M15 assessment; produce a before/after findings delta.
+- **Lab 16.1:** Apply and commit the **hardening checklist v-final**; map each item to the T# it
+- **Lab 16.2:** Build fraud detection + auto-suspend; simulate an IRSF pattern and show it caught
+- **Lab 16.3:** Re-run the M15 assessment; produce a before/after findings delta.
 - *Rubric:* layered baseline applied with evidence; fraud pattern detected + contained; measurable
 
 <!-- Speaker note: connect this beat to the module's security takeaway. -->

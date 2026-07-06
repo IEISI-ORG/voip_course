@@ -1,4 +1,4 @@
-# Detection Signatures — M15 findings → M17 alerts (Lab 15.2)
+# Detection Signatures — M15 findings → M17 alerts (Lab 17.2)
 
 Every threat the M15 assessment exercised must have a detection signature here, so a repeat is
 seen in real time. Layer: **M** = metric (Prometheus), **L** = log/SIEM (Wazuh/Loki), **C** = CDR.

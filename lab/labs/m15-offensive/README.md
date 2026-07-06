@@ -18,7 +18,7 @@ bash labs/m15-offensive/verify.sh        # torture the SBC; confirm it survives 
 Fail-closed & self-validating: the SBC must answer a valid request before AND after a batch of
 malformed messages — proving the parser drops garbage cleanly (threat T10).
 
-## Lab 13.1 — Full authorized assessment  (60 pts)
+## Lab 15.1 — Full authorized assessment  (60 pts)
 Work the methodology from the `redteam` container:
 ```bash
 docker compose exec -it redteam bash
@@ -35,7 +35,7 @@ reproduction, mapped defense.
 
 **Deliverable:** the completed findings report (≥3 findings, each with evidence + remediation).
 
-## Lab 13.2 — Detection signatures  (40 pts)
+## Lab 15.2 — Detection signatures  (40 pts)
 For each finding, capture its **detection signature** (log pattern / metric / Wazuh rule) so M17
 can alert on it. Link each signature to its finding.
 

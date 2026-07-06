@@ -23,7 +23,7 @@ clean=$(CAP=20 bash "$DIR/fraud-detect.sh" "$tmp" 2>/dev/null)
 echo "$clean" | grep -q '== 0 alert(s) ==' && ok "no alerts on a clean CDR (no false positive)" || bad "false positive on clean CDR"
 rm -f "$tmp"
 
-echo "== 3. hardening checklist available (Lab 14.1 v-final base) =="
+echo "== 3. hardening checklist available (Lab 16.1 v-final base) =="
 [ -f labs/m6-building-core/hardening-checklist.md ] && ok "hardening checklist template present" || bad "hardening checklist missing"
 
 echo

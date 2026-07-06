@@ -13,21 +13,21 @@ bash labs/m17-monitoring-ir/verify.sh        # rules valid + alert/threat/runboo
 Deterministic: alert rules are well-formed and every M15 threat has a detection signature and the
 three IR scenarios have runbooks.
 
-## Lab 15.1 — KPI dashboard + alerts  (30 pts)
+## Lab 17.1 — KPI dashboard + alerts  (30 pts)
 Load `alert-rules.yml` into Prometheus (validate `promtool check rules alert-rules.yml`); build a
 Grafana dashboard of security KPIs (failure ratio, registration/INVITE rates, bans, spend, cert
 expiry). Screenshot **healthy vs under-attack**.
 
 **Deliverable:** dashboard + the two screenshots.
 
-## Lab 15.2 — Detection coverage  (40 pts)
+## Lab 17.2 — Detection coverage  (40 pts)
 Implement a detection rule for **every** M15 signature
 ([`detection-signatures.md`](detection-signatures.md)); trigger each attack from `redteam` /
 replay and show the matching alert firing.
 
 **Deliverable:** each threat's alert firing during replay (coverage table complete).
 
-## Lab 15.3 (IR) — Runbooks executed  (30 pts)
+## Lab 17.3 (IR) — Runbooks executed  (30 pts)
 Using [`incident-runbook-template.md`](incident-runbook-template.md), author and **execute** an
 incident runbook for (a) toll fraud, (b) INVITE flood, (c) suspected eavesdropping. Produce an
 incident report with a timeline.

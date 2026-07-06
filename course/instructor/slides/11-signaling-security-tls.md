@@ -63,9 +63,9 @@ Encrypt and authenticate the signaling plane end-to-edge with TLS, and manage th
 
 ## 5. Labs
 
-- **Lab 10.1:** Enforce TLS-only registration on Asterisk + Kamailio; prove UDP/TCP are refused.
-- **Lab 10.2:** Decrypt a captured SIP-TLS session with the server key and read it.
-- **Lab 10.3 (security):** Establish mTLS on the trunk; show a peer without a valid client cert
+- **Lab 11.1:** Enforce TLS-only registration on Asterisk + Kamailio; prove UDP/TCP are refused.
+- **Lab 11.2:** Decrypt a captured SIP-TLS session with the server key and read it.
+- **Lab 11.3 (security):** Establish mTLS on the trunk; show a peer without a valid client cert
 - *Rubric:* TLS-only enforced; decryption demonstrated for teaching; working mTLS + expiry alert.
 
 <!-- Speaker note: connect this beat to the module's security takeaway. -->

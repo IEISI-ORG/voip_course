@@ -11,7 +11,7 @@ bash labs/m18-testing-cloud/verify.sh        # CI valid + repo lint + no Actions
 ```
 Mirrors what CI runs on every push (`.github/workflows/ci.yml`).
 
-## Lab 16.1 — Load & regression  (30 pts)
+## Lab 18.1 — Load & regression  (30 pts)
 ```bash
 RATE=5 CALLS=50 bash labs/m18-testing-cloud/load-test.sh
 RATE=50 CALLS=500 bash labs/m18-testing-cloud/load-test.sh   # find the knee
@@ -21,13 +21,13 @@ timeouts). Keep a regression baseline.
 
 **Deliverable:** capacity numbers + the failure mode + a regression baseline.
 
-## Lab 16.2 (interop) — Fix an interop failure  (30 pts)
+## Lab 18.2 (interop) — Fix an interop failure  (30 pts)
 Introduce an interop break (e.g., a header/codec a peer rejects) and fix it with **SBC message
 manipulation** (Kamailio `textops`/`sdpops`, or Asterisk PJSIP header rules). Capture before/after.
 
 **Deliverable:** the failing exchange, the SBC fix, and the working exchange.
 
-## Lab 16.3 (IaC) — One-command deploy + CI  (40 pts)
+## Lab 18.3 (IaC) — One-command deploy + CI  (40 pts)
 - Deploy the whole platform reproducibly (`docker compose up` today; add Ansible/Terraform for
   VM/cloud parity).
 - CI on every change (`.github/workflows/ci.yml`): shell lint, compose config, YAML lint, the

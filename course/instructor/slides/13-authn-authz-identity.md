@@ -63,9 +63,9 @@ Prove who a party is — at registration, at call setup, and across the PSTN wit
 
 ## 5. Labs
 
-- **Lab 12.1:** Enforce SHA-256 digest on REGISTER+INVITE; capture and annotate the challenge.
-- **Lab 12.2 (identity):** Sign outbound calls and verify inbound STIR/SHAKEN in the lab CA;
-- **Lab 12.3 (attack→defend):** Run authorized `svwar`/`svcrack` against the lab; measure how
+- **Lab 13.1:** Enforce SHA-256 digest on REGISTER+INVITE; capture and annotate the challenge.
+- **Lab 13.2 (identity):** Sign outbound calls and verify inbound STIR/SHAKEN in the lab CA;
+- **Lab 13.3 (attack→defend):** Run authorized `svwar`/`svcrack` against the lab; measure how
 - *Rubric:* strong digest enforced; working sign/verify with attestation logic; enumeration &
 
 <!-- Speaker note: connect this beat to the module's security takeaway. -->

@@ -13,14 +13,14 @@ bash labs/m16-defense-fraud/fraud-detect.sh    # scan the sample CDR
 Deterministic: the detector must catch the IRSF burst (spend-cap breach + high-cost prefix spike
 + offending account) and NOT false-positive on a clean CDR.
 
-## Lab 14.1 — Hardening checklist v-final  (30 pts)
+## Lab 16.1 — Hardening checklist v-final  (30 pts)
 Apply the layered baseline and complete your **living hardening checklist**
 ([template](../m6-building-core/hardening-checklist.md)); map each item to the threat (T#) it
 mitigates and cite the evidence (`verify.sh` output, config diff, capture).
 
 **Deliverable:** committed `hardening-checklist.md` with every item checked + evidence.
 
-## Lab 14.2 — Fraud detection + auto-suspend  (40 pts)
+## Lab 16.2 — Fraud detection + auto-suspend  (40 pts)
 Build CDR-based fraud detection with a spend cap and auto-suspend:
 ```bash
 bash labs/m16-defense-fraud/fraud-detect.sh labs/m16-defense-fraud/sample-cdr.csv
@@ -32,7 +32,7 @@ alert to Wazuh (M17).
 
 **Deliverable:** the detector firing on your IRSF simulation + the auto-suspend/containment action.
 
-## Lab 14.3 — Before/after findings delta  (30 pts)
+## Lab 16.3 — Before/after findings delta  (30 pts)
 Re-run the M15 assessment (`labs/m15-offensive/`) against the hardened platform and produce a
 **before/after findings delta** — quantify the reduction in exploitable findings.
 

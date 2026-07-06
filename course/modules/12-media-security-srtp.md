@@ -44,9 +44,9 @@
 - Finalize the crypto section of the hardening checklist; update threat model.
 
 ## 5. Labs
-- **Lab 11.1:** Bring up SDES-SRTP (with TLS) end-to-end; prove media is unreadable in capture.
-- **Lab 11.2:** Bring up DTLS-SRTP (WebRTC-style) via rtpengine; capture the handshake.
-- **Lab 11.3 (attack):** Attempt an SDP `a=crypto` strip; show SRTP-only policy rejects the call;
+- **Lab 12.1:** Bring up SDES-SRTP (with TLS) end-to-end; prove media is unreadable in capture.
+- **Lab 12.2:** Bring up DTLS-SRTP (WebRTC-style) via rtpengine; capture the handshake.
+- **Lab 12.3 (attack):** Attempt an SDP `a=crypto` strip; show SRTP-only policy rejects the call;
   then demonstrate ZRTP SAS defeating an in-path MITM.
 - *Rubric:* all three methods working; eavesdrop defeated; downgrade blocked; SAS verified.
 

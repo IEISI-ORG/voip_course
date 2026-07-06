@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# VoIPSec M19 Lab 17.2 — ENUM (RFC 6116): E.164 -> e164.arpa NAPTR query name -> SIP URI.
+# VoIPSec M19 Lab 19.2 — ENUM (RFC 6116): E.164 -> e164.arpa NAPTR query name -> SIP URI.
 # Deterministic. Uses a built-in private-ENUM sample map (no public DNS). If `dig` is present
 # and RESOLVE=1, it also queries a real NAPTR (for the lab BIND zone).
 # Usage: enum-lookup.sh "+1 415 555 0100"

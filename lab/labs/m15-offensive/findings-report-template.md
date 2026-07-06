@@ -1,4 +1,4 @@
-# Authorized Assessment — Findings Report (Lab 13.1/13.2)
+# Authorized Assessment — Findings Report (Lab 15.1/13.2)
 
 **Engagement:** VoIPSec lab · **Tester:** <name> · **Date:** <date> · **Scope:** `edge`/`redteam`
 lab subnets ONLY (written authorization: this is a training lab). No third-party targets.
@@ -18,7 +18,7 @@ For each finding, fill one block. Severity: Critical / High / Medium / Low (just
 - **Reproduction:** <exact commands/steps>
 - **Impact:** <what an attacker gains>
 - **Remediation:** <concrete fix + module reference, e.g. "enable pike (M7), fail2ban (M16)">
-- **Detection signature (Lab 13.2 → M17):** <log pattern / metric / Wazuh rule that catches it>
+- **Detection signature (Lab 15.2 → M17):** <log pattern / metric / Wazuh rule that catches it>
 
 ### F-02 — <title>
 - (repeat)

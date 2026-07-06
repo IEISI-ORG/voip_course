@@ -60,9 +60,9 @@ See everything, detect abuse in real time, and respond with runbooks.
 
 ## 5. Labs / Deliverable
 
-- **Lab 15.1:** Build the KPI dashboard + alerts; screenshot healthy vs. under-attack states.
-- **Lab 15.2:** Detection rules for all M15 signatures; show each firing during a replay.
-- **Lab 15.3 (IR):** Author and execute an incident runbook for (a) toll fraud, (b) INVITE flood,
+- **Lab 17.1:** Build the KPI dashboard + alerts; screenshot healthy vs. under-attack states.
+- **Lab 17.2:** Detection rules for all M15 signatures; show each firing during a replay.
+- **Lab 17.3 (IR):** Author and execute an incident runbook for (a) toll fraud, (b) INVITE flood,
 - *Rubric:* actionable dashboards; complete detection coverage; runbooks executed with evidence.
 
 <!-- Speaker note: connect this beat to the module's security takeaway. -->

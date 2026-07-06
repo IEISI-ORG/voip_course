@@ -47,10 +47,10 @@ STIR/SHAKEN. **Est. time:** 6h · **Prereqs:** Modules 6–11. **Checkpoint exam
 - Update threat model + hardening checklist (identity controls).
 
 ## 5. Labs
-- **Lab 12.1:** Enforce SHA-256 digest on REGISTER+INVITE; capture and annotate the challenge.
-- **Lab 12.2 (identity):** Sign outbound calls and verify inbound STIR/SHAKEN in the lab CA;
+- **Lab 13.1:** Enforce SHA-256 digest on REGISTER+INVITE; capture and annotate the challenge.
+- **Lab 13.2 (identity):** Sign outbound calls and verify inbound STIR/SHAKEN in the lab CA;
   decode a PASSporT; branch call handling on attestation level.
-- **Lab 12.3 (attack→defend):** Run authorized `svwar`/`svcrack` against the lab; measure how
+- **Lab 13.3 (attack→defend):** Run authorized `svwar`/`svcrack` against the lab; measure how
   uniform responses + fail2ban + lockout defeat enumeration and brute force.
 - *Rubric:* strong digest enforced; working sign/verify with attestation logic; enumeration &
   brute force demonstrably mitigated.

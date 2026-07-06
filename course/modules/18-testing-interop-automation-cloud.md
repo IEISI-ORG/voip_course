@@ -1,7 +1,7 @@
 # Module 18 — Testing, Interop, Automation & Cloud Deployment
 
 **One-liner:** Validate at scale, prove interoperability, and deploy the whole platform as code.
-**Est. time:** 5h · **Prereqs:** Modules 6–15.
+**Est. time:** 5h · **Prereqs:** Modules 6–16.
 
 ## Learning Objectives
 - Write SIPp scenarios for load, regression, and conformance testing.
@@ -42,9 +42,9 @@
   rtpengine binding, SBC in front.
 
 ## 5. Labs / Deliverable
-- **Lab 16.1:** SIPp scenarios for load + regression; report capacity and the failure mode.
-- **Lab 16.2 (interop):** Diagnose and fix an interop failure with SBC message manipulation.
-- **Lab 16.3 (IaC):** One-command deploy of the platform via compose + Ansible/Terraform; CI runs
+- **Lab 18.1:** SIPp scenarios for load + regression; report capacity and the failure mode.
+- **Lab 18.2 (interop):** Diagnose and fix an interop failure with SBC message manipulation.
+- **Lab 18.3 (IaC):** One-command deploy of the platform via compose + Ansible/Terraform; CI runs
   config lint + SIPp smoke + image scan on every change.
 - *Rubric:* working scenarios + capacity numbers; interop fix proven; reproducible secure deploy.
 

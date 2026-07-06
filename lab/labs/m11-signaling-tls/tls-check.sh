@@ -19,7 +19,7 @@ if [ -n "${END:-}" ]; then
   if command -v date >/dev/null 2>&1 && date -d "$END" +%s >/dev/null 2>&1; then
     days=$(( ( $(date -d "$END" +%s) - $(date +%s) ) / 86400 ))
     echo "  notAfter: $END  ->  ~$days days"
-    [ "$days" -lt 30 ] && echo "  WARNING: cert expires in <30 days (Lab 10.3: Prometheus should alert)"
+    [ "$days" -lt 30 ] && echo "  WARNING: cert expires in <30 days (Lab 11.3: Prometheus should alert)"
   else
     echo "  notAfter: $END  (install GNU date to compute days here)"
   fi
@@ -31,5 +31,5 @@ $COMPOSE exec -T client sh -c "true | ncat --ssl -v -w3 $SBC 5061 2>&1 | grep -i
   || echo "  (client handshake failed)"
 
 echo
-echo "Cert-expiry alerting (Lab 10.3): scrape with prometheus ssl_exporter or blackbox_exporter"
+echo "Cert-expiry alerting (Lab 11.3): scrape with prometheus ssl_exporter or blackbox_exporter"
 echo "and alert on probe_ssl_earliest_cert_expiry - time() < 30d."

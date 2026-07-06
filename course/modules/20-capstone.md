@@ -4,7 +4,7 @@
 operational artifacts to run it. **Est. time:** 10h+ · **Prereqs:** all modules.
 
 ## Objective
-Take the platform grown across Modules 0–17 to a production-grade, defensible state, then prove
+Take the platform grown across Modules 0–19 to a production-grade, defensible state, then prove
 it under authorized attack and operate it through simulated incidents.
 
 ## Deliverables (the graded artifacts)

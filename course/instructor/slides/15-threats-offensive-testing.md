@@ -60,8 +60,8 @@ Think like an attacker — run a disciplined, authorized red-team assessment aga
 
 ## 5. Labs / Deliverable
 
-- **Lab 13.1:** Full authorized assessment of the lab; produce a findings report (severity,
-- **Lab 13.2:** For each finding, capture its detection signature for M17.
+- **Lab 15.1:** Full authorized assessment of the lab; produce a findings report (severity,
+- **Lab 15.2:** For each finding, capture its detection signature for M17.
 - *Rubric:* methodology followed; each finding has evidence + a concrete remediation reference;
 
 <!-- Speaker note: connect this beat to the module's security takeaway. -->

@@ -65,9 +65,9 @@ Where SIP goes beyond the PBX — mobile core, fax, inter-carrier routing, and u
 
 ## 5. Labs / Deliverable
 
-- **Lab 17.1:** Working T.38 fax through the SBC; diagnose one induced failure.
-- **Lab 17.2:** Private-ENUM routing + presence between endpoints.
-- **Lab 17.3 (security):** Secure a CPaaS-style origination API (auth + rate + spend cap) and show
+- **Lab 19.1:** Working T.38 fax through the SBC; diagnose one induced failure.
+- **Lab 19.2:** Private-ENUM routing + presence between endpoints.
+- **Lab 19.3 (security):** Secure a CPaaS-style origination API (auth + rate + spend cap) and show
 - *Rubric:* fax completes + troubleshooting shown; ENUM routing works; API abuse contained.
 
 <!-- Speaker note: connect this beat to the module's security takeaway. -->

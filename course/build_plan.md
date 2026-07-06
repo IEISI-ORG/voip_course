@@ -702,6 +702,17 @@ Fold F8/F9 opportunistically during these passes.
   correctly this time (`.github/` was in scope — iter-96 lesson held). Verify: bash -n / YAML /
   offline graders (m16-defense, m17-monitoring) / quiz / slop all PASS; 0 broken content links.
   Next 2 iterations: continue auditing for missed changes per the feedback.
+- Iteration 108 (2026-07-06): **renumber-audit pass 1** (feedback1's "next 2 iterations"). Found
+  the miss-class the token pass structurally can't catch: **bare numbers in prose** (not `M<n>` /
+  `Module <n>` form). Fixed: prereq lists — M17 `5,13,14`→`5,13,15`, M18 `6–15`→`6–16`, M19
+  `M1–16`→`M1–17`; capstone range `0–17`→`0–19`. Bigger find: **`Lab N.x` sub-numbers had drifted
+  from `module N`** — H1 (DNS→M10) never re-synced them (modules 11–13 lagged 1) and H2 widened it
+  to lag-2 (modules 15–19) **and collided** my new M14 `Lab 14.x` with defense's stale `Lab 14.x`.
+  Restored the course's own convention (`Lab N.x == module N`) across 8 module groups (docs + lab
+  dirs + regenerated slides); verified every module 0–19 now self-consistent, no collision. Topical
+  `Module N` cross-refs (threats→16 harden, →17 detect) were already correct. Verify: bash -n / quiz
+  / offline graders (m16,m17) / slop all PASS; 0 broken links. (Runtime graders m11/12/13/15 FAIL
+  offline — pre-existing service dependency, not this change.) 1 audit pass left.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

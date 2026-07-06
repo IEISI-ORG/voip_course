@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# VoIPSec M13 — decode a STIR/SHAKEN PASSporT (Lab 12.2). A PASSporT is a JWT
+# VoIPSec M13 — decode a STIR/SHAKEN PASSporT (Lab 13.2). A PASSporT is a JWT
 # (header.payload.signature); this prints the base64url-decoded header and payload claims.
 # It does NOT verify the signature — that requires the x5u cert chain (do that in the lab).
 # Usage: passport-decode.sh [compact-jwt]     (no arg = decode a built-in sample)

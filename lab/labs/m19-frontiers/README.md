@@ -12,20 +12,20 @@ bash labs/m19-frontiers/verify.sh                    # ENUM encoding + private r
 bash labs/m19-frontiers/enum-lookup.sh "+1 415 555 0100"
 ```
 
-## Lab 17.1 — T.38 fax through the SBC  (30 pts)
+## Lab 19.1 — T.38 fax through the SBC  (30 pts)
 Bring up a T.38 fax call through the SBC (spandsp in Asterisk/FreeSWITCH); complete a fax, then
 diagnose one **induced failure** (e.g. re-INVITE to T.38 blocked, or a codec/ptime mismatch).
 
 **Deliverable:** a successful fax + the diagnosed failure with root cause.
 
-## Lab 17.2 — Private ENUM + presence  (30 pts)
+## Lab 19.2 — Private ENUM + presence  (30 pts)
 Stand up a **private** `e164.arpa` zone (BIND, from M10) mapping numbers to SIP URIs; route a call
 via ENUM and show presence/SUBSCRIBE-NOTIFY between endpoints. Use `enum-lookup.sh` to see the
 NAPTR query name and resolution.
 
 **Deliverable:** ENUM-routed call + presence exchange; note the DNSSEC/private-zone security point.
 
-## Lab 17.3 (security) — Secure a CPaaS origination API  (40 pts)
+## Lab 19.3 (security) — Secure a CPaaS origination API  (40 pts)
 Front call origination with an API that enforces **auth (API key/JWT) + rate limit + spend cap**.
 Show an abusive caller (over-rate or over-cap) blocked, and the event alerted (M17).
 

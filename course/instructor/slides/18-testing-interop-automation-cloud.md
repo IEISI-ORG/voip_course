@@ -61,9 +61,9 @@ Validate at scale, prove interoperability, and deploy the whole platform as code
 
 ## 5. Labs / Deliverable
 
-- **Lab 16.1:** SIPp scenarios for load + regression; report capacity and the failure mode.
-- **Lab 16.2 (interop):** Diagnose and fix an interop failure with SBC message manipulation.
-- **Lab 16.3 (IaC):** One-command deploy of the platform via compose + Ansible/Terraform; CI runs
+- **Lab 18.1:** SIPp scenarios for load + regression; report capacity and the failure mode.
+- **Lab 18.2 (interop):** Diagnose and fix an interop failure with SBC message manipulation.
+- **Lab 18.3 (IaC):** One-command deploy of the platform via compose + Ansible/Terraform; CI runs
 - *Rubric:* working scenarios + capacity numbers; interop fix proven; reproducible secure deploy.
 
 <!-- Speaker note: connect this beat to the module's security takeaway. -->

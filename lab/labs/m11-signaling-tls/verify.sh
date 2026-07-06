@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# VoIPSec M11 acceptance test — proves the SBC's SIP-over-TLS endpoint works (Lab 10.1 core).
+# VoIPSec M11 acceptance test — proves the SBC's SIP-over-TLS endpoint works (Lab 11.1 core).
 # Fail-closed: services up, then an OPTIONS carried over a TLS handshake to :5061 must draw a
 # SIP response. (TLS-only *enforcement* — refusing UDP/TCP — is a config step, capture-graded.)
 # Run from lab/:  bash labs/m11-signaling-tls/verify.sh

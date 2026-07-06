@@ -1,7 +1,7 @@
 # Module 17 — Monitoring, Observability & Incident Response
 
 **One-liner:** See everything, detect abuse in real time, and respond with runbooks.
-**Est. time:** 5h · **Prereqs:** Modules 5, 13, 14.
+**Est. time:** 5h · **Prereqs:** Modules 5, 13, 15.
 
 ## Learning Objectives
 - Build a VoIP observability stack (metrics, logs, SIP capture) and meaningful dashboards/alerts.
@@ -36,9 +36,9 @@
 - Tune out false positives; document detection coverage vs. the threat catalog (gap analysis).
 
 ## 5. Labs / Deliverable
-- **Lab 15.1:** Build the KPI dashboard + alerts; screenshot healthy vs. under-attack states.
-- **Lab 15.2:** Detection rules for all M15 signatures; show each firing during a replay.
-- **Lab 15.3 (IR):** Author and execute an incident runbook for (a) toll fraud, (b) INVITE flood,
+- **Lab 17.1:** Build the KPI dashboard + alerts; screenshot healthy vs. under-attack states.
+- **Lab 17.2:** Detection rules for all M15 signatures; show each firing during a replay.
+- **Lab 17.3 (IR):** Author and execute an incident runbook for (a) toll fraud, (b) INVITE flood,
   (c) suspected eavesdropping; produce an incident report with a timeline.
 - *Rubric:* actionable dashboards; complete detection coverage; runbooks executed with evidence.
 

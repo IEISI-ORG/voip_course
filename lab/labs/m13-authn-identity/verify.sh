@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# VoIPSec M13 acceptance test — proves enumeration is mitigated (Lab 12.3) and the PASSporT tool
-# works (Lab 12.2). Self-validating & fail-closed: a plain probe is answered, then an authorized
+# VoIPSec M13 acceptance test — proves enumeration is mitigated (Lab 13.3) and the PASSporT tool
+# works (Lab 13.2). Self-validating & fail-closed: a plain probe is answered, then an authorized
 # svwar enumeration run must get the source banned. (Bans redteam IP ~300s.)
 # Run from lab/:  bash labs/m13-authn-identity/verify.sh
 set -u

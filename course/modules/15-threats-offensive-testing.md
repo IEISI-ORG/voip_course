@@ -44,9 +44,9 @@ your own platform. **Est. time:** 5h · **Prereqs:** Modules 1–12.
   M9/M16 guardrails blocking it.
 
 ## 5. Labs / Deliverable
-- **Lab 13.1:** Full authorized assessment of the lab; produce a findings report (severity,
+- **Lab 15.1:** Full authorized assessment of the lab; produce a findings report (severity,
   evidence pcap, reproduction, mapped defense).
-- **Lab 13.2:** For each finding, capture its detection signature for M17.
+- **Lab 15.2:** For each finding, capture its detection signature for M17.
 - *Rubric:* methodology followed; each finding has evidence + a concrete remediation reference;
   authorized-use rules respected; detection signatures captured.
 

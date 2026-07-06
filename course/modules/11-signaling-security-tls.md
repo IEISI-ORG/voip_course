@@ -42,9 +42,9 @@ certificates. **Est. time:** 5h · **Prereqs:** Modules 6–9.
 - Extend hardening checklist (transport policy) + threat model.
 
 ## 5. Labs
-- **Lab 10.1:** Enforce TLS-only registration on Asterisk + Kamailio; prove UDP/TCP are refused.
-- **Lab 10.2:** Decrypt a captured SIP-TLS session with the server key and read it.
-- **Lab 10.3 (security):** Establish mTLS on the trunk; show a peer without a valid client cert
+- **Lab 11.1:** Enforce TLS-only registration on Asterisk + Kamailio; prove UDP/TCP are refused.
+- **Lab 11.2:** Decrypt a captured SIP-TLS session with the server key and read it.
+- **Lab 11.3 (security):** Establish mTLS on the trunk; show a peer without a valid client cert
   is rejected; add a cert-expiry alert to Prometheus.
 - *Rubric:* TLS-only enforced; decryption demonstrated for teaching; working mTLS + expiry alert.
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# VoIPSec M16 Lab 14.2 — CDR fraud detector (IRSF / toll fraud). Deterministic analytics.
+# VoIPSec M16 Lab 16.2 — CDR fraud detector (IRSF / toll fraud). Deterministic analytics.
 # Flags: spend-cap breach, high-cost destination-prefix spikes (IRSF), and per-account spend
 # that warrants auto-suspend. Works offline on a CDR CSV (ts,src,dst,dur_s,cost).
 # Usage: fraud-detect.sh [cdr.csv]     env: CAP=<global $ cap> PREFIX_CAP=<$ per prefix>

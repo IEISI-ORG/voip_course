@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# VoIPSec M19 acceptance test — ENUM encoding/routing is correct (Lab 17.2). Deterministic,
+# VoIPSec M19 acceptance test — ENUM encoding/routing is correct (Lab 19.2). Deterministic,
 # offline, fail-closed. Fax (T.38) and the CPaaS API labs are capture/config-graded.
 # Run from lab/:  bash labs/m19-frontiers/verify.sh
 set -u

@@ -44,11 +44,11 @@ drains a budget. **Est. time:** 6h · **Prereqs:** Module 15.
 - Tabletop: an account *is* compromised — what limits the loss? (spend cap, velocity, alerting).
 
 ## 5. Labs / Deliverable
-- **Lab 14.1:** Apply and commit the **hardening checklist v-final**; map each item to the T# it
+- **Lab 16.1:** Apply and commit the **hardening checklist v-final**; map each item to the T# it
   mitigates.
-- **Lab 14.2:** Build fraud detection + auto-suspend; simulate an IRSF pattern and show it caught
+- **Lab 16.2:** Build fraud detection + auto-suspend; simulate an IRSF pattern and show it caught
   and contained within a set spend cap.
-- **Lab 14.3:** Re-run the M15 assessment; produce a before/after findings delta.
+- **Lab 16.3:** Re-run the M15 assessment; produce a before/after findings delta.
 - *Rubric:* layered baseline applied with evidence; fraud pattern detected + contained; measurable
   reduction in exploitable findings.
 

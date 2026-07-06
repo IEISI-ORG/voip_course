@@ -12,14 +12,14 @@ bash labs/m13-authn-identity/verify.sh          # enumeration ban (self-validati
 bash labs/m13-authn-identity/passport-decode.sh # decode a SHAKEN PASSporT
 ```
 
-## Lab 12.1 — Strong digest auth  (30 pts)
+## Lab 13.1 — Strong digest auth  (30 pts)
 Enforce **SHA-256** digest (RFC 8760) on REGISTER + INVITE (Asterisk/Kamailio); reject algorithm
 downgrade to MD5. Capture and annotate the `401 WWW-Authenticate` challenge → `Authorization`
 round-trip (realm, nonce, qop, algorithm).
 
 **Deliverable:** the annotated challenge/response + config; a downgrade attempt refused.
 
-## Lab 12.2 (identity) — STIR/SHAKEN  (30 pts)
+## Lab 13.2 (identity) — STIR/SHAKEN  (30 pts)
 Sign outbound calls and verify inbound STIR/SHAKEN using the lab CA; decode a PASSporT
 (`passport-decode.sh`) and **branch call handling on attestation** (A/B/C). Include the RFC 9060
 delegate-cert scenario (enterprise self-signs to keep "A").
@@ -27,7 +27,7 @@ delegate-cert scenario (enterprise self-signs to keep "A").
 **Deliverable:** a signed+verified call, the decoded PASSporT claims, and attestation-based
 routing (e.g. tag/deprioritize B/C).
 
-## Lab 12.3 (attack → defend) — enumeration & brute force  (40 pts)
+## Lab 13.3 (attack → defend) — enumeration & brute force  (40 pts)
 Run authorized `svwar` (extension enumeration) and `svcrack` (password) against the lab, then show
 the mitigations work:
 ```bash

@@ -3,7 +3,7 @@
 # The offer requests RTP/SAVP with an a=crypto line. Watch the answer:
 #   - a peer/anchor that supports SRTP answers RTP/SAVP + a=crypto  (11.1 secure)
 #   - a plain peer answers RTP/AVP (no crypto) -> would be a silent downgrade
-#   - an SRTP-ONLY policy (Lab 11.3) should REJECT an offer whose crypto was stripped
+#   - an SRTP-ONLY policy (Lab 12.3) should REJECT an offer whose crypto was stripped
 # Usage: srtp-offer.sh [target] [--strip]   (--strip sends RTP/AVP with NO a=crypto)
 # Run from lab/.  The inline key below is a LAB-ONLY throwaway, never a real key.
 set -u
