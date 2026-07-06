@@ -40,7 +40,7 @@ STIR/SHAKEN. **Est. time:** 6h · **Prereqs:** Modules 6–11. **Checkpoint exam
 - **Extension enumeration (T2):** response/timing deltas (401 vs. 404 vs. 403) reveal valid users
   → uniform responses, randomized delay, fail2ban; don't leak in error bodies.
 - **Registration/password brute force (T3):** svcrack → strong secret policy, lockout/backoff,
-  IP allowlists for admin, TLS to protect credentials, monitor auth failures (M16).
+  IP allowlists for admin, TLS to protect credentials, monitor auth failures (M17).
 - **Caller-ID spoofing (T7):** untrusted From/PAI → verify STIR/SHAKEN, gate features by
   attestation, feed analytics; never display unverified CNAM as trusted.
 - **Weak digest (MD5, no qop):** upgrade to SHA-256/qop; TLS still required (digest ≠ confidentiality).

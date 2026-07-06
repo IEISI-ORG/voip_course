@@ -32,7 +32,7 @@ in version control and update it as you build and attack the platform.
 | T1 | scanning / fingerprinting | edge 5060 | UA hide, pike, fail2ban | partial |
 | T2 | extension enumeration | registrar/auth | uniform responses (M13) | open |
 | T5 | media eavesdropping | RTP path | SRTP (M12) | open |
-| T7 | caller-ID spoofing | inbound trunk | STIR/SHAKEN (M13/M18) | open |
+| T7 | caller-ID spoofing | inbound trunk | STIR/SHAKEN (M13/M19) | open |
 
 ## 5. Assumptions & open questions
 - <what you are assuming is true; what you still need to verify>

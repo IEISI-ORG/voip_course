@@ -1,7 +1,7 @@
 # Lab BF12 — SIP Honeypot → Dynamic Blocklist
 
-**Modules:** [M15](../../../course/modules/15-defense-hardening-fraud.md) +
-[M16](../../../course/modules/16-monitoring-observability-ir.md). Feedback-derived
+**Modules:** [M16](../../../course/modules/16-defense-hardening-fraud.md) +
+[M17](../../../course/modules/17-monitoring-observability-ir.md). Feedback-derived
 (gemini_feedback1). Threats: scanning (T1), flood (T8).
 
 Goal: a decoy SIP listener that no legitimate client touches, turning every hit into a
@@ -17,7 +17,7 @@ raises **no** bans from a clean log.
 
 ## Build
 1. **Decoy listener** — run a dummy SIP responder on UDP 5060 while the real service is SIPS on
-   5061 (M15). Log every hit as `HONEYPOT hit src=<ip> ua=<ua> method=<m>`.
+   5061 (M16). Log every hit as `HONEYPOT hit src=<ip> ua=<ua> method=<m>`.
 2. **Blocklist** — load [`nftables-honeypot.nft`](nftables-honeypot.nft) (a timeout'd `banned_v4`
    set + a drop rule). Feed it from the honeypot log:
    ```bash

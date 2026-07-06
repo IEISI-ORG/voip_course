@@ -23,7 +23,7 @@ section. Run autonomously (no user interaction) and leave a complete plan on dis
 
 ## Key Decisions
 - Course name: **VoIPSec — Secure Open-source VoIP Operations Certificate**.
-- 18 modules (M0 orientation → M17 frontiers) + capstone, vs. SIP School's 14.
+- 18 modules (M0 orientation → M18 frontiers) + capstone, vs. SIP School's 14.
 - Reference stack: Asterisk, FreeSWITCH, Kamailio, OpenSIPS, rtpengine, Wireshark/sngrep,
   HOMER/Heplify, SIPp, Baresip/Linphone/PJSIP, OpenSSL/Let's Encrypt, fail2ban/nftables,
   libstirshaken, Prometheus/Grafana/Loki, Wazuh, Docker/Ansible/Terraform, spandsp, BIND.

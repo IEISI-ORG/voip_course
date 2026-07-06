@@ -1,5 +1,5 @@
 # VoIPSec observability — Prometheus scrape config (Stage A5).
-# Scrapes itself now; VoIP exporters (Kamailio/Asterisk) are wired in M16 once the exporters
+# Scrapes itself now; VoIP exporters (Kamailio/Asterisk) are wired in M17 once the exporters
 # are enabled on the core services. Targets are commented until then so scrapes don't error.
 global:
   scrape_interval: 15s
@@ -12,7 +12,7 @@ scrape_configs:
     static_configs:
       - targets: ["localhost:9090"]
 
-  # --- Enabled in M16 (uncomment once exporters are running) ---
+  # --- Enabled in M17 (uncomment once exporters are running) ---
   # - job_name: kamailio
   #   static_configs: [{ targets: ["172.28.20.10:9494"] }]   # kamailio-exporter
   # - job_name: asterisk

@@ -63,7 +63,7 @@ Each module ends with: **objectives recap**, **quiz** (10–15 items), **lab rub
 
 ---
 
-## 5. Module Map (19 modules + capstone)
+## 5. Module Map (20 modules + capstone)
 
 | # | Module | Core OSS | Security spotlight | Est. hours |
 |---|--------|----------|--------------------|-----------|
@@ -81,11 +81,12 @@ Each module ends with: **objectives recap**, **quiz** (10–15 items), **lab rub
 | 11 | Signaling Security: TLS & SIPS | OpenSSL, Let's Encrypt, step-ca | MITM, cert mgmt, mTLS trunks | 5 |
 | 12 | Media Security: SRTP/DTLS-SRTP/ZRTP | libsrtp, rtpengine, ZRTP clients | Eavesdropping, key exchange pitfalls | 5 |
 | 13 | AuthN, AuthZ & Caller Identity | Asterisk, libstirshaken, OpenSIPS | Enumeration, brute force, spoofing | 6 |
-| 14 | VoIP Threats & Offensive Testing | SIPVicious, SIPp, custom fuzzers | Authorized red-team methodology | 5 |
-| 15 | Defense, Hardening & Fraud Prevention | fail2ball, Wazuh, CDR analytics | Toll fraud, IRSF, DoS mitigation | 6 |
-| 16 | Monitoring, Observability & Incident Response | HOMER, Prometheus, Grafana, Loki | Detection, IR runbooks, forensics | 5 |
-| 17 | Testing, Interop, Automation & Cloud | SIPp, Docker/K8s, Ansible, Terraform, CI | Secure pipelines, config drift | 5 |
-| 18 | Frontiers: VoLTE/IMS, FoIP, ENUM/Peering, UC/UCaaS/CPaaS | Kamailio IMS, spandsp, BIND | IMS/peering trust, RCS/OTT risks | 5 |
+| 14 | Provisioning & Device Configuration Security | HTTPS provisioning, TFTP, config encryption | Plaintext configs, MAC-URL enumeration, RPS/redirection abuse (T15) | 4 |
+| 15 | VoIP Threats & Offensive Testing | SIPVicious, SIPp, custom fuzzers | Authorized red-team methodology | 5 |
+| 16 | Defense, Hardening & Fraud Prevention | fail2ball, Wazuh, CDR analytics | Toll fraud, IRSF, DoS mitigation | 6 |
+| 17 | Monitoring, Observability & Incident Response | HOMER, Prometheus, Grafana, Loki | Detection, IR runbooks, forensics | 5 |
+| 18 | Testing, Interop, Automation & Cloud | SIPp, Docker/K8s, Ansible, Terraform, CI | Secure pipelines, config drift | 5 |
+| 19 | Frontiers: VoLTE/IMS, FoIP, ENUM/Peering, UC/UCaaS/CPaaS | Kamailio IMS, spandsp, BIND | IMS/peering trust, RCS/OTT risks | 5 |
 | — | Capstone: Secure VoIP Platform | Whole stack | Full build+attack+defend+operate | 10+ |
 
 **Total structured time ≈ 100 hours** (SIP School's "running time" is ~16h; VoIPSec is a
@@ -114,7 +115,7 @@ Design rules:
 
 - **Per-module quiz** (auto-graded, 10–15 items) — protocol/security literacy.
 - **Per-module lab** with a rubric (functionality + security posture + evidence of verification).
-- **Three checkpoint exams:** after M5 (protocol), M13 (build+security), M18 (operations).
+- **Three checkpoint exams:** after M5 (protocol), M13 (build+security), M19 (operations).
 - **Capstone:** design → deploy → attack (authorized) → defend → operate a platform, with a
   written threat model and an incident-response runbook. Peer + instructor review.
 - **Certification:** the **Certified VoIPSec Operator (CVO)** credential, issued on capstone pass +
@@ -137,8 +138,8 @@ This guarantees the "emphasis on secure VoIP operations" is assessed continuousl
 ## 9. Deliverable Files
 
 - `00-course-overview.md` — this document.
-- `modules/00-orientation-and-lab.md` … `modules/18-frontiers.md` — per-module deep dives.
-- `modules/19-capstone.md` — capstone + operations runbooks.
+- `modules/00-orientation-and-lab.md` … `modules/19-frontiers.md` — per-module deep dives.
+- `modules/20-capstone.md` — capstone + operations runbooks.
 - `notes.md` — OSS tool map, threat catalog, lab architecture, RFC backbone.
 - `references/bibliography.md` — RFCs/standards + package knowledge bases.
 - `references/glossary.md` — abbreviations & acronyms.

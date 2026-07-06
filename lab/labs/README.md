@@ -18,13 +18,13 @@ against the shared lab, with an executable checker where possible (`verify.sh`).
 | [m11-signaling-tls](m11-signaling-tls/) | M11 | SIP-over-TLS (handshake-tested), cert inspection, mTLS + expiry alert | ✅ |
 | [m12-media-srtp](m12-media-srtp/) | M12 | SRTP foundation, SDES offer + crypto-strip demo, DTLS/ZRTP | ✅ |
 | [m13-authn-identity](m13-authn-identity/) | M13 | digest/STIR-SHAKEN, PASSporT decoder, enumeration ban; exam #2 | ✅ |
-| [m14-offensive](m14-offensive/) | M14 | authorized assessment, RFC 4475 torture (survival-tested), findings report | ✅ |
-| [m15-defense-fraud](m15-defense-fraud/) | M15 | hardening v-final, CDR IRSF fraud detector (offline-graded) | ✅ |
-| [m16-monitoring-ir](m16-monitoring-ir/) | M16 | Prometheus alert rules, M14 detection coverage, IR runbooks | ✅ |
-| [m17-testing-cloud](m17-testing-cloud/) | M17 | SIPp load test, CI pipeline (repo lint + graders), IaC | ✅ |
-| [m18-frontiers](m18-frontiers/) | M18 | ENUM lookup tool, T.38 fax, CPaaS API hardening; exam #3 | ✅ |
+| [m15-offensive](m15-offensive/) | M15 | authorized assessment, RFC 4475 torture (survival-tested), findings report | ✅ |
+| [m16-defense-fraud](m16-defense-fraud/) | M16 | hardening v-final, CDR IRSF fraud detector (offline-graded) | ✅ |
+| [m17-monitoring-ir](m17-monitoring-ir/) | M17 | Prometheus alert rules, M15 detection coverage, IR runbooks | ✅ |
+| [m18-testing-cloud](m18-testing-cloud/) | M18 | SIPp load test, CI pipeline (repo lint + graders), IaC | ✅ |
+| [m19-frontiers](m19-frontiers/) | M19 | ENUM lookup tool, T.38 fax, CPaaS API hardening; exam #3 | ✅ |
 
-**Stage B complete — all 18 module labs (M0–M18) built.**
+**Stage B complete — all 18 module labs (M0–M19) built.**
 
 Conventions:
 - Each lab dir has a `README.md` runbook with a **100-pt rubric (pass ≥ 70)**.

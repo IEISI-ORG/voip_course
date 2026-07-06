@@ -52,7 +52,7 @@ Master the OSS analysis toolchain (Wireshark, sngrep, HOMER) and a repeatable fa
 
 - **Evidence integrity & chain of custody:** hashing pcaps, timestamps, access control — needed
 - **Captures contain secrets/PII:** SDP, DTMF (card numbers via inband!), recordings → handle,
-- **Detecting recon in captures:** spot svmap/OPTIONS sweeps and enumeration patterns (feeds M14/M15).
+- **Detecting recon in captures:** spot svmap/OPTIONS sweeps and enumeration patterns (feeds M15/M16).
 
 <!-- Speaker note: connect this beat to the module's security takeaway. -->
 ---

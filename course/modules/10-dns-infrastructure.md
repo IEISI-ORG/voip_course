@@ -76,5 +76,5 @@ redirecting calls. Build it correctly and defend it. **Est. time:** 4h ·
 
 ## References
 - RFC 3263 (locating SIP servers), RFC 2782 (SRV), RFC 3401–3404 (NAPTR/DDDS),
-  RFC 4033–4035 (DNSSEC), RFC 7858 (DoT), RFC 8484 (DoH), RFC 6116 (ENUM, see M18);
+  RFC 4033–4035 (DNSSEC), RFC 7858 (DoT), RFC 8484 (DoH), RFC 6116 (ENUM, see M19);
   BIND9 ARM; Kamailio `dns` / `dns_srv_lb` docs; NIST SP 800-81 (Secure DNS Deployment).

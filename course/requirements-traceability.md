@@ -18,7 +18,7 @@ Status: ✅ done · 🟡 partial/in-progress · ⬜ open
 |---|-------------|--------|----------|
 | A1 | Course modelled on SIP School SSCA 'Elite' | ✅ | README crosswalk maps **all 14** SSCA modules (verified iter 49, nothing dropped) |
 | A2 | Open-source tools throughout | ✅ | `lab/` (Kamailio/Asterisk/FreeSWITCH/rtpengine/HOMER/…), `notes.md` tool map |
-| A3 | Emphasis on **secure** VoIP operations | ✅ | security spine T1–T15, per-module attack/defend, M13–M15; **capstone** (verified iter 49) requires final threat model, hardening checklist, red-team report, IR runbooks, detection-coverage map |
+| A3 | Emphasis on **secure** VoIP operations | ✅ | security spine T1–T15, per-module attack/defend, M13–M16; **capstone** (verified iter 49) requires final threat model, hardening checklist, red-team report, IR runbooks, detection-coverage map |
 | A4 | Plan then deep-dive every section | ✅ | 18 modules + M9D + capstone, each 5-beat with labs |
 | A5 | Runnable/reproducible lab | ✅ | Docker compose (8 svcs), 24 module labs + BF labs, `make verify-all`, CI |
 
@@ -51,14 +51,14 @@ Status: ✅ done · 🟡 partial/in-progress · ⬜ open
 |------|--------|----------|
 | Rename SOVOC → VoIPSec + CVO credential | ✅ | iter 62; 0 live residue (G8), history/log clean |
 | F0 LICENSE (CC BY-NC-SA 4.0) + CONTRIBUTING + CONTRIBUTORS | ✅ | iter 62 |
-| F1 Suricata IDS (BF15) into M13→M15 pipeline | ✅ | iter 67, verify 9/9 |
+| F1 Suricata IDS (BF15) into M13→M16 pipeline | ✅ | iter 67, verify 9/9 |
 | F2 AI-slop review + `slop-check.sh` | ✅ | iter 68 (clean) |
 | F5 multi-jurisdiction emergency (US/AU/UK/EU) + NG112 hook | ✅ | iters 72-76 (BF2 14/14) |
 | F6 RFC evolution SVG · F7 device-config-security | ✅ | iters 74, 85 |
 | Peer-review gate on all processed papers | ✅ | iter 70+ (Keromytis/Dantu/Kolahi/JTDE/Goode kept; predatory venues rejected) |
 | G1–G8 consistency audit | ✅ | iters 86-93 (threat-map, citations, lab-align, links, glossary +49, security, assessments, naming) |
 | F3 issue-triage · F4 paper ingestion | 🟡 | reactive — wake on GitHub issue / dropped paper |
-| F8 VoWiFi/GSMA · F9 Schulzrinne · H1 DNS-into-main · H2 provisioning-security | ⬜ | planned; H1/H2 post-audit (feedback iter 92) |
+| F8 VoWiFi/GSMA · F9 Schulzrinne · H1 DNS-into-main · H2 provisioning-security | ✅ | F8/F9 done; H1 DNS→M10 (iter 94); H2 provisioning as **M14** + renumber 15–20 (this iter) |
 
 ## D. Verification health (re-measured across the G-audit, iters 86–93)
 Ran every `verify.sh` + validators:

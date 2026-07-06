@@ -10,7 +10,7 @@ _None right now._
   Threat Taxonomy kept as an aged, rebuttable standards/consortium doc. *(answered iter 71)*
 - **Q7 (paper 3 Bernard 2022) = DROPPED entirely:** management, not technical. Reverted the slide +
   citation + MD (iter 66). *(final)*
-- **Q5 (Suricata) = integrate into M13→M15 pipeline:** build F1 as the IDS stage of the existing
+- **Q5 (Suricata) = integrate into M13→M16 pipeline:** build F1 as the IDS stage of the existing
   attack→detect→respond pipeline (not a standalone service). *(answered iter 63)*
 - **Q6 (commercial contact) = contact@ieisi.org** + web <https://www.ieisi.org/contact> and
   training <https://www.ieisi.org/training>. Applied to LICENSE/CONTRIBUTING. *(answered iter 63)*

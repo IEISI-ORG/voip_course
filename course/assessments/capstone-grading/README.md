@@ -1,6 +1,6 @@
 # Capstone Grading Harness (C2)
 
-Turns the capstone's rubric ([`../../modules/19-capstone.md`](../../modules/19-capstone.md)) into
+Turns the capstone's rubric ([`../../modules/20-capstone.md`](../../modules/20-capstone.md)) into
 a runnable scoring sheet with the **mandatory-security gate**.
 
 ## Use

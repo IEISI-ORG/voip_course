@@ -28,7 +28,7 @@ companion to your living threat model. Check items as you implement them; cite e
 - [ ] Digest auth on REGISTER/INVITE; SHA-256 (RFC 8760); downgrade rejected
 - [ ] STIR/SHAKEN verify/attest; strip untrusted Identity at border (T7)
 
-## Fraud / monitoring / IR (M15–M16)
+## Fraud / monitoring / IR (M16–M17)
 - [ ] Spend limits + anomaly CDR (T4); DISA/voicemail PIN policy (T13)
 - [ ] Recording encryption-at-rest + RBAC + DTMF suppression (T14)
 - [ ] SIEM alerts (toll fraud, recording access, honeypot hits); IR runbooks

@@ -16,10 +16,10 @@ prerequisites, per-cohort lab setup, the assessment flow, and operations.
 | Mode | Duration | Cadence |
 |------|----------|---------|
 | Self-paced | 8–12 weeks | ~8–12 h/week |
-| Instructor-led cohort | 12 weeks | 1 module/week (M5,M13,M18 weeks include the checkpoint exam) |
+| Instructor-led cohort | 12 weeks | 1 module/week (M5,M13,M19 weeks include the checkpoint exam) |
 | Intensive bootcamp | 3 weeks | 6 modules/week; capstone in a 4th week |
 
-Checkpoint exams gate progress after **M5** (protocol), **M13** (build+security), **M18** (operations).
+Checkpoint exams gate progress after **M5** (protocol), **M13** (build+security), **M19** (operations).
 
 ## 3. Per-cohort lab setup
 Each learner runs their own copy of [`lab/`](../../lab/):
@@ -29,7 +29,7 @@ make init            # create .env from template
 # edit .env: set unique strong secrets (SIP_*_SECRET, TOPOH_MASK_SECRET, FS_*, GRAFANA_*, HOMER_*)
 make up              # base topology (SBC, PBXs, trunk, client, redteam)
 make status && bash labs/m0-orientation/verify.sh    # confirm healthy + segmentation
-make obs-up          # observability plane, when M5/M16 need it
+make obs-up          # observability plane, when M5/M17 need it
 ```
 - **Secrets:** every learner generates their own (`openssl rand -base64 24`); never share/commit
   `.env` (it is gitignored).
@@ -45,7 +45,7 @@ make obs-up          # observability plane, when M5/M16 need it
 - **Quizzes:** [`assessments/quiz-bank/`](../assessments/quiz-bank/) — per-module MC; a
   self-contained `exam.html` for practice (client-scored; **not proctored** — grade real sittings
   server-side).
-- **Checkpoint exams:** three, after M5/M13/M18, each with a **gated Security section**. Question
+- **Checkpoint exams:** three, after M5/M13/M19, each with a **gated Security section**. Question
   files and answer keys are separate — keys live in
   [`assessments/answer-keys/`](../assessments/answer-keys/) (instructor-only).
 - **Capstone:** 9 graded deliverables. Score with the harness
@@ -61,7 +61,7 @@ make obs-up          # observability plane, when M5/M16 need it
   rubric deliverables (captures, configs, threat-model/hardening-checklist updates).
 - **Living artifacts:** learners carry a threat model (from M1) and a hardening checklist (from M6),
   extended every module and audited at the capstone.
-- **Ethics gate:** an M14 assessment that ignores scope fails regardless of technical quality.
+- **Ethics gate:** an M15 assessment that ignores scope fails regardless of technical quality.
 - **References:** cite from [`references/bibliography.md`](../references/bibliography.md); acronyms
   in [`references/glossary.md`](../references/glossary.md).
 

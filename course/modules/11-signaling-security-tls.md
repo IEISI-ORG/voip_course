@@ -36,7 +36,7 @@ certificates. **Est. time:** 5h · **Prereqs:** Modules 6–9.
 - **Signaling MITM/tampering (T6):** demonstrate (in lab) reading/altering plaintext SIP; then
   show TLS defeats it. Downgrade attempts (offer only TLS; drop UDP/TCP at edge).
 - **Cert-management failures:** expired certs = outage; weak ciphers/old TLS = exposure; private
-  key leakage (T11) → perms, HSM/where feasible, rotation, expiry alerts in monitoring (M16).
+  key leakage (T11) → perms, HSM/where feasible, rotation, expiry alerts in monitoring (M17).
 - **Trust pitfalls:** hop-by-hop TLS means you trust every intermediary — document the trust
   boundary; use mTLS on peer links.
 - Extend hardening checklist (transport policy) + threat model.

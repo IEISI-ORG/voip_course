@@ -47,6 +47,6 @@ fi
 
 echo
 echo "== note: signature bans are one layer; attackers change the UA. Behavioural (pike) and"
-echo "==       nftables/fail2ban layers (nftables-edge.example.nft, M15) complete the defense."
+echo "==       nftables/fail2ban layers (nftables-edge.example.nft, M16) complete the defense."
 echo "== result: $pass passed, $fail failed =="
 [ "$fail" -eq 0 ] && { echo "M8 ACCEPTANCE: PASS"; exit 0; } || { echo "M8 ACCEPTANCE: FAIL"; exit 1; }

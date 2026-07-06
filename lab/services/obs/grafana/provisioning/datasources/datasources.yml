@@ -1,6 +1,6 @@
 # VoIPSec observability — Grafana datasource provisioning (Stage A5).
 # Auto-wires Prometheus (metrics) and Loki (logs). HOMER has its own UI (homer-webapp);
-# a Grafana HEP/SIP datasource is added in M16.
+# a Grafana HEP/SIP datasource is added in M17.
 apiVersion: 1
 
 datasources:

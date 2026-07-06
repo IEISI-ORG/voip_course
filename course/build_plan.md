@@ -136,10 +136,11 @@ Fold F8/F9 opportunistically during these passes.
 - [x] H1. **Promote M9D (DNS Infrastructure) into the main module series** — it is core, not an
       optional extra. Renumber it into sequence and update every reference (modules, labs BF14,
       bibliography, crosswalk, dependency map). Big cross-cutting refactor — do carefully post-audit.
-- [~] H2. **Provisioning-security expansion** — "device config files in the clear are a major SIP
-      security hole." Deepen beyond BF4 into fuller module coverage: cleartext-config threat (extend
-      T15), TR-069/CWMP + TR-104 model, signed+encrypted configs, secure zero-touch (RPS/mTLS/MAC),
-      key/secret rotation. Likely a dedicated provisioning-security module + expanded lab.
+- [x] H2. **Provisioning-security expansion** — "device config files in the clear are a major SIP
+      security hole." DONE (iter 107): dedicated module **M14 Provisioning & Device Configuration
+      Security** (placed after M13 per feedback; old M14–M19 → M15–M20). Covers cleartext-config
+      threat (T15), redirection/RPS + zero-touch (mTLS/MAC allowlist/CN-scoping), signed **and**
+      encrypted configs, key rotation. Lab = BF4 (`verify.sh` + `sign-config.sh` + `encrypt-config.sh`).
 ## Loop protocol (each iteration)
 1. Check `/home/terry/voip_course` for feedback files (`*feedback*`, `FEEDBACK*`, `feedback/`).
    If present: read, incorporate, and prioritize before the backlog. Record what it asked in the
@@ -689,6 +690,18 @@ Fold F8/F9 opportunistically during these passes.
   PASS; module sequence 00-09,10=DNS,11-18,19=capstone). Caught one **real drift**: iter 97 edited
   M18 (VoWiFi section) but didn't regenerate its MARP deck -> the slides drift check flagged it.
   Regenerated `slides/18-frontiers.md`; SLIDES PASS. (The drift check earned its keep.)
+- Iteration 107 (2026-07-06): **H2 done** — processed `feedback1.txt` ("place new provisioning
+  after M13 and renumber"). Inserted **M14 Provisioning & Device Configuration Security** (maps
+  T15; lab = BF4 + `encrypt-config.sh`), shifted old M14–M19 → **M15–M20** via descending
+  collision-free token passes over 214 files + 31 git-mv renames (module/slide files, lab dirs
+  m14–m18 → m15–m19). Regenerated 21 slide decks + `exam.html`; added 2 M14 quiz Qs (coverage
+  M0–M19). Reassigned BF4 + threat-catalog T15 to M14. **Renumber misses caught** (the point of
+  the audit): (a) overview map used bare `| 14 |` numbers — rebuilt + inserted M14 row; (b) README
+  map still carried the **pre-H1 `9D` DNS number** and lagged filenames by one — rebuilt to true
+  numbering; (c) three prose module-counts "19 modules" → "20". CI offline-grader paths shifted
+  correctly this time (`.github/` was in scope — iter-96 lesson held). Verify: bash -n / YAML /
+  offline graders (m16-defense, m17-monitoring) / quiz / slop all PASS; 0 broken content links.
+  Next 2 iterations: continue auditing for missed changes per the feedback.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

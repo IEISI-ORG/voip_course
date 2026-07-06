@@ -1,14 +1,14 @@
 # pbx-b — FreeSWITCH application server (Stage A3)
 
 The second-stack PBX on the trusted `core` network (172.28.20.22). Runs alongside `pbx-a`
-(Asterisk) so later modules can show cross-stack interop (M17) and compare hardening idioms.
+(Asterisk) so later modules can show cross-stack interop (M18) and compare hardening idioms.
 
 ## Security posture (base)
 
 | Choice | Why | Threat / module |
 |--------|-----|-----------------|
 | Inject `default_password` from env at boot | kill FreeSWITCH's stock `1234` | T3 / M13 |
-| ESL bound to `127.0.0.1`, `loopback.auto` ACL, env password | ESL = full switch control | T11 / M16 |
+| ESL bound to `127.0.0.1`, `loopback.auto` ACL, env password | ESL = full switch control | T11 / M17 |
 | Test users in restricted `voipsec` context | no PSTN route from a user | T4 / M9 |
 | Explicit reject catch-all in dialplan | no fraud-enabling fallthrough | T4 |
 

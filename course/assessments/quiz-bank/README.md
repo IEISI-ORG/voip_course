@@ -1,7 +1,7 @@
 # Quiz Bank (C0)
 
 Per-module multiple-choice questions in a single machine-readable file
-([`quiz-bank.json`](quiz-bank.json)), security-focused, one+ per module (M0–M18 + M10).
+([`quiz-bank.json`](quiz-bank.json)), security-focused, one+ per module (M0–M19 + M10).
 
 ## Format
 ```json
@@ -15,7 +15,7 @@ Per-module multiple-choice questions in a single machine-readable file
 ```bash
 bash verify.sh
 ```
-Checks: valid JSON, ≥4 options and an in-range `answer` per question, every module M0–M18 (+M10)
+Checks: valid JSON, ≥4 options and an in-range `answer` per question, every module M0–M19 (+M10)
 covered, and that correct answers aren't clustered on one position (anti-gaming).
 
 ## HTML exam (E1)

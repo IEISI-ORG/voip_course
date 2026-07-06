@@ -9,9 +9,9 @@ sits behind.
 | Concern | Mechanism | Threat / module |
 |---------|-----------|-----------------|
 | Listeners | UDP/TCP 5060, TLS 5061 | M11 |
-| Malformed-message drop | `sanity_check` | T10 / M14 |
-| Flood protection | `pike` + `htable` ipban | T8 / M8, M15 |
-| Scanner rejection | UA fingerprint match → ban | T1 / M15 |
+| Malformed-message drop | `sanity_check` | T10 / M15 |
+| Flood protection | `pike` + `htable` ipban | T8 / M8, M16 |
+| Scanner rejection | UA fingerprint match → ban | T1 / M16 |
 | Topology hiding | `topoh` (masks internal Via/Contact/RR) | M7 |
 | NAT handling | `nat_uac_test` + `fix_nated_*` | M8 |
 | Media anchoring | `rtpengine_manage` rewrites SDP → rtpengine | T9 / M12 |

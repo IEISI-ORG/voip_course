@@ -34,21 +34,21 @@ every module deep dive.
 
 | # | Threat | Vector | Primary defense | Module |
 |---|--------|--------|-----------------|--------|
-| T1 | SIP scanning / device fingerprinting | OPTIONS/REGISTER sweeps (svmap) | Rate limit, fail2ban, hide UA, TLS | M8,M14,M15 |
-| T2 | Extension enumeration | 401/403/404 response deltas | Uniform responses, delay, fail2ban | M13,M14,M15 |
-| T3 | Registration hijack / password brute force | svcrack, credential stuffing | Strong secrets, TLS, lockout, IP allowlist | M13,M15 |
-| T4 | Toll fraud / IRSF | Compromised creds, open dialplan | Dial restrictions, spend limits, anomaly CDR | M15,M16 |
+| T1 | SIP scanning / device fingerprinting | OPTIONS/REGISTER sweeps (svmap) | Rate limit, fail2ban, hide UA, TLS | M8,M15,M16 |
+| T2 | Extension enumeration | 401/403/404 response deltas | Uniform responses, delay, fail2ban | M13,M15,M16 |
+| T3 | Registration hijack / password brute force | svcrack, credential stuffing | Strong secrets, TLS, lockout, IP allowlist | M13,M16 |
+| T4 | Toll fraud / IRSF | Compromised creds, open dialplan | Dial restrictions, spend limits, anomaly CDR | M16,M17 |
 | T5 | Eavesdropping (media) | RTP sniffing on path | SRTP / DTLS-SRTP / ZRTP | M12 |
 | T6 | Signaling tampering / MITM | Plain UDP/TCP SIP | TLS/SIPS, mutual TLS on trunks | M11 |
-| T7 | Caller-ID spoofing / robocalls | Forged From/PAI | STIR/SHAKEN, attestation, analytics | M13,M18 |
-| T8 | DoS / flood (INVITE, REGISTER) | Volumetric + app-layer | pike/ratelimit (Kamailio), nftables, SBC | M8,M14,M15 |
+| T7 | Caller-ID spoofing / robocalls | Forged From/PAI | STIR/SHAKEN, attestation, analytics | M13,M19 |
+| T8 | DoS / flood (INVITE, REGISTER) | Volumetric + app-layer | pike/ratelimit (Kamailio), nftables, SBC | M8,M15,M16 |
 | T9 | RTP injection / bleed | Unauthenticated media ports | rtpengine strict source, SRTP, symmetric RTP | M8,M12 |
-| T10 | SIP message fuzzing / parser crashes | Malformed SIP | Robust parsers, WAF-style checks, patching | M14,M17 |
-| T11 | Config/secret leakage | World-readable configs, plaintext secrets | Secrets mgmt, file perms, no creds in git | M6,M15 |
+| T10 | SIP message fuzzing / parser crashes | Malformed SIP | Robust parsers, WAF-style checks, patching | M15,M18 |
+| T11 | Config/secret leakage | World-readable configs, plaintext secrets | Secrets mgmt, file perms, no creds in git | M6,M16 |
 | T12 | Trunk abuse / spoofed peers | Static-IP trunks without auth | IP+TLS+SIP auth, topology hiding | M9,M11 |
-| T13 | Voicemail / feature-code abuse | Weak PINs, DISA misuse | PIN policy, disable DISA, monitor | M15 |
-| T14 | Insider / recording exposure | Access to recordings/CDRs | Encryption at rest, RBAC, audit | M15,M16 |
-| T15 | Supply-chain / provisioning abuse; **cleartext config exposure** | Insecure auto-provisioning (TFTP/HTTP); config files with credentials in the clear | HTTPS/mTLS provisioning, **signed AND encrypted configs**, MAC binding, key rotation | M15 |
+| T13 | Voicemail / feature-code abuse | Weak PINs, DISA misuse | PIN policy, disable DISA, monitor | M16 |
+| T14 | Insider / recording exposure | Access to recordings/CDRs | Encryption at rest, RBAC, audit | M16,M17 |
+| T15 | Supply-chain / provisioning abuse; **cleartext config exposure** | Insecure auto-provisioning (TFTP/HTTP); config files with credentials in the clear | HTTPS/mTLS provisioning, **signed AND encrypted configs**, MAC binding, key rotation | M14 |
 
 ## 3. Reference Lab Architecture (Docker-composed)
 
@@ -90,6 +90,6 @@ every module deep dive.
 
 ## 5. SIP School coverage crosswalk (ensure nothing dropped)
 Every SIP School module maps into VoIPSec; security-first reordering shown in README.md.
-Additions beyond SIP School: dedicated offensive module (M14), defense/fraud module (M15),
-observability/IR module (M16), automation/IaC (M17), and a build-focus (M6/M7) that SIP
+Additions beyond SIP School: dedicated offensive module (M15), defense/fraud module (M16),
+observability/IR module (M17), automation/IaC (M18), and a build-focus (M6/M7) that SIP
 School only describes conceptually.

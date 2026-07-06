@@ -9,7 +9,7 @@ about what is turned off.
 | Choice | Why | Threat / module |
 |--------|-----|-----------------|
 | `chan_pjsip` only, `chan_sip` unloaded | legacy stack has weak enumeration/defaults | T2 / M13 |
-| AMI disabled (`manager.conf`) | powerful remote-control surface | T11 / M16 |
+| AMI disabled (`manager.conf`) | powerful remote-control surface | T11 / M17 |
 | ARI/HTTP disabled (`http.conf`) | unneeded attack surface | T11 |
 | MGCP/Skinny/Unistim unloaded | shrink channel-driver surface | T11 |
 | Dialplan denies outbound by default | no toll route from a compromised ext | T4 / M9 |

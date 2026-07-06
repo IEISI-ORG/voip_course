@@ -2,7 +2,7 @@
 
 An open-source, security-first VoIP training course modelled on The SIP School's SSCA "Elite"
 programme but rebuilt around open-source tools and an emphasis on **secure VoIP operations**.
-It pairs a written curriculum (19 modules (incl. DNS) + capstone) with a single, growing,
+It pairs a written curriculum (20 modules (incl. DNS) + capstone) with a single, growing,
 reproducible **Docker lab** that learners build, attack, defend, and operate across the course.
 Completing it earns the **Certified VoIPSec Operator (CVO)** credential.
 
@@ -48,7 +48,7 @@ findings from automated review are addressed and logged.
 - **Iteration:** 94 · **Date:** 2026-07-05 · **HEAD:** `git log --oneline -1`
 - **Design:** ✅ complete — 18 modules + M10 (DNS Infrastructure) + capstone
 - **Stage A (lab foundation):** ✅ complete (8 services)
-- **Stage B (per-module labs):** ✅ complete — all 19 module docs M0–M18 (DNS=M10; its lab is BF14), each with a `verify.sh`
+- **Stage B (per-module labs):** ✅ complete — all 20 module docs M0–M19 (DNS=M10, provisioning=M14; capstone=M20), each with a `verify.sh`
 - **Assessments:** ✅ all 3 checkpoint exams (keys held separately in `assessments/answer-keys/`)
 - **Feedback-driven BF labs:** ✅ **all 14 done (BF1–BF14)**
 - **Consistency audit:** ✅ complete (3 passes) · **Requirements audit:** ✅ complete (6 passes) — see [`course/requirements-traceability.md`](course/requirements-traceability.md)

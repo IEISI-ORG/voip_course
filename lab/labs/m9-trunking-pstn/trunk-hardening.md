@@ -61,7 +61,7 @@ blocked => 1,NoOp(spend/concurrency cap hit); Hangup(21)
 
 ## 3. Alerting
 - Emit a log/CDR event on: blocked destination, concurrency cap, spend-limit breach.
-- Ship to Wazuh (M16) and fire an alert. **Trigger it** in the lab by dialing a blocked prefix.
+- Ship to Wazuh (M17) and fire an alert. **Trigger it** in the lab by dialing a blocked prefix.
 
 ## Checklist (add to your living hardening checklist)
 - [ ] Trunk requires TLS + digest auth (not IP-only)

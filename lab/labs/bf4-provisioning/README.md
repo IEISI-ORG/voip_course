@@ -1,6 +1,6 @@
 # Lab BF4 — Secure Auto-Provisioning
 
-**Module:** [M15](../../../course/modules/15-defense-hardening-fraud.md). Feedback-derived
+**Module:** [M14](../../../course/modules/14-provisioning-security.md). Feedback-derived
 (gemini_feedback1). Threat: insecure provisioning (T15) leaking credentials (T11).
 
 Goal: serve device configs securely — HTTPS + **mutual TLS**, a **MAC allowlist**, per-device

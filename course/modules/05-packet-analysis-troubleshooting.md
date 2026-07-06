@@ -31,10 +31,10 @@ fault-isolation method. **Est. time:** 4h · **Prereqs:** Modules 2–4. **Check
 
 ## 4. Attack / Defend
 - **Evidence integrity & chain of custody:** hashing pcaps, timestamps, access control — needed
-  for incident response (M16) and fraud cases.
+  for incident response (M17) and fraud cases.
 - **Captures contain secrets/PII:** SDP, DTMF (card numbers via inband!), recordings → handle,
   redact, encrypt, and control access. This is itself a security control.
-- **Detecting recon in captures:** spot svmap/OPTIONS sweeps and enumeration patterns (feeds M14/M15).
+- **Detecting recon in captures:** spot svmap/OPTIONS sweeps and enumeration patterns (feeds M15/M16).
 
 ## 5. Labs
 - **Lab 5.1:** Given 6 fault pcaps, diagnose each with a one-paragraph root cause + fix.

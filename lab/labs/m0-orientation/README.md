@@ -60,7 +60,7 @@ docker compose exec -it redteam bash        # note the authorized-use banner
 cat /opt/redteam/AUTHORIZED_USE.md
 lab-scan 8.8.8.8                             # confirm the scope guard REFUSES external targets
 ```
-**Deliverable:** paste the `REFUSED:` line. (Offensive tooling is used for real starting M14.)
+**Deliverable:** paste the `REFUSED:` line. (Offensive tooling is used for real starting M15.)
 
 ## Rubric (100 pts, pass ≥ 70)
 | Item | Pts | Evidence |

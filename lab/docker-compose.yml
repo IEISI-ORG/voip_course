@@ -5,7 +5,7 @@
 # verify network segmentation in the M0 lab immediately. Each Stage-A build iteration
 # replaces one placeholder with its real service (Kamailio, Asterisk, FreeSWITCH, ...).
 #
-# Segmentation invariant (enforced here, tested in M0/M8/M14):
+# Segmentation invariant (enforced here, tested in M0/M8/M15):
 #   - redteam containers attach ONLY to `edge` + `redteam` — never `core` or `mgmt`.
 #   - `core` (trusted, mTLS) is reachable only through edge-sbc.
 #   - `mgmt` carries observability; production would firewall it off from `edge`.
@@ -179,7 +179,7 @@ services:
     restart: unless-stopped
     networks:
       mgmt: { ipv4_address: 172.28.30.54 }
-      core: { ipv4_address: 172.28.20.54 }   # scrape core exporters (M16)
+      core: { ipv4_address: 172.28.20.54 }   # scrape core exporters (M17)
 
   grafana:             # dashboards
     image: grafana/grafana:latest
@@ -206,7 +206,7 @@ services:
     restart: unless-stopped
     networks: { mgmt: { ipv4_address: 172.28.30.56 } }
 
-  wazuh:               # SIEM (single-node manager; full indexer+dashboard in M16)
+  wazuh:               # SIEM (single-node manager; full indexer+dashboard in M17)
     image: wazuh/wazuh-manager:latest
     profiles: [obs]
     hostname: wazuh

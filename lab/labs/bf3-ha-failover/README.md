@@ -1,7 +1,7 @@
 # Lab BF3 — HA State Sharing & Hitless Failover
 
 **Modules:** [M7](../../../course/modules/07-proxies-and-sbcs.md) (SBC HA) +
-[M17](../../../course/modules/17-testing-interop-automation-cloud.md) (orchestration).
+[M18](../../../course/modules/18-testing-interop-automation-cloud.md) (orchestration).
 Feedback-derived (gemini_feedback1).
 
 Goal: run two SBC replicas that share registration and media state so a node loss doesn't drop

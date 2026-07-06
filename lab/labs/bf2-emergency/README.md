@@ -1,7 +1,7 @@
 # Lab BF2 — Emergency Calling (PIDF-LO + Resource-Priority)
 
 **Modules:** [M9](../../../course/modules/09-sip-trunking-pstn.md) +
-[M18](../../../course/modules/18-frontiers.md) (NG911). Feedback-derived (gemini_feedback0).
+[M19](../../../course/modules/19-frontiers.md) (NG911). Feedback-derived (gemini_feedback0).
 
 Goal: deliver a compliant emergency call — direct 911 dialing with notification (**Kari's Law**),
 a **dispatchable location** (**RAY BAUM'S Act**, via PIDF-LO), and **priority** (Resource-Priority).
