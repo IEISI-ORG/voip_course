@@ -154,6 +154,22 @@ per-5-beat teaching slides w/ speaker notes, a security-takeaway/quick-check sli
 - [x] I1..I20. **STAGE I COMPLETE** — all 21 decks hand-authored (M0…M19 + capstone), one per
       iteration. `slides/verify.sh` PASS: authored 21/21, quality bar met (≥10 slides, ≥4 speaker
       notes, Lab/Deliverable slide). Capstone exempted from the Lab-slide rule (deliverables deck).
+
+## Stage J — Deck render + readability/fit check (feedback1: render each deck in Playwright headless)
+Render every authored deck (marp-cli → HTML/PDF) and check readability under a headless browser
+(Playwright + xvfb), **including per-page overflow** — content must fit each slide. Wire into the
+existing `course/instructor/marp/` Makefile + render-check.js (memorized tooling: Makefile + Playwright
++ headless X). Fail-closed: a slide whose content overflows the page fails the check.
+- [ ] J0. Render pipeline (marp-cli build all 21 decks) + Playwright fit/overflow check under xvfb.
+- [ ] J1. Fix any decks that overflow; re-run until all pass.
+
+## Stage K — SIP workflow state-diagram library (feedback2 + feedback3)
+A library of **self-generated** state/sequence diagrams for common SIP workflows (feedback3 rule:
+own source only, no 3rd-party images — see `references/diagrams.md`). Workflow list gathered WITH the
+maintainer (feedback2: "ask me for ideas"; example given: non-authorised calls). Each diagram:
+Mermaid/Graphviz source + rendered SVG, embedded in the relevant module + slide, listed in the registry.
+- [ ] K0. Agree the workflow list with the maintainer (AskUserQuestion sent this iter).
+- [ ] K1..Kn. One diagram per iteration: source + SVG + registry entry + embed.
 ## Loop protocol (each iteration)
 1. Check `/home/terry/voip_course` for feedback files (`*feedback*`, `FEEDBACK*`, `feedback/`).
    If present: read, incorporate, and prioritize before the backlog. Record what it asked in the
@@ -743,6 +759,15 @@ per-5-beat teaching slides w/ speaker notes, a security-takeaway/quick-check sli
   slide) + `authored N/21` progress. Authored the **M0 exemplar deck** (12 slides, instructor speaker
   notes, 5-beat coverage, ethics gate). SLIDES verify PASS 4/4, progress 1/21. Next iterations: one
   authored deck each, M1 → capstone.
+- Iterations 124–143 (2026-07-07/08): **Stage I executed** — authored all 21 full decks (M1…M19 +
+  capstone), one per loop iteration, each verified (SLIDES PASS 4/4) and pushed. Capstone exempted
+  from the Lab-slide quality rule (deliverables deck). Stage I COMPLETE at 21/21.
+- Iteration 144 (2026-07-08): processed **3 feedback files**. (f3) Created `references/diagrams.md`
+  — a diagram registry + the **self-generated-only rule** (own Graphviz/Mermaid→SVG source, no
+  3rd-party images); linked from the bibliography. Inventory: 1 current diagram (RFC evolution map).
+  (f1) Opened **Stage J** — Playwright headless render + per-page overflow/fit check for the 21 decks.
+  (f2) Opened **Stage K** — self-generated SIP workflow state-diagram library; **AskUserQuestion sent
+  to gather the workflow list** (maintainer example: non-authorised calls). Feedback files consumed.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

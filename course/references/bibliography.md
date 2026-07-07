@@ -164,6 +164,11 @@ to follow where the standards go next.
 See [`rfc-dependency-map.md`](rfc-dependency-map.md) — a curated graph of how the core VoIP RFCs
 build on one another (the VoIP analogue of the RPKI RFC dependency graph).
 
+## Diagram registry
+See [`diagrams.md`](diagrams.md) — every figure in the course, its source, and its rebuild command.
+**Rule: all diagrams are self-generated from source we own (Graphviz/Mermaid → SVG); no third-party
+images.** Currently: the RFC evolution map. Planned: a SIP workflow state-diagram library (Stage K).
+
 ## Glossary
 Abbreviations and acronyms are defined in [`glossary.md`](glossary.md).
 
