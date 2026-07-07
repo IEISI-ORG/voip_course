@@ -24,9 +24,14 @@ def bullets(block, cap=6):
         if len(out)>=cap: break
     return out
 
-built=0
+built=0; skipped=0
 for path in sorted(glob.glob(os.path.join(MODDIR,"*.md"))):
     name=os.path.splitext(os.path.basename(path))[0]
+    outpath_existing=os.path.join(OUT, name+".md")
+    # Non-destructive: never clobber a hand-authored full deck (marked deck-status: authored).
+    if os.path.exists(outpath_existing) and "deck-status: authored" in open(outpath_existing).read():
+        skipped+=1
+        continue
     txt=open(path).read()
     mtitle=re.search(r"^#\s+(.+)$", txt, re.M)
     title=mtitle.group(1).strip() if mtitle else name
@@ -58,5 +63,5 @@ for path in sorted(glob.glob(os.path.join(MODDIR,"*.md"))):
     open(os.path.join(OUT, name+".md"),"w").write("\n".join(deck)+"\n")
     built+=1
 
-print(f"generated {built} MARP decks in {OUT}")
+print(f"generated {built} scaffold decks, skipped {skipped} authored, in {OUT}")
 PY

@@ -141,6 +141,17 @@ Fold F8/F9 opportunistically during these passes.
       Security** (placed after M13 per feedback; old M14–M19 → M15–M20). Covers cleartext-config
       threat (T15), redirection/RPS + zero-touch (mTLS/MAC allowlist/CN-scoping), signed **and**
       encrypted configs, key rotation. Lab = BF4 (`verify.sh` + `sign-config.sh` + `encrypt-config.sh`).
+
+## Stage I — Full authored instructor decks (feedback iter ~123: "write the full decks, one module/iteration")
+Upgrades E4: decks move from mechanically-generated outlines to **hand-authored, presentation-ready
+MARP decks** (real teaching slides + instructor speaker notes). One module per loop iteration, in order.
+Tooling reconciled: decks are now source-of-truth (marked `<!-- deck-status: authored -->`);
+`build-slides.sh` only **scaffolds** un-authored modules and never clobbers an authored deck;
+`slides/verify.sh` drops the byte-drift check for a **quality bar** (≥10 slide separators, ≥4 speaker
+notes, a Lab slide) + prints `authored N/21` progress. Deck spec: title+one-liner slide, objectives,
+per-5-beat teaching slides w/ speaker notes, a security-takeaway/quick-check slide, lab & assessment.
+- [x] I0. Tooling + exemplar — non-destructive scaffolder, quality-bar verify.sh, **M0 deck authored** (this iter)
+- [ ] I1..I20. One authored deck per iteration in order: M1, M2, … M19, capstone (20).
 ## Loop protocol (each iteration)
 1. Check `/home/terry/voip_course` for feedback files (`*feedback*`, `FEEDBACK*`, `feedback/`).
    If present: read, incorporate, and prioritize before the backlog. Record what it asked in the
@@ -722,6 +733,14 @@ Fold F8/F9 opportunistically during these passes.
   `Lab 10.x`. Final state: every module 0–19 has `Lab N.x == module N`; no residual `9D`/`M9D`/
   stale-count tokens; 0 broken links; quiz/slop/offline-graders PASS. `task_plan.md` left as-is
   (frozen start-of-project planning doc, like this log). H2 + its 2-pass audit fully complete.
+- Iteration ~123 (2026-07-07): after a run of idle iterations, processed `feedback1.txt` — "plan
+  autonomously writing the full decks for all modules, one module per iteration." Opened **Stage I**.
+  Reconciled the slide tooling so authored decks can coexist with the scaffolder: `build-slides.sh`
+  now skips any deck marked `<!-- deck-status: authored -->` (non-destructive); `slides/verify.sh`
+  drops the byte-drift check for a full-deck **quality bar** (≥10 separators, ≥4 speaker notes, a Lab
+  slide) + `authored N/21` progress. Authored the **M0 exemplar deck** (12 slides, instructor speaker
+  notes, 5-beat coverage, ethics gate). SLIDES verify PASS 4/4, progress 1/21. Next iterations: one
+  authored deck each, M1 → capstone.
 
 ## Security review log
 - Commit `1182c54` (B0) → MEDIUM fail-open in verify.sh segmentation check → FIXED iter 10

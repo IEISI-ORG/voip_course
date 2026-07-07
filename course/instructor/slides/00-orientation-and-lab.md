@@ -4,70 +4,164 @@ theme: default
 paginate: true
 title: Module 0 — Orientation & Lab Setup
 ---
+<!-- deck-status: authored -->
+<!-- Authored full deck. build-slides.sh will NOT overwrite this file (it skips authored decks). -->
 
 # Module 0 — Orientation & Lab Setup
 
-Get the reproducible, segmented lab running and learn the toolchain before touching SIP.
+**Get the reproducible, segmented lab running before you touch SIP.**
 
-<!-- Instructor: set the scene; ~30 min. Every module ends with a hands-on lab + fail-closed verify.sh. -->
+`Est. 2h` · Prereqs: Linux CLI, Docker basics
+
+<!--
+Speaker: This is a setup module — no protocol theory yet. The goal by the end of the hour is a
+running lab where every learner can capture a live call. If the lab isn't up, nothing else in the
+course works, so we spend the time here and get it right. Set expectations: they will run ONE
+`docker compose up` and end with a call visible in sngrep.
+-->
+
 ---
 
-## Learning Objectives
+## What you'll leave with
 
-- Stand up the full VoIPSec Docker topology and verify every service is healthy.
-- Understand lab network segmentation and the ethical/authorized-use rules for offensive tools.
-- Know where captures, logs, configs, and secrets live, and how to reset the lab cleanly.
+- The full VoIPSec Docker topology **up and healthy**.
+- A mental model of the **four lab networks** and why they're separated.
+- The **authorized-use rules** for the offensive tooling — non-negotiable.
+- Knowing where captures, logs, configs, and secrets live — and how to reset cleanly.
 
-<!-- Speaker note: connect this beat to the module's security takeaway. -->
+<!--
+Speaker: Frame these as the four things they must be able to do unaided by the next session:
+bring the lab up, explain the segmentation, recite the rules of engagement, and reset. Everything
+else builds on this.
+-->
+
 ---
 
-## 1. Concept
+## One lab, grown across the whole course
 
-- Why a shared, growing lab: you build one platform across 20 modules; the capstone is its
-- Network segmentation model: `edge` (untrusted), `core` (trusted/mTLS), `mgmt`
-- Reproducibility contract: infra-as-code, no snowflake hosts, `docker compose down -v` resets.
+- You don't build 20 throwaway labs — you grow **one platform** across 20 modules.
+- The **capstone is this same lab** in its hardened, defensible final form.
+- **Reproducibility contract:** infrastructure-as-code, no snowflake hosts.
+  `docker compose down -v` returns you to a known-clean state, every time.
 
-<!-- Speaker note: connect this beat to the module's security takeaway. -->
+<!--
+Speaker: Emphasise the through-line. Decisions they make in Module 6 (secret hygiene) still matter
+in the capstone. "No snowflake hosts" = if it isn't in the repo, it doesn't exist. This is also the
+first security lesson: reproducible infra is auditable infra.
+-->
+
 ---
 
-## 2. Packet Reality
+## The four networks (this is a security control)
 
-- First capture: run `sngrep` on the edge and place a call between two softphones; watch the
+| Network | Trust | What lives there |
+|---|---|---|
+| `edge` | untrusted | SBC, public-facing SIP |
+| `core` | trusted / mTLS | PBXs, registrar, media |
+| `mgmt` | observability | HOMER, Prometheus, Grafana, Loki, Wazuh |
+| `redteam` | **isolated** | SIPVicious, SIPp, nmap |
 
-<!-- Speaker note: connect this beat to the module's security takeaway. -->
+- Mirrors real **DMZ design**: the attacker net can reach `edge`, **never `core`**.
+
+<!--
+Speaker: This table is the spine of the whole lab's threat model. Ask the room: why can redteam
+reach edge but not core? Because that models an internet-facing attacker who has to get THROUGH the
+SBC. The segmentation is enforced in docker-compose networks — it's not a diagram, it's config we
+verify later.
+-->
+
 ---
 
-## 3. Build (OSS)
+## Packet reality: prove the tooling sees traffic
 
-- Install Docker + compose; `git clone` the lab repo; `docker compose up -d`.
-- Services: `edge-sbc` (Kamailio+rtpengine), `pbx-a` (Asterisk), `pbx-b` (FreeSWITCH),
-- Health checks: `docker compose ps`, service logs, Grafana up, HOMER receiving HEP.
-- Register two softphones (Linphone, Baresip) against `pbx-a`; place a test call.
+- Run `sngrep` on the **edge**.
+- Place a call between two softphones.
+- Watch the **SIP ladder** appear in real time.
 
-<!-- Speaker note: connect this beat to the module's security takeaway. -->
+> No theory yet — the only goal is: *the capture tooling works.*
+
+<!--
+Speaker: This is a confidence check, not a lesson in SIP. If they see the INVITE / 100 / 180 / 200
+ladder, their lab is wired correctly. If sngrep is empty, troubleshoot networking now — don't move
+on. This is the single best early smoke test.
+-->
+
 ---
 
-## 4. Attack / Defend (orientation only)
+## Build: bring up the topology
 
-- Tour the `redteam` container (SIPVicious, SIPp, nmap) — but **do not run yet**.
-- Authorized-use rules: offensive tooling only against lab targets on `edge`/`redteam`;
+```bash
+git clone <lab-repo> && cd lab
+docker compose up -d
+docker compose ps          # every service healthy?
+```
 
-<!-- Speaker note: connect this beat to the module's security takeaway. -->
+- `edge-sbc` (Kamailio + rtpengine) · `pbx-a` (Asterisk) · `pbx-b` (FreeSWITCH)
+- `trunk-sim` (SIPp) · `obs` (HOMER/Prometheus/Grafana/Loki/Wazuh) · `clients` · `redteam`
+
+<!--
+Speaker: One command brings up the whole stack. Walk the service list and name the role of each —
+they'll meet all of these again. Common failure: ports already bound, or insufficient Docker memory
+for the obs stack. Have them run `docker compose ps` and read the health column, not just "it's up".
+-->
+
 ---
 
-## 5. Labs
+## Build: verify it's actually working
 
-- **Lab 0.1:** Bring up the topology; paste `docker compose ps` + a Grafana screenshot.
-- **Lab 0.2:** Capture a call in `sngrep`, export the pcap, open it in Wireshark.
-- **Lab 0.3:** Break and reset — `down -v`, back `up`, prove idempotency.
-- *Rubric:* all services healthy, one call captured end-to-end, clean reset demonstrated.
+- `docker compose ps` — health, not just running.
+- Service logs; **Grafana** reachable; **HOMER** receiving HEP.
+- Register two softphones (**Linphone**, **Baresip**) against `pbx-a`; place a test call.
 
-<!-- Speaker note: connect this beat to the module's security takeaway. -->
+<!--
+Speaker: "Healthy" is a claim you verify, not assume — this habit carries through the whole course
+(every lab ships a fail-closed verify.sh). If HOMER isn't receiving HEP, captures won't correlate
+later, so fix it here.
+-->
+
 ---
 
-## Lab & assessment
+## Attack / Defend — orientation only
 
-- Hands-on lab with a fail-closed `verify.sh`; rubric 100 pts, pass ≥ 70.
-- Update your living threat model + hardening checklist.
+- Tour the `redteam` container: SIPVicious, SIPp, nmap. **Do not run anything yet.**
+- **Rules of engagement (restated in every offensive lab):**
+  - Offensive tooling targets **only** lab hosts on `edge` / `redteam`.
+  - **Never** against third parties or systems you don't own.
 
-<!-- Speaker note: point learners at lab/labs/<module>/. -->
+<!--
+Speaker: This is the ethics gate. Say it plainly: pointing these tools at anything outside the lab
+is illegal and gets you removed from the course. We restate it every single offensive module on
+purpose. The redteam net being isolated is the technical backstop for the human rule.
+-->
+
+---
+
+## Labs
+
+- **Lab 0.1** — Bring up the topology; submit `docker compose ps` + a Grafana screenshot.
+- **Lab 0.2** — Capture a call in `sngrep`, export the pcap, open it in Wireshark.
+- **Lab 0.3** — Break & reset: `down -v`, back `up`, prove idempotency.
+
+*Rubric:* all services healthy · one call captured end-to-end · clean reset demonstrated.
+
+<!--
+Speaker: 0.3 is the one people skip and regret. Proving `down -v` → `up` returns a clean, working
+lab is what lets them experiment fearlessly for the rest of the course. Reward the reset.
+-->
+
+---
+
+## Takeaways & quick check
+
+- One reproducible lab; **segmentation is a security control**, not decoration.
+- Verify health — don't assume it.
+- Rules of engagement are absolute.
+
+**Check:** Which network may attacker containers reach, and why is `core` excluded?
+What command fully resets state *including volumes*? Where are captures aggregated?
+
+<!--
+Speaker: Answers — redteam reaches edge only, modelling an internet attacker who must pass the SBC;
+`docker compose down -v` (the -v drops volumes); captures aggregate in HOMER for cross-hop
+correlation. If they can answer these three, they're ready for Module 1.
+-->

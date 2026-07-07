@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-# VoIPSec D0 — validate the generated MARP decks (offline, deterministic, fail-closed & in-sync).
+# VoIPSec D0 — validate the MARP decks (offline, deterministic, fail-closed).
+# Model: decks are HAND-AUTHORED source of truth. build-slides.sh only *scaffolds* un-authored
+# modules and never clobbers a deck marked `deck-status: authored`. This script therefore checks
+# structure + an authoring quality bar (not byte-equality with the generator).
 # Run:  bash course/instructor/slides/verify.sh
 set -u
 cd "$(dirname "$0")" || exit 3
@@ -8,7 +11,7 @@ pass=0; fail=0
 ok()  { echo "  PASS: $1"; pass=$((pass+1)); }
 bad() { echo "  FAIL: $1"; fail=$((fail+1)); }
 
-echo "== 1. decks regenerate =="
+echo "== 1. scaffolder runs (and preserves authored decks) =="
 bash build-slides.sh >/dev/null 2>&1 && ok "build-slides.sh runs" || bad "build-slides.sh failed"
 
 echo "== 2. one deck per module =="
@@ -24,12 +27,22 @@ for d in *.md; do [ "$d" = "README.md" ] && continue
 done
 [ "$missing" -eq 0 ] && ok "all decks are MARP-valid with a title slide" || bad "a deck is malformed"
 
-echo "== 4. decks are in sync with the module docs (no drift) =="
-if command -v git >/dev/null 2>&1 && git ls-files --error-unmatch 00-orientation-and-lab.md >/dev/null 2>&1; then
-  git diff --quiet -- . && ok "committed decks match freshly generated" || bad "decks stale — run build-slides.sh and commit"
-else
-  echo "  NOTE: decks not yet tracked — commit them (first run)"
-fi
+echo "== 4. authored decks meet the full-deck quality bar =="
+authored=0; qbad=0
+for d in *.md; do [ "$d" = "README.md" ] && continue
+  grep -q 'deck-status: authored' "$d" || continue
+  authored=$((authored+1))
+  slides=$(grep -c '^---$' "$d")            # front-matter + slide separators
+  notes=$(grep -c 'Speaker:' "$d")           # instructor speaker notes
+  labs=$(grep -cE '^## .*Lab' "$d")
+  [ "$slides" -ge 10 ] || { echo "    $d: only $slides separators (<10) — too thin"; qbad=1; }
+  [ "$notes"  -ge 4 ]  || { echo "    $d: only $notes speaker notes (<4)"; qbad=1; }
+  [ "$labs"   -ge 1 ]  || { echo "    $d: no Lab slide"; qbad=1; }
+done
+[ "$qbad" -eq 0 ] && ok "all $authored authored deck(s) meet the bar" || bad "an authored deck is below the bar"
+
+echo "== 5. authoring progress =="
+echo "  authored: $authored / $decks decks  (scaffolded: $((decks-authored)))"
 
 echo
 echo "== result: $pass passed, $fail failed =="
