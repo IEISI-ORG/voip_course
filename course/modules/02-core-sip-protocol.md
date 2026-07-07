@@ -19,6 +19,13 @@
   WWW-Authenticate, P-Asserted-Identity, Diversion/History-Info.
 - **Transactions vs. dialogs:** client/server transactions, the 3-way INVITE transaction, ACK
   handling for 2xx vs. non-2xx; dialog identifiers (Call-ID + tags).
+
+![INVITE dialog — setup, media, teardown](../references/diagrams/sip-invite-dialog.svg)
+
+> Flow above (self-generated — [source](../references/diagrams/sip-invite-dialog.dot)): the 3-way
+> INVITE transaction (INVITE/100/180/200/ACK), media on a separate plane, and BYE teardown. Note the
+> 2xx ACK is a new end-to-end transaction. See the [diagram registry](../references/diagrams.md).
+
 - **Routing:** Via processing, loose vs. strict routing, Record-Route, service-route.
 - **Registration & mobility:** binding lifecycle, re-registration, forking (parallel/sequential),
   call forwarding (busy/no-answer/voicemail), Replaces, Diversion, History-Info.

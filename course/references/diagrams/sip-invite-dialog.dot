@@ -1,0 +1,41 @@
+// VoIPSec self-generated diagram — INVITE dialog: setup (3-way), media, teardown (BYE).
+// Rebuild:  dot -Tsvg sip-invite-dialog.dot -o sip-invite-dialog.svg
+// Palette: signalling=blue, provisional=grey, success=green, media=green-note, teardown=orange.
+digraph sip_invite_dialog {
+  rankdir=TB;
+  fontname="Helvetica"; fontsize=12; labelloc="t";
+  label="INVITE dialog — call setup (3-way transaction), media, and teardown";
+  node [shape=box style="rounded,filled" fontname="Helvetica" fontsize=11 color="#33445a"];
+  edge [fontname="Helvetica" fontsize=10 color="#33445a"];
+
+  subgraph cluster_setup {
+    label="1 · Setup — the INVITE transaction (Caller → Callee)";
+    fontname="Helvetica"; color="#9fb3c8"; style="rounded";
+    s0 [label="Caller → INVITE\nSDP offer (codecs, c=/m=)" fillcolor="#dbeafe"];
+    s1 [label="Callee → 100 Trying" fillcolor="#e9ecef"];
+    s2 [label="Callee → 180 Ringing" fillcolor="#e9ecef"];
+    s3 [label="Callee → 200 OK\nSDP answer" fillcolor="#d3f9d8"];
+    s4 [label="Caller → ACK\n(new transaction for 2xx)" fillcolor="#dbeafe"];
+    s0 -> s1 [label="provisional"];
+    s1 -> s2 [label="alerting"];
+    s2 -> s3 [label="answered"];
+    s3 -> s4 [label="confirm"];
+  }
+
+  media [shape=note fillcolor="#d3f9d8" color="#2b8a3e"
+         label="2 · Media — RTP/RTCP flows directly per the negotiated SDP\n(separate plane, separate ports; secure with SRTP — M12)"];
+  s4 -> media [label="dialog established" color="#2b8a3e"];
+
+  subgraph cluster_teardown {
+    label="3 · Teardown";
+    fontname="Helvetica"; color="#f0c088"; style="rounded";
+    t0 [label="Either party → BYE" fillcolor="#ffe8cc"];
+    t1 [label="Other party → 200 OK\ndialog ended" fillcolor="#d3f9d8"];
+    t0 -> t1 [label="within the dialog"];
+  }
+  media -> t0 [label="hang up" color="#f08c00"];
+
+  note [shape=note fillcolor="#fff3bf" color="#b8860b"
+        label="Transaction = one request + its responses (INVITE..200).\nACK for a 2xx is a NEW end-to-end transaction; for non-2xx it is\npart of the INVITE transaction. Dialog = Call-ID + From/To tags."];
+  t1 -> note [style=dashed arrowhead=none color="#b8860b"];
+}
