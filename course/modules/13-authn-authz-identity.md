@@ -8,6 +8,12 @@ STIR/SHAKEN. **Est. time:** 6h · **Prereqs:** Modules 6–11. **Checkpoint exam
 - Deploy STIR/SHAKEN (sign + verify) with libstirshaken/Asterisk/OpenSIPS.
 - Defend against enumeration, brute force, and caller-ID spoofing.
 
+![SIP registration with digest auth, and an unauthorised call rejected](../references/diagrams/sip-registration-auth.svg)
+
+> Flow above (self-generated — [source](../references/diagrams/sip-registration-auth.dot)): the
+> registrar challenges REGISTER (401) and binds the AoR only after a valid digest response; an
+> unauthorised INVITE is challenged (407) and refused (403). See the [diagram registry](../references/diagrams.md).
+
 ## 1. Concept
 - **SIP digest auth (RFC 7616/2617 heritage):** 401/407 challenge, realm, nonce, `qop`, MD5 vs.
   SHA-256 (RFC 8760), `Authorization`/`Proxy-Authorization`; where to challenge (REGISTER, INVITE).

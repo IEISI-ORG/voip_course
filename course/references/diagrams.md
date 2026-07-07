@@ -22,17 +22,18 @@ course content and are never published.)
 | Diagram | Source | Rendered | Rebuild | Used in |
 |---|---|---|---|---|
 | VoIP/SIP RFC evolution & dependency map | `rfc-evolution-map.dot` (Graphviz) | `rfc-evolution-map.svg` | `dot -Tsvg rfc-evolution-map.dot -o rfc-evolution-map.svg` | `rfc-dependency-map.md` |
+| SIP registration (digest auth) + unauthorised-call rejection | `diagrams/sip-registration-auth.dot` (Graphviz) | `diagrams/sip-registration-auth.svg` | `dot -Tsvg diagrams/sip-registration-auth.dot -o diagrams/sip-registration-auth.svg` | `modules/13-authn-authz-identity.md` |
 
 ## Planned — SIP workflow state-diagram library (Stage K)
 
-A library of state/sequence diagrams for common SIP workflows, each **self-generated** (Mermaid
-`sequenceDiagram`/`stateDiagram` or Graphviz → SVG), rendered offline, and embedded in the relevant
-module + slide deck. Workflow list is being gathered with the maintainer (feedback2). Seed
-candidates (pending maintainer steer):
+A library of state/sequence diagrams for common SIP workflows, each **self-generated** with
+**Graphviz** (`dot` → SVG; mermaid-cli isn't installed, and Graphviz matches the RFC-map precedent),
+rendered offline, and embedded in the relevant module. Workflow list is provisional (maintainer may
+amend — feedback2). Progress:
 
-- Registration bind (REGISTER → 401 → auth REGISTER → 200) — success **and** an **unauthorised call**
-  rejected (the maintainer's example).
-- INVITE 3-way + media start + BYE; forking (parallel/sequential) with the CANCEL race.
+- [x] Registration bind (REGISTER → 401 → auth REGISTER → 200) + **unauthorised call** rejected
+  (maintainer's example) — `diagrams/sip-registration-auth.svg`, embedded in M13.
+- [ ] INVITE 3-way + media start + BYE; forking (parallel/sequential) with the CANCEL race.
 - Digest challenge round-trip; STIR/SHAKEN sign→verify (pass/fail).
 - TLS/SIPS handshake; SRTP vs. plaintext media; ZRTP SAS.
 - NAT traversal (`rport`/`received`, symmetric-RTP, STUN/TURN/ICE).

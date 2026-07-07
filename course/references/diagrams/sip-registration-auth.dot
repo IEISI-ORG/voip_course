@@ -1,0 +1,43 @@
+// VoIPSec self-generated diagram — SIP registration (digest auth) + unauthorised-call rejection.
+// Rebuild:  dot -Tsvg sip-registration-auth.dot -o sip-registration-auth.svg
+// Style matches the course palette: signalling=blue, security/challenge=orange, reject=red, ok=green.
+digraph sip_registration_auth {
+  rankdir=TB;
+  fontname="Helvetica"; fontsize=12;
+  labelloc="t";
+  label="SIP registration with digest auth, and an unauthorised call rejected";
+  node [shape=box style="rounded,filled" fontname="Helvetica" fontsize=11 color="#33445a"];
+  edge [fontname="Helvetica" fontsize=10 color="#33445a"];
+
+  // ---- Lane 1: successful authenticated registration ----
+  subgraph cluster_reg {
+    label="1 · Registration binds AoR → Contact (authenticated)";
+    fontname="Helvetica"; color="#9fb3c8"; style="rounded";
+    r0 [label="UAC → REGISTER\n(no credentials)" fillcolor="#dbeafe"];
+    r1 [label="Registrar → 401 Unauthorized\nWWW-Authenticate: realm, nonce, qop" fillcolor="#ffe8cc"];
+    r2 [label="UAC → REGISTER\nAuthorization: response=H(...)" fillcolor="#dbeafe"];
+    r3 [label="Registrar → 200 OK\nAoR → Contact bound, Expires set" fillcolor="#d3f9d8"];
+    r0 -> r1 [label="challenge"];
+    r1 -> r2 [label="retry w/ digest"];
+    r2 -> r3 [label="verified"];
+  }
+
+  // ---- Lane 2: unauthorised call is challenged and rejected ----
+  subgraph cluster_call {
+    label="2 · Unauthorised INVITE is challenged, then rejected";
+    fontname="Helvetica"; color="#f0a9a9"; style="rounded";
+    c0 [label="UAC → INVITE\n(no / invalid credentials)" fillcolor="#dbeafe"];
+    c1 [label="Proxy → 407 Proxy Authentication Required\nProxy-Authenticate: realm, nonce" fillcolor="#ffe8cc"];
+    c2 [label="UAC → INVITE\n(still no valid Authorization)" fillcolor="#dbeafe"];
+    c3 [label="Proxy → 403 Forbidden\ncall refused — no valid identity" fillcolor="#ffc9c9"];
+    c0 -> c1 [label="challenge every INVITE"];
+    c1 -> c2 [label="retry"];
+    c2 -> c3 [label="auth fails"];
+  }
+
+  // security note tying the two lanes together
+  note [shape=note fillcolor="#fff3bf" color="#b8860b"
+        label="Challenge REGISTER AND INVITE. Digest proves the subscriber\nbut not confidentiality — pair with TLS/SIPS. Uniform 401/403/404\nresponses + rate limiting defeat enumeration (T2) and brute force (T3)."];
+  r3 -> note [style=dashed arrowhead=none color="#b8860b"];
+  c3 -> note [style=dashed arrowhead=none color="#b8860b"];
+}
