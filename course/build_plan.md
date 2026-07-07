@@ -168,8 +168,13 @@ A library of **self-generated** state/sequence diagrams for common SIP workflows
 own source only, no 3rd-party images — see `references/diagrams.md`). Workflow list gathered WITH the
 maintainer (feedback2: "ask me for ideas"; example given: non-authorised calls). Each diagram:
 Mermaid/Graphviz source + rendered SVG, embedded in the relevant module + slide, listed in the registry.
-- [ ] K0. Agree the workflow list with the maintainer (AskUserQuestion sent this iter).
-- [ ] K1..Kn. One diagram per iteration: source + SVG + registry entry + embed.
+- [~] K0. Workflow list — AskUserQuestion sent iter 144; **no response (maintainer away)**, so
+      adopting the **provisional** 8-workflow set from `references/diagrams.md` (call flows:
+      registration+unauthorised-call, INVITE dialog+BYE, forking+CANCEL race, NAT traversal; security
+      flows: STIR/SHAKEN, TLS+media crypto, DNS 3263+spoof defense, fraud/flood). List stays OPEN —
+      maintainer can add/drop any time via feedback. Start order: **registration + unauthorised call**
+      (the maintainer's explicit example) first.
+- [ ] K1..K8. One diagram per iteration: Mermaid/Graphviz source + rendered SVG + registry entry + embed.
 ## Loop protocol (each iteration)
 1. Check `/home/terry/voip_course` for feedback files (`*feedback*`, `FEEDBACK*`, `feedback/`).
    If present: read, incorporate, and prioritize before the backlog. Record what it asked in the
