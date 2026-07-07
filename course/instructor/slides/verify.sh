@@ -34,10 +34,11 @@ for d in *.md; do [ "$d" = "README.md" ] && continue
   authored=$((authored+1))
   slides=$(grep -c '^---$' "$d")            # front-matter + slide separators
   notes=$(grep -c 'Speaker:' "$d")           # instructor speaker notes
-  labs=$(grep -cE '^## .*Lab' "$d")
+  # every module deck needs a Lab slide; the capstone is a deliverables/runbook deck (no per-module lab)
+  labs=$(grep -cE '^## .*(Lab|Deliverable|Runbook|Rubric)' "$d")
   [ "$slides" -ge 10 ] || { echo "    $d: only $slides separators (<10) — too thin"; qbad=1; }
   [ "$notes"  -ge 4 ]  || { echo "    $d: only $notes speaker notes (<4)"; qbad=1; }
-  [ "$labs"   -ge 1 ]  || { echo "    $d: no Lab slide"; qbad=1; }
+  [ "$labs"   -ge 1 ]  || { echo "    $d: no Lab/Deliverable slide"; qbad=1; }
 done
 [ "$qbad" -eq 0 ] && ok "all $authored authored deck(s) meet the bar" || bad "an authored deck is below the bar"
 

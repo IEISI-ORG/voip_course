@@ -150,8 +150,10 @@ Tooling reconciled: decks are now source-of-truth (marked `<!-- deck-status: aut
 `slides/verify.sh` drops the byte-drift check for a **quality bar** (≥10 slide separators, ≥4 speaker
 notes, a Lab slide) + prints `authored N/21` progress. Deck spec: title+one-liner slide, objectives,
 per-5-beat teaching slides w/ speaker notes, a security-takeaway/quick-check slide, lab & assessment.
-- [x] I0. Tooling + exemplar — non-destructive scaffolder, quality-bar verify.sh, **M0 deck authored** (this iter)
-- [ ] I1..I20. One authored deck per iteration in order: M1, M2, … M19, capstone (20).
+- [x] I0. Tooling + exemplar — non-destructive scaffolder, quality-bar verify.sh, **M0 deck authored**.
+- [x] I1..I20. **STAGE I COMPLETE** — all 21 decks hand-authored (M0…M19 + capstone), one per
+      iteration. `slides/verify.sh` PASS: authored 21/21, quality bar met (≥10 slides, ≥4 speaker
+      notes, Lab/Deliverable slide). Capstone exempted from the Lab-slide rule (deliverables deck).
 ## Loop protocol (each iteration)
 1. Check `/home/terry/voip_course` for feedback files (`*feedback*`, `FEEDBACK*`, `feedback/`).
    If present: read, incorporate, and prioritize before the backlog. Record what it asked in the
