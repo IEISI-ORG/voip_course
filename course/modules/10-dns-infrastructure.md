@@ -15,6 +15,12 @@ redirecting calls. Build it correctly and defend it. **Est. time:** 4h ·
 - Treat DNS as an **attack surface**: spoofing/cache poisoning → call redirection, and the
   defenses (DNSSEC, and authenticating the server by TLS cert regardless of DNS).
 
+![DNS for SIP — RFC 3263 resolution, SRV failover, spoof defeated two ways](../references/diagrams/sip-dns-resolution.svg)
+
+> Flow above (self-generated — [source](../references/diagrams/sip-dns-resolution.dot)): NAPTR→SRV→A
+> resolution, SRV-priority failover, and a spoofed answer defeated independently by DNSSEC (answer
+> integrity) and by SIPS/TLS cert verification (destination identity). See the [diagram registry](../references/diagrams.md).
+
 ## 1. Concept
 - **Resolution chain (RFC 3263):** domain → NAPTR (service+transport, e.g. `SIPS+D2T`, `SIP+D2U`)
   → SRV (`_sips._tcp`, `_sip._udp`) with priority/weight → A/AAAA. Client picks transport from

@@ -1,0 +1,43 @@
+// VoIPSec self-generated diagram — RFC 3263 resolution + SRV failover + spoof defended two ways.
+// Rebuild:  dot -Tsvg sip-dns-resolution.dot -o sip-dns-resolution.svg
+digraph sip_dns_resolution {
+  rankdir=TB;
+  fontname="Helvetica"; fontsize=12; labelloc="t";
+  label="DNS for SIP — RFC 3263 resolution, SRV failover, and a spoof defeated two ways";
+  node [shape=box style="rounded,filled" fontname="Helvetica" fontsize=11 color="#33445a"];
+  edge [fontname="Helvetica" fontsize=10 color="#33445a"];
+
+  subgraph cluster_resolve {
+    label="1 · Resolution chain (RFC 3263) — done before any SIP is sent";
+    fontname="Helvetica"; color="#9fb3c8"; style="rounded";
+    r0 [label="NAPTR: service + transport\n(SIPS+D2T ⇒ TLS)" fillcolor="#f5e1c0"];
+    r1 [label="SRV: hosts w/ priority + weight\n_sips._tcp / _sip._udp" fillcolor="#f5e1c0"];
+    r2 [label="A / AAAA: addresses" fillcolor="#f5e1c0"];
+    r0 -> r1 -> r2;
+  }
+
+  subgraph cluster_failover {
+    label="2 · SRV failover";
+    fontname="Helvetica"; color="#9fb3c8"; style="rounded";
+    f0 [label="Connect primary SRV (lowest priority #)" fillcolor="#d3f9d8"];
+    f1 [label="Primary down?\n→ next SRV target (TTL governs speed)" fillcolor="#ffe8cc"];
+    f0 -> f1 [label="health / timeout"];
+  }
+  r2 -> f0 [label="pick target"];
+
+  subgraph cluster_attack {
+    label="3 · Spoof / cache poisoning — defeated two independent ways";
+    fontname="Helvetica"; color="#f0a9a9"; style="rounded";
+    a0 [label="Forged answer: SRV → attacker host" fillcolor="#ffc9c9"];
+    d1 [label="Defense 1 — DNSSEC\nvalidating resolver rejects forged answer" fillcolor="#d3f9d8"];
+    d2 [label="Defense 2 — SIPS/TLS cert\nattacker lacks valid cert → handshake fails" fillcolor="#d3f9d8"];
+    a0 -> d1 [label="signed zone"];
+    a0 -> d2 [label="even without DNSSEC"];
+  }
+  f0 -> a0 [style=dashed color="#e03131" label="attacker poisons DNS"];
+
+  note [shape=note fillcolor="#fff3bf" color="#b8860b"
+        label="What you publish is policy (publish only SIPS to force TLS).\nDNSSEC protects the answer's integrity; TLS cert verification protects\nthe destination's identity — two layers, TLS still saves you without DNSSEC."];
+  d1 -> note [style=dashed arrowhead=none color="#b8860b"];
+  d2 -> note [style=dashed arrowhead=none color="#b8860b"];
+}
