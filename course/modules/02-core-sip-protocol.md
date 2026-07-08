@@ -29,6 +29,12 @@
 - **Routing:** Via processing, loose vs. strict routing, Record-Route, service-route.
 - **Registration & mobility:** binding lifecycle, re-registration, forking (parallel/sequential),
   call forwarding (busy/no-answer/voicemail), Replaces, Diversion, History-Info.
+
+![Parallel forking and the CANCEL race](../references/diagrams/sip-forking-cancel.svg)
+
+> Flow above (self-generated — [source](../references/diagrams/sip-forking-cancel.dot)): one INVITE
+> forks to two contacts; the first 200 OK wins and the proxy CANCELs the loser, which replies 487.
+> See the [diagram registry](../references/diagrams.md).
 - **Proxy modes & state:** stateless vs. stateful proxy, redirect (3xx), B2BUA (why it exists,
   what it hides/breaks).
 - **SDP preview:** where the body lives (offer/answer handled fully in Module 3).

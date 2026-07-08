@@ -24,6 +24,7 @@ course content and are never published.)
 | VoIP/SIP RFC evolution & dependency map | `rfc-evolution-map.dot` (Graphviz) | `rfc-evolution-map.svg` | `dot -Tsvg rfc-evolution-map.dot -o rfc-evolution-map.svg` | `rfc-dependency-map.md` |
 | SIP registration (digest auth) + unauthorised-call rejection | `diagrams/sip-registration-auth.dot` (Graphviz) | `diagrams/sip-registration-auth.svg` | `dot -Tsvg diagrams/sip-registration-auth.dot -o diagrams/sip-registration-auth.svg` | `modules/13-authn-authz-identity.md` |
 | INVITE dialog — setup, media, teardown | `diagrams/sip-invite-dialog.dot` (Graphviz) | `diagrams/sip-invite-dialog.svg` | `dot -Tsvg diagrams/sip-invite-dialog.dot -o diagrams/sip-invite-dialog.svg` | `modules/02-core-sip-protocol.md` |
+| Parallel forking + CANCEL race | `diagrams/sip-forking-cancel.dot` (Graphviz) | `diagrams/sip-forking-cancel.svg` | `dot -Tsvg diagrams/sip-forking-cancel.dot -o diagrams/sip-forking-cancel.svg` | `modules/02-core-sip-protocol.md` |
 
 ## Planned — SIP workflow state-diagram library (Stage K)
 
@@ -35,7 +36,7 @@ amend — feedback2). Progress:
 - [x] Registration bind (REGISTER → 401 → auth REGISTER → 200) + **unauthorised call** rejected
   (maintainer's example) — `diagrams/sip-registration-auth.svg`, embedded in M13.
 - [x] INVITE 3-way + media start + BYE — `diagrams/sip-invite-dialog.svg`, embedded in M2.
-- [ ] Forking (parallel/sequential) with the CANCEL race.
+- [x] Forking (parallel) with the CANCEL race — `diagrams/sip-forking-cancel.svg`, embedded in M2.
 - Digest challenge round-trip; STIR/SHAKEN sign→verify (pass/fail).
 - TLS/SIPS handshake; SRTP vs. plaintext media; ZRTP SAS.
 - NAT traversal (`rport`/`received`, symmetric-RTP, STUN/TURN/ICE).

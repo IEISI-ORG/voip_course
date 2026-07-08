@@ -1,0 +1,35 @@
+// VoIPSec self-generated diagram — parallel forking and the CANCEL race.
+// Rebuild:  dot -Tsvg sip-forking-cancel.dot -o sip-forking-cancel.svg
+digraph sip_forking_cancel {
+  rankdir=TB;
+  fontname="Helvetica"; fontsize=12; labelloc="t";
+  label="Parallel forking — one INVITE rings two branches; winner answers, loser is CANCELled";
+  node [shape=box style="rounded,filled" fontname="Helvetica" fontsize=11 color="#33445a"];
+  edge [fontname="Helvetica" fontsize=10 color="#33445a"];
+
+  inv  [label="Caller → INVITE\n(to an AoR with 2 contacts)" fillcolor="#dbeafe"];
+  fork [label="Proxy forks the INVITE\n(parallel to both contacts)" fillcolor="#e7f5ff" shape=box style="rounded,filled,bold"];
+  inv -> fork [label="one request"];
+
+  // branch A — the winner
+  a180 [label="Branch A → 180 Ringing" fillcolor="#e9ecef"];
+  a200 [label="Branch A → 200 OK\n(answered first — WINS)" fillcolor="#d3f9d8"];
+  aack [label="Proxy/Caller → ACK to A\ndialog established with A" fillcolor="#dbeafe"];
+  fork -> a180 [label="fork → A"];
+  a180 -> a200 [label="answered"];
+  a200 -> aack [label="confirm winner"];
+
+  // branch B — the loser
+  b180 [label="Branch B → 180 Ringing" fillcolor="#e9ecef"];
+  bcanc[label="Proxy → CANCEL to B\n(a winner already answered)" fillcolor="#ffe8cc"];
+  b487 [label="Branch B → 487 Request Terminated\n(+ 200 OK to the CANCEL)" fillcolor="#ffc9c9"];
+  fork -> b180 [label="fork → B"];
+  a200 -> bcanc [label="race: A won → cancel B" color="#f08c00"];
+  b180 -> bcanc [style=invis];
+  bcanc -> b487 [label="B stops ringing"];
+
+  note [shape=note fillcolor="#fff3bf" color="#b8860b"
+        label="The CANCEL race: the first 200 OK wins; the proxy CANCELs the other\nbranch, which replies 487. Security note: forking multiplies signalling —\nrate-limit and watch for fork-bomb / amplification abuse (T8)."];
+  aack  -> note [style=dashed arrowhead=none color="#b8860b"];
+  b487  -> note [style=dashed arrowhead=none color="#b8860b"];
+}
