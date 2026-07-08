@@ -8,6 +8,13 @@ border. **Est. time:** 5h · **Prereqs:** Module 7.
 - Apply STUN/TURN/ICE and server-side NAT handling (Kamailio + rtpengine).
 - Build edge firewalling (nftables), rate limiting, and brute-force jails (fail2ban).
 
+![NAT traversal — the problem and its two fix paths](../references/diagrams/sip-nat-traversal.svg)
+
+> Flow above (self-generated — [source](../references/diagrams/sip-nat-traversal.dot)): NAT rewrites
+> packet headers but not the SIP/SDP payload, so the server sees a private IP. Fix A is server-side
+> (rport/received + symmetric RTP/rtpengine); Fix B is client-side (STUN → TURN on symmetric NAT →
+> ICE). See the [diagram registry](../references/diagrams.md).
+
 ## 1. Concept
 - **NAT & why VoIP breaks:** private addresses in SIP/SDP vs. public path; the two-plane problem
   (signaling Contact/Via + media `c=`/`m=`); hairpinning/tromboning.

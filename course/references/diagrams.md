@@ -25,6 +25,7 @@ course content and are never published.)
 | SIP registration (digest auth) + unauthorised-call rejection | `diagrams/sip-registration-auth.dot` (Graphviz) | `diagrams/sip-registration-auth.svg` | `dot -Tsvg diagrams/sip-registration-auth.dot -o diagrams/sip-registration-auth.svg` | `modules/13-authn-authz-identity.md` |
 | INVITE dialog — setup, media, teardown | `diagrams/sip-invite-dialog.dot` (Graphviz) | `diagrams/sip-invite-dialog.svg` | `dot -Tsvg diagrams/sip-invite-dialog.dot -o diagrams/sip-invite-dialog.svg` | `modules/02-core-sip-protocol.md` |
 | Parallel forking + CANCEL race | `diagrams/sip-forking-cancel.dot` (Graphviz) | `diagrams/sip-forking-cancel.svg` | `dot -Tsvg diagrams/sip-forking-cancel.dot -o diagrams/sip-forking-cancel.svg` | `modules/02-core-sip-protocol.md` |
+| NAT traversal — problem + server/client fixes | `diagrams/sip-nat-traversal.dot` (Graphviz) | `diagrams/sip-nat-traversal.svg` | `dot -Tsvg diagrams/sip-nat-traversal.dot -o diagrams/sip-nat-traversal.svg` | `modules/08-nat-firewalls-sbc.md` |
 
 ## Planned — SIP workflow state-diagram library (Stage K)
 
@@ -39,7 +40,8 @@ amend — feedback2). Progress:
 - [x] Forking (parallel) with the CANCEL race — `diagrams/sip-forking-cancel.svg`, embedded in M2.
 - Digest challenge round-trip; STIR/SHAKEN sign→verify (pass/fail).
 - TLS/SIPS handshake; SRTP vs. plaintext media; ZRTP SAS.
-- NAT traversal (`rport`/`received`, symmetric-RTP, STUN/TURN/ICE).
+- [x] NAT traversal (`rport`/`received`, symmetric-RTP, STUN/TURN/ICE) —
+  `diagrams/sip-nat-traversal.svg`, embedded in M8.
 - DNS RFC 3263 resolution + SRV failover; DNS-spoof redirect defeated by DNSSEC/TLS.
 - Toll-fraud detect→contain runbook; INVITE-flood mitigation.
 

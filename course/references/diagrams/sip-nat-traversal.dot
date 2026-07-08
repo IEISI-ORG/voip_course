@@ -1,0 +1,46 @@
+// VoIPSec self-generated diagram — the NAT problem and its two fix paths.
+// Rebuild:  dot -Tsvg sip-nat-traversal.dot -o sip-nat-traversal.svg
+digraph sip_nat_traversal {
+  rankdir=TB;
+  fontname="Helvetica"; fontsize=12; labelloc="t";
+  label="NAT traversal — why VoIP breaks through NAT, and the two fix paths";
+  node [shape=box style="rounded,filled" fontname="Helvetica" fontsize=11 color="#33445a"];
+  edge [fontname="Helvetica" fontsize=10 color="#33445a"];
+
+  subgraph cluster_problem {
+    label="The problem — private addresses inside the payload";
+    fontname="Helvetica"; color="#f0a9a9"; style="rounded";
+    p0 [label="UAC (behind NAT) → REGISTER / INVITE\nContact + SDP c=/m= carry a PRIVATE IP" fillcolor="#dbeafe"];
+    p1 [label="NAT rewrites packet headers\nbut NOT the SIP/SDP payload" fillcolor="#ffe8cc"];
+    p2 [label="Server sees a private IP\n→ replies/media go nowhere (one-way / no audio)" fillcolor="#ffc9c9"];
+    p0 -> p1 -> p2;
+  }
+
+  subgraph cluster_server {
+    label="Fix A · Server-side (you control the server)";
+    fontname="Helvetica"; color="#9fb3c8"; style="rounded";
+    a0 [label="Signalling: rport / received (RFC 3581)\nreply to the real source, not the claimed IP" fillcolor="#d3f9d8"];
+    a1 [label="Media: symmetric RTP + rtpengine anchor\n+ NAT keepalives (OPTIONS/CRLF)" fillcolor="#d3f9d8"];
+    a0 -> a1 [style=invis];
+  }
+
+  subgraph cluster_client {
+    label="Fix B · Client-side (STUN / TURN / ICE)";
+    fontname="Helvetica"; color="#9fb3c8"; style="rounded";
+    b0 [label="STUN: discover public mapping" fillcolor="#e7f5ff"];
+    b1 [label="Symmetric NAT? mapping differs per peer\n→ STUN answer useless" fillcolor="#ffe8cc"];
+    b2 [label="TURN: relay the media" fillcolor="#d3f9d8"];
+    b3 [label="ICE: try all candidates, use what works" fillcolor="#d3f9d8"];
+    b0 -> b1 [label="test"];
+    b1 -> b2 [label="fall back"];
+    b2 -> b3 [label="host/srflx/relay"];
+  }
+
+  p2 -> a0 [label="server fix" color="#2b8a3e"];
+  p2 -> b0 [label="client fix" color="#2b8a3e"];
+
+  note [shape=note fillcolor="#fff3bf" color="#b8860b"
+        label="Symmetric NAT defeats plain STUN → TURN relay solves it.\nSecurity: keep RTP ports tight, use strict-source in rtpengine,\nand harden the TURN relay (denied-peer-ip toward core/mgmt)."];
+  a1 -> note [style=dashed arrowhead=none color="#b8860b"];
+  b3 -> note [style=dashed arrowhead=none color="#b8860b"];
+}
