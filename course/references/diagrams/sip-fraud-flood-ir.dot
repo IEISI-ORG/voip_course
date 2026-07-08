@@ -1,0 +1,36 @@
+// VoIPSec self-generated diagram — incident response: toll-fraud and flood, shared IR lifecycle.
+// Rebuild:  dot -Tsvg sip-fraud-flood-ir.dot -o sip-fraud-flood-ir.svg
+digraph sip_fraud_flood_ir {
+  rankdir=TB;
+  fontname="Helvetica"; fontsize=12; labelloc="t";
+  label="Incident response — toll fraud and INVITE/REGISTER flood through one IR lifecycle";
+  node [shape=box style="rounded,filled" fontname="Helvetica" fontsize=11 color="#33445a"];
+  edge [fontname="Helvetica" fontsize=10 color="#33445a"];
+
+  subgraph cluster_detect {
+    label="Detect (from monitoring, M17)";
+    fontname="Helvetica"; color="#9fb3c8"; style="rounded";
+    df [label="Toll fraud (T4)\nspend / velocity / off-hours spike" fillcolor="#ffe8cc"];
+    dl [label="Flood (T8)\nCPS / registration-rate / 4xx spike" fillcolor="#ffe8cc"];
+  }
+
+  triage [label="Triage\nidentify account/source, scope, attack vs. surge\n(pull CDR + HOMER trace)" fillcolor="#dbeafe"];
+  df -> triage; dl -> triage;
+
+  subgraph cluster_contain {
+    label="Contain (differs by incident)";
+    fontname="Helvetica"; color="#f0c088"; style="rounded";
+    cf [label="Fraud: suspend account, block\ndestination range, enforce spend cap" fillcolor="#ffe8cc"];
+    cl [label="Flood: nftables rate-limit / geo-block,\n`pike` tighten, fail2ban, scale/roll" fillcolor="#ffe8cc"];
+  }
+  triage -> cf [label="fraud"]; triage -> cl [label="flood"];
+
+  erad [label="Eradicate\nfind entry (weak secret? open 5060? provisioning?)\nrotate creds; tune thresholds" fillcolor="#dbeafe"];
+  recov[label="Recover\nre-enable w/ tighter class-of-service;\nconfirm KPIs normalise" fillcolor="#d3f9d8"];
+  review[label="Review\nroot cause, loss estimate, control gap\n→ update threat model + hardening checklist" fillcolor="#d3f9d8"];
+  cf -> erad; cl -> erad; erad -> recov -> review;
+
+  note [shape=note fillcolor="#fff3bf" color="#b8860b"
+        label="A hard spend/velocity cap BOUNDS the loss even if prevention fails —\nthe top toll-fraud control. 'Find the entry' prevents recurrence:\nrecovering without closing the entry point just resets the clock."];
+  review -> note [style=dashed arrowhead=none color="#b8860b"];
+}

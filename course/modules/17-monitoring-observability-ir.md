@@ -21,6 +21,13 @@
   reroute) → eradicate → recover → post-incident review; evidence handling from M5.
 - **Forensics:** using HOMER captures + CDRs + logs to reconstruct an incident timeline.
 
+![Incident response — toll fraud and flood through one IR lifecycle](../references/diagrams/sip-fraud-flood-ir.svg)
+
+> Flow above (self-generated — [source](../references/diagrams/sip-fraud-flood-ir.dot)): toll-fraud
+> and flood both run the detect→triage→contain→eradicate→recover→review lifecycle, with
+> incident-specific containment; a hard spend cap bounds fraud loss and "find the entry" prevents
+> recurrence. See the [diagram registry](../references/diagrams.md).
+
 ## 2. Packet Reality
 - Correlate a single fraudulent call across HOMER (signaling), CDR (billing), and logs (auth)
   to build an incident timeline.

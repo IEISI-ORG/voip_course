@@ -174,7 +174,10 @@ Mermaid/Graphviz source + rendered SVG, embedded in the relevant module + slide,
       flows: STIR/SHAKEN, TLS+media crypto, DNS 3263+spoof defense, fraud/flood). List stays OPEN —
       maintainer can add/drop any time via feedback. Start order: **registration + unauthorised call**
       (the maintainer's explicit example) first.
-- [ ] K1..K8. One diagram per iteration: Mermaid/Graphviz source + rendered SVG + registry entry + embed.
+- [x] K1..K8. **STAGE K provisional set COMPLETE** — 8 self-generated Graphviz→SVG diagrams
+      (registration+unauth call·M13, INVITE dialog·M2, forking+CANCEL·M2, NAT traversal·M8,
+      STIR/SHAKEN·M13, TLS+SRTP crypto·M12, DNS 3263+spoof·M10, fraud/flood IR·M17), each embedded in
+      its module + listed in `references/diagrams.md`. Library stays open to maintainer additions.
 ## Loop protocol (each iteration)
 1. Check `/home/terry/voip_course` for feedback files (`*feedback*`, `FEEDBACK*`, `feedback/`).
    If present: read, incorporate, and prioritize before the backlog. Record what it asked in the

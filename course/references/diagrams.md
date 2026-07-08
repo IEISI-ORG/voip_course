@@ -29,6 +29,7 @@ course content and are never published.)
 | STIR/SHAKEN sign→verify (pass/fail) | `diagrams/sip-stir-shaken.dot` (Graphviz) | `diagrams/sip-stir-shaken.svg` | `dot -Tsvg diagrams/sip-stir-shaken.dot -o diagrams/sip-stir-shaken.svg` | `modules/13-authn-authz-identity.md` |
 | Securing both planes — TLS + SRTP (SDES/DTLS/ZRTP) | `diagrams/sip-media-crypto.dot` (Graphviz) | `diagrams/sip-media-crypto.svg` | `dot -Tsvg diagrams/sip-media-crypto.dot -o diagrams/sip-media-crypto.svg` | `modules/12-media-security-srtp.md` |
 | DNS RFC 3263 resolution + SRV failover + spoof defense | `diagrams/sip-dns-resolution.dot` (Graphviz) | `diagrams/sip-dns-resolution.svg` | `dot -Tsvg diagrams/sip-dns-resolution.dot -o diagrams/sip-dns-resolution.svg` | `modules/10-dns-infrastructure.md` |
+| Incident response — toll fraud + flood lifecycle | `diagrams/sip-fraud-flood-ir.dot` (Graphviz) | `diagrams/sip-fraud-flood-ir.svg` | `dot -Tsvg diagrams/sip-fraud-flood-ir.dot -o diagrams/sip-fraud-flood-ir.svg` | `modules/17-monitoring-observability-ir.md` |
 
 ## Planned — SIP workflow state-diagram library (Stage K)
 
@@ -48,6 +49,8 @@ amend — feedback2). Progress:
   `diagrams/sip-nat-traversal.svg`, embedded in M8.
 - [x] DNS RFC 3263 resolution + SRV failover; DNS-spoof defeated by DNSSEC/TLS —
   `diagrams/sip-dns-resolution.svg`, embedded in M10.
-- Toll-fraud detect→contain runbook; INVITE-flood mitigation.
+- [x] Toll-fraud detect→contain + INVITE-flood mitigation IR lifecycle —
+  `diagrams/sip-fraud-flood-ir.svg`, embedded in M17.
 
+**Stage K provisional set complete (8/8).** Further workflows welcome from the maintainer.
 Each entry graduates into the table above once its source + SVG are committed.
