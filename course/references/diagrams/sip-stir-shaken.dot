@@ -1,0 +1,39 @@
+// VoIPSec self-generated diagram — STIR/SHAKEN sign -> verify, with pass and fail branches.
+// Rebuild:  dot -Tsvg sip-stir-shaken.dot -o sip-stir-shaken.svg
+digraph sip_stir_shaken {
+  rankdir=TB;
+  fontname="Helvetica"; fontsize=12; labelloc="t";
+  label="STIR/SHAKEN — sign at origination, verify at termination (pass / fail)";
+  node [shape=box style="rounded,filled" fontname="Helvetica" fontsize=11 color="#33445a"];
+  edge [fontname="Helvetica" fontsize=10 color="#33445a"];
+
+  subgraph cluster_orig {
+    label="Originating carrier — authentication service (STIR sign)";
+    fontname="Helvetica"; color="#9fb3c8"; style="rounded";
+    o0 [label="Caller → INVITE\n(calling + called numbers)" fillcolor="#dbeafe"];
+    o1 [label="Authenticate the subscriber\n+ their right to the number" fillcolor="#e5dbff"];
+    o2 [label="Build PASSporT (RFC 8225)\nsigned JWT + attestation A/B/C" fillcolor="#e5dbff"];
+    o3 [label="Add Identity header (RFC 8224)\n→ forward INVITE" fillcolor="#dbeafe"];
+    o0 -> o1 -> o2 -> o3;
+  }
+
+  subgraph cluster_term {
+    label="Terminating carrier — verification service (STIR verify)";
+    fontname="Helvetica"; color="#9fb3c8"; style="rounded";
+    v0 [label="Receive INVITE + Identity header" fillcolor="#dbeafe"];
+    v1 [label="Fetch signing cert (RFC 8226)\nvalidate the STI-CA chain" fillcolor="#e5dbff"];
+    v2 [label="Verify PASSporT signature\n+ numbers match" fillcolor="#e5dbff"];
+    v0 -> v1 -> v2;
+  }
+  o3 -> v0 [label="across the network" color="#2b8a3e"];
+
+  pass [label="PASS → verstat = TN-Validation-Passed\ndeliver; surface attestation to callee" fillcolor="#d3f9d8"];
+  fail [label="FAIL → missing/bad Identity, cert or signature invalid\nverstat failed → flag / label as likely spoof" fillcolor="#ffc9c9"];
+  v2 -> pass [label="valid" color="#2b8a3e"];
+  v2 -> fail [label="invalid" color="#e03131"];
+
+  note [shape=note fillcolor="#fff3bf" color="#b8860b"
+        label="Attestation A = subscriber authenticated AND authorised for the number;\nB = known customer, unverified number; C = pass-through. Strip untrusted\ninbound Identity at the border; verify-then-reattest at transit (T7)."];
+  pass -> note [style=dashed arrowhead=none color="#b8860b"];
+  fail -> note [style=dashed arrowhead=none color="#b8860b"];
+}

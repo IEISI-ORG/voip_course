@@ -31,6 +31,13 @@ STIR/SHAKEN. **Est. time:** 6h · **Prereqs:** Modules 6–11. **Checkpoint exam
     Data (RCD, RFC 9795/9796), out-of-band STIR, `div`/`div-o` for diverted calls (RFC 8946).
 - **Interplay:** digest proves *your* subscriber; STIR/SHAKEN conveys trust *between operators*.
 
+![STIR/SHAKEN sign at origination, verify at termination](../references/diagrams/sip-stir-shaken.svg)
+
+> Flow above (self-generated — [source](../references/diagrams/sip-stir-shaken.dot)): the originating
+> authentication service signs a PASSporT (attestation A/B/C) into an Identity header; the terminating
+> verification service validates the cert chain + signature, yielding a pass (`verstat` passed) or a
+> fail (flagged as likely spoof). See the [diagram registry](../references/diagrams.md).
+
 ## 2. Packet Reality
 - Read a 401/407 digest round-trip; identify realm/nonce/qop/response.
 - Read a signed INVITE: decode the `Identity` header, the PASSporT header/payload/signature,
