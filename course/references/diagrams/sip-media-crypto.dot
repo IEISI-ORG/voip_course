@@ -1,0 +1,40 @@
+// VoIPSec self-generated diagram — securing both planes: TLS signalling + SRTP media key exchange.
+// Rebuild:  dot -Tsvg sip-media-crypto.dot -o sip-media-crypto.svg
+digraph sip_media_crypto {
+  rankdir=TB;
+  fontname="Helvetica"; fontsize=12; labelloc="t";
+  label="Securing both planes — TLS/SIPS for signalling, SRTP (SDES / DTLS / ZRTP) for media";
+  node [shape=box style="rounded,filled" fontname="Helvetica" fontsize=11 color="#33445a"];
+  edge [fontname="Helvetica" fontsize=10 color="#33445a"];
+
+  subgraph cluster_sig {
+    label="Signalling plane — TLS/SIPS (port 5061)";
+    fontname="Helvetica"; color="#9fb3c8"; style="rounded";
+    s0 [label="TLS handshake\nClientHello → ServerHello + cert → verify" fillcolor="#ffe8cc"];
+    s1 [label="Encrypted SIP\n(SDES key, if used, is now protected)" fillcolor="#d3f9d8"];
+    s0 -> s1;
+  }
+
+  subgraph cluster_media {
+    label="Media plane — pick a key-exchange method";
+    fontname="Helvetica"; color="#9fb3c8"; style="rounded";
+    m0 [label="SDES (RFC 4568)\nkey in SDP a=crypto — needs TLS" fillcolor="#e5dbff"];
+    m1 [label="DTLS-SRTP (RFC 5763/64)\nkey in media handshake; SDP fingerprint" fillcolor="#e5dbff"];
+    m2 [label="ZRTP (RFC 6189)\nin-media DH + human SAS (E2E)" fillcolor="#e5dbff"];
+  }
+  s1 -> m0 [label="SDES ⇒ requires TLS" color="#2b8a3e"];
+  s1 -> m1 [style=invis];
+  s1 -> m2 [style=invis];
+
+  plain [label="Plaintext RTP\n→ recordable / eavesdroppable (T5)" fillcolor="#ffc9c9"];
+  srtp [label="SRTP — confidential + authenticated\n(AES-CM/GCM)" fillcolor="#d3f9d8"];
+  m0 -> srtp [label="keyed" color="#2b8a3e"];
+  m1 -> srtp [color="#2b8a3e"];
+  m2 -> srtp [color="#2b8a3e"];
+  m0 -> plain [label="crypto stripped →" style=dashed color="#e03131"];
+
+  note [shape=note fillcolor="#fff3bf" color="#b8860b"
+        label="Encrypt BOTH planes — TLS alone leaves media readable.\nDowngrade works only if you allow cleartext → SRTP-only policy,\nalarm at the SBC. ZRTP's SAS defeats a DTLS-fingerprint MITM."];
+  srtp -> note [style=dashed arrowhead=none color="#b8860b"];
+  plain -> note [style=dashed arrowhead=none color="#b8860b"];
+}

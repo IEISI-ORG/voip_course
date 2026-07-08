@@ -8,6 +8,12 @@
 - Explain the key-exchange trade-offs and their attack surfaces.
 - Bridge secure/insecure media at the SBC without silently downgrading.
 
+![Securing both planes — TLS signalling + SRTP media key exchange](../references/diagrams/sip-media-crypto.svg)
+
+> Flow above (self-generated — [source](../references/diagrams/sip-media-crypto.dot)): TLS/SIPS secures
+> signalling; media is keyed via SDES (needs TLS), DTLS-SRTP, or ZRTP (SAS) → SRTP. Stripping crypto
+> downgrades to eavesdroppable plaintext RTP unless policy forbids it. See the [diagram registry](../references/diagrams.md).
+
 ## 1. Concept
 - **Why encrypt media:** TLS protects signaling only; RTP is separately sniffable/recordable
   (M4 lab proved it). SRTP (RFC 3711) adds confidentiality + authentication to RTP/RTCP.

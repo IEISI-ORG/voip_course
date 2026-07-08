@@ -27,6 +27,7 @@ course content and are never published.)
 | Parallel forking + CANCEL race | `diagrams/sip-forking-cancel.dot` (Graphviz) | `diagrams/sip-forking-cancel.svg` | `dot -Tsvg diagrams/sip-forking-cancel.dot -o diagrams/sip-forking-cancel.svg` | `modules/02-core-sip-protocol.md` |
 | NAT traversal — problem + server/client fixes | `diagrams/sip-nat-traversal.dot` (Graphviz) | `diagrams/sip-nat-traversal.svg` | `dot -Tsvg diagrams/sip-nat-traversal.dot -o diagrams/sip-nat-traversal.svg` | `modules/08-nat-firewalls-sbc.md` |
 | STIR/SHAKEN sign→verify (pass/fail) | `diagrams/sip-stir-shaken.dot` (Graphviz) | `diagrams/sip-stir-shaken.svg` | `dot -Tsvg diagrams/sip-stir-shaken.dot -o diagrams/sip-stir-shaken.svg` | `modules/13-authn-authz-identity.md` |
+| Securing both planes — TLS + SRTP (SDES/DTLS/ZRTP) | `diagrams/sip-media-crypto.dot` (Graphviz) | `diagrams/sip-media-crypto.svg` | `dot -Tsvg diagrams/sip-media-crypto.dot -o diagrams/sip-media-crypto.svg` | `modules/12-media-security-srtp.md` |
 
 ## Planned — SIP workflow state-diagram library (Stage K)
 
@@ -40,7 +41,8 @@ amend — feedback2). Progress:
 - [x] INVITE 3-way + media start + BYE — `diagrams/sip-invite-dialog.svg`, embedded in M2.
 - [x] Forking (parallel) with the CANCEL race — `diagrams/sip-forking-cancel.svg`, embedded in M2.
 - [x] STIR/SHAKEN sign→verify (pass/fail) — `diagrams/sip-stir-shaken.svg`, embedded in M13.
-- TLS/SIPS handshake; SRTP vs. plaintext media; ZRTP SAS.
+- [x] TLS/SIPS + SRTP key exchange (SDES/DTLS/ZRTP) vs. plaintext —
+  `diagrams/sip-media-crypto.svg`, embedded in M12.
 - [x] NAT traversal (`rport`/`received`, symmetric-RTP, STUN/TURN/ICE) —
   `diagrams/sip-nat-traversal.svg`, embedded in M8.
 - DNS RFC 3263 resolution + SRV failover; DNS-spoof redirect defeated by DNSSEC/TLS.
