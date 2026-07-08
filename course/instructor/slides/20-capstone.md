@@ -40,8 +40,7 @@ platform through real incidents with runbooks. Design + proof + operations.
 
 1. **Architecture doc** — topology, trust boundaries, data flows, component rationale.
 2. **Reproducible deployment** — one-command compose + IaC variant; parity; **secure CI**.
-3. **Security implementation** — TLS/SIPS, SRTP/DTLS, SHA-256 digest, STIR/SHAKEN, topology hiding,
-   edge firewall + rate limits + fail2ban, toll-fraud controls.
+3. **Security implementation** — TLS/SIPS + SRTP/DTLS, digest, STIR/SHAKEN, edge firewall, toll-fraud controls.
 4. **Living threat model (final)** — every threat addressed or accepted with rationale; residual risk.
 5. **Hardening checklist (final)** — each item mapped to the T# it mitigates, with evidence.
 
@@ -70,7 +69,7 @@ security-review package.
 
 ---
 
-## Assessment rubric (100 pts)
+## Assessment rubric (100 pts) — build & crypto
 
 | Area | Pts |
 |---|---|
@@ -78,6 +77,19 @@ security-review package.
 | Reproducibility + IaC parity + secure CI | 15 |
 | Signaling + media encryption (verified in capture) | 15 |
 | Identity (digest + STIR/SHAKEN) | 10 |
+
+<!--
+Speaker: The first half of the rubric is "built it right" — it works, it's reproducible, and the
+crypto is verified in capture (not just claimed). Encryption is worth 15 because it's the course's
+spine; a broken-crypto submission cannot pass regardless of other scores.
+-->
+
+---
+
+## Assessment rubric — defense, ops & the gate
+
+| Area | Pts |
+|---|---|
 | Edge/border defense | 10 |
 | Fraud prevention (demonstrated) | 10 |
 | Observability + detection coverage | 10 |
@@ -87,9 +99,9 @@ security-review package.
 **Pass = ≥70 overall AND no failing security category.** Security is mandatory.
 
 <!--
-Speaker: Spell out the gate: you cannot certify on protocol fluency while failing security. A student
-with great functionality but broken encryption FAILS — that's the whole ethos of a security-first
-course. The categories mirror the modules, so the rubric is also a course-coverage map.
+Speaker: The second half is "proved and operable" plus the gate. Spell it out: you cannot certify on
+protocol fluency while failing security — great functionality with broken encryption FAILS. The
+categories mirror the modules, so the rubric doubles as a course-coverage map.
 -->
 
 ---

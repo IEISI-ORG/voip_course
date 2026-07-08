@@ -152,12 +152,11 @@ handshake fails. Two independent layers.
 
 - **Lab 10.1** — Author the NAPTR/SRV/A zone in BIND9; prove RFC 3263 resolution + registration.
 - **Lab 10.2 (failover)** — Two SRV targets; drop the primary, show failover; measure recovery vs. TTL.
-- **Lab 10.3 (security)** — Inject a spoofed answer redirecting `_sips._tcp`; show the redirect, then
-  show **DNSSEC** and **TLS cert verification** each defeat it.
+- **Lab 10.3 (security)** — Inject a spoofed `_sips._tcp` answer; show the redirect, then **DNSSEC**
+  + **TLS cert** each defeat it.
 - **Lab 10.4 (ops)** — TTL-based cut-over + clean rollback; write the runbook.
 
-*Rubric:* correct RFC 3263 resolution · working SRV failover · spoof + DNSSEC/TLS mitigation · safe
-reversible cut-over.
+*Rubric:* correct resolution · SRV failover · spoof + DNSSEC/TLS mitigation · safe cut-over.
 
 <!--
 Speaker: 10.3 is the security keystone — they poison DNS, watch the call redirect, then watch two
@@ -171,10 +170,9 @@ resilience tool and an attack surface, and you must build for both.
 
 - **What you publish in DNS is policy** — publish SIPS to force TLS.
 - **Lower TTL before changes** — fast cut-over *and* instant rollback.
-- **DNSSEC + TLS cert = two independent defenses** against redirection.
+- **DNSSEC + TLS cert = two independent defenses**.
 
-**Check:** In what order does a UAC use NAPTR/SRV/A, and how does that force TLS? Why lower TTL
-*before* a cut-over? Which defense still protects you if DNSSEC isn't deployed?
+**Check:** Order of NAPTR/SRV/A, and how does it force TLS? Which defense still protects you without DNSSEC?
 
 <!--
 Speaker: Answers — NAPTR (service+transport) → SRV (hosts, priority/weight) → A/AAAA; publishing only

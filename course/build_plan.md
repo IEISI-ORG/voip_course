@@ -160,8 +160,11 @@ Render every authored deck (marp-cli → HTML/PDF) and check readability under a
 (Playwright + xvfb), **including per-page overflow** — content must fit each slide. Wire into the
 existing `course/instructor/marp/` Makefile + render-check.js (memorized tooling: Makefile + Playwright
 + headless X). Fail-closed: a slide whose content overflows the page fails the check.
-- [ ] J0. Render pipeline (marp-cli build all 21 decks) + Playwright fit/overflow check under xvfb.
-- [ ] J1. Fix any decks that overflow; re-run until all pass.
+- [x] J0. Render pipeline works (marp-cli builds 21 decks) + **added per-slide overflow detection**
+      to `marp/render-check.js` (Playwright measures section scroll-vs-client height under xvfb).
+- [x] J1. **STAGE J COMPLETE** — found 4 overflowing slides (capstone rubric +137px split into two;
+      capstone deliverables, DNS Labs, authn Labs trimmed). **RENDER CHECK: PASS (21 decks, no
+      overflow).** Fit-check wired as the `marp` render gate (`make check`); pointer added to slides/verify.sh.
 
 ## Stage K — SIP workflow state-diagram library (feedback2 + feedback3)
 A library of **self-generated** state/sequence diagrams for common SIP workflows (feedback3 rule:

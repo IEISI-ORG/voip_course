@@ -45,6 +45,10 @@ done
 echo "== 5. authoring progress =="
 echo "  authored: $authored / $decks decks  (scaffolded: $((decks-authored)))"
 
+echo "== 6. readability / per-page fit =="
+echo "  NOTE: rendered readability + per-slide overflow are checked by the marp render gate"
+echo "        (chromium under xvfb): cd ../marp && make check   — asserts no slide overflows its page."
+
 echo
 echo "== result: $pass passed, $fail failed =="
 [ "$fail" -eq 0 ] && { echo "SLIDES: PASS"; exit 0; } || { echo "SLIDES: FAIL"; exit 1; }

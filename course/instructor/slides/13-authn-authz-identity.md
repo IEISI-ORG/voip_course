@@ -155,13 +155,11 @@ dual-algo challenge lets mixed fleets upgrade without a downgrade hole.
 ## Labs
 
 - **Lab 13.1** — Enforce **SHA-256 digest** on REGISTER+INVITE; capture + annotate the challenge.
-- **Lab 13.2 (identity)** — **Sign + verify** STIR/SHAKEN in the lab CA; decode a PASSporT; branch
-  handling on attestation.
-- **Lab 13.3 (attack→defend)** — Authorized `svwar`/`svcrack`; show uniform responses + fail2ban +
-  lockout defeat enumeration and brute force.
+- **Lab 13.2 (identity)** — **Sign + verify** STIR/SHAKEN in the lab CA; decode a PASSporT; branch on attestation.
+- **Lab 13.3 (attack→defend)** — Authorized `svwar`/`svcrack`; uniform responses + fail2ban + lockout
+  defeat enumeration/brute force.
 
-*Rubric:* strong digest enforced · working sign/verify with attestation logic · enumeration & brute
-force demonstrably mitigated.
+*Rubric:* strong digest · working sign/verify + attestation logic · enumeration & brute force mitigated.
 
 <!--
 Speaker: 13.2 stands up a real STI-CA in the lab so they sign and verify end to end — the only way
@@ -175,11 +173,9 @@ uniform responses + fail2ban shut it down. This is checkpoint-#2 rehearsal.
 
 - **Digest authenticates, it does not encrypt** — pair with TLS.
 - **AuthN ≠ AuthZ** — bound what a valid identity may do (toll-fraud backstop).
-- **STIR/SHAKEN** conveys trust *between* operators; verify and act on attestation.
+- **STIR/SHAKEN** conveys trust *between* operators; act on attestation.
 
-**Check:** Why doesn't digest provide confidentiality, and what must accompany it? Walk the PASSporT
-from creation to verification — what does attestation A assert? Two response changes that stop
-enumeration, and why?
+**Check:** Why doesn't digest give confidentiality? What does attestation A assert? What stops enumeration?
 
 <!--
 Speaker: Answers — digest only proves knowledge of a secret via a hash; it needs TLS for
